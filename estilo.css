@@ -282,6 +282,21 @@
     font-size:12px; 
 }
 
+.texto_normal{
+    font-size: 16px;	
+	font-family: Georgia, Verdana, Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif; 
+	text-indent: 4em;
+}
+
+ol.a{
+	list-style-type:upper-roman;
+	padding-left:8em;
+}
+
+ol li {
+    text-indent: 0;!important
+}
+
 #principal {
     padding-left:320px;
     padding-top: 10px;
