@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:37:02 GMT -->
+
+<head>
+
+  <title>Manual da NF-e</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Keywords" content="NF-e, NFC-e, Encat, Web- Services, Nota Eltrônica, Nota Fiscal, Nota de Consumidor, Nota Fiscal de Consumidor Eletrônica">
+  <meta name="Description" content="Manual de Orientação ao Contribuinte- Nota Fiscal Eletrônica">
+
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="myscript.js"></script>
+</head>
+
+<body>
+
+  <!-- Cabeçalho da pagina, que deve sumir quando dou o scroll-->
+  <div class='cabecalho topo'>
+    <div class='titulo'>
+      <p><span><span style="font-size: 14pt;">Projeto Nota Fiscal Eletr&ocirc;nica</span></span></p>
+      <p><span><span>Manual de Orienta&ccedil;&atilde;o ao Contribuinte</span></span></p>
+    </div>
+    <div class='imagens_cabecalho'>
+      <img src="./Imagens/nfce_logo.png" alt="NFC-e" style="height:100%;width:auto;float:right ;">
+      <img src="./Imagens/nfe_logo.png" alt="NF-e" style="height:100%;width:auto;float:right;">
+
+    </div>
+  </div>
+
+
+
+  <!-- Barra de navegação superior, que deve ficar fixa no alto da pagina quando dou scroll -->
+
+  <!--Essa primeira parte cria a barra, atribuindo os efeitos à ela -->
+  <div class='linha_superior sombra barra_nav' id='barra_superior'>
+    <div style='overflow:auto;'>
+      <div style='float:left;width:100%;overflow:hidden;height:44px'>
+        <!-- Aqui vai o índice geral do Manual-->
+        <a href='javascript:void(0);' id="botao_menu" class='active' onclick='menu()' title='Menu'>&#9776;</a>
+        <a href='./index.html' title='Visão Geral'>Visão Geral</a>
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Web Services'>Web Services</a>
+          <div class='dropdown-content'>
+            <a href='./NFeAutorizacao.html' title='WS Autorizacao'> Web Service- NFeAutorização</a>
+            <a href='./NFeRetAutorizacao.html' title='WS RetAutorizacao'>Web Service- NFeRetAutorizacao</a>
+            <a href='./NFeInutilizacao.html' title='WS Inutilizacao'>Web Service- NFeInutilização</a>
+            <a href='./NFeConsultaProtocolo.html' title='WS Consulta Protocolo'>Web Service- NFeConsulta Protocolo</a>
+            <a href='./NFeStatusServico.html' title='WS Status Serviço'>Web Service- NFeStatus Servico</a>
+            <a href='./NFeConsultaCadastro.html' title='WS Consulta Cadastro'>Web Service- NFeConsultaCadastro</a>
+            <a href='./NFeDistribuicaoDFe.html' title='WS Distribuição DFe'>Web Service- NFeDistribuicaoDFe</a>
+            <a href='./RecepcaoEventoGeral.html' title='WS Autorizacao'>Web Service- NFeRecepcaoEvento</a>
+            <a href='./RecepcaoEventoGeral.html' title='WS Autorizacao'>&emsp;&#8227;Parte Geral</a>
+            <a href='./RecepcaoEventoCancelamento.html' title='Anexo II- Regras de Validação'>&emsp;&#8227;Cancelamento/Cancelamento por substituição</a>
+            <a href='./RecepcaoEventoCartaCorrecao.html' title='WS Autorizacao'>&emsp;&#8227;Carta de Correção</a>
+            <a href='./RecepcaoEventoManifestacao.html' title='Anexo II- Regras de Validação'>&emsp;&#8227;Manifestação do Destinatário</a>
+            <a href='./RecepcaoEventoEPEC.html' title='WS Autorizacao'>&emsp;&#8227;EPEC</a>
+            <a href='./RecepcaoEventoProrrogacao.html' title='Anexo II- Regras de Validação'>&emsp;&#8227;Pedido de Prorrogação</a>
+            <a href='./RecepcapEventoCancProrrogacao.html' title='WS Autorizacao'>&emsp;&#8227;Cancelamento do Pedido de Prorrogação</a>
+          </div>
+        </div>
+
+        <div class='dropdown hide_ultra_small'>
+          <a href='./Leiaute.html' id="botao_leiaute" title='Leiaute'>Leiaute</a>
+        </div>
+
+        <div class='dropdown hide_super_small'>
+          <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
+        </div>
+
+
+        <div class='dropdown hide_very_small'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>Danfe</a>
+          <div class='dropdown-content'>
+            <a href='./AnexoIII_danfe.html' title='Anexo III- Danfe'>Anexo III- DANFE</a>
+            <a href='./AnexoIV_danfe_NFCE.html' title='Anexo IV- Danfe'>Anexo IV- DANFE NFC-e</a>
+          </div>
+        </div>
+
+        <div class='dropdown hide_small'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>Contingência</a>
+          <div class='dropdown-content'>
+            <a href='./AnexoV_Contingencia_NFe.html' title='Anexo V- Contingência NF-e'>Anexo V- Contingência NF-e</a>
+            <a href='./AnexoVI_ContingenciaNFCe.html' title='Anexo VI- Contingência NFC-e'>Anexo VI- Contingência NFC-e</a>
+          </div>
+        </div>
+
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Demais Anexos'><span class="normal">Demais Anexos</span><span class="super_pequeno">Anexos</span></a>
+          <div class='dropdown-content'>
+
+            <div class="show_ultra_small">
+              <!--A classe show_very_small garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 630 pixels -->
+              <a href='./AnexoI_Leiaute.html' title='Anexo I- Leiaute'>Anexo I- Leiaute</a>
+            </div>
+
+            <div class="show_very_small">
+              <!--A classe show_very_small garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 840 pixels -->
+              <a href='./AnexoII_Regras_de_validação.html' title='Anexo II- Regras de Validação'>Anexo II- Regras de Validação</a>
+            </div>
+
+            <div class="show_very_small">
+              <!--A classe show_very_small garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 934 pixels -->
+              <a href='./AnexoIII_danfe.html' title='Anexo III- Danfe'>Anexo III- DANFE</a>
+              <a href='./AnexoIV_danfe_NFCE.html' title='Anexo IV- Danfe'>Anexo IV- DANFE NFC-e</a>
+            </div>
+
+            <div class="show_small">
+              <!--A classe show_small garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 1100 pixels -->
+              <a href='./AnexoV_Contingencia_NFe.html' title='Anexo V- Contingência NF-e'>Anexo V- Contingência NF-e</a>
+              <a href='./AnexoVI_ContingenciaNFCe.html' title='Anexo VI- Contingência NFC-e'>Anexo VI- Contingência NFC-e</a>
+            </div>
+
+
+            <a href='./AnexoVII_Ws_Disponiveis.html' title='Anexo VII- WS Disponíveis'>Anexo VII- WS Disponíveis</a>
+            <a href='./AnexoVIII_Tabelas de UF_Municipio_Pais.html' title='Anexo VIII- Tabelas de UF, Município e País'>Anexo VIII- Tabelas de UF, Município e País</a>
+            <a href='./AnexoIX_NCM_Especificos.html' title='Anexo IX- NCM Específicos'>Anexo IX- NCM Específicos</a>
+            <a href='./AnexoX_Produtos_ANP.html' title='Anexo X- Códigos de Produto da ANP Específicos'>Anexo X- Códigos de Produto da ANP Específicos</a>
+            <a href='./AnexoXI_Códigos_Identificadores.html' title='Anexo XI- Códigos Identificadores'>Anexo XI- Códigos Identificadores</a>
+            <a href='./AnexoXII_CFOP_Especificos.html' title='Anexo XII- CFOP Específicos'>Anexo XII- CFOP Específicos</a>
+            <a href='./AnexoXIII_Código_enquadramento_IPI.html' title='Anexo XIII- Código de Enquadramento Legal do IPI'>Anexo X- Códigos de Produto da ANP Específicos</a>
+            <a href='./AnexoXIV_Calculo_EC_87.html' title='Anexo XIV- Sistema de Cáldulo (EC 87/2015)'>Anexo XIV- Sistema de Cálculo (EC 87/2015)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id='sub_barra'>
+    <!-- Isso aqui estbelece uma divisao pra toda a parte abaixo da barra de navegacao-->
+    <div id='menu_esq'>
+      <!-- isso aqui cria o menu lateral, à esquerda-->
+      <div id='indice'>
+        <!-- cria a parte interna do menu a esquerda-->
+        <div id='indice_texto'>
+          <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
+          <!-- Aqui vai o índice específico dessa parte-->
+          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
+        <h1> Manual de Orientação ao Contribuinte da Nota Fiscal Eletrônica</h1>
+        <h2>1. Considerações Iniciais</h2>
+        <div class='texto_normal'>
+          <p>A Nota Fiscal Eletrônica (NF-e) e a Nota Fiscal de Consumidor Eletrônica (NFC-e) foram desenvolvidas de forma integrada, pelas Secretarias de Fazenda dos Estados e Secretaria da Receita Federal do Brasil, a partir da assinatura do
+            Protocolo ENAT 03/2005 (27/08/2005), que atribui ao Encontro Nacional de Coordenadores e Administradores Tributários Estaduais (ENCAT) a coordenação e a responsabilidade pelo desenvolvimento e implantação do Projeto NF-e.</p>
+          <p>Para instituir a NF-e, modelo 55, foi celebrado o <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05">Ajuste SINIEF 07/2005</a>, pelos Estados, Distrito Federal e União, juntamente com a legislação complementar
+            contida no Ato COTEPE 72/05, de 22/12/2005. Ambas as legislações sofreram modificações e atualizações, resultado da evolução ocorrida desde o início da fase de massificação.</p>
+          <p>Quanto à NFC-e, modelo 65, o <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2016/AJ_009_16">Ajuste SINIEF 19/2016</a> trata da legislação base deste documento, delineia as principais regras e identifica quais os documentos
+            em papel podem ser por ela substituídos.</p>
+          <p>Ao longo deste documento o acrônimo NF-e é utilizado para todas as situações que se aplicam indistintamente a ambos os modelos de Nota Fiscal Eletrônica (55 e 65). Sempre que é necessário identificar um dos dois modelos em particular, a
+            diferenciação é feita pela expressão respectiva: NF-e modelo 55 ou NFC-e modelo 65.</p>
+
+          <h3>1.1 Objetivos do Projeto</h3>
+          <p>O Projeto NF-e teve como objetivo a implantação de um modelo nacional de documento fiscal eletrônico, identificado pelo modelo 55, visando a substituir a sistemática de emissão do documento fiscal em papel, no caso as notas fiscais
+            modelos 1 e 1A, com validade jurídica garantida pela assinatura digital do emitente, simplificando as obrigações acessórias dos contribuintes e permitindo, ao mesmo tempo, o acompanhamento em tempo real das operações comerciais pelo
+            Fisco.</p>
+          <p>O final do processo de implantação das diversas obrigatoriedades de uso da NF-e com alcance nacional, em dezembro de 2010, marcou o fim do Projeto, e a NF-e assumiu o status de um sistema nacional de documento fiscal eletrônico,
+            compartilhado entre as unidades da Federação e a Receita Federal do Brasil. A evolução da NF-e trouxe a possibilidade de substituir também a sistemática da Nota Fiscal de Produtor, modelo 4.</p>
+          <p>Posteriormente, a critério de cada unidade federada, foi introduzida a possibilidade de substituir-se a sistemática da nota fiscal modelo 2 e dos cupons fiscais. Nesta última situação a NF-e é identificada pelo modelo 65 e chamada de
+            Nota Fiscal Eletrônica de Venda a Consumidor Final – NFC-e.</p>
+
+          <h3>1.2 Conceitos</h3>
+
+          <h4>1.2.1 NF-e (Modelo 55)</h4>
+
+          <p>A Nota Fiscal Eletrônica (NF-e) é um documento de existência exclusivamente digital, emitido e armazenado eletronicamente, com o intuito de documentar uma operação de circulação de mercadorias ou prestação de serviços, nos campos de
+            incidência do Imposto sobre Operações relativas à Circulação de Mercadorias e Prestação de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação (ICMS) e do Imposto Sobre Produtos Industrializados (IPI), cuja validade
+            jurídica é garantida por duas condições necessárias: a assinatura digital do emitente e a Autorização de Uso fornecida pela administração tributária do domicílio do contribuinte, que poderá ser utilizada em substituição:</p>
+          <ol class="a">
+            <li>à Nota Fiscal, modelo 1 ou 1-A;</li>
+            <li>à Nota Fiscal de Produtor, modelo 4.</li>
+          </ol>
+
+          <h4>1.2.2 NFA-e – Nota Fiscal Avulsa Eletrônica (Modelo 55)</h4>
+
+
+          <p>Na hipótese de a NF-e ser emitida por sistema eletrônico disponibilizado pelas administrações tributárias das unidades federadas em seus correspondentes endereços eletrônicos, contendo a assinatura digital da respectiva administração
+            tributária, passa a receber a denominação de Nota Fiscal Avulsa eletrônica – NFA-e, modelo 55.</p>
+          <p>A emissão da NFA-e – Modelo 55 segue o padrão da NF-e emitida pelas empresas, com as seguintes diferenças:</p>
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:41:03 GMT -->
+
+</html>
