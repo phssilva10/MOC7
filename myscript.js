@@ -1,26 +1,30 @@
-window.onload = function() {
-    myFunction()
-  };
-  window.onscroll = function() {
-    myFunction()
-  };
 
-  var navbar = document.getElementById("barra_superior");
-  var sticky = navbar.offsetTop;
-  var leftmenu = document.getElementById("indice");
+
+var navbar;
+var sticky;
+
+window.onload = function() {
+  navbar = document.getElementById("barra_superior");
+  sticky = navbar.offsetTop;
+    myFunction()
+  };
+window.onscroll = function() {
+    myFunction()
+};
 
   function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
 
+
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
     } else {
       navbar.classList.remove("sticky");
     }
 
     var element = document.getElementById("barra_superior");
-    elemRect = element.getBoundingClientRect(),
-
-      leftmenu.style.paddingTop = elemRect.bottom + "px";
+    var leftmenu = document.getElementById("indice");
+    elemRect = element.getBoundingClientRect();
+    leftmenu.style.paddingTop = elemRect.bottom + "px";
   }
 
 

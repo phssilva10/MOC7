@@ -68,71 +68,71 @@
 }
 
 .super_pequeno{
-    display:none;	
+    display:none;
 }
 
 
 @media (max-width:610px){
     .imagens_cabecalho {
-       display:none;   
+       display:none;
     }
-    
+
     .titulo{
       width:100%;
       text-align:center;
     }
-    
+
 }
 
 @media (max-width:626px){
     .show_ultra_small {
-       display:block;   
+       display:block;
     }
-    
+
     .hide_ultra_small{
       display:none !important;
     }
-	
+
 	.super_pequeno{
-	  display:block;	
+	  display:block;
 	}
 	.normal{
-	   display:none;	
+	   display:none;
 	}
-    
+
 }
 
 @media (max-width:840px){
     .show_super_small {
-       display:block;   
+       display:block;
     }
-    
+
     .hide_super_small{
       display:none !important;
     }
-    
+
 }
 
 @media (max-width:934px){
     .show_very_small {
-       display:block;   
+       display:block;
     }
-    
+
     .hide_very_small{
       display:none !important;
     }
-    
+
 }
 
 @media (max-width:1100px){
     .show_small {
-       display:block;   
+       display:block;
     }
-    
+
     .hide_small{
       display:none !important;
     }
-    
+
 }
 
 .linha_superior{
@@ -177,7 +177,7 @@
 }
 .barra_nav a.active {
     height: inherit;
-    background-color:white;  
+    background-color:white;
     color:#6577b2;
 }
 
@@ -237,18 +237,18 @@
     color:#000000;
     background-color:#73AD21;
     background-color:#4CAF50;
-    color:#ffffff;  
+    color:#ffffff;
 }
 #menu_esq {
     width:320px;
     z-index:9;
-    display:block;
+    display:none;
 }
 #indice {
     position:fixed;
     top:0;
     padding-top:112px;
-    padding-bottom:0;    
+    padding-bottom:0;
     height:100%;
     width:16.66666%;
     width:320px;
@@ -279,12 +279,12 @@
 }
 
 .subtitulo{
-    font-size:12px; 
+    font-size:12px;
 }
 
 .texto_normal{
-    font-size: 16px;	
-	font-family: Georgia, Verdana, Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif; 
+    font-size: 16px;
+	font-family: Georgia, Verdana, Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
 	text-indent: 4em;
 }
 
@@ -298,7 +298,7 @@ ol li {
 }
 
 #principal {
-    padding-left:320px;
+    padding-left:10px;
     padding-top: 10px;
     padding-right: 10px;
     background-color: white;
