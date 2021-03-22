@@ -293,9 +293,20 @@ ol.a{
 	padding-left:8em;
 }
 
+ol.b {
+  list-style-type: lower-alpha;
+  font-weight:bold;
+}
+
+ol.b li span{
+font-weight:normal;
+
+}
+
 ol li {
     text-indent: 0;!important
 }
+
 
 #principal {
     padding-left:10px;
@@ -334,9 +345,14 @@ ol li {
 
 .leiaute_nfe tr:hover, .regras_validacao_nfe tr:hover,  .regras_validacao_gerais tr:hover  {background-color: #ddd;} /*hover é a propriedade de se destacar uma linha (tr) da tabela com a cor definida*/
 
-.linha_grupo {background-color: #f2f2f2; font-weight:bold;}
+.linha_grupo {background-color: #87CEFA; font-weight:bold;}
 
-.linha_revogada {background-color: lightgray; text-decoration: line-through;}
+.linha_revogada {text-decoration: line-through;}
+
+.linha_revogada div{display: inline-block;
+  text-decoration: none;}
+
+
 
 .leiaute_nfe th, .regras_validacao_nfe th, .regras_validacao_gerais th{
     padding-top: 12px;
@@ -382,6 +398,94 @@ comentario{
 .regras_validacao_gerais td:nth-child(5){width: 5%; }		/*Estabelece a largura da célula 5 de todas as linhas (equivalente a coluna 5)*/
 .regras_validacao_gerais td:nth-child(6){width: 40%; }		/*Estabelece a largura da célula 6 de todas as linhas (equivalente a coluna 6)*/
 
+.tributacao_leiaute{
+    font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif; 	/*fonte da tabela*/
+    border-collapse: collapse; 									/*colapsa as bordas entre as diferentes colunas- linhas*/
+    width: 80%;
+		 border: 1px solid black;
+}
+
+.tributacao_leiaute tr, td, th{
+	border: 1px solid black;
+    padding: 8px;
+}
+
+
+
+.tributacao_leiaute th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: gray;
+    font-weight: bold;
+}
+
+.tributacao_leiaute td{text-align: center};
+
+.tributacao_leiaute td:nth-child(1){width: 5%; }		/*Estabelece a largura da célula 1 de todas as linhas (equivalente a coluna 1)*/
+.tributacao_leiaute td:nth-child(2){width: 10%; }		/*Estabelece a largura da célula 2 de todas as linhas (equivalente a coluna 2)*/
+.tributacao_leiaute td:nth-child(3){width: 30%; }		/*Estabelece a largura da célula 3 de todas as linhas (equivalente a coluna 3)*/
+.tributacao_leiaute td:nth-child(4){width: 5%; }		/*Estabelece a largura da célula 4 de todas as linhas (equivalente a coluna 4)*/
+.tributacao_leiaute td:nth-child(5){width: 5%; }		/*Estabelece a largura da célula 5 de todas as linhas (equivalente a coluna 5)*/
+.tributacao_leiaute td:nth-child(6){width: 5%; }		/*Estabelece a largura da célula 6 de todas as linhas (equivalente a coluna 6)*/
+.tributacao_leiaute td:nth-child(7){width: 5%; }		/*Estabelece a largura da célula 7 de todas as linhas (equivalente a coluna 7)*/
+.tributacao_leiaute td:nth-child(8){width: 5%; }		/*Estabelece a largura da célula 8 de todas as linhas (equivalente a coluna 8)*/
+.tributacao_leiaute td:nth-child(9){width: 5%; }		/*Estabelece a largura da célula 9 de todas as linhas (equivalente a coluna 9)*/
+.tributacao_leiaute td:nth-child(10){width: 5%;}		/*Estabelece a largura da célula 7 de todas as linhas (equivalente a coluna 10)*/
+.tributacao_leiaute td:nth-child(11){width: 5%; }		/*Estabelece a largura da célula 7 de todas as linhas (equivalente a coluna 11)*/
+.tributacao_leiaute td:nth-child(12){width: 5%; }		/*Estabelece a largura da célula 8 de todas as linhas (equivalente a coluna 12)*/
+.tributacao_leiaute td:nth-child(13){width: 5%; }		/*Estabelece a largura da célula 9 de todas as linhas (equivalente a coluna 13)*/
+.tributacao_leiaute td:nth-child(14){width: 5%; }		/*Estabelece a largura da célula 7 de todas as linhas (equivalente a coluna 14)*/
+
+.leiaute_qr_code{
+    font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif; 	/*fonte da tabela*/
+    border-collapse: collapse; 									/*colapsa as bordas entre as diferentes colunas- linhas*/
+    width: 80%;
+		 border: 1px solid black;
+}
+
+.leiaute_qr_code tr, td, th{
+	border: 1px solid black;
+    padding: 8px;
+}
+
+
+.leiaute_qr_code th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: gray;
+    font-weight: bold;
+}
+
+
+.leiaute_qr_code td:nth-child(1){width: 10%; }		/*Estabelece a largura da célula 1 de todas as linhas (equivalente a coluna 1)*/
+.leiaute_qr_code td:nth-child(2){width: 90%; }		/*Estabelece a largura da célula 2 de todas as linhas (equivalente a coluna 2)*/
+
+.tabela_cstat{
+    font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif; 	/*fonte da tabela*/
+    border-collapse: collapse; 									/*colapsa as bordas entre as diferentes colunas- linhas*/
+    width: 50%;
+		 border: 1px solid black;
+}
+
+.tabela_cstat tr, td, th{
+	border: 1px solid black;
+    padding: 8px;
+}
+
+
+.tabela_cstat th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: gray;
+    font-weight: bold;
+}
+
+
+.tabela_cstat td:nth-child(1){width: 7%; }		/*Estabelece a largura da célula 1 de todas as linhas (equivalente a coluna 1)*/
+.tabela_cstat td:nth-child(2){width: 93%; }		/*Estabelece a largura da célula 2 de todas as linhas (equivalente a coluna 2)*/
 
 titulo_tabela {
     text-align: left;

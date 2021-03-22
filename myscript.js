@@ -71,7 +71,9 @@ window.onscroll = function() {
   }
 
   function meiodatela(id_elemento) {
+    console.log("opa, esta querendo que eu va ate o elemento   "+id_elemento);
     var elmnt = document.getElementById(id_elemento);
     posicao = elmnt.offsetTop - 100;
+    console.log("peguei a posicao dele, ta em   "+posicao);
     window.scrollTo(0, posicao);
   }
