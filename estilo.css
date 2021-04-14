@@ -15,7 +15,7 @@
 
 .titulo{
     float:left;
-    font-family: helvetica;
+    font-family: Calibri, helvetica;
     font-weight: bold;
     color: #0000ff;
     position:absolute;
@@ -35,41 +35,50 @@
     height:inherit;
 }
 
-.show_very_small{
+.show_leiaute{
 	display:none;
 }
 
-.hide_very_small{
-	display:block;
-}
-
-.show_ultra_small{
-	display:none;
-}
-
-.hide_ultra_small{
-	display:block;
-}
-
-.show_super_small{
-	display:none;
-}
-
-.hide_super_small{
-	display:block;
-}
-
-.show_small{
-	display:none;
-}
-
-.hide_small{
-	display:block;
-}
-
-.super_pequeno{
+.show_regras_validacao{
     display:none;
 }
+
+.show_contingencia{
+	display:none;
+}
+
+.show_danfe{
+    display:none;
+}
+
+
+
+.show_anexo{
+    display:none;
+}
+
+
+
+.hide_leiaute{
+	display:block;
+}
+
+.hide_danfe{
+	display:block;
+}
+
+.hide_regras_validacao{
+	display:block;
+}
+
+
+
+.hide_contingencia{
+	display:block;
+}
+
+
+
 
 
 @media (max-width:610px){
@@ -85,60 +94,59 @@
 }
 
 @media (max-width:626px){
-    .show_ultra_small {
+    .show_leiaute {
        display:block;
     }
 
-    .hide_ultra_small{
+    .hide_leiaute{
       display:none !important;
     }
-
-	.super_pequeno{
-	  display:block;
-	}
-	.normal{
-	   display:none;
-	}
 
 }
 
 @media (max-width:840px){
-    .show_super_small {
+    .show_regras_validacao {
        display:block;
     }
 
-    .hide_super_small{
+    .hide_regras_validacao{
       display:none !important;
     }
 
 }
 
-@media (max-width:934px){
-    .show_very_small {
+@media (max-width:941px){
+    .show_danfe {
        display:block;
     }
 
-    .hide_very_small{
+    .hide_danfe{
       display:none !important;
     }
+
+
 
 }
 
-@media (max-width:1100px){
-    .show_small {
+@media (max-width:987px){
+    .show_contingencia {
        display:block;
     }
 
-    .hide_small{
+    .hide_contingencia{
       display:none !important;
     }
+
+    .show_anexo{
+  	  display:block !important;
+  	}
 
 }
 
 .linha_superior{
     padding:8px 8px;
     border-bottom:0;
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family: Calibri, "Segoe UI",Arial,sans-serif;
     letter-spacing:4px;
 }
 .linha_superior a{
@@ -213,7 +221,10 @@
   display: block;
 }
 
-
+#menu_esq {
+    width:320px;
+    z-index:9;
+}
 #menu_esq h2 {
     font-size:21px;
     padding-left:16px;
@@ -222,7 +233,7 @@
 #menu_esq a {
     display:block;
     text-decoration:none;
-	color: #014012;
+	  color: #014012;
     padding:2px 1px 1px 16px;
     font-size:14px;
 }
@@ -239,11 +250,7 @@
     background-color:#4CAF50;
     color:#ffffff;
 }
-#menu_esq {
-    width:320px;
-    z-index:9;
-    display:none;
-}
+
 #indice {
     position:fixed;
     top:0;
@@ -260,7 +267,7 @@
     overflow-y:hidden;
     padding-top:20px;
     background-color: #f2f8ff;
-    font-family:Helvetica,Arial,sans-serif;
+    font-family: Calibri, Helvetica,Arial,sans-serif;
 }
 
 
@@ -284,7 +291,7 @@
 
 .texto_normal{
     font-size: 16px;
-	font-family: Georgia, Verdana, Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: Calibri, Georgia, Verdana,  "Trebuchet MS", Arial, Helvetica, sans-serif;
 	text-indent: 4em;
 }
 
@@ -352,7 +359,15 @@ ol li {
 .linha_revogada div{display: inline-block;
   text-decoration: none;}
 
+.observacao{
+   font-weight:bold;
+   display:inline;
+}
 
+.recuo{
+    margin-left:20px;
+     display:inline;
+}
 
 .leiaute_nfe th, .regras_validacao_nfe th, .regras_validacao_gerais th{
     padding-top: 12px;
@@ -489,7 +504,7 @@ comentario{
 
 titulo_tabela {
     text-align: left;
-    font-family: Arial, Calibri, "Trebuchet MS", Helvetica, sans-serif;
+    font-family: Calibri, Arial,  "Trebuchet MS", Helvetica, sans-serif;
     padding-left: 22px;
     font-weight: bold;
     font-size: 22px;
@@ -497,7 +512,7 @@ titulo_tabela {
 
 comentario_titulo {
     text-align: left;
-    font-family: Arial, Calibri, "Trebuchet MS", Helvetica, sans-serif;
+    font-family: Calibri, Arial, "Trebuchet MS", Helvetica, sans-serif;
     padding-left: 22px;
     font-weight: bold;
     font-size: 18px;<
@@ -507,7 +522,7 @@ comentario_titulo {
 
 subtitulo_pagina{
 	 text-align: left;
-    font-family: Arial, Calibri, "Trebuchet MS", Helvetica, sans-serif;
+    font-family: Calibri, Arial, "Trebuchet MS", Helvetica, sans-serif;
     padding-left: 22px;
     font-weight: bold;
     font-size: 18px;

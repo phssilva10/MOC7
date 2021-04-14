@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:37:02 GMT -->
+
+<head>
+
+  <title>Template</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Keywords" content="NF-e, NFC-e, Encat, Web- Services, Nota Eltrônica, Nota Fiscal, Nota de Consumidor, Nota Fiscal de Consumidor Eletrônica">
+  <meta name="Description" content="Manual de Orientação ao Contribuinte- Nota Fiscal Eletrônica">
+
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="myscript.js"></script>
+</head>
+
+<body>
+
+  <!-- Cabeçalho da pagina, que deve sumir quando dou o scroll-->
+  <div class='cabecalho topo'>
+    <div class='titulo'>
+      <p><span><span style="font-size: 14pt;">Projeto Nota Fiscal Eletr&ocirc;nica</span></span></p>
+      <p><span><span>Manual de Orienta&ccedil;&atilde;o ao Contribuinte</span></span></p>
+    </div>
+    <div class='imagens_cabecalho'>
+      <img src="./Imagens/nfce_logo.png" alt="NFC-e" style="height:100%;width:auto;float:right ;">
+      <img src="./Imagens/nfe_logo.png" alt="NF-e" style="height:100%;width:auto;float:right;">
+
+    </div>
+  </div>
+
+  <!-- Barra de navegação superior, que deve ficar fixa no alto da pagina quando dou scroll -->
+
+
+
+  <!--Essa primeira parte cria a barra, atribuindo os efeitos à ela -->
+  <div class='linha_superior sombra barra_nav' id='barra_superior'>
+    <div style='overflow:auto;'>
+      <div style='float:left;width:100%;overflow:hidden;height:44px'>
+        <!-- Aqui vai o índice geral do Manual-->
+        <a href='javascript:void(0);' id="botao_menu" class='' onclick='menu()' title='Menu'>&#9776;</a>
+        <a href='./index.html' title='Visão Geral'>Visão Geral</a>
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Web Services'>Web Services</a>
+          <div class='dropdown-content'>
+            <a href='./NFeAutorizacao.html' title='WS Autorizacao'> Web Service- NFeAutorização</a>
+            <a href='./NFeRetAutorizacao.html' title='WS RetAutorizacao'>Web Service- NFeRetAutorizacao</a>
+            <a href='./NFeInutilizacao.html' title='WS Inutilizacao'>Web Service- NFeInutilização</a>
+            <a href='./NFeConsultaProtocolo.html' title='WS Consulta Protocolo'>Web Service- NFeConsulta Protocolo</a>
+            <a href='./NFeStatusServico.html' title='WS Status Serviço'>Web Service- NFeStatus Servico</a>
+            <a href='./NFeConsultaCadastro.html' title='WS Consulta Cadastro'>Web Service- NFeConsultaCadastro</a>
+            <a href='./NFeDistribuicaoDFe.html' title='WS Distribuição DFe'>Web Service- NFeDistribuicaoDFe</a>
+            <a href='javascript:void(0);' title='WS Recepção Evento'>Web Service- NFeRecepcaoEvento</a>
+            <a href='./RecepcaoEventoGeral.html' title='WS Autorizacao'>&emsp;&#8227;Parte Geral</a>
+            <a href='./RecepcaoEventoCancelamento.html' title='WS Cancelamento por Substituição'>&emsp;&#8227;Cancelamento/Cancelamento por substituição</a>
+            <a href='./RecepcaoEventoCartaCorrecao.html' title='WS Carta de Correção'>&emsp;&#8227;Carta de Correção</a>
+            <a href='./RecepcaoEventoManifestacao.html' title='WS Manifestação do Destinatário'>&emsp;&#8227;Manifestação do Destinatário</a>
+            <a href='./RecepcaoEventoEPEC.html' title='WS EPEC'>&emsp;&#8227;EPEC</a>
+            <a href='./RecepcaoEventoProrrogacao.html' title='WS Pedido de Prorrogação'>&emsp;&#8227;Pedido de Prorrogação</a>
+            <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
+          </div>
+        </div>
+
+        <div class='dropdown hide_leiaute'>
+          <a href='./Leiaute.html' id="botao_leiaute" title='Leiaute'>Leiaute</a>
+        </div>
+
+        <div class='dropdown hide_regras_validacao'>
+          <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
+        </div>
+
+
+        <div class='dropdown hide_danfe'>
+          <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+        </div>
+
+        <div class='dropdown hide_contingencia'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>Contingência</a>
+          <div class='dropdown-content'>
+            <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Contingência NF-e</a>
+            <a href='./ContingenciaNFCe.html' title='Contingência NFC-e'>Contingência NFC-e</a>
+          </div>
+        </div>
+
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Demais Anexos'><span class="show_anexo">Anexos</span></a>
+          <div class='dropdown-content'>
+
+            <div class="show_leiaute">
+              <!--A classe show_leiaute garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 630 pixels -->
+              <a href='./Leiaute.html' id="botao_leiaute" title='Leiaute'>Leiaute</a>
+            </div>
+
+            <div class="show_regras_validacao">
+              <!--A classe show_regras_validacao garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 840 pixels -->
+              <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
+            </div>
+
+            <div class="show_danfe">
+              <!--A classe show_danfe garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 934 pixels -->
+              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+            </div>
+
+            <div class="show_contingencia">
+              <!--A classe show_contingencia garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 1100 pixels -->
+              <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Contingência NF-e</a>
+              <a href='./ContingenciaNFCe.html' title='Contingência NFC-e'>Contingência NFC-e</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='sub_barra'>
+    <!-- Isso aqui estbelece uma divisao pra toda a parte abaixo da barra de navegacao-->
+    <div id='menu_esq' style="display:none">
+      <!-- isso aqui cria o menu lateral, à esquerda-->
+      <div id='indice'>
+        <!-- cria a parte interna do menu a esquerda-->
+        <div id='indice_texto'>
+          <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
+          <!-- Aqui vai o índice específico dessa parte-->
+          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+        </div>
+      </div>
+    </div>
+
+
+<div class='corpo'>
+  <div id='principal'>
+    <!-- Aqui vão as tabelas e o texto do MOC -->
+
+    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+
+  </div>
+</div>
+</div>
+
+
+</body>
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:41:03 GMT -->
+
+</html>
