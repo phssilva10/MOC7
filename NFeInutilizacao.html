@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>NFeInutilização</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,21 +123,609 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+
+          <h4 style="text-align:center">Web Service – NfeInutilização</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Descrição do Processo de Web Service")' title='1.3. Descrição do Processo de Web Service'>1.3. Descrição do Processo de Web Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Regras de Validação")' title='1.4. Regras de Validação'>1.4. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Final do Processamento")' title='1.5. Final do Processamento'>1.5. Final do Processamento<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <h1>Web Service – NfeInutilizacao</h1>
 
-  </div>
-</div>
-</div>
+        <ul>
+          <div class="negrito">Função: </div>serviço destinado ao atendimento de solicitações de inutilização de numeração.<br>
+          <div class="negrito">Processo: </div>síncrono.<br>
+          <div class="negrito">Método: nfeInutilizacaoNF</div><br>
+        </ul>
+        <img src="./Imagens/NFe_Inutilização_1_fluxo.png" alt="Fluxo do Web Service nfeInutilização" class="imagem_central">
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML contendo a mensagem de solicitação de inutilização.<br>
+          <div class="negrito">Schema XML: inutNFe_v4.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DP01</td>
+            <td>inutNFe</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>DP02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>DP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DP03</td>
+            <td>infInut</td>
+            <td>G</td>
+            <td>DP01</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Dados do Pedido<br>TAG a ser assinada</td>
+          </tr>
+          <tr class="">
+            <td>DP04</td>
+            <td>id</td>
+            <td>ID</td>
+            <td>DP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>43</td>
+            <td>Identificador da TAG a ser assinada formada com Código da UF + Ano (2 posições) + CNPJ + modelo + série + número inicial e número final precedida do literal “ID”</td>
+          </tr>
+          <tr class="">
+            <td>DP05</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente: <br>1- Produção<br>2- Homologação</td>
+          </tr>
+          <tr class="">
+            <td>DP06</td>
+            <td>xServ</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>10</td>
+            <td>Serviço solicitado: ‘INUTILIZAR’</td>
+          </tr>
+          <tr class="">
+            <td>DP07</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF do solicitante</td>
+          </tr>
+          <tr class="">
+            <td>DP08</td>
+            <td>ano</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Ano de inutilização da numeração</td>
+          </tr>
+          <tr class="">
+            <td>DP09</td>
+            <td>CNPJ</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>14</td>
+            <td>CNPJ do emitente</td>
+          </tr>
+          <tr class="">
+            <td>DP10</td>
+            <td>mod</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Modelo do documento (55 ou 65)</td>
+          </tr>
+          <tr class="">
+            <td>DP11</td>
+            <td>serie</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-3</td>
+            <td>Série da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>DP12</td>
+            <td>nNFIni</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-9</td>
+            <td>Número da NF-e inicial a ser inutilizada</td>
+          </tr>
+          <tr class="">
+            <td>DP13</td>
+            <td>nNFFin</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-9</td>
+            <td>Número da NF-e final a ser inutilizada</td>
+          </tr>
+          <tr class="">
+            <td>DP14</td>
+            <td>xJust</td>
+            <td>E</td>
+            <td>DP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>15-255</td>
+            <td>Informar a justificativa do pedido de inutilização</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DP15</td>
+            <td>Signature</td>
+            <td>D</td>
+            <td>DP01</td>
+            <td>xml</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Assinatura XML do grupo identificado pelo atributo“Id”</td>
+          </tr>
+
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML contendo a mensagem do resultado da solicitação de inutilização:<br>
+          <div class="negrito">Schema XML: retInutNFe_v4.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DR01</td>
+            <td>retInutNFe</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da Resposta</td>
+          </tr>
+          <tr class="">
+            <td>DR02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>DR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DR03</td>
+            <td>infInut</td>
+            <td>G</td>
+            <td>DR01</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Dados da resposta – TAG a ser assinada</td>
+          </tr>
+          <tr class="">
+            <td>DR04</td>
+            <td>Id</td>
+            <td>ID</td>
+            <td>DR03</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>17</td>
+            <td>Identificador da TAG a ser assinada, somente precisa ser informado se a UF assinar a resposta.
+              <br>Em caso de assinatura da resposta pela SEFAZ preencher o campo com o Número do Protocolo, precedido com o literal “ID”
+            </td>
+          </tr>
+          <tr class="">
+            <td>DR05</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:<br>1- Produção;<br>2- Homologação</td>
+          </tr>
+          <tr class="">
+            <td>DR06</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que recebeu a Consulta.<br><br>A versão deve ser iniciada com a sigla da UF nos casos de WS próprio ou a sigla SVAN ou SVRS nos demais casos.</td>
+          </tr>
+          <tr class="">
+            <td>DR07</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta para o Lote (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+            </td>
+          </tr>
+          <tr class="">
+            <td>DR08</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição literal do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>DR09</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF que atendeu a solicitação</td>
+          </tr>
+          <tr class="">
+            <td colspan="8" style="text-align:center; background:darkgrey">Os campos a seguir são obrigatórios no caso de homologação da inutilização cStat=102.
+              <br>Os campos de dhRecbto e nProt não serão preenchidos em caso de erro
+            </td>
+          </tr>
+          <tr class="">
+            <td>DR10</td>
+            <td>ano</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>2</td>
+            <td>Ano de inutilização da numeração</td>
+          </tr>
+          <tr class="">
+            <td>DR11</td>
+            <td>CNPJ</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>14</td>
+            <td>CNPJ do emitente</td>
+          </tr>
+          <tr class="">
+            <td>DR12</td>
+            <td>mod</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>2</td>
+            <td>Modelo da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>DR13</td>
+            <td>serie</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-3</td>
+            <td>Série da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>RP14</td>
+            <td>nNFIni</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-9</td>
+            <td>Número da NF-e inicial a ser inutilizada</td>
+          </tr>
+          <tr class="">
+            <td>DR15</td>
+            <td>nNFFin</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-9</td>
+            <td>Número da NF-e final a ser inutilizada</td>
+          </tr>
+          <tr class="">
+            <td>DR16</td>
+            <td>dhRecebto</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Preenchido com a data e hora do processamento (informado também no caso de rejeição).
+              <br>Formato: “AAAA-MM-DDThh:mm:ssTZD” (UTC –Universal Coordinated Time).
+            </td>
+          </tr>
+          <tr class="">
+            <td>DR17</td>
+            <td>nProt</td>
+            <td>E</td>
+            <td>DR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>15</td>
+            <td>Número do Protocolo da NF-e, <a href="./index.html#4.3.5. Número do Protocolo">conforme item 4.3.5</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>DR18</td>
+            <td>Signature</td>
+            <td>G</td>
+            <td>DR01</td>
+            <td>xml</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Assinatura XML do grupo identificado pelo atributo “Id”
+              <br>A decisão de assinar a mensagem fica a critério da UF interessada.
+            </td>
+        </table>
+        <br>
+        <div class='texto_normal'>
+          <p>Nota: A resposta da SEFAZ pode ser assinada e neste caso deve ser preenchido o atributo "Id'
+            (DR04). Este atributo é opcional e não deve ser informado pela SEFAZ caso a mensagem de
+            resposta não seja assinada.</p>
+        </div>
+        <br><br>
+        <titulo_tabela id="1.3. Descrição do Processo de Web Service">1.3. Descrição do Processo de Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Este método será responsável por receber as solicitações referentes à inutilização de faixas de numeração de notas fiscais eletrônicas. Ao receber a solicitação, a aplicação NFE realiza o processamento da solicitação e devolve o
+            resultado do processamento para o aplicativo do transmissor.</p>
+          <p>A mensagem de pedido de inutilização de numeração de NF-e é um documento eletrônico e deve ser assinado digitalmente pelo emitente da NF-e.</p>
+        </div>
+        <br>
+        <titulo_tabela id="1.4. Regras de Validação">1.4. Regras de Validação</titulo_tabela>
+        <br>
+        <div class='texto_normal'>
+          <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a>
+          </p>
+        </div>
+        <table class="tabela_regras_genericas">
+          <tr>
+            <th>Grupo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Validação Inicial da Mensagem no Web Service</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Validação da Área de Dados </td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>Validação do Certificado Digital de Assinatura</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>Validação da Assinatura Digital</td>
+          </tr>
+        </table>
+        <div class='texto_normal'>
+          <p>As regras de validação específicas deste WS podem ser vistas abaixo:</p>
+          <br>
+          <table class="regras_validacao_gerais">
+            <tr>
+              <th>#</th>
+              <th>Regra de Validação</th>
+              <th>Aplic.</th>
+              <th>Msg</th>
+              <th>Efeito</th>
+              <th>Descrição Erro</th>
+            </tr>
+            <tr class="">
+              <td>I01</td>
+              <td>Tipo do ambiente da NF-e difere do ambiente do Web Service</td>
+              <td>Obrig.</td>
+              <td>252</td>
+              <td>Rej.</td>
+              <td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td>
+            </tr>
+            <tr class="">
+              <td>I02</td>
+              <td>UF do Pedido de inutilização difere da UF do Web Service</td>
+              <td>Obrig</td>
+              <td>250</td>
+              <td>Rej.</td>
+              <td>Rejeição: UF diverge da UF autorizadora</td>
+            </tr>
+            <tr class="">
+              <td>I02a</td>
+              <td>Série do Pedido de Inutilização identifica emitente com CPF:
+                <br>• Série na faixa de 910-969 (NT 2018.001)
+              </td>
+              <td>Obrig.</td>
+              <td>266</td>
+              <td>Rej.</td>
+              <td>Rejeição: Série utilizada não permitida no Web Service.</td>
+            </tr>
+            <tr class="">
+              <td>I02b</td>
+              <td>Ano da Inutilização não pode ser superior ao Ano atual</td>
+              <td>Obrig.</td>
+              <td>453</td>
+              <td>Rej.</td>
+              <td>Rejeição: Ano de inutilização não pode ser superior ao Ano atual</td>
+            </tr>
+            <tr class="">
+              <td>I02c</td>
+              <td>Ano da Inutilização não pode ser inferior a 2006</td>
+              <td>Obrig.</td>
+              <td>454</td>
+              <td>Rej.</td>
+              <td>Rejeição: Ano de inutilização não pode ser inferior a 2006</td>
+            </tr>
+            <tr class="">
+              <td>I03</td>
+              <td>Número da Faixa Inicial maior do que o número Final</td>
+              <td>Obrig</td>
+              <td>224</td>
+              <td>Rej</td>
+              <td>Rejeição: A faixa inicial é maior que a faixa final</td>
+            </tr>
+            <tr class="">
+              <td>I04</td>
+              <td>Quantidade máxima de numeração a inutilizar ultrapassa o limite (10.000 números)</td>
+              <td>Obrig.</td>
+              <td>201</td>
+              <td>Rej.</td>
+              <td>Rejeição: Número máximo de numeração a inutilizar ultrapassou o limite</td>
+            </tr>
+            <tr class="">
+              <td>I04a</td>
+              <td>Campo Id inválido: conteúdo informado difere da concatenação dos campos correspondentes</td>
+              <td>Obrig.</td>
+              <td>502</td>
+              <td>Rej.</td>
+              <td>Rejeição: Erro na Chave de Acesso – Campo Id não corresponde à concatenação dos campos correspondentes</td>
+            </tr>
+            <tr class="">
+              <td>I05</td>
+              <td>Acesso Cadastro Contribuinte:
+                <br>• Verificar Emitente não autorizado a emitir NF-e
+              </td>
+              <td>Obrig.</td>
+              <td>203</td>
+              <td>Rej.</td>
+              <td>Rejeição: Emissor não habilitado para emissão de NFe</td>
+            </tr>
+            <tr class="">
+              <td>I06</td>
+              <td>• Verificar Situação Fiscal irregular do Emitente</td>
+              <td>Obrig.</td>
+              <td>240</td>
+              <td>Rej.</td>
+              <td>Rejeição: Cancelamento/Inutilização – Irregularidade Fiscal do Emitente</td>
+            </tr>
+            <tr class="">
+              <td>I07</td>
+              <td>Acesso BD NFE-Inutilização (Chave: CNPJ Emit, Modelo, Série, nNFIni, nNFFin):
+                <br>• Verificar se já existe um Pedido de inutilização igual (NT 2011.004)
+              </td>
+              <td>Obrig.</td>
+              <td>563</td>
+              <td>Rej.</td>
+              <td>Rejeição: Já existe pedido de Inutilização com a mesma faixa de inutilização</td>
+            </tr>
+            <tr class="">
+              <td>I07a</td>
+              <td>• Verificar se algum Número da Faixa de Inutilização atual pertence a uma faixa anterior</td>
+              <td>Obrig.</td>
+              <td>256</td>
+              <td>Rej.</td>
+              <td>Rejeição: Uma NF-e da faixa já está inutilizada na Base de dados da SEFAZ</td>
+            </tr>
+            <tr class="">
+              <td>I08</td>
+              <td>Acesso BD NFE (Chave: CNPJ Emit, Modelo, Série, Número):
+                <br>• Verificar se existe NF-e utilizada na faixa de inutilização solicitada
+              </td>
+              <td>Obrig.</td>
+              <td>241</td>
+              <td>Rej.</td>
+              <td>Rejeição: Um número da faixa já foi utilizado</td>
+            </tr>
+            <tr class="">
+              <td>I09</td>
+              <td>Acesso ao BD Evento EPEC (Chave: Modelo, UF, CNPJ Emitente, Série, Nro):
+                <br>• Verificar se existe EPEC (NT 2014.001)
+              </td>
+              <td>Obrig.</td>
+              <td>241</td>
+              <td>Rej.</td>
+              <td>Rejeição: Um número da faixa já foi utilizado</td>
+            </tr>
+          </table>
+          <br>
+          <div class="texto_normal">
+            <p>Para cada inutilização de numeração de NF-e homologada é criado um novo protocolo de status para
+              NF-e, com a atribuição de um número de protocolo único, seguindo o disposto no item 4.3.5.</p>
+
+          </div>
+          <br>
+          <titulo_tabela id="1.5. Final do Processamento">1.5. Final do Processamento</titulo_tabela><br>
+          <div class='texto_normal'>
+            <p>No caso de homologação da Inutilização retornar o cStat = 102.</p>
+            <p>É verificada a existência de um Pedido de Inutilização de Numeração em duplicidade (mesma faixa de numeração a ser inutilizada), rejeitando o novo Pedido de Inutilização com o erro “563-Rejeição: Já existe pedido de Inutilização com a
+              mesma faixa de inutilização”. Para esta rejeição, será informado na resposta o Número do Protocolo de Autorização do Pedido de Inutilização anteriormente autorizado (tag: retInutNFe/infInut/nProt). (NT 2015.002)</p>
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
 
 
 </body>

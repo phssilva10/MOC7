@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>NFeRetAutorização</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,21 +123,533 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+
+  <h4 style="text-align:center">Web Service – NfeRetAutorizacao</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Descrição do Processo de Web Service")' title='1.3. Descrição do Processo de Web Service'>1.3. Descrição do Processo de Web Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Regras de Validação")' title='1.4. Regras de Validação'>1.4. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Final do Processamento")' title='1.5. Final do Processamento'>1.5. Final do Processamento<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.6. Canal de Comunicação com Contribuinte")' title='1.6. Canal de Comunicação com Contribuinte'>1.6. Canal de Comunicação com Contribuinte<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <h1>Web Service – NfeRetAutorizacao</h1>
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <ul>
+          <div class="negrito">Função: </div>serviço destinado a retornar o resultado do processamento do lote de NF-e. A mensagem de retorno poderá ser utilizada pela SEFAZ para enviar mensagens de interesse da SEFAZ para o emissor.<br>
+          <div class="negrito">Processo: </div>assíncrono.<br>
+          <div class="negrito">Método: </div>nfeRetAutorizacao<br>
+        </ul>
+        <img src="./Imagens/NFe_RetAutorizacao_1_fluxo.png" alt="Fluxo do Web Service nfeRetAutorização (Consulta Processamento de Lote)" class="imagem_central">
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML contendo o número do recibo que identifica a mensagem de envio de lotes de NF-e.<br>
+          <div class="negrito">Schema XML: consReciNFe_v4.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>BP01</td>
+            <td>consReciNFe</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td></td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>BP02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>BP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>BP03</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>BP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificador do Ambiente<br>1- Produção.<br>2- Homologação.
+            </td>
+          </tr>
+          <tr class="">
+            <td>BP04</td>
+            <td>nRec</td>
+            <td>E</td>
+            <td>BP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>15</td>
+            <td>Número do Recibo gerado pelo Portal da Secretaria de Fazenda Estadual, conforme descrição do item 4.3.4</td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com resultado do processamento da mensagem de envio de lote de NF-e.<br>
+          <div class="negrito">Schema XML: retConsReciNFe_v4.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>BR01</td>
+            <td>retConsReciNFe</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da Resposta</td>
+          </tr>
+          <tr class="">
+            <td>BR02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>BR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>BR03</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:<br>1- Produção.<br>2- Homologação.</td>
+          </tr>
+          <tr class="">
+            <td>BR04</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que recebeu a Consulta.<br><br>A versão deve ser iniciada com a sigla da UF nos casos de WS próprio ou a sigla SVAN ou SVRS nos demais casos.</td>
+          </tr>
+          <tr class="">
+            <td>BR05</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta para o Lote (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+              <br>Se cStatus = 215, 516, ou 517 significa que a mensagem de consulta é inválida.
+              <br>Se cStatus = 225, 565, ou 568, significa que o lote de NFe consultado é inválido
+            </td>
+          </tr>
+          <tr class="">
+            <td>BR06</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição literal do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>BR06a</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF que atendeu a solicitação</td>
+          </tr>
+          <tr class="">
+            <td>BR06a1</td>
+            <td>dhRecebto</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Preenchido com a data e hora do processamento (informado também no caso de rejeição).
+              <br>Formato: “AAAA-MM-DDThh:mm:ssTZD” (UTC –Universal Coordinated Time).
+            </td>
+          </tr>
+          <tr class="">
+            <td>BR06b</td>
+            <td>cMsg</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-4</td>
+            <td>Código da Mensagem (v2.0) <br>Campo de uso da SEFAZ para enviar mensagem de interesse da SEFAZ para o emissor. (NT 2011.004)</td>
+          </tr>
+          <tr class="">
+            <td>BR06c</td>
+            <td>xMsg</td>
+            <td>E</td>
+            <td>BR01</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-200</td>
+            <td>Mensagem da SEFAZ para o emissor. (v2.0)</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>BR07</td>
+            <td>protNFe*</td>
+            <td>xml</td>
+            <td>BR01</td>
+            <td>-</td>
+            <td>0-50</td>
+            <td>-</td>
+            <td>Conjunto de resultado do processamento de cada NF-e (vide leiaute abaixo).
+              <br>Estas informações são retornadas apenas para o código do status do lote = 104 (Lote processado)
+            </td>
+          </tr>
+        </table>
+        <br>
+        <ul>
+          <div class="negrito">* Para cada Protocolo de uma NF-e processada teremos o seguinte leiaute: (Atualizado NT 2018.005)</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>PR01</td>
+            <td>protNFe</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz do Protocolo de recebimento da NFe</td>
+          </tr>
+          <tr class="">
+            <td>PR02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>PR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute das informações de Protocolo</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>PR03</td>
+            <td>infProt</td>
+            <td>G</td>
+            <td>PR01</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Informações do Protocolo de resposta.<br>TAG a ser assinada</td>
+          </tr>
+          <tr class="">
+            <td>PR04</td>
+            <td>Id</td>
+            <td>ID</td>
+            <td>PR03</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Identificador da TAG a ser assinada, somente precisa ser informado se a UF assinar a resposta.
+              <br>Em caso de assinatura da resposta pela SEFAZ preencher o campo com o Número do Protocolo, precedido com o literal “ID”
+            </td>
+          </tr>
+          <tr class="">
+            <td>PR05</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:<br>1- Produção;<br>2- Homologação;</td>
+          </tr>
+          <tr class="">
+            <td>PR06</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que processou o Lote.
+              <br>A versão deve ser iniciada com a sigla da UF nos casos de WS próprio ou a sigla SVAN ou SVRS nos demais casos.
+            </td>
+          </tr>
+          <tr class="">
+            <td>PR07</td>
+            <td>chNFe</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>44</td>
+            <td>Chave de Acesso da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>PR08</td>
+            <td>dhRecebto</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Preenchido com a data e hora do processamento (informado também no caso de rejeição).
+              <br>Formato: “AAAA-MM-DDThh:mm:ssTZD” (UTC –Universal Coordinated Time).
+            </td>
+          </tr>
+          <tr class="">
+            <td>PR09</td>
+            <td>nProt</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>15</td>
+            <td>Número do Protocolo da NF-e, <a href="./index.html#4.3.5. Número do Protocolo">conforme item 4.3.5</td>
+          </tr>
+          <tr class="">
+            <td>PR10</td>
+            <td>digVal</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>28</td>
+            <td>Digest Value da NF-e processada.
+              <br>Utilizado para conferir a integridade da NFe original.
+            </td>
+          </tr>
+          <tr class="">
+            <td>PR11</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>)</td>
+          </tr>
+          <tr class="">
+            <td>PR12</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>PR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição literal do status da resposta para a NF-e.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>PR13</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>PR03</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo de informações para envio de mensagens do interesse da SEFAZ (Criado na NT 2018.005)</td>
+          </tr>
+          <tr class="">
+            <td>PR14</td>
+            <td>cMsg</td>
+            <td>E</td>
+            <td>PR13</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-4</td>
+            <td>Código da Mensagem. (Criado na NT 2018.005)</td>
+          </tr>
+          <tr class="">
+            <td>PR15</td>
+            <td>xMsg</td>
+            <td>E</td>
+            <td>PR13</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-200</td>
+            <td>Mensagem da SEFAZ para o emissor. (Criado na NT 2018.005)</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>PR90</td>
+            <td>Signature</td>
+            <td>G</td>
+            <td>PR01</td>
+            <td>xml</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Assinatura XML do grupo identificado pelo atributo “Id”
+              <br>A decisão de assinar a mensagem fica a critério da UF interessada.
+            </td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.3. Descrição do Processo de Web Service">1.3. Descrição do Processo de Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Este método oferece a consulta do resultado do processamento de um lote de NF-e.</p>
+          <p>O aplicativo do Contribuinte deve ser construído de forma a aguardar um tempo mínimo de 15 segundos entre o envio do Lote de NF-e para processamento e a consulta do resultado deste processamento, evitando a obtenção desnecessária do
+            status de erro 105 – "Lote em Processamento".</p>
+        </div>
+        <br>
+        <titulo_tabela id="1.4. Regras de Validação">1.4. Regras de Validação</titulo_tabela>
+        <br>
+        <div class='texto_normal'>
+          <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a>
+          </p>
+        </div>
+        <table class="tabela_regras_genericas">
+          <tr>
+            <th>Grupo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Validação Inicial da Mensagem no Web Service</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Validação da Área de Dados </td>
+          </tr>
+        </table>
+        <div class='texto_normal'>
+          <p>As regras de validação específicas deste WS podem ser vistas abaixo:</p></div>
+          <br>
+          <table class="regras_validacao_gerais">
+            <tr>
+              <th>#</th>
+              <th>Regra de Validação</th>
+              <th>Aplic.</th>
+              <th>Msg</th>
+              <th>Efeito</th>
+              <th>Descrição Erro</th>
+            </tr>
+            <tr class="">
+              <td>E01</td>
+              <td>Tipo do ambiente da NF-e difere do ambiente do Web Service</td>
+              <td>Obrig.</td>
+              <td>252</td>
+              <td>Rej.</td>
+              <td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td>
+            </tr>
+            <tr class="">
+              <td>E02</td>
+              <td> UF do Recibo difere da UF do Web Service</td>
+              <td>Obrig</td>
+              <td>248</td>
+              <td>Rej.</td>
+              <td>Rejeição: UF do Recibo diverge da UF autorizadora</td>
+            </tr>
+            <tr class="">
+              <td>E02a</td>
+              <td>Tipo autorizador do recibo diverge do Órgão Autorizador.</td>
+              <td>Obrig.</td>
+              <td>553</td>
+              <td>Rej.</td>
+              <td>Rejeição: Tipo autorizador do recibo diverge do Órgão Autorizador.</td>
+            </tr>
+            <tr class="">
+              <td>E03</td>
+              <td>Verifica se o Lote não está na fila de saída, nem na fila de entrada</td>
+              <td>Obrig.</td>
+              <td>106</td>
+              <td>Rej.</td>
+              <td>Rejeição: Lote não localizado</td>
+            </tr>
+            <tr class="">
+              <td>E04</td>
+              <td>Verifica se o Lote não está na fila de resposta, mas está na fila de entrada</td>
+              <td>Obrig</td>
+              <td>105</td>
+              <td>Rej.</td>
+              <td>Rejeição: Serviço em Operação</td>
+            </tr>
+            <tr class="">
+              <td>E05</td>
+              <td>CNPJ/CPF do transmissor do lote difere do CNPJ/CPF do transmissor da consulta (NT 2018.001)</td>
+              <td>Obrig</td>
+              <td>223</td>
+              <td>Rej</td>
+              <td>Rejeição: CNPJ/CPF do transmissor do lote difere do CNPJ/CPF do transmissor da consulta</td>
+            </tr>
+          </table>
+          <br>
+          <titulo_tabela id="1.5. Final do Processamento">1.5. Final do Processamento</titulo_tabela><br>
+          <div class='texto_normal'>
+            <p>A mensagem de retorno poderá ser:</p></div>
 
-  </div>
-</div>
-</div>
+            <ul class="lista">
+              <li>
+                <div class="negrito">Lote processado</div> – cStat=104, com os resultados individuais de processamento das NF-e;
+              </li>
+              <li>
+                <div class="negrito">Lote em processamento</div> – cStat=105, o aplicativo do contribuinte deverá fazer uma nova consulta;
+              </li>
+              <li>
+                <div class="negrito">Lote não localizado</div> – cStat=106, o aplicativo do contribuinte deverá providenciar o reenvio da mensagem;
+              </li>
+              <li>
+                <div class="negrito">Recibo ou CNPJ do requisitante com problemas</div> – cStat= 248 ou 223, o aplicativo do contribuinte deverá sanar o problema;
+              </li>
+            </ul>
+            <titulo_tabela id="1.6. Canal de Comunicação com Contribuinte">1.6. Canal de Comunicação com Contribuinte</titulo_tabela><br>
+            <div class='texto_normal'>
+              <p>A SEFAZ poderá utilizar este serviço como canal de comunicação com o emissor da NF-e. A aplicação deverá verificar se existe alguma mensagem para o emissor, se existir a mensagem será disponibilizada para o contribuinte.</p>
+              <br>
+              <br></div>
+
+
+            </div>
+          </div>
+        </div>
 
 
 </body>

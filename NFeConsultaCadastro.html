@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>NFeConsultaCadastro</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,21 +123,715 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+
+          <h4 style="text-align:center">Web Service – NfeInutilização</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Descrição do Processo de Web Service")' title='1.3. Descrição do Processo de Web Service'>1.3. Descrição do Processo de Web Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Regras de Validação")' title='1.4. Regras de Validação'>1.4. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Final do Processamento")' title='1.5. Final do Processamento'>1.5. Final do Processamento<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
 
-  </div>
-</div>
-</div>
+        <h1>Web Service – NfeConsultaCadastro</h1>
+
+        <ul>
+          <div class="negrito">Função: </div>Serviço para consultar o cadastro de contribuintes do ICMS da unidade federada.<br>
+          <div class="negrito">Processo: </div>síncrono.<br>
+          <div class="negrito">Método: consultaCadastro</div><br>
+        </ul>
+        <img src="./Imagens/NFe_ConsultaCadastro_1_fluxo.png" alt="Fluxo do Web Service ConsultaCadastro" class="imagem_central">
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML para consulta ao cadastro de contribuintes ICMS.<br>
+          <div class="negrito">Schema XML: consCad_v2.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GP01</td>
+            <td>ConsCad</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>GP02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>GP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GP03</td>
+            <td>infCons</td>
+            <td>G</td>
+            <td>GP01</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Dados da consulta</td>
+          </tr>
+          <tr class="">
+            <td>GP04</td>
+            <td>xServ</td>
+            <td>E</td>
+            <td>GP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>8</td>
+            <td>Serviço solicitado: ‘CONS-CAD’</td>
+          </tr>
+          <tr class="">
+            <td>GP05</td>
+            <td>UF</td>
+            <td>E</td>
+            <td>GP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Sigla da UF consultada, informar 'SU' para SUFRAMA.</td>
+          </tr>
+          <tr class="">
+            <td>GP06</td>
+            <td>IE</td>
+            <td>CE</td>
+            <td>GP03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2-14</td>
+            <td>Inscrição Estadual do contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GP07</td>
+            <td>CNPJ</td>
+            <td>CE</td>
+            <td>GP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-14</td>
+            <td>CNPJ do contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GP08</td>
+            <td>CPF</td>
+            <td>CE</td>
+            <td>GP03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-11</td>
+            <td>CPF do contribuinte</td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com o retorno da consulta ao cadastro de contribuintes do ICMS.<br>
+          <div class="negrito">Schema XML: retConsCad_v2.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GR01</td>
+            <td>retConsCad</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da solicitação</td>
+          </tr>
+          <tr class="">
+            <td>GR02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>DR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GR03</td>
+            <td>infCons</td>
+            <td>G</td>
+            <td>GR01</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Dados da consulta</td>
+          </tr>
+          <tr class="">
+            <td>GR04</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que processou a Consulta.<br><br>A versão deve ser iniciada com a sigla da UF nos casos de WS próprio ou a sigla SVAN ou SVRS nos demais casos.</td>
+          </tr>
+          <tr class="">
+            <td>GR05</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+            </td>
+          </tr>
+          <tr class="">
+            <td>GR06</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>GR06a</td>
+            <td>UF</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Sigla da UF consultada.</td>
+          </tr>
+          <tr class="">
+            <td>GR06b</td>
+            <td>IE</td>
+            <td>CE</td>
+            <td>GR03</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2-14</td>
+            <td>Inscrição Estadual consultada</td>
+          </tr>
+          <tr class="">
+            <td>GR06c</td>
+            <td>CNPJ</td>
+            <td>CE</td>
+            <td>GR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-14</td>
+            <td>CNPJ consultado</td>
+          </tr>
+          <tr class="">
+            <td>GR06d</td>
+            <td>CPF</td>
+            <td>CE</td>
+            <td>GR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-11</td>
+            <td>CPF consultado</td>
+          </tr>
+          <tr class="">
+            <td>GR06e</td>
+            <td>dhCons</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td></td>
+            <td>Data e hora de processamento da consulta <br>Formato = AAAA-MM-DDTHH:MM:SS</td>
+          </tr>
+          <tr class="">
+            <td>GR06f</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>GR03</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF que atendeu a solicitação</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GR07</td>
+            <td>infCad</td>
+            <td>G</td>
+            <td>GR03</td>
+            <td>-</td>
+            <td>0-N</td>
+            <td>-</td>
+            <td>Dados da situação cadastral
+              <br>Esta estrutura existe somente para as consultas
+              realizadas com sucesso cStat=111, com
+              possibilidade de múltiplas ocorrências (Ex.:
+              consulta por IE de contribuinte com Inscrição
+              Única – retorno de todos os estabelecimentos
+              do contribuinte).
+            </td>
+          </tr>
+          <tr class="">
+            <td>GR08</td>
+            <td>IE</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2-14</td>
+            <td>Inscrição Estadual do contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR09</td>
+            <td>CNPJ</td>
+            <td>CE</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-14</td>
+            <td>CNPJ do contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR10</td>
+            <td>CPF</td>
+            <td>CE</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-11</td>
+            <td>CPF em caso de pessoa física com IE</td>
+          </tr>
+          <tr class="">
+            <td>GR11</td>
+            <td>UF</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>O campo deve ser preenchido com a sigla da UF de
+              localização do contribuinte. Em algumas
+              situações, a UF de localização pode ser diferente
+              da UF consultada. Ex. IE de contribuinte inscrito
+              como Substituto Tributário.</td>
+          </tr>
+          <tr class="">
+            <td>GR12</td>
+            <td>cSit</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Situação do contribuinte:<br>0=não habilitado;<br>
+              1=habilitado.</td>
+          </tr>
+          <tr class="">
+            <td>GR12a</td>
+            <td>indCredNFe</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Indicador de contribuinte credenciado a emitir NF-e.
+              <br>0=Não credenciado para emissão da NF-e;
+              <br>1=Credenciado;
+              <br>2=Credenciado com obrigatoriedade para todas operações;
+              <br>3=Credenciado com obrigatoriedade parcial;
+              <br>4=a SEFAZ não fornece a informação.
+              <br>Este indicador significa apenas que o contribuinte é credenciado para emitir NF-e na SEFAZ consultada.
+            </td>
+          </tr>
+          <tr class="">
+            <td>GR12b</td>
+            <td>indCredCTe</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Indicador de contribuinte credenciado a emitir CT-e.
+              <br>0=Não credenciado para emissão da CT-e;
+              <br>1=Credenciado;
+              <br>2=Credenciado com obrigatoriedade para todas operações;
+              <br>3=Credenciado com obrigatoriedade parcial;
+              <br>4=a SEFAZ não fornece a informação.
+              <br>Este indicador significa apenas que o contribuinte é credenciado para emitir CT-e na SEFAZ consultada.
+            </td>
+          </tr>
+          <tr class="">
+            <td>GR13</td>
+            <td>xNome</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-60</td>
+            <td>Razão Social ou nome do Contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR13a</td>
+            <td>xFant</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Nome Fantasia</td>
+          </tr>
+          <tr class="">
+            <td>GR14</td>
+            <td>xRegApur</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Regime de Apuração do ICMS do Contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR15</td>
+            <td>CNAE</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>6-7</td>
+            <td>CNAE principal do contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR16</td>
+            <td>dIniAtiv</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>D</td>
+            <td>0-1</td>
+            <td></td>
+            <td>Data de Início da Atividade do Contribuinte</td>
+          </tr>
+          <tr class="">
+            <td>GR17</td>
+            <td>dUltSit</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>D</td>
+            <td>0-1</td>
+            <td></td>
+            <td>Data da última modificação da situação cadastral do contribuinte.</td>
+          </tr>
+          <tr class="">
+            <td>GR18</td>
+            <td>dBaixa</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>D</td>
+            <td>0-1</td>
+            <td></td>
+            <td>Data de ocorrência da baixa do contribuinte.</td>
+          </tr>
+          <tr class="">
+            <td>GR20</td>
+            <td>IEUnica</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>2-14</td>
+            <td>IE única, este campo será informado quando o contribuinte possuir IE única</td>
+          </tr>
+          <tr class="">
+            <td>GR21</td>
+            <td>IEAtual</td>
+            <td>E</td>
+            <td>GR07</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>2-14</td>
+            <td>IE atual (em caso de IE antiga consultada)</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>GR22</td>
+            <td>Ender</td>
+            <td>G</td>
+            <td>GR07</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Endereço – grupo de informações opcionais.</td>
+          </tr>
+          <tr class="">
+            <td>GR23</td>
+            <td>xLgr</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-255</td>
+            <td>Nome do Logradouro</td>
+          </tr>
+          <tr class="">
+            <td>GR24</td>
+            <td>Nro</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Número</td>
+          </tr>
+          <tr class="">
+            <td>GR25</td>
+            <td>xCpl</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Complemento</td>
+          </tr>
+          <tr class="">
+            <td>GR26</td>
+            <td>xBairro</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Nome do Bairro</td>
+          </tr>
+          <tr class="">
+            <td>GR27</td>
+            <td>cMun</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>7</td>
+            <td>Código do Município do Contribuinte, conforme Tabela do IBGE</td>
+          </tr>
+          <tr class="">
+            <td>GR28</td>
+            <td>xMun</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>Nome do município</td>
+          </tr>
+          <tr class="">
+            <td>GR29</td>
+            <td>CEP</td>
+            <td>E</td>
+            <td>GR22</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>7-8</td>
+            <td>Código do CEP</td>
+          </tr>
+        </table>
+        <br>
+        <br><br>
+        <titulo_tabela id="1.3. Descrição do Processo de Web Service">1.3. Descrição do Processo de Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Este Web Service oferece a consulta pública do cadastro de contribuintes do ICMS de uma unidade federada.</p>
+          <p>O Web Service poderá ser oferecido por qualquer UF, sendo de oferecimento obrigatório para as UF
+            que autorizam a emissão de qualquer espécie de Documento Fiscal eletrônico – DF-e.</p>
+          <p>Apenas as empresas autorizadas a emitir Documentos Fiscais eletrônicos poderão utilizar este
+            serviço. A UF que oferecer o Web Service deverá verificar se o CNPJ da empresa solicitante consta
+            do cadastro nacional de emissores de Documentos Fiscais eletrônicos – DF-e.</p>
+          <p>A identificação da empresa solicitante do serviço será realizada através do CNPJ contido na
+            extensão otherName – OID=2.16.76.1.3.3 do certificado digital utilizado na conexão TLS</p>
+          <p>Importante ressaltar que este Web Service não tem a mesma disponibilidade dos demais Web
+            Services da NF-e.</p>
+          <p>O aplicativo do contribuinte envia a solicitação para o Web Service da Secretaria de Fazenda
+            Estadual. Ao receber a solicitação a aplicação do Portal da Secretaria de Fazenda Estadual
+            processará a solicitação de consulta, validando o argumento de pesquisa informado (CNPJ ou CPF
+            ou IE), e retornará mensagem contendo a situação cadastral atual do contribuinte no cadastro de
+            contribuintes do ICMS.</p>
+
+        </div>
+        <br>
+        <titulo_tabela id="1.4. Regras de Validação">1.4. Regras de Validação</titulo_tabela>
+        <br>
+        <div class='texto_normal'>
+          <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a>
+          </p>
+        </div>
+        <table class="tabela_regras_genericas">
+          <tr>
+            <th>Grupo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Validação Inicial da Mensagem no Web Service</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Validação da Área de Dados </td>
+          </tr>
+        </table>
+        <div class='texto_normal'>
+          <p>As regras de validação específicas deste WS podem ser vistas abaixo:</p>
+          <br>
+          <table class="regras_validacao_gerais">
+            <tr>
+              <th>#</th>
+              <th>Regra de Validação</th>
+              <th>Aplic.</th>
+              <th>Msg</th>
+              <th>Efeito</th>
+              <th>Descrição Erro</th>
+            </tr>
+            <tr class="">
+              <td>K01</td>
+              <td>UF da consulta difere da UF do Web Service</td>
+              <td>Obrig.</td>
+              <td>265</td>
+              <td>Rej.</td>
+              <td>Rejeição: Sigla da UF da consulta difere da UF do Web Service</td>
+            </tr>
+            <tr class="">
+              <td>K02</td>
+              <td>Se Certificado de Transmissão = e-CNPJ:
+                <br>• Acessar Cadastro Centralizado de
+                Contribuionte (CCC):
+                <br>o Verificar CNPJ do Certificado Digital é
+                emitente de NF-e (NT 2018.001) (Alterada na NT 2018.001 v 1.10)
+              </td>
+              <td>Obrig.</td>
+              <td>257</td>
+              <td>Rej.</td>
+              <td>Rejeição: Solicitante não habilitado para emissão da NF-e</td>
+            </tr>
+            <tr class="">
+              <td>K02a</td>
+              <td>Se Certificado de Transmissão = e-CPF:
+                <br>• Acessar Cadastro Centralizado de
+                Contribuionte (CCC):
+                <br>o Verificar CPF do Certificado Digital é
+                emitente de NF-e (NT 2018.001) (Alterada na NT 2018.001 v 1.10)
+              </td>
+              <td>Obrig.</td>
+              <td>257</td>
+              <td>Rej.</td>
+              <td>Rejeição: Solicitante não habilitado para emissão da NF-e</td>
+            </tr>
+            <tr class="">
+              <td>K03</td>
+              <td>Se informado CNPJ: Verificar dígito controle, ou zeros</td>
+              <td>Obrig.</td>
+              <td>258</td>
+              <td>Rej.</td>
+              <td>Rejeição: CNPJ da consulta inválido</td>
+            </tr>
+            <tr class="">
+              <td>K04</td>
+              <td>Se informado CNPJ: Acessar Cadastro Contribuinte por CNPJ
+                  <br>Não encontrado Contribuinte</td>
+              <td>Obrig.</td>
+              <td>259</td>
+              <td>Rej.</td>
+              <td>Rejeição: CNPJ da consulta não cadastrado como contribuinte na UF</td>
+            </tr>
+            <tr class="">
+              <td>K05</td>
+              <td>Se informado IE: Verificar dígito controle ou zeros</td>
+              <td>Obrig.</td>
+              <td>260</td>
+              <td>Rej.</td>
+              <td>Rejeição: IE da consulta inválida</td>
+            </tr>
+            <tr class="">
+              <td>K06</td>
+              <td>Se informado IE: Acessar Cadastro Contribuinte por IE
+                <br>Não encontrado Contribuinte</td>
+              <td>Obrig.</td>
+              <td>261</td>
+              <td>Rej.</td>
+              <td>Rejeição: IE da consulta não cadastrada como contribuinte na UF</td>
+            </tr>
+            <tr class="">
+              <td>K07</td>
+              <td>Se informado CPF: Verificar se a UF fornece consulta por CPF</td>
+              <td>Obrig.</td>
+              <td>262</td>
+              <td>Rej.</td>
+              <td>Rejeição: UF não fornece consulta por CPF</td>
+            </tr>
+            <tr class="">
+              <td>K08</td>
+              <td>Se informado CPF: Verificar dígito controle ou zeros</td>
+              <td>Obrig.</td>
+              <td>263</td>
+              <td>Rej.</td>
+              <td>Rejeição: CPF da consulta inválido</td>
+            </tr>
+            <tr class="">
+              <td>K09</td>
+              <td>Se informado CPF: Acessar Cadastro Contribuinte por CPF
+                <br>Não encontrado Contribuinte</td>
+              <td>Obrig.</td>
+              <td>264</td>
+              <td>Rej.</td>
+              <td>Rejeição: CPF da consulta não cadastrado como contribuinte na UF</td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <titulo_tabela id="1.5. Final do Processamento">1.5. Final do Processamento</titulo_tabela><br>
+          <div class='texto_normal'>
+            <p>A consulta com sucesso poderá resultar:</p>
+            <ul>
+              <li>cStat = 111 – consulta cadastro com uma ocorrência;</li>
+              <li>cStat = 112 – consulta cadastro com mais de uma ocorrência, existe mais de um estabelecimento para o argumento pesquisado – ex.: consulta por IE de contribuinte com diversos estabelecimentos e inscrição estadual única.</li>
+            </ul>
+
+            <br>
+            <br>
+
+
+          </div>
+        </div>
+      </div>
 
 
 </body>

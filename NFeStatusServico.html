@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>NFeStatusServico</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,21 +123,319 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+          <h4 style="text-align:center">Web Service – NfeStatusServico</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Descrição do Processo de Web Service")' title='1.3. Descrição do Processo de Web Service'>1.3. Descrição do Processo de Web Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Regras de Validação")' title='1.4. Regras de Validação'>1.4. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Final do Processamento")' title='1.5. Final do Processamento'>1.5. Final do Processamento<br></span></a><br>
+
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
+        <!-- Aqui vão as tabelas e o texto do MOC -->
+        <h1>Web Service – NfeConsultaProtocolo</h1>
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <ul>
+          <div class="negrito">Função: </div>serviço destinado à consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.<br>
+          <div class="negrito">Processo: </div>síncrono.<br>
+          <div class="negrito">Método: nfeStatusServico</div><br>
+        </ul>
+        <img src="./Imagens/NFe_StatusServico_1_fluxo.png" alt="Fluxo do Web Service nfeStatusServico" class="imagem_central">
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML para a consulta do status do serviço.<br>
+          <div class="negrito">Schema XML: consStatServ_v4.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>FP01</td>
+            <td>consStatServ</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>FP02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>FP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>FP03</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>FP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:
+              <br>1- Produção<br>2- Homologação
+            </td>
+          </tr>
+          <tr class="">
+            <td>FP04</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>FP01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF consultada</td>
+          </tr>
+          <tr class="">
+            <td>FP05</td>
+            <td>xServ</td>
+            <td>E</td>
+            <td>FP01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>6</td>
+            <td>Serviço solicitado 'STATUS'</td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML contendo a mensagem do resultado da consulta do status do serviço:<br>
+          <div class="negrito">Schema XML: retConsStatServ_4.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>FR01</td>
+            <td>retConsStatServ</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da Resposta</td>
+          </tr>
+          <tr class="">
+            <td>FR02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>FR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>FR03</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:<br>1- Produção;<br>2- Homologação</td>
+          </tr>
+          <tr class="">
+            <td>FR04</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que recebeu a Consulta.<br><br>A versão deve ser iniciada com a sigla da UF nos casos de WS próprio ou a sigla SVAN ou SVRS nos demais casos.</td>
+          </tr>
+          <tr class="">
+            <td>FR05</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta para o Lote (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+            </td>
+          </tr>
+          <tr class="">
+            <td>FR06</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição literal do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>FR07</td>
+            <td>cUF</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF que atendeu a solicitação</td>
+          </tr>
+          <tr class="">
+            <td>FR08</td>
+            <td>dhRecebto</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Preenchido com a data e hora do processamento (informado também no caso de rejeição).
+              <br>Formato: “AAAA-MM-DDThh:mm:ssTZD” (UTC –Universal Coordinated Time).
+            </td>
+          </tr>
+          <tr class="">
+            <td>FR09</td>
+            <td>tMed</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-4</td>
+            <td>Tempo médio de resposta do serviço (em segundos) dos últimos 5 minutos (item 5.7).</td>
+          </tr>
+          <tr class="">
+            <td>FR10</td>
+            <td>dhRetorno</td>
+            <td>E</td>
+            <td>FR01</td>
+            <td>D</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Preenchido com a data e hora previstas para o retorno do Web Service, no formato “AAAA-MM-DDThh:mm:ss”
+            </td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.3. Descrição do Processo de Web Service">1.3. Descrição do Processo de Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Este método é responsável por receber as solicitações referentes à consulta do status do serviço do Portal da Secretaria de Fazenda Estadual.</p>
+          <p>O aplicativo do contribuinte envia a solicitação para o Web Service da Secretaria de Fazenda Estadual. </p>
+          <p>Ao receber a solicitação a aplicação do Portal da Secretaria de Fazenda Estadual processará a solicitação de consulta, e retorna mensagem contendo a status do serviço.</p>
+          <p>As empresas que construírem um aplicativo que se mantenha em "loop" permanente de consulta a este Web Service, devem aguardar um tempo mínimo de 3 minutos entre cada consulta, evitando sobrecarregar desnecessariamente os servidores da
+            SEFAZ.
+          <p>
 
-  </div>
-</div>
-</div>
+        </div>
+        <br>
+        <titulo_tabela id="1.4. Regras de Validação">1.4. Regras de Validação</titulo_tabela>
+        <br>
+        <div class='texto_normal'>
+          <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a>
+          </p>
+        </div>
+        <table class="tabela_regras_genericas">
+          <tr>
+            <th>Grupo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Validação Inicial da Mensagem no Web Service</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Validação da Área de Dados </td>
+          </tr>
+        </table>
+        <div class='texto_normal'>
+          <p>As regras de validação específicas deste WS podem ser vistas abaixo:</p>
+          <br>
+          <table class="regras_validacao_gerais">
+            <tr>
+              <th>#</th>
+              <th>Regra de Validação</th>
+              <th>Aplic.</th>
+              <th>Msg</th>
+              <th>Efeito</th>
+              <th>Descrição Erro</th>
+            </tr>
+            <tr class="">
+              <td>K01</td>
+              <td>Tipo do ambiente da NF-e difere do ambiente do Web Service</td>
+              <td>Obrig.</td>
+              <td>252</td>
+              <td>Rej.</td>
+              <td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td>
+            </tr>
+            <tr class="">
+              <td>K02</td>
+              <td>Código da UF consultada difere da UF do Web Service</td>
+              <td>Obrig</td>
+              <td>289</td>
+              <td>Rej.</td>
+              <td>Rejeição: Código da UF informada diverge da UF solicitada</td>
+            </tr>
+            <tr class="">
+              <td>K03</td>
+              <td>Verifica se o Servidor de Processamento está Paralisado Momentaneamente</td>
+              <td>Obrig.</td>
+              <td>108</td>
+              <td>-</td>
+              <td>Rejeição: Serviço Paralisado Momentaneamente (curto prazo)</td>
+            </tr>
+            <tr class="">
+              <td>K04</td>
+              <td>Verifica se o Servidor de Processamento está Paralisado sem Previsão</td>
+              <td>Obrig.</td>
+              <td>109</td>
+              <td>-</td>
+              <td>Rejeição: Serviço Paralisado sem Previsão</td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <titulo_tabela id="1.5. Final do Processamento">1.5. Final do Processamento</titulo_tabela><br>
+          <div class='texto_normal'>
+            <p>O processamento do pedido de consulta de status de Serviço pode resultar em uma mensagem de erro ou retornar a situação atual do Servidor de Processamento, códigos de situação “107-Serviço em Operação”, “108-Serviço Paralisado
+              Temporariamente” e “109-Serviço Paralisado sem Previsão”. A critério da UF o campo xObs pode ser utilizado para fornecer maiores informações ao contribuinte, como por exemplo: “manutenção programada”, “modificação de versão do
+              aplicativo”, “previsão de retorno”, etc.</p>
+
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
 
 
 </body>
