@@ -372,6 +372,25 @@ ol li {
   /*oucpação da tabela na janela*/
 }
 
+.tabela_regras_genericas, .tabela_distribuicao_dfe{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabela_distribuicao_dfe{
+font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+
+.tabela_distribuicao_dfe th {
+  background-color: #B8ABA8;
+}
+
+.tabela_distribuicao_dfe td, .tabela_distribuicao_dfe th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
 .tabela_regras_genericas td, .tabela_regras_genericas th {
   border: 1px solid #ddd;
   padding: 8px;
@@ -414,6 +433,13 @@ ol li {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  height: auto;
+}
+
+.tabela_NSU {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
 }
 
