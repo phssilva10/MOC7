@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>RecepcaoEvento</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,21 +124,894 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+
+          <h4 style="text-align:center">Web Service – NfeInutilização</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada (Parte Geral)")' title='1.1. Leiaute Mensagem de Entrada (Parte Geral)'>1.1. Leiaute Mensagem de Entrada (Parte
+            Geral)<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno (Parte Geral)")' title='1.2. Leiaute Mensagem de Retorno (Parte Geral)'>1.2. Leiaute Mensagem de Retorno (Parte
+            Geral)<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Descrição do Processo de Web Service")' title='1.3. Descrição do Processo de Web Service'>1.3. Descrição do Processo de Web Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Regras de Validação Genéricas Para Todos os Eventos")' title='1.4. Regras de Validação Genéricas Para Todos os Eventos'>1.4. Regras de Validação Genéricas Para
+            Todos os Eventos<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Final do Processamento do Lote")' title='1.5. Final do Processamento do Lote'>1.5. Final do Processamento do Lote<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.6. Armazenamento e Disponibilização do Evento")' title='1.6. Armazenamento e Disponibilização do Evento'>1.6. Armazenamento e Disponibilização do
+            Evento<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <h1>Web Service – NFeRecepcaoEvento – Parte Geral</h1>
 
-  </div>
-</div>
-</div>
+        <ul>
+          <div class="negrito">Função: </div>Serviço destinado à recepção de mensagem de Evento da NF-e<br>
+          <div class="negrito">Processo: </div>síncrono.<br>
+          <div class="negrito">Método: nfeRecepcaoEvento</div><br>
+        </ul>
+        <img src="./Imagens/NFe_EventoGeral_1_fluxo.png" alt="Fluxo do Web Service de Eventos- Parte Geral" class="imagem_central">
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada (Parte Geral)">1.1. Leiaute Mensagem de Entrada (Parte Geral)</titulo_tabela><br>
+        <br>
+
+        <ul>
+          <p>
+            O Web Service de Registro de Evento possui uma interface genérica, complementada por uma área
+            específica para cada tipo de evento. Segue abaixo o leiaute da parte geral da mensagem de entrada
+            para os eventos.
+          </p>
+          <div class="negrito">Schema XML: envEvento_v1.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P01</td>
+            <td>envEvento</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>P02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>P03</td>
+            <td>idLote</td>
+            <td>E</td>
+            <td>P01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-15</td>
+            <td>Identificador de controle do Lote de envio do Evento.<br>
+              Número sequencial único para identificação do Lote, de uso exclusivo do autor do evento. O Web Service não faz qualquer uso deste identificador.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P04</td>
+            <td>evento</td>
+            <td>G</td>
+            <td>P01</td>
+            <td>xml</td>
+            <td>1-20</td>
+            <td>-</td>
+            <td>Evento, um lote pode conter até 20 eventos</td>
+          </tr>
+          <tr class="">
+            <td>P05</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P04</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute do evento</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P06</td>
+            <td>infEvento</td>
+            <td>G</td>
+            <td>P04</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Grupo de informações do registro do Evento</td>
+          </tr>
+          <tr class="">
+            <td>P07</td>
+            <td>Id</td>
+            <td>ID</td>
+            <td>P06</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>54</td>
+            <td>Identificador da TAG a ser assinada, formado por “ID” + tpEvento + Chave da NF-e + nSeqEvento</td>
+          </tr>
+          <tr class="">
+            <td>P08</td>
+            <td>cOrgao</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código do órgão de recepção do Evento, conforme Tabela do IBGE ou: 91=Ambiente Nacional
+              <br>Informar o código da UF para este evento.
+            </td>
+          </tr>
+          <tr class="">
+            <td>P09</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Identificação do Ambiente:<br>1- Produção;<br>2- Homologação;</td>
+          </tr>
+          <tr class="">
+            <td>P10</td>
+            <td>CNPJ</td>
+            <td>CE</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>14</td>
+            <td>CNPJ do autor do evento</td>
+          </tr>
+          <tr class="">
+            <td>P11</td>
+            <td>CPF</td>
+            <td>CE</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>11</td>
+            <td>CPF do autor do evento</td>
+          </tr>
+          <tr class="">
+            <td>P12</td>
+            <td>chNFe</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>44</td>
+            <td>Chave de Acesso da NF-e à qual o evento será vinculado</td>
+          </tr>
+          <tr class="">
+            <td>P13</td>
+            <td>dhEvento</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Data e hora do evento no formato AAAAMMDDThh:mm:ssTZD (UTC – Universal Coordinated Time)</td>
+          </tr>
+          <tr class="">
+            <td>P14</td>
+            <td>tpEvento</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>6</td>
+            <td>Código do evento (de acordo com tabelas do item 3.1)</td>
+          </tr>
+          <tr class="">
+            <td>P15</td>
+            <td>nSeqEvento</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-2</td>
+            <td>Sequencial do evento para o mesmo tipo de evento. Informar o valor “1” para este evento.</td>
+          </tr>
+          <tr class="">
+            <td>P16</td>
+            <td>verEvento</td>
+            <td>E</td>
+            <td>P06</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do grupo de detalhe do evento.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P17</td>
+            <td>detEvento</td>
+            <td>G</td>
+            <td>P06</td>
+            <td></td>
+            <td>1-1</td>
+            <td></td>
+            <td>Detalhes do evento. Inserir neste local o XML específico do tipo de evento (ex: cancelamento, carta correção, registro de passagem).</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P91</td>
+            <td>Signature</td>
+            <td>G</td>
+            <td>P04</td>
+            <td>xml</td>
+            <td>1-1</td>
+            <td></td>
+            <td>Assinatura Digital do documento XML, a assinatura deverá ser aplicada no elemento infEvento</td>
+          </tr>
+        </table>
+
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno (Parte Geral)">1.2. Leiaute Mensagem de Retorno (Parte Geral)</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com a mensagem do resultado da transmissão.<br>
+          <div class="negrito">Schema XML: retEnvEvento_v1.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>R01</td>
+            <td>retEnvEvento</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da mensagem de retorno</td>
+          </tr>
+          <tr class="">
+            <td>R02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>R03</td>
+            <td>idLote</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-15</td>
+            <td>Idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R04</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R05</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão da aplicação que processou o evento.</td>
+          </tr>
+          <tr class="">
+            <td>R06</td>
+            <td>cOrgao</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Órgão de recepção do Evento, idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R07</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+            </td>
+          </tr>
+          <tr class="">
+            <td>R08</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição do status da resposta.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>R09</td>
+            <td>retEvento</td>
+            <td>G</td>
+            <td>R01</td>
+            <td>-</td>
+            <td>0-20</td>
+            <td>-</td>
+            <td>Grupo do resultado do processamento do Evento</td>
+          </tr>
+          <tr class="">
+            <td>R10</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>R09</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>R11</td>
+            <td>infEvento</td>
+            <td>G</td>
+            <td>R09</td>
+            <td></td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Grupo de informações do registro do Evento</td>
+          </tr>
+          <tr class="">
+            <td>R12</td>
+            <td>Id</td>
+            <td>ID</td>
+            <td>R11</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>17</td>
+            <td>Identificador da TAG a ser assinada, somente deve ser informado se o órgão de registro assinar a resposta. No caso de assinatura, preencher com o número do protocolo, precedido pela literal “ID”</td>
+          </tr>
+          <tr class="">
+            <td>R13</td>
+            <td>tpAmb</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R14</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão da aplicação que registrou o Evento, utilizar literal que permita a identificação do órgão, como a sigla da UF ou do órgão.</td>
+          </tr>
+          <tr class="">
+            <td>R15</td>
+            <td>cOrgao</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R16</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3</td>
+            <td>Código do status da resposta (<a href="./RegrasDeValidação.html#4.1. Tabela de Códigos de Resultado de Processamento (cStat)">conforme item 4.1 do Anexo Regras de Validação</a>).
+            </td>
+          </tr>
+          <tr class="">
+            <td>R17</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>R18</td>
+            <td>chNFe</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>44</td>
+            <td>Idem a mensagem de entrada</td>
+          </tr>
+          <tr class="">
+            <td>R19</td>
+            <td>tpEvento</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>6</td>
+            <td>Código do evento (de acordo com tabelas do item 3.1)</td>
+          </tr>
+          <tr class="">
+            <td>R20</td>
+            <td>xEvento</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>5-60</td>
+            <td>Descrição do resultado do processamento do evento</td>
+          </tr>
+          <tr class="">
+            <td>R21</td>
+            <td>nSeqEvento</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-2</td>
+            <td>Idem a mensagem de entrada.</td>
+          </tr>
+          <tr class="">
+            <td>R22</td>
+            <td>cOrgaoAutor</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>2</td>
+            <td>Idem a mensagem de entrada, para os casos de eventos em que é informado na mensagem de entrada.
+              <br>Específico para eventos:
+              <br>- 110112 – Cancelamento por substituição (NT 2018.005)
+              <br>- 110140 – EPEC
+              <br>Obs: Esta tag não é preenchida no evento de manifestação
+            </td>
+          </tr>
+          <tr class="">
+            <td>R23</td>
+            <td>CNPJDest</td>
+            <td>CE</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>14</td>
+            <td>Informar o CNPJ do destinatário da NF-e. <br>Específico para evento 110111 – Cancelamento</td>
+          </tr>
+          <tr class="">
+            <td>R23</td>
+            <td>CPFDest</td>
+            <td>CE</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>11</td>
+            <td>Informar o CPF do destinatário da NF-e. <br>Específico para evento 110111 – Cancelamento</td>
+          </tr>
+          <tr class="">
+            <td>R24</td>
+            <td>emailDest</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-60</td>
+            <td>E-mail do destinatário informado na NF-e. <br>Específico para evento 110111 – Cancelamento<br>Obs: Esta tag não é preenchida no evento de manifestação</td>
+          </tr>
+          <tr class="">
+            <td>R25</td>
+            <td>dhRegEvento</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>D</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Data e hora do registro do evento no formato AAAAMMDDThh:mm:ssTZD (UTC – Universal Coordinated Time).Se o evento for rejeitado informar a data e hora de recebimento do evento.</td>
+          </tr>
+          <tr class="">
+            <td>R26</td>
+            <td>nProt</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>15</td>
+            <td>Número do Protocolo do Evento, conforme item 4.3.5</td>
+          </tr>
+          <tr class="">
+            <td>R27</td>
+            <td>chNFePend</td>
+            <td>E</td>
+            <td>R11</td>
+            <td>N</td>
+            <td>0-50</td>
+            <td>44</td>
+            <td>Relação de Chaves de Acesso de EPEC pendentes de conciliação, existentes no AN. <br>Específico para evento: 110140 – EPEC <br>Obs: Esta tag não é preenchida no evento de manifestação</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>R91</td>
+            <td>Signature</td>
+            <td>G</td>
+            <td>R09</td>
+            <td>xml</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Assinatura Digital do documento XML, a assinatura deverá ser aplicada no elemento infEvento. A decisão de assinar a mensagem fica a critério da UF.</td>
+          </tr>
+        </table>
+        <br>
+        <br><br>
+        <titulo_tabela id="1.3. Descrição do Processo de Web Service">1.3. Descrição do Processo de Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O WS de Eventos é acionado pelo interessado emissor da NF-e que deve enviar mensagem de registro de evento.</p>
+          <p>O processo de Registro de Eventos recebe eventos em uma estrutura de lotes, que podem conter de 1 a 20 eventos.</p>
+        </div>
+        <br>
+        <titulo_tabela id="1.4. Regras de Validação Genéricas Para Todos os Eventos">1.4. Regras de Validação Genéricas Para Todos os Eventos</titulo_tabela>
+        <br>
+        <div class='texto_normal'>
+          <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a>
+          </p>
+        </div>
+        <table class="tabela_regras_genericas">
+          <tr>
+            <th>Grupo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Validação Inicial da Mensagem no Web Service</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Validação da Área de Dados </td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>Validação do Certificado Digital de Assinatura</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>Validação da Assinatura Digital</td>
+          </tr>
+        </table>
+        <br><br>
+        <div class='texto_normal'>
+          <p>A validação do Schema XML é realizada em toda mensagem de entrada, mas como existe uma parte da mensagem que é variável pode ocorrer erro de falha de Schema XML da parte específica da mensagem que será identificado posteriormente.</p>
+          <p>As regras de validação da parte geral deste WS podem ser vistas na tabela abaixo; as regras de validação específicas para cada evento estão tratadas nas seções relativas a cada um deles</p>
+        </div>
+        <table class="regras_validacao_gerais">
+          <tr>
+            <th>#</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr class="">
+            <td>P07-10</td>
+            <td>Atributo “Id” não corresponde à concatenação dos campos do evento (“ID” + tpEvento + chNFe + nSeqEvento) (*1)</td>
+            <td>Obrig.</td>
+            <td>572</td>
+            <td>Rej.</td>
+            <td>Rejeição: Erro Atributo ID do evento não corresponde a concatenação dos campos (“ID” + tpEvento + chNFe + nSeqEvento)</td>
+          </tr>
+          <tr class="">
+            <td>P08-10</td>
+            <td>Código do órgão de recepção do Evento diverge do definido para este evento (*1)</td>
+            <td>Obrig.</td>
+            <td>250</td>
+            <td>Rej.</td>
+            <td>Rejeição: UF diverge da UF autorizadora</td>
+          </tr>
+          <tr class="">
+            <td>P09-10</td>
+            <td>Tipo do ambiente difere do ambiente do Web Service (*1)</td>
+            <td>Obrig.</td>
+            <td>252</td>
+            <td>Rej.</td>
+            <td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td>
+          </tr>
+          <tr class="">
+            <td>P10-10</td>
+            <td>Se informado CNPJ do Autor do Evento: <br>• CNPJ inválido (zeros, nulo ou DV inválido) (*1)</td>
+            <td>Obrig.</td>
+            <td>489</td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ informado inválido (DV ou zeros)</td>
+          </tr>
+          <tr class="">
+            <td>P11-10</td>
+            <td>Se informado o CPF do Autor do evento: <br>• CPF inválido (zeros, nulo ou DV inválido) (*1)</td>
+            <td>Obrig.</td>
+            <td>490</td>
+            <td>Rej.</td>
+            <td>Rejeição: CPF informado inválido (DV ou zeros)</td>
+          </tr>
+          <tr class="">
+            <td>P11-20</td>
+            <td>Se informado o CPF do Autor do evento e Modelo da Chave de Acesso = 65: <br>• Evento não disponível para Autor tipo pessoa física (*1)</td>
+            <td>Obrig.</td>
+            <td>408</td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento não disponível para Autor pessoa física</td>
+          </tr>
+          <tr class="">
+            <td>P12-10</td>
+            <td>Validação da Chave de Acesso (tag:chNFe): <br>• Dígito verificador inválido (*1)</td>
+            <td>Obrig.</td>
+            <td>236</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso com dígito verificador inválido</td>
+          </tr>
+          <tr class="">
+            <td>P12-14</td>
+            <td>• Código UF inválido (*1)</td>
+            <td>Obrig.</td>
+            <td>614</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Código UF inválido)</td>
+          </tr>
+          <tr class="">
+            <td>P12-18</td>
+            <td>• Ano < 06 ou Ano maior que Ano corrente (*1)</td>
+            <td>Obrig.</td>
+            <td>615</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Ano < 06 ou Ano maior que Ano corrente)</td>
+          </tr>
+          <tr class="">
+            <td>P12-22</td>
+            <td>• Mês = 0 ou Mês > 12 (*1)</td>
+            <td>Obrig.</td>
+            <td>616</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês> 12)</td>
+          </tr>
+          <tr class="">
+            <td>P12-26</td>
+            <td>• CNPJ/CPF zerado ou dígito inválido (*1) <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]</td>
+            <td>Obrig.</td>
+            <td>617</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (CNPJ/CPF zerado ou dígito inválido)</td>
+          </tr>
+          <tr class="">
+            <td>P12-30</td>
+            <td>• Modelo diferente de 55 ou 65 (*1)</td>
+            <td>Obrig.</td>
+            <td>619</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (modelo diferente de 55/65)</td>
+          </tr>
+          <tr class="">
+            <td>P12-34</td>
+            <td>• Número NF = 0 (*1)</td>
+            <td>Obrig.</td>
+            <td>619</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (número NF = 0)</td>
+          </tr>
+          <tr class="">
+            <td>P12-40</td>
+            <td>• UF da Chave de Acesso diverge da UF Autorizadora</td>
+            <td>Obrig.</td>
+            <td>249</td>
+            <td>Rej.</td>
+            <td>Rejeição: UF da Chave de Acesso diverge da UF autorizadora</td>
+          </tr>
+          <tr class="">
+            <td>P12-44</td>
+            <td>• CNPJ/CPF do Autor diverge do CNPJ/CPF da Chave de Acesso
+              <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]
+            </td>
+            <td>Obrig.</td>
+            <td>574</td>
+            <td>Rej.</td>
+            <td>Rejeição: Autor do evento diverge do emissor da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>P13-10</td>
+            <td> Data do evento maior que a data de processamento (aceitar tolerância de até 5 minutos) (*1)</td>
+            <td>Obrig.</td>
+            <td>578</td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser maior que a data do processamento</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Emitente</td>
+          </tr>
+          <tr class="">
+            <td>1P10-10</td>
+            <td>Acesso ao Cadastro de Contribuintes (Chave: CNPJ do Autor):
+              <br>• Verificar se Emitente não autorizado a emitir NF-e
+            </td>
+            <td>Obrig.</td>
+            <td>203</td>
+            <td>Rej.</td>
+            <td>Rejeição: Emissor não habilitado para emissão de NF-e</td>
+          </tr>
+          <tr class="">
+            <td>1P10-20</td>
+            <td>• Verificar situação fiscal do emitente</td>
+            <td>Obrig.</td>
+            <td>240</td>
+            <td>Rej.</td>
+            <td>Rejeição: Irregularidade fiscal do emitente</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento</td>
+          </tr>
+          <tr class="">
+            <td>3P15-10</td>
+            <td>Acesso BD de Eventos (Chave: Chave de Acesso, tpEvento, nSeqEvento):
+              <br>• Duplicidade do evento (tpEvento + chNFe + nSeqEvento) (*1)
+            </td>
+            <td>Obrig.</td>
+            <td>573</td>
+            <td>Rej.</td>
+            <td>Rejeição: Duplicidade de Evento</td>
+          </tr>
+
+        </table>
+        <br>
+        <div class='texto_normal'>
+          <p>*1 ......Validações genéricas do Registro de Evento.</p>
+        </div>
+        <br>
+        <titulo_tabela id="1.5. Final do Processamento do Lote">1.5. Final do Processamento do Lote</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O processamento do lote pode resultar em:</p>
+          <ul>
+            <li><div class="negrito">Rejeição do Lote – </div>por algum problema que comprometa o processamento do lote;</li>
+            <li><div class="negrito">Processamento do Lote – </div>o lote foi processado (cStat=128), a validação de cada evento do lote
+              poderá resultar em:</li>
+            <ul>
+              <li><div class="negrito">Rejeição – </div>o Evento será descartado, com retorno do código do status do motivo da rejeição;</li>
+              <li><div class="negrito">Recebido pelo Sistema de Registro de Eventos, com vinculação do evento na NF-e,</div> o
+                Evento será armazenado no repositório do Sistema de Registro de Eventos com a vinculação
+                do Evento à respectiva NF-e (cStat=135);</li>
+                <li><div class="negrito">Recebido pelo Sistema de Registro de Eventos – vinculação do evento à respectiva NFe prejudicada –</div> o Evento será armazenado no repositório do Sistema de Registro de
+Eventos, a vinculação do evento à respectiva NF-e fica prejudicada face à inexistência da NFe no momento do recebimento do Evento (cStat=136);</li>
+            </ul>
+
+          </ul>
+          <p>A UF que recepcionar o Evento deve enviá-lo para o Sistema de Compartilhamento do AN –
+Ambiente Nacional – para que o Evento seja distribuído para todos os interessados.</p>
+            <p>A resposta da SEFAZ pode ser assinada e neste caso deve ser preenchido o atributo "Id' (HR12).
+Este atributo é opcional e não deve ser informado pela SEFAZ caso a mensagem de resposta não
+seja assinada. Esta orientação é válida para todos os tipos de evento.</p>
+        </div>
+        <titulo_tabela id="1.6. Armazenamento e Disponibilização do Evento">1.6. Armazenamento e Disponibilização do Evento</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O arquivo digital do Evento, com a respectiva informação do Registro de Evento da SEFAZ, deve ser
+mantido pelo emissor e disponibilizado para o destinatário, na forma da abaixo.</p>
+<ul>
+<div class="negrito">Schema XML: procEventoNFe_v1.00.xsd</div>
+</ul>
+
+      </div>
+
+      <table class="leiaute_web_services">
+        <tr>
+          <th>#</th>
+          <th>Campo</th>
+          <th>Ele</th>
+          <th>Pai</th>
+          <th>Tipo</th>
+          <th>Ocor.</th>
+          <th>Tam.</th>
+          <th>Descrição/Observação</th>
+        </tr>
+        <tr class="linha_grupo">
+          <td>ZR01</td>
+          <td>procEventoNFe</td>
+          <td>Raiz</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>TAG raiz</td>
+        </tr>
+        <tr class="">
+          <td>ZR02</td>
+          <td>versao</td>
+          <td>A</td>
+          <td>ZR01</td>
+          <td>N</td>
+          <td>1-1</td>
+          <td>2v2</td>
+          <td>TAG raiz</td>
+        </tr>
+        <tr class="linha_grupo">
+          <td>ZR03</td>
+          <td>evento</td>
+          <td>G</td>
+          <td>ZR01</td>
+          <td>-</td>
+          <td>1-1</td>
+          <td>-</td>
+          <td></td>
+        </tr>
+        <tr class="">
+          <td>ZR04</td>
+          <td>(dados)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Dados do Evento (mensagem de entrada)</td>
+        </tr>
+        <tr class="linha_grupo">
+          <td>ZR05</td>
+          <td>retEvento</td>
+          <td>G</td>
+          <td>ZR01</td>
+          <td>-</td>
+          <td>1-1</td>
+          <td>-</td>
+          <td></td>
+        </tr>
+        <tr class="">
+          <td>ZR06</td>
+          <td>(dados)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Dados do registro do Evento (mensagem de saída)</td>
+        </tr>
+      </table>
+      <br><br>
+          <img src="./Imagens/NFe_EventoGeral_2_fluxo.png" alt="Diagrama Simplificado do procEventoNFe" class="imagem_central">
+    </div>
+
 
 
 </body>

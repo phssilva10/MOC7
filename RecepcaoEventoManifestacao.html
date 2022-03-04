@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>Manifestação do Destinatário</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,21 +124,206 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <h4 style="text-align:center">Web Service – NfeRecepcao Evento- Cancelamento/Cancelamento por substituição</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Regras de Validação")' title='1.3. Regras de Validação'>1.3. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Final do Processamento do Lote")' title='1.4. Final do Processamento do Lote'>1.4. Final do Processamento do Lote<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
+        <h1>Web Service – NFeRecepcaoEvento – Manifestação do Destinatário</h1>
+        <img src="./Imagens/NFe_Manifestacao_1_fluxo.png" alt="Fluxo do Web Service Manifestação do Destinatário" class="imagem_central">
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <ul>
+          <div class="negrito">Processo: </div>síncrono.<br>
+          <div class="negrito">Método: nfeRecepcaoEvento</div><br>
+          <div class="negrito">Função: </div>permite que o destinatário da Nota Fiscal eletrônica confirme a sua participação na operação acobertada pela Nota Fiscal eletrônica emitida para o seu CNPJ/CPF, através do envio da mensagem de:<br><br>
+          <li><span class="negrito">Confirmação da Operação –</span>confirmando a ocorrência da operação e o recebimento da
+            mercadoria (para as operações com circulação de mercadoria);</li>
+          <li><span class="negrito">Desconhecimento da Operação –</span>declarando o desconhecimento da operação;</li>
+          <li><span class="negrito">Operação Não Realizada –</span>declarando que a operação não foi realizada (com recusa do
+            Recebimento da mercadoria e outros) e a justificativa do porquê a operação não se realizou;</li>
+          <li><span class="negrito">Ciência da Emissão (ou Ciência da Operação) –</span>declarando ter ciência da operação destinada
+            ao CNPJ, mas ainda não possuir elementos suficientes para apresentar uma manifestação
+            conclusiva, como as acima citadas. Este evento era chamado de Ciência da Operação.</li>
+          <br>
+          <div class="negrito">Autor do Evento:</div>destinatário da NF-e. A mensagem XML do evento será assinada com o
+          certificado digital que tenha o CNPJ-Base (8 primeiras posições do CNPJ) ou CPF do Destinatário da
+          NF-e.<br>
+          <p>A ciência da emissão é um evento opcional que pode ser utilizado pelo destinatário para declarar que
+            tem ciência da existência da operação, mas ainda não tem elementos suficientes para apresentar
+            uma manifestação conclusiva. O destinatário deve apresentar uma manifestação conclusiva dentro
+            de um prazo máximo definido, contados a partir da data de autorização da NF-e.
+          <p>
+          <div class="negrito">Código do Tipo de Evento:</div>
+          <li>210200 – Confirmação da Operação</li>
+          <li>210210 – Ciência da Emissão</li>
+          <li>210220 – Desconhecimento da Operação</li>
+          <li>210240 – Operação não Realizada</li>
 
+        </ul>
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML da parte específica do evento, a ser inserida na tag detEvento (P17) da <a href="./RecepcaoEventoGeral.html#1.1. Leiaute Mensagem de Entrada (Parte Geral)">Parte
+            Geral do Web Service de Registro de Eventos.</a><br>
+          <div class="negrito">Schema XML: envConfRecebto_v9.99.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="">
+            <td>HP18</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do evento</td>
+          </tr>
+          <tr class="">
+            <td>HP19</td>
+            <td>descEvento</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>5-60</td>
+            <td>Informar a descrição do evento:
+              <br>Confirmacao da Operacao
+              <br>Ciencia da Operacao
+              <br>Desconhecimento da Operacao
+              <br>Operacao nao Realizada
+            </td>
+          </tr>
+          <tr class="">
+            <td>HP20</td>
+            <td>xJust</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>15-255</td>
+            <td>Informar a justificativa porque a operação não foi realizada, este campo deve ser informado somente no evento de Operação não Realizada.</td>
+          </tr>
+        </table>
+
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com a mensagem do resultado da transmissão, conforme<a href="./RecepcaoEventoGeral.html#1.2. Leiaute Mensagem de Retorno (Parte Geral)"> retorno do Web Service de Registro de Eventos –
+            Parte Geral</a><br><br>
+          <div class="negrito">Descrição do resultado do processamento do evento (xEvento):</div><br><br>
+          <li>Confirmacao de Operacao registrada</li>
+          <li>Ciencia da Operacao registrada</li>
+          <li>Desconhecimento da Operacao registrada</li>
+          <li>Operacao nao Realizada registrada</li><br>
+
+          <div class="negrito">Schema XML: retEnvConfRecebto _v9.99.xsd</div><br>
+          <p>O leiaute desta mensagem de retorno não apresenta nenhuma diferença com relação ao retorno do Web Service de Registro de Eventos</p>
+        </ul>
+        <br>
+        <br>
+        <titulo_tabela id="1.3. Regras de Validação">1.3. Regras de Validação</titulo_tabela><br>
+        <div class="texto_normal">
+
+          <p>Serão aplicadas as <a href="./RecepcaoEventoGeral.html#1.4. Regras de Validação Genéricas Para Todos os Eventos"> regras de validação gerais </a>e as regras de negócio específicas que podem ser vistas na Tabela abaixo</p>
+        </div>
+
+        <table class="regras_validacao_gerais">
+          <tr>
+            <th>#</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr class="">
+            <td>H01</td>
+            <td>Evento de “Operação não Realizada” deve ter uma justificativa</td>
+            <td>Obrig.</td>
+            <td>595</td>
+            <td>Rej.</td>
+            <td>Rejeição: Obrigatória a informação da justificativa do evento.</td>
+          </tr>
+          <tr class="">
+            <td>H02</td>
+            <td>O nSeqEvento deve ser = 1</td>
+            <td>Obrig.</td>
+            <td>594</td>
+            <td>Rej.</td>
+            <td>Rejeição: O número de sequencia do evento informado é maior que o permitido</td>
+          </tr>
+          <tr class="">
+            <td>H03</td>
+            <td>Verificar prazo de recepção do evento, em relação a data da autorização</td>
+            <td>Obrig.</td>
+            <td>596</td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento apresentado fora do prazo: [prazo vigente]</td>
+          </tr>
+          <tr class="">
+            <td>H04</td>
+            <td> Evento de “Ciência da Emissão” para NF-e Cancelada ou Denegada</td>
+            <td>Obrig.</td>
+            <td>650</td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento de "Ciência da Emissão" para NF-e Cancelada ou Denegada</td>
+          </tr>
+          <tr class="">
+            <td>H05</td>
+            <td>Evento de “Desconhecimento da Operação” para NFe Cancelada ou Denegada</td>
+            <td>Obrig.</td>
+            <td>651</td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento de "Desconhecimento da Operação" para NF-e Cancelada ou Denegada</td>
+          </tr>
+          <tr class="">
+            <td>H06</td>
+            <td>Evento de "Ciência da Emissão" informado após a Manifestação final do destinatário (Confirmação da Operação, Operação não Realizada ou Desconhecimento).</td>
+            <td>Obrig.</td>
+            <td>655</td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento de Ciência da Emissão informado após a manifestação final do destinatário</td>
+          </tr>
+          <tr class="">
+            <td>H07</td>
+            <td>Se Evento do Destinatário, verificar se UF do destinatário corresponde a UF do Web Service
+              <br>(Nota: esta validação não se aplica para o Ambiente Nacional, no atendimento de todas as UF)
+            </td>
+            <td>Obrig.</td>
+            <td>658</td>
+            <td>Rej.</td>
+            <td>Rejeição: UF do destinatário da Chave de Acesso diverge da UF autorizadora</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <titulo_tabela id="1.4. Final do Processamento do Lote">1.4. Final do Processamento do Lote</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O resultado do processamento do lote está especificado na seção <a href="./RecepcaoEventoGeral.html#1.5. Final do Processamento do Lote">Web Service de Registro de Eventos – Parte Geral</a></p>
+        </div>
+
+
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
 
 </body>

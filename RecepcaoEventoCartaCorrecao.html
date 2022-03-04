@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>Carta de Correção</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,21 +124,247 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+
+          <h4 style="text-align:center">Web Service – NfeInutilização</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Leiaute Mensagem de Entrada")' title='1.1. Leiaute Mensagem de Entrada'>1.1. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Retorno")' title='1.2. Leiaute Mensagem de Retorno'>1.2. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Regras de Validação")' title='1.3. Regras de Validação'>1.3. Regras de Validação<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Final do Processamento")' title='1.4. Final do Processamento'>1.4. Final do Processamento<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Disponibilização do Evento")' title='1.5. Disponibilização do Evento'>1.5. Disponibilização do Evento<br></span></a><br>
         </div>
       </div>
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
 
-    <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <h1>Web Service – NFeRecepcaoEvento- Carta de Correção</h1>
 
+        <ul>
+          <div class="negrito">Função: </div>evento destinado à correção de informações da NF-e.<br>
+        </ul>
+        <div class="texto_normal">
+          <p>A Carta de Correção é um evento para corrigir as informações da NF-e, prevista na cláusula décima
+            quarta-A do Ajuste SINIEF 07/05. O evento será utilizado pelo contribuinte e o alcance das
+            alterações permitidas é definido no § 1º do art. 7º do Convênio SINIEF s/n de 1970:</p>
+
+          <ul>
+            <ul>
+              <ul>
+                <ul><i>
+                    “Art. 7º Os documentos fiscais referidos nos incisos I a V do artigo anterior deverão ser
+                    extraídos por decalque a carbono ou em papel carbonado, devendo ser preenchidos a máquina
+                    ou manuscritos a tinta ou a lápis-tinta, devendo ainda os seus dizeres e indicações estar bem
+                    legíveis, em todas as vias.
+                    <br>
+                    (...)
+                    <br>§ 1º-A Fica permitida a utilização de carta de correção, para regularização de erro
+                    ocorrido na emissão de documento fiscal, desde que o erro não esteja relacionado com:
+                    <br>I - as variáveis que determinam o valor do imposto tais como: base de cálculo, alíquota,
+                    diferença de preço, quantidade, valor da operação ou da prestação;
+                    <br>II - a correção de dados cadastrais que implique mudança do remetente ou do
+                    destinatário;
+                    <br>III - a data de emissão ou de saída.”
+                  </i>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+
+          <p>O registro de uma nova Carta de Correção substitui a Carta de Correção anterior, assim a nova Carta
+            de Correção deve conter todas as correções a serem consideradas.</p>
+          <ul>
+            <p>
+            <div class="negrito">Autor do Evento:</div>O autor do evento é o emissor da NF-e e a NF-e deve existir no banco de dados
+            da SEFAZ. A mensagem XML do evento será assinada com o certificado digital do emitente da NF-e.
+            No caso do emitente pessoa jurídica, poderá ser usado o certificado digital da matriz ou de qualquer
+            filial da empresa (mesmo CNPJ-Base)”.</p>
+            <p>
+            <div class="negrito">Código do Evento: 110110</div>
+            </p>
+          </ul>
+        </div>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML da parte específica do evento, a ser inserida na tag detEvento (P17) da <a href="./RecepcaoEventoGeral.html#1.1. Leiaute Mensagem de Entrada (Parte Geral)">Parte
+            Geral do Web Service de Registro de Eventos.</a><br>
+          <div class="negrito">Schema XML: envCCe_v9.99.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr>
+            <td>HP18</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P17 </td>
+            <td></td>
+            <td>1-1</td>
+            <td></td>
+            <td>Versão da carta de correção</td>
+          </tr>
+          <tr>
+            <td>HP19</td>
+            <td>descEvento</td>
+            <td>E</td>
+            <td>P17 </td>
+            <td>C</td>
+            <td>5-60</td>
+            <td></td>
+            <td>“Carta de Correção” ou “Carta de Correcao”</td>
+          </tr>
+          <tr>
+            <td>HP20</td>
+            <td>xCorrecao</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>15-1000</td>
+            <td> Correção a ser considerada, texto livre. A correção mais recente substitui as anteriores.</td>
+          </tr>
+          <tr>
+            <td>HP20a</td>
+            <td>xCondUso</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Condições de uso da Carta de Correção, informar a literal :
+<br>“A Carta de Correção é disciplinada pelo § 1º-A do art.
+7º do Convênio S/N, de 15 de dezembro de 1970
+e pode ser utilizada para regularização de erro
+ocorrido na emissão de documento fiscal, desde
+que o erro não esteja relacionado com: I - as
+variáveis que determinam o valor do imposto tais
+como: base de cálculo, alíquota, diferença de
+preço, quantidade, valor da operação ou da
+prestação; II - a correção de dados cadastrais que
+implique mudança do remetente ou do
+destinatário; III - a data de emissão ou de saída.”
+(texto com acentuação)
+<br>ou
+<br>“A Carta de Correcao e disciplinada pelo paragrafo 1o-A
+do art. 7o do Convenio S/N, de 15 de dezembro
+de 1970 e pode ser utilizada para regularizacao
+de erro ocorrido na emissao de documento fiscal,
+desde que o erro nao esteja relacionado com: I -
+as variaveis que determinam o valor do imposto
+tais como: base de calculo, aliquota, diferenca de
+preco, quantidade, valor da operacao ou da
+prestacao; II - a correcao de dados cadastrais que
+implique mudanca do remetente ou do
+destinatario; III - a data de emissao ou de saida.”
+(texto sem acentuação)</td>
+          </tr>
+        </table>
+
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com a mensagem do resultado da transmissão, conforme<a href="./RecepcaoEventoGeral.html#1.2. Leiaute Mensagem de Retorno (Parte Geral)"> retorno do Web Service de Registro de Eventos –
+            Parte Geral</a><br>
+          <div class="negrito">Descrição do resultado do processamento do evento (xEvento):</div>“Carta de Correção registrada” <br>
+          <div class="negrito">Schema XML: retEnvCCe_v9.99.xsd</div><br>
+          <p>O leiaute desta mensagem de retorno não apresenta nenhuma diferença com relação ao retorno do Web Service de Registro de Eventos</p>
+        </ul>
+        <br>
+        <br>
+        <titulo_tabela id="1.3. Regras de Validação">1.3. Regras de Validação</titulo_tabela><br>
+        <div class="texto_normal">
+
+          <p>Serão aplicadas as <a href="./RecepcaoEventoGeral.html#1.4. Regras de Validação Genéricas Para Todos os Eventos"> regras de validação gerais </a>e as regras de negócio específicas que podem ser vistas na Tabela abaixo</p>
+        </div>
+
+        <table class="regras_validacao_gerais">
+          <tr>
+            <th>#</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr>
+            <td>GA01</td>
+            <td>Verificar se a NF-e está autorizada (não pode estar cancelada nem denegada)</td>
+            <td>Obrig.</td>
+            <td>580</td>
+            <td>Rej.</td>
+            <td>Rejeição: O evento exige uma NF-e autorizada</td>
+          </tr>
+          <tr>
+            <td>GA03</td>
+            <td>Verificar o sequencial do evento (P15 – nSeqEvento) é valor válido (1-20)
+            </td>
+            <td>Obrig.</td>
+            <td>594</td>
+            <td>Rej.</td>
+            <td>Rejeição: O número de sequencia do evento informado é maior que o permitido</td>
+          </tr>
+          <tr>
+            <td>GA03a</td>
+            <td>Se Modelo = 65: NFC-e não permite o evento de Carta de Correção</td>
+            <td>Obrig.</td>
+            <td>784</td>
+            <td>Rej.</td>
+            <td>Rejeição: NFC-e não permite o evento de Carta de Correção</td>
+          </tr>
+          <tr>
+            <td>GA04</td>
+            <td>Acesso Cadastro Contribuinte:
+<br>- Verificar Emitente não autorizado a emitir NF-e</td>
+            <td>Obrig.</td>
+            <td>203</td>
+            <td>Rej.</td>
+            <td>Rejeição: Emissor não habilitado para emissão de NF-e</td>
+          </tr>
+          <tr>
+            <td>GA05</td>
+            <td>- Verificar Situação Fiscal irregular do Emitente</td>
+            <td>Obrig.</td>
+            <td>240</td>
+            <td>Rej.</td>
+            <td>Rejeição: Cancelamento/Inutilização – Irregularidade Fiscal do Emitente</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <titulo_tabela id="1.4. Final do Processamento">1.4. Final do Processamento</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O resultado do processamento do lote está especificado na seção <a href="./RecepcaoEventoGeral.html#1.5. Final do Processamento do Lote">Web Service de Registro de Eventos – Parte Geral</a></p>
+        </div>
+        <br>
+        <br>
+        <titulo_tabela id="1.5. Disponibilização do Evento">1.5. Disponibilização do Evento</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O arquivo digital da Carta de Correção com a respectiva informação de Registro do Evento da SEFAZ faz parte integrante da NF-e e também deve ser disponibilizado para o destinatário e para o transportador.</p>
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </div>
   </div>
-</div>
-</div>
 
 
 </body>
