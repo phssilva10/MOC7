@@ -59,6 +59,8 @@
             <a href='./RecepcaoEventoEPEC.html' title='WS EPEC'>&emsp;&#8227;EPEC</a>
             <a href='./RecepcaoEventoProrrogacao.html' title='WS Pedido de Prorrogação'>&emsp;&#8227;Pedido de Prorrogação</a>
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
+            <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
+            <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
           </div>
         </div>
 
@@ -165,6 +167,7 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I05. Produtos e Serviços / Pedido de Compra")' title='I05. Produtos e Serviços / Pedido de Compra'>I05. Produtos e Serviços / Pedido de Compra<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I07. Produtos e Serviços / Grupo Diversos")' title='I07. Produtos e Serviços / Grupo Diversos'>I07. Produtos e Serviços / Grupo Diversos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I08. Rastreabilidade de produto")' title='I08. Rastreabilidade de produto'>I08. Rastreabilidade de produto<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I86. Informações Adicionais do Produto NFF")' title='I86. Informações Adicionais do Produto NFF'>I86. Informações Adicionais do Produto NFF<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("J. Item / Veículos Novos")' title='J. Item / Veículos Novos'>J. Item / Veículos Novos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("K. Item / Medicamentos")' title='K. Item / Medicamentos'>K. Item / Medicamentos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("L. Item / Armamentos")' title='L. Item / Armamentos'>L. Item / Armamentos<br></span></a><br>
@@ -193,7 +196,8 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZB. Informação de Compra")' title='ZB. Informação de Compra'>ZB. Informação de Compra<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZC. Informações do Registro de Aquisição de Cana")' title='ZC. Informações do Registro de Aquisição de Cana'>ZC. Informações do Registro de Aquisição de
             Cana<br></span></a><br>
-          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo ZD. Informações do Responsável Técnico")' title='Grupo ZD. Informações do Responsável Técnico'>Grupo ZD. Informações do Responsável Técnico<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZD. Informações do Responsável Técnico")' title='ZD. Informações do Responsável Técnico'>ZD. Informações do Responsável Técnico<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZE. Informações da Nota Fiscal Fácil – NFF")' title='ZE. Informações da Nota Fiscal Fácil – NFF'>ZE. Informações da Nota Fiscal Fácil – NFF<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZX. Informações Suplementares da Nota Fiscal")' title='ZX. Informações Suplementares da Nota Fiscal'>ZX. Informações Suplementares da Nota Fiscal<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1. Banco de Dados: Emitente")' title='1. Banco de Dados: Emitente'>1. Banco de Dados: Emitente<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2. Banco de Dados: NF-e")' title='2. Banco de Dados: NF-e'>2. Banco de Dados: NF-e<br></span></a><br>
@@ -310,6 +314,14 @@
             <td id="Rej_282">282</td>
             <td id="Rej.">Rej.</td>
             <td>Rejeição: Certificado Transmissor sem CNPJ/CPF</td>
+          </tr>
+          <tr class="">
+            <td>A08</td>
+            <td>NF-e do regime nota fiscal fácil (tpEmis = 3) e CNPJ-Base do certificado digital de transmissão difere do CNPJ-Base da SVRS (NT 2021.002)</td>
+            <td>Obrig.</td>
+            <td id="Rej_832">832</td>
+            <td id="Rej.">Rej.</td>
+            <td>Rejeição: CNPJ incorreto na transmissão da NFF</td>
           </tr>
         </table><br>
         <titulo_tabela id="B. Validação Inicial da Mensagem no Web Service">B. Validação Inicial da Mensagem no Web Service</titulo_tabela><br><br>
@@ -648,6 +660,14 @@
             <td id="Rej_227">227</td>
             <td id="Rej.">Rej.</td>
             <td>Rejeição: CPF do Emitente difere do CPF do Certificado Digital</td>
+          </tr>
+          <tr class="">
+            <td>F03B</td>
+            <td>NF-e do regime nota fiscal fácil (tpEmis = 3) e CNPJ-Base do certificado digital de assinatura difere do CNPJ-Base da SVRS (NT 2021.002)</td>
+            <td>Obrig.</td>
+            <td id="Rej_818">818</td>
+            <td id="Rej.">Rej.</td>
+            <td>Rejeição: CNPJ incorreto na assinatura da NFF</td>
           </tr>
         </table><br>
 
@@ -3356,6 +3376,28 @@
               <td>Rejeição: Data de validade incompatível com data de fabricação [nItem: 999]</td>
             </tr>
           </table><br>
+          <br>
+        <titulo_tabela id="I86. Informações Adicionais do Produto NFF">I86. Informações Adicionais do Produto NFF</titulo_tabela><br><br>
+        <table class="regras_validacao_nfe">
+          <tr>
+            <th>Campo-Seq</th>
+            <th>Modelo</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr class="">
+            <td>I86-10</td>
+            <td>55/65</td>
+            <td>Tipo de emissão diferente de Nota Fiscal Fácil (tpEmis <> 3-NFF) e NF-e não é avulsa (procEmi <> 1 ou 2) e preenchido grupo de produto NFF (infProdNFF) (NT 2021.002)</td>
+            <td>Obrig</td>
+            <td id="Rej_820">820</td>
+            <td>Rej</td>
+            <td>Rejeição: Informado produto fiscal de NFF</td>
+          </tr>
+        </table><br>
           <titulo_tabela id="J. Item / Veículos Novos">J. Item / Veículos Novos</titulo_tabela><br><br>
           <table class="regras_validacao_nfe">
             <tr>
@@ -5697,7 +5739,7 @@
                       <td>Rejeição: NFC-e com dados de aquisição de Cana</td>
                     </tr>
                   </table><br>
-                  <titulo_tabela id="Grupo ZD. Informações do Responsável Técnico">Grupo ZD. Informações do Responsável Técnico</titulo_tabela><br><br>
+                  <titulo_tabela id="ZD. Informações do Responsável Técnico">ZD. Informações do Responsável Técnico</titulo_tabela><br><br>
                   <table class="regras_validacao_nfe">
                     <tr>
                       <th>Campo-Seq</th>
@@ -5735,12 +5777,42 @@
                       <td>ZD07-10</td>
                       <td>55/65</td>
                       <td>Obrigatória a informação do identificador do CSRT (tag: idCSRT) e Hash do CSTR (tag: hashCSRT)<br><br>
-                        <div class="negrito">Observação: </div>Implementação futura, todas as UFs (NT 2018.005 v1.30)</td>
-                        <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF)(NT 2021.002)
+                        <div class="negrito">Observação: </div>Implementação futura, todas as UFs (NT 2018.005 v1.30)
+                        <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF)(NT 2021.002)</td>
                       <td>Facult.</td>
                       <td id="Rej_975">975</td>
                       <td>Rej.</td>
                       <td>Rejeição: Obrigatória a informação do identificador do CSRT e do Hash do CSRT</td>
+                    </tr>
+                  </table><br>
+                  <titulo_tabela id="ZE. Informações da Nota Fiscal Fácil – NFF">ZE. Informações da Nota Fiscal Fácil – NFF</titulo_tabela><br><br>
+                  <table class="regras_validacao_nfe">
+                    <tr>
+                      <th>Campo-Seq</th>
+                      <th>Modelo</th>
+                      <th>Regra de Validação</th>
+                      <th>Aplic.</th>
+                      <th>Msg</th>
+                      <th>Efeito</th>
+                      <th>Descrição Erro</th>
+                    </tr>
+                    <tr class="">
+                      <td>ZE01-10</td>
+                      <td>55/65</td>
+                      <td>Tipo de emissão diferente de Nota Fiscal Fácil (tpEmis <> 3-NFF) e preenchida informação de solicitação de NFF (infSolicNFF) (NT 2021.002)</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_819">819</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: Informação de Solicitação de NFF não pode estar preenchido</td>
+                    </tr>
+                    <tr class="">
+                      <td>ZE01-20</td>
+                      <td>55/65</td>
+                      <td>Tipo de emissão igual a Nota Fiscal Fácil (tpEmis = 3-NFF) e não preenchida informação de solicitação de NFF (infSolicNFF) (NT 2021.002)</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_834">834</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: Informação de Solicitação de NFF não preenchida</td>
                     </tr>
                   </table><br>
                   <titulo_tabela id="ZX. Informações Suplementares da Nota Fiscal">ZX. Informações Suplementares da Nota Fiscal</titulo_tabela><br><br>
@@ -7641,7 +7713,7 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: Certificado Assinatura revogado</td>
                       </tr>
                       <tr>
-                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_295")'>295</a></td>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_295")';>295</a></td>
                         <td>Rejeição: Certificado Assinatura difere ICP-Brasil</td>
                       </tr>
                       <tr>
@@ -8091,6 +8163,10 @@ UF (NT 2021.002)</td>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_455")'>455</a></td>
                         <td>Rejeição: Órgão Autor do evento diferente da UF da Chave de Acesso</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_460")'>460</a></td>
+                        <td>Rejeição: Protocolo do Evento difere do cadastrado</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_461")'>461</a></td>
@@ -9269,6 +9345,42 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: Unidade Tributável incompatível com o NCM informado na operação com Comércio Exterior [nItem: 999]</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_818")'>818</a></td>
+                        <td>Rejeição: Informação de Solicitação de NFF não pode estar preenchido</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_819")'>819</a></td>
+                        <td>Rejeição: Rejeição: CNPJ incorreto na assinatura da NFF</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_820")'>820</a></td>
+                        <td>Rejeição: Informado produto fiscal de NFF</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_821")'>821</a></td>
+                        <td>Rejeição: Data-Hora de Entrega superior a data de emissão do evento</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_822")'>822</a></td>
+                        <td>Rejeição: Data-Hora do Hash do Comprovante de Entrega superior a data de emissão do evento</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_823")'>823</a></td>
+                        <td>Rejeição: Data-Hora de Entrega inferior a data de emissão da NF-e</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_824")'>824</a></td>
+                        <td>Rejeição: Data-Hora do Hash do Comprovante de Entrega inferior a data de emissão da NF-e</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_825")'>825</a></td>
+                        <td>Rejeição: Não permitido mais de um Evento deste tipo para a NF-e</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_826")'>826</a></td>
+                        <td>Rejeição: Pedido de Cancelamento para NF-e com evento de registro de Entrega</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_827")'>827</a></td>
                         <td>Rejeição: Obrigatório informar o tipo de autorização</td>
                       </tr>
@@ -9283,6 +9395,14 @@ UF (NT 2021.002)</td>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_830")'>830</a></td>
                         <td>Rejeição: Não permitido preencher o campo Condição de Uso</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_832")'>832</a></td>
+                        <td>Rejeição: Rejeição: CNPJ incorreto na transmissão da NFF</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_834")'>834</a></td>
+                        <td>Rejeição: Informação de Solicitação de NFF não preenchida</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_850")'>850</a></td>

@@ -61,6 +61,8 @@
             <a href='./RecepcaoEventoEPEC.html' title='WS EPEC'>&emsp;&#8227;EPEC</a>
             <a href='./RecepcaoEventoProrrogacao.html' title='WS Pedido de Prorrogação'>&emsp;&#8227;Pedido de Prorrogação</a>
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
+            <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
+            <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
           </div>
         </div>
 
@@ -206,7 +208,7 @@
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>Informar "1=Empresa Emitente" para este evento. <br>Nota: 1=Empresa Emitente; 2=Empresa Destinatária; 3=Empresa; 5=Fisco; 6=RFB; 9=Outros Órgãos.</td>
+            <td>Informar "1=Empresa Emitente/Pessoa Física" para este evento.(NT 2018.004) <br>Nota: 1=Empresa Emitente; 2=Empresa Destinatária; 3=Empresa; 5=Fisco; 6=RFB; 9=Outros Órgãos.</td>
           </tr>
           <tr class="">
             <td>P22</td>
@@ -468,7 +470,7 @@
           </tr>
           <tr class="">
             <td>P21-10</td>
-            <td>Verificar se Tipo do Autor difere de "1=Empresa Emitente"</td>
+            <td>Verificar se Tipo do Autor difere de "1=Empresa Emitente/Pessoa Física"(NT 2018.004)</td>
             <td>Obrig.</td>
             <td>466</td>
             <td>Rej.</td>
@@ -476,7 +478,11 @@
           </tr>
           <tr class="">
             <td>P23-10</td>
-            <td>Data de Emissão posterior a data de recebimento</td>
+            <td>Data de Emissão posterior a data de recebimento
+            <br><div class="negrito">Nota:</div>Na comparação acima, aceitar
+uma tolerância de 5 minutos, devido ao
+sincronismo de horário entre o servidor
+da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)</td>
             <td>Obrig.</td>
             <td>212</td>
             <td>Rej.</td>
