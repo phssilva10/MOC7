@@ -635,7 +635,7 @@
           </tr>
           <tr class="">
             <td>F03</td>
-            <td>Se Certificado de Assinatura com CNPJ e CNPJ do Certificado difere do CNPJ da SEFAZ para a UF:<br>-CNPJ-Base do Emitente difere do CNPJ-Base do Certificado Digital (NT 2018.001)</td>
+            <td>Se Certificado de Assinatura com CNPJ e CNPJ do Certificado difere do CNPJ da SEFAZ para a UF:<br>-CNPJ-Base do Emitente difere do CNPJ-Base do Certificado Digital (NT 2018.001)<br><br><span class="negrito">Exceção:</span> Para tpEmis = 3-NFF, CNPJ do certificado é somente o da SVRS (NT 2021.002)</td>
             <td>Obrig.</td>
             <td id="Rej_213">213</td>
             <td id="Rej.">Rej.</td>
@@ -802,7 +802,7 @@
           <tr class="">
             <td>B09-40</td>
             <td>65</td>
-            <td>NFC-e com Tipo de Emissão=1-Normal (ou 3-SCAN, ou 6-SVC-AN, 7-SVC-RS) e Data-Hora de Emissão com atraso superior a 5 minutos em relação ao horário de recepção na SEFAZ.<br><br>
+            <td>NFC-e com Tipo de Emissão=1-Normal (<span class="linha_revogada">ou 3-SCAN,</span>(NT 2021.002) ou 6-SVC-AN, 7-SVC-RS) e Data-Hora de Emissão com atraso superior a 5 minutos em relação ao horário de recepção na SEFAZ.<br><br>
               <div class="negrito">Exceção 1: </div>A critério da UF, a rejeição acima pode ser efetuada para qualquer Tipo de Emissão.<br>
               <div class="negrito">Exceção 2: </div>A critério da UF, pode ser aceita a NFC-e com Data de Emissão muito atrasada, desde que tenham sido emitida em contingência (tpEmis=4, 9). A NFC-e transmitida para a SEFAZ Autorizadora após o
               prazo de 24 horas deveretornar cStat="150- Autorizado Uso da NF-e, autorização fora de prazo".<br><br>
@@ -945,12 +945,12 @@
             <td>B22-30</td>
             <td>55/65</td>
             <td>Na autorização pela SEFAZ:<br>
-              <div class="recuo">– Não aceitar o conteúdo tpEmis=3-SCAN (NT 2010/004), 6-SVC-AN ou 7-SVC-RS</div>
+              <div class="recuo">– Não aceitar o conteúdo tpEmis=<span class="linha_revogada">3-SCAN (NT 2010/004)</span>(NT 2021.002), 6-SVC-AN ou 7-SVC-RS</div>
             </td>
             <td>Obrig.</td>
             <td id="Rej_570">570</td>
             <td>Rej.</td>
-            <td>Rejeição: Tipo de Emissão 3, 6 ou 7 só é válido nas contingências SCAN/SVC</td>
+            <td>Rejeição: Tipo de Emissão <span class="linha_revogada">3,</span> 6 ou 7 só é válido nas contingências SCAN/SVC</td>
           </tr>
           <tr class="">
             <td>B22-34</td>
@@ -1298,6 +1298,8 @@
             <td>Se informada uma NF-e referenciada (tag:refNFe):<br>
               <div class="recuo"></div>- Série = [0-909] e CNPJ zerado ou dígito inválido, ou<br>
               <div class="recuo"></div>- Série = [910-969] e CPF zerado ou dígito inválido (NT 2018.001)
+              <br><br>Nota: Caso tpEmis = 3-NFF, considerar o 5º dígito do número da nota (nNF) para determinar se CNPJ/CPF naChave de Acesso:
+<br>CNPJ: 5º dígito do nNF = “1” , CPF: 5º dígito do nNF = “2” (NT 2021.002).
             </td>
             <td>Facult.</td>
             <td id="Rej_552">552</td>
@@ -1659,7 +1661,7 @@
           <tr class="">
             <td>C02a-04</td>
             <td>65</td>
-            <td>Se informado CPF do emitente:<br>
+            <td>Se informado CPF do emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
               <div class="recuo"></div>- Se NFC-e (modelo 65) (NT 2015.002)
             </td>
             <td>Obrig.</td>
@@ -1682,7 +1684,7 @@
           <tr class="">
             <td>C02a-10</td>
             <td>55</td>
-            <td>Se informado CPF do emitente:<br>
+            <td>Se informado CPF do emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
               <div class="recuo"></div>- Série difere da faixa para emitente CPF: 890-899 e 910-969 (NT 2018.001 / NT 2015.002)
             </td>
             <td>Obrig.</td>
@@ -1693,7 +1695,7 @@
           <tr class="">
             <td>C02a-14</td>
             <td>55</td>
-            <td>Se informado CPF do Emitente:<br>
+            <td>Se informado CPF do Emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
               <div class="recuo"></div>- Série difere da faixa para emitente CPF: 890-899 e 910-919<br><br>
               <div class="negrito">Observação: </div>Regra de validação opcional a critério da UF. Permite a emissão de NF-e por pessoa física, somente no serviço de Nota Fiscal Avulsa no site da UF. (NT 2018.001)
             </td>
@@ -1995,6 +1997,7 @@
             <td>55/65</td>
             <td>Se tag:tpAmb (id:B24) = 2:<br>
               <div class="recuo"></div>- xNome (E04) deve ser informado com a literal “NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"(NT 2011/002)
+              <br><br><span class="negrito">Exceção: </span>Não se aplica para tpEmis = 3-NFF (NT 2021.002)
             </td>
             <td>Obrig</td>
             <td id="Rej_598">598</td>
@@ -3773,6 +3776,7 @@
                   <div class="negrito">Exceção 2: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a Devolução de Mercadoria; <br>
                   <div class="negrito">Exceção 3: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a NF-e de Ajuste;  <br>
                   <div class="negrito">Exceção 4: </div> a critério da UF, a RV não se se aplica quando Tipo de Operação (tag: tpNF) igual à Entrada. (NT 2019.001 v1.50)<br>
+                    <div class="negrito">Exceção 5: </div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002).<br>
                 </td>
                 <td>Facult.</td>
                 <td id="Rej_930">930</td>
@@ -3790,6 +3794,7 @@
                   <div class="negrito">Exceção 2: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a Devolução de Mercadoria; <br>
                   <div class="negrito">Exceção 3: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a NF-e de Ajuste;  <br>
                   <div class="negrito">Exceção 4: </div> a critério da UF, a RV não se se aplica quando Tipo de Operação (tag: tpNF) igual à Entrada. (NT 2019.001 v1.50)<br>
+                    <div class="negrito">Exceção 5: </div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002).<br>
                 </td>
                 <td>Facult.</td>
                 <td id="Rej_928">928</td>
@@ -3838,6 +3843,7 @@
                   <div class="negrito">Exceção 2: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a Devolução de Mercadoria; <br>
                   <div class="negrito">Exceção 3: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a NF-e de Ajuste; <br>
                   <div class="negrito">Exceção 4: </div> a critério da UF, a RV não se aplica quando Tipo de Operação (tag: tpNF) igual à Entrada. <br>
+                    <div class="negrito">Exceção 5: </div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002).<br>
                    <div class="negrito">Nota: </div>Para itens sem benefício fiscal, a UF poderá exigir a informação da literal “SEM CBENEF” para alguns CST, vide tabela publicada no Portal da Secretaria de Fazenda da respectiva UF.<br>
                 </td>
                 <td>Facult.</td>
@@ -3872,6 +3878,7 @@
                   <div class="negrito">Exceção 3: </div> a critério da UF, a RV não se aplica quando Finalidade de emissão da NF-e (tag: finNFe) igual a NF-e de Ajuste; <br>
                   <div class="negrito">Exceção 4: </div> a critério da UF, a RV não se aplica quando Tipo de Operação (tag: tpNF) igual à Entrada. <br>
                   <div class="negrito">Exceção 5: </div> essa RV não se aplica quando informado CSOSN (operação realizada por optante pelo Simples Nacional). (NT2019.001 v1.50)<br>
+                  <div class="negrito">Exceção 6: </div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002).<br>
                 </td>
                 <td>Facult.</td>
                 <td id="Rej_946">946</td>
@@ -5705,7 +5712,9 @@
                       <td>ZD01-10</td>
                       <td>55/65</td>
                       <td>Não informado o grupo de informações do responsável técnico<br><br>
-                        <div class="negrito">Observação: </div>Implementação futura, exceto as UF de AM, MS, PE, PR, SC e TO, nas quais estas regras já estão em vigor em ambiente de teste e entrarão em vigor em ambiente de produção no dia 03 de junho de 2019  (NT 2018.005 v 1.30) </td>
+                        <div class="negrito">Observação: </div>Implementação futura, exceto as UF de AM, MS, PE, PR, SC e TO, nas quais estas regras já estão em vigor em ambiente de teste e entrarão em vigor em ambiente de produção no dia 03 de junho de 2019  (NT 2018.005 v 1.30)
+                        <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF), pois neste caso não é informado o grupo Informações do Responsável Técnico (NT 2021.002)
+                      </td>
                       <td>Facult.</td>
                       <td id="Rej_972">972</td>
                       <td>Rej.</td>
@@ -5714,7 +5723,7 @@
                     <tr class="">
                       <td>ZD02-10</td>
                       <td>55/65</td>
-                      <td>Informado CNPJ do responsável técnico inválido<br>
+                      <td>Se informado CNPJ do responsável técnico e CNPJ inválido (NT 2021.002)<br>
                         <div class="recuo"></div>- CNPJ com zeros, nulo ou DV inválido<br><br>
                         <div class="negrito">Observação: </div> Implementação futura, exceto as UF de AM, MS, PE, PR, SC e TO, nas quais estas regras já estão em vigor em ambiente de teste e entrarão em vigor em ambiente de produção no dia 03 de junho de 2019  (NT 2018.005 v 1.30)</td>
                       <td>Facult.</td>
@@ -5727,6 +5736,7 @@
                       <td>55/65</td>
                       <td>Obrigatória a informação do identificador do CSRT (tag: idCSRT) e Hash do CSTR (tag: hashCSRT)<br><br>
                         <div class="negrito">Observação: </div>Implementação futura, todas as UFs (NT 2018.005 v1.30)</td>
+                        <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF)(NT 2021.002)
                       <td>Facult.</td>
                       <td id="Rej_975">975</td>
                       <td>Rej.</td>
@@ -5757,7 +5767,9 @@
                       <td>ZX02-10</td>
                       <td>65</td>
                       <td>Não informado o campo de QR-Code para a NFC-e.<br><br>
-                      <div class="negrito">Exceção: </div> A regra de validação não se aplica, em produção, para Nota Fiscal com Data de Emissão anterior a 01/04/2016. Não sendo informado o QR-Code não se aplicam as demais validações relacionadas com este campo. (NT 2015.002)</td>
+                      <div class="negrito">Exceção 1 : </div> A regra de validação não se aplica, em produção, para Nota Fiscal com Data de Emissão anterior a 01/04/2016. Não sendo informado o QR-Code não se aplicam as demais validações relacionadas com este campo. (NT 2015.002)
+<br><div class="negrito">Exceção 2 : </div>  Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+                    </td>
                       <td>Obrig.</td>
                       <td id="Rej_394">394</td>
                       <td>Rej.</td>
@@ -6287,7 +6299,7 @@
                     <tr class="">
                       <td>1C17-10</td>
                       <td>55/65</td>
-                      <td>Se informada IE do Emitente:<br>
+                      <td>Se informada IE do Emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
                         <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: IE Emitente)<br>
                         <div class="recuo"></div>- IE Emitente não cadastrada</td>
                       <td>Obrig.</td>
@@ -6298,7 +6310,7 @@
                     <tr class="">
                       <td>1C17-20</td>
                       <td>55/65</td>
-                      <td>Se informada IE do Emitente:<br>
+                      <td>
                         <div class="recuo"></div>- IE Emitente não vinculada ao CNPJ (se informado CNPJ emitente, tratar Regime Especial de IE Única)</td>
                       <td>Obrig.</td>
                       <td id="Rej_231">231</td>
@@ -6308,7 +6320,7 @@
                     <tr class="">
                       <td>1C17-30</td>
                       <td>55/65</td>
-                      <td>Se informada IE do Emitente:<br>
+                      <td>
                         <div class="recuo"></div>- IE emitente não vinculada ao CPF (se informado CPF emitente)</td>
                       <td>Obrig.</td>
                       <td id="Rej_622">622</td>
@@ -6318,7 +6330,7 @@
                     <tr class="">
                       <td>1C17-34</td>
                       <td>55</td>
-                      <td>Se informada IE do Emitente:<br>
+                      <td>
                         <div class="recuo"></div>- Emitente não autorizado para emissão de NF-e</td>
                       <td>Obrig.</td>
                       <td id="Rej_203">203</td>
@@ -6328,7 +6340,7 @@
                     <tr class="">
                       <td>1C17-38</td>
                       <td>65</td>
-                      <td>Se informada IE do Emitente:<br>
+                      <td>
                         <div class="recuo"></div>- Emitente não autorizado para emissão de NFC-e</td>
                       <td>Obrig.</td>
                       <td id="Rej_781">781</td>
@@ -6338,8 +6350,13 @@
                     <tr class="">
                       <td>1C17-40</td>
                       <td>55/65</td>
-                      <td>Se informada IE do Emitente:<br>
-                        <div class="recuo"></div>- Emitente em situação irregular perante o Fisco</td>
+                      <td>
+                        <div class="recuo"></div>- Emitente em situação irregular perante o Fisco
+                        <br><br><div class="negrito">Observação:</div> o aplicativo emissor de NFF garante que a solicitação de emissão da NF-e é realizada
+somente para contribuintes ativos; entretanto, como é possível que ocorra um atraso no envio do
+XML para o ambiente de autorização, nessa situação, de forma excepcional e transitória, poderá
+acontecer a autorização de uso de uma NF-e para um contribuinte que já não está mais ativo na
+UF (NT 2021.002)</td>
                       <td>Obrig.</td>
                       <td id="Rej_301">301</td>
                       <td>Den.</td>
@@ -6361,6 +6378,7 @@
                       <td>Mensagens opcionais no caso de IE não vinculada ao CNPJ/CPF.<br>
                         <div class="recuo"></div>- Acessar Cadastro de Pessoa Jurídica ou Pessoa Física:<br>
                         <div class="recuo"></div>- CNPJ emitente não cadastrado</td>
+                        <br><br><div class="negrito">Exceção:</div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
                       <td>Facult.</td>
                       <td id="Rej_245">245</td>
                       <td>Rej.</td>
@@ -6371,7 +6389,8 @@
                       <td>55</td>
                       <td>Mensagens opcionais no caso de IE não vinculada ao CNPJ/CPF.<br>
                         <div class="recuo"></div>- Acessar Cadastro de Pessoa Jurídica ou Pessoa Física:<br>
-                        <div class="recuo"></div>- CPF Emitente não cadastrado (NT 2011/004)</td>
+                        <div class="recuo"></div>- CPF Emitente não cadastrado (NT 2011/004)
+                          <br><br><div class="negrito">Exceção:</div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)</td>
                       <td>Facult.</td>
                       <td id="Rej_621">621</td>
                       <td>Rej.</td>
@@ -6651,7 +6670,7 @@
                     <tr class="">
                       <td>5E17-10</td>
                       <td>55</td>
-                      <td>Se informada IE do Destinatário:<br>
+                      <td>Se informada IE do Destinatário e tpEmis <> 3-NFF (NT 2021.002):<br>
                         <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: UF Dest, IE Dest.) (*5)<br>
                         <div class="recuo"></div>- IE destinatário não cadastrada, ou situação da IE igual a exclusão lógica no CCC (CCC.cSitIE=9-Exclusão lógica) (*7) (NT 2019.001)</td>
                       <td>Obrig.</td>
@@ -6707,7 +6726,7 @@
                     <tr class="">
                       <td>5E17-50</td>
                       <td>55</td>
-                      <td>Se IE Destinatário não informada e informado CNPJ do destinatário:<br>
+                      <td>Se IE Destinatário não informada e informado CNPJ do destinatário e tpEmis <> 3-NFF (NT 2021.002):<br>
                         <div class="recuo"></div>- Acessar Cadastro Contribuinte da UF (Chave: UF-Dest, CNPJ-Dest) (*6)<br>
                         <div class="recuo"></div>- Destinatário possui IE ativa na UF (CCC.cSitIE=1-Habilitado) e CCC.IndIEDestOpc = 0 – Obrigatório (NT 2019.001)</td>
                       <td>Obrig.</td>
@@ -6736,7 +6755,7 @@
                     <tr class="">
                       <td>5E17-70</td>
                       <td>55</td>
-                      <td>Mensagens opcionais se informada IE do destinatário e IE não vinculada ao CNPJ/CPF.<br>
+                      <td>Mensagens opcionais se informada IE do destinatário e IE não vinculada ao CNPJ/CPF e tpEmis <> 3-NFF (NT 2021.002):<br>
                         <div class="recuo"></div>- Acessar Cadastro de Pessoa Jurídica ou Pessoa Física:<br>
                         <div class="recuo"></div>- CNPJ destinatário não cadastrado (NT 2019.001)</td>
                       <td>Facult.</td>

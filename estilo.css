@@ -414,6 +414,13 @@ font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 
+.linha_grupo_revogada{
+  background-color: #87CEFA;
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+
 .linha_revogada {
   text-decoration: line-through;
 }

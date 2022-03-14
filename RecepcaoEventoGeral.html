@@ -814,7 +814,11 @@
           </tr>
           <tr class="">
             <td>P12-26</td>
-            <td>• CNPJ/CPF zerado ou dígito inválido (*1) <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]</td>
+            <td>• CNPJ/CPF zerado ou dígito inválido (*1)
+              <br><br>Nota 01: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]
+              <br>Nota 02: Caso tpEmis = 3-NFF, considerar o 5º dígito do número da nota (nNF) para determinar se CNPJ/CPF na Chave de Acesso:
+              <br><div class="recuo"></div>CNPJ: 5º dígito do nNF = “1” , CPF: 5º dígito do nNF = “2” (NT 2021.002)
+            </td>
             <td>Obrig.</td>
             <td>617</td>
             <td>Rej.</td>
@@ -869,6 +873,7 @@
             <td>1P10-10</td>
             <td>Acesso ao Cadastro de Contribuintes (Chave: CNPJ do Autor):
               <br>• Verificar se Emitente não autorizado a emitir NF-e
+              <br><br><div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
             </td>
             <td>Obrig.</td>
             <td>203</td>
@@ -877,7 +882,9 @@
           </tr>
           <tr class="">
             <td>1P10-20</td>
-            <td>• Verificar situação fiscal do emitente</td>
+            <td>• Verificar situação fiscal do emitente
+<br><br><div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+            </td>
             <td>Obrig.</td>
             <td>240</td>
             <td>Rej.</td>

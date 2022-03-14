@@ -159,6 +159,7 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo I07. Produtos e Serviços / Grupo Diversos")' title='Grupo I07. Produtos e Serviços / Grupo Diversos'>Grupo I07<br><span class='subtitulo'> Produtos e Serviços /
               Grupo Diversos</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo I80. Rastreabilidade de produto")' title='Grupo I80. Rastreabilidade de produto'>Grupo I80<br><span class='subtitulo'> Rastreabilidade de produto</span></a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo I86. Informações Adicionais do Produto")' title='Grupo I86. Informações Adicionais do Produto'>Grupo I86<br><span class='subtitulo'> Informações Adicionais do Produto</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo J. Produto Específico")' title='Grupo J. Produto Específico'>Grupo J<br><span class='subtitulo'> Produto Específico</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo JA. Detalhamento Específico de Veículos novos")' title='Grupo JA. Detalhamento Específico de Veículos novos'>Grupo JA<br><span class='subtitulo'> Detalhamento
               Específico de Veículos novos</span></a><br>
@@ -236,6 +237,7 @@
               Informações do Registro de Aquisição de Cana</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo ZD. Informações do Responsável Técnico")' title='Grupo ZD. Informações do Responsável Técnico'>Grupo ZD<br><span class='subtitulo'> Informações do Responsável
               Técnico</span></a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo ZE. Informações do Pedido de Emissão da NFF")' title='Grupo ZE. Informações do Pedido de Emissão da NFF'>Grupo ZE<br><span class='subtitulo'> Informações do Pedido de Emissão da NFF</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo ZX. Informações Suplementares da Nota Fiscal")' title='Grupo ZX. Informações Suplementares da Nota Fiscal'>Grupo ZX<br><span class='subtitulo'> Informações
               Suplementares da Nota Fiscal</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo ZZ. Informações da Assinatura Digital")' title='Grupo ZZ. Informações da Assinatura Digital'>Grupo ZZ<br><span class='subtitulo'> Informações da Assinatura
@@ -538,7 +540,7 @@
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>1=Emissão normal (não em contingência);<br>2=Contingência FS-IA, com impressão do DANFE em Formulário de Segurança - Impressor Autônomo; <br>3=Contingência SCAN (Sistema de Contingência do Ambiente Nacional); *Desativado * NT 2015/002
+            <td>1=Emissão normal (não em contingência);<br>2=Contingência FS-IA, com impressão do DANFE em Formulário de Segurança - Impressor Autônomo; <br>3= Regime Especial NFF (NT 2021.002)<span class="linha_revogada">Contingência SCAN (Sistema de Contingência do Ambiente Nacional); *Desativado * NT 2015/002</span>
               <br>4=Contingência EPEC (Evento Prévio da Emissão em Contingência); <br>5=Contingência FS-DA, com impressão do DANFE em Formulário de Segurança - Documento Auxiliar; <br>6=Contingência SVC-AN (SEFAZ Virtual de Contingência do AN);
               <br>7=Contingência
               SVC-RS (SEFAZ Virtual de Contingência do RS); <8>9=Contingência off-line da NFC-e;<br>Observação: Para a NFC-e somente é válida a opção de contingência: 9-Contingência Off-Line e, a critério da UF, opção 4-Contingência EPEC. (NT
@@ -3051,6 +3053,134 @@
             <td>1-20</td>
             <td></td>
           </tr>
+        </table><br>
+        <titulo_tabela id="Grupo I86. Informações Adicionais do Produto">Grupo I86. Informações Adicionais do Produto</titulo_tabela><br><br>
+        <p>O conjunto de campos do Grupo I86 tem o objetivo agrupar as informações de codificação do produto do fisco, além de receber a operação da NFF que
+gerou a inclusão daquele produto na NF-e. Este grupo permite também a padronização da descrição da embalagem dos produtos da NFF.</p>
+<p>A primeira versão do app NFF para a utilização por produtores primários tem por objetivo permitir a utilização em operações internas de saída de legumes,
+frutas e verduras, destinadas a contribuintes do ICMS.
+É esperado que o aumento deste escopo em próximas versões tenha reflexos neste grupo.</p>
+        <table class="leiaute_nfe">
+          <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Campo</th>
+            <th>Descrição</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>128v-a</td>
+            <td>I86</td>
+            <td>infProdNFF</td>
+            <td>Informações do Produto (NT 2021.002)</td>
+            <td>G</td>
+            <td>I01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Informações do produto</td>
+          </tr>
+          <tr class="">
+            <td>128v-b</td>
+            <td>I86a</td>
+            <td>cProdFisco</td>
+            <td>Código Fiscal do Produto</td>
+            <td>E</td>
+            <td>I86</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>14</td>
+            <td>Código Fiscal do Produto</td>
+          </tr>
+          <tr class="">
+            <td>128v-c</td>
+            <td>I86b</td>
+            <td>cOperNFF</td>
+            <td>Código da Operação NFF</td>
+            <td>E</td>
+            <td>I86</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-5</td>
+            <td>Código da operação selecionada na NFF e relacionada ao item</td>
+          </tr>
+          <tr class="linha_grupo_revogada">
+            <td>128v-d</td>
+            <td>I87</td>
+            <td>infProdEmb</td>
+            <td>Informações da Embalagem do Produto (NT 2021.002)</td>
+            <td>G</td>
+            <td>I01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Informações da embalagem do produto No caso da NFF, preenchido somente se modBC = 1-Pauta</td>
+          </tr>
+        </tr>
+        <tr class="linha_grupo">
+          <td>128v-d</td>
+          <td>I86c</td>
+          <td>-x-</td>
+          <td>Sequência XML (NT 2021.002)</td>
+          <td>G</td>
+          <td>I86</td>
+          <td></td>
+          <td>0-1</td>
+          <td></td>
+          <td>No caso da NFF, preenchido somente se modBC = 1-Pauta</td>
+        </tr>
+        <tr class="">
+          <td>128v-e</td>
+          <td>I86d</td>
+          <td>xEmb</td>
+          <td>Embalagem do produto</td>
+          <td>E</td>
+          <td>I86c</td>
+          <td>C</td>
+          <td>1-1</td>
+          <td>1-8</td>
+          <td>Exemplos de embalagens:<br>
+"a granel"; "balde"; "bandeja"; "barril"; "caixa"; "copo";
+"estojo"; "fardo"; "garrafa"; "garrafão"; "lata";
+"molho"; "pacote"; "pote"; "saco"; "sacola"</td>
+        </tr>
+        <tr class="">
+          <td>128v-f</td>
+          <td>I86e</td>
+          <td>qVolEmb</td>
+          <td>Volume do produto na embalagem</td>
+          <td>E</td>
+          <td>I86c</td>
+          <td>N</td>
+          <td>1-1</td>
+          <td>7v2</td>
+          <td>Volume / quantidade do produto por unidade de medida
+na embalagem.<br>
+Ex: Caixa com 3 KG<br>
+xEmb: caixa<br>
+qVolEmb: 3<br>
+uEmb: kg</td>
+        </tr>
+        <tr class="">
+          <td>128v-g</td>
+          <td>I86f</td>
+          <td>uEmb</td>
+          <td>Unidade de Medida da Embalagem</td>
+          <td>E</td>
+          <td>I86c</td>
+          <td>C</td>
+          <td>1-1</td>
+          <td>1-8</td>
+          <td>Exemplos<br>
+      Ex: Caixa com 3 KG<br>
+      "grama"; "kg"; "ton"; "litro"; "metro"; "m3"; "m3 ester"
+  (m3 estéreo); "m2"; "unid"; "dúzia";</td>
+        </tr>
         </table><br>
         <titulo_tabela id="Grupo J. Produto Específico">Grupo J. Produto Específico</titulo_tabela><br><br>
         <table class="leiaute_nfe">
@@ -11035,6 +11165,50 @@
             <td>1-1</td>
             <td>28</td>
             <td>O hashCSRT é o resultado da função hash (SHA-1 – Base64) do CSRT fornecido pelo fisco mais a Chave de Acesso da NFe.</td>
+          </tr>
+        </table><br>
+        <titulo_tabela id="Grupo ZE. Informações do Pedido de Emissão da NFF">Grupo ZE. Informações do Pedido de Emissão da NFF</titulo_tabela><br><br>
+        <p>O pedido de emissão da NFF existirá somente na hipótese de tipo de emissão = 3-NFF e será gerado exclusivamente pelo aplicativo emissor, que também poderá gerar pedidos de evento.</p>
+        <p>Essa tag deverá conter todos os campos e valores gerados pelo aplicativo para integrar o pedido de emissão ou o pedido de registro de evento.</p>
+        <p>Fica adicionada a estrutura a seguir ao schema da NF-e e do pedido de Evento:</p>
+          <img src="./Imagens/NFe_GrupoZE_NFF.png" alt="Grupo ZE">
+          <br>
+        <table class="leiaute_nfe">
+          <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Campo</th>
+            <th>Descrição</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>423i</td>
+            <td>ZE01</td>
+            <td>infSolicNFF</td>
+            <td>Informações de solicitação da NFF (NT 2021.002)</td>
+            <td>G</td>
+            <td>A01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo para informações da solicitação da NFF</td>
+          </tr>
+          <tr class="">
+            <td>423j</td>
+            <td>ZE02</td>
+            <td>xSolic</td>
+            <td>Solicitação de pedido de emissão da NFF</td>
+            <td>E</td>
+            <td>ZE01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>2-5000</td>
+            <td>Campos do pedido preenchidos no aplicativo móvel (app) da NFF, no formato JSON</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo ZX. Informações Suplementares da Nota Fiscal">Grupo ZX. Informações Suplementares da Nota Fiscal</titulo_tabela><br><br>
