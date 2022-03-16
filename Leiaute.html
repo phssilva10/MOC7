@@ -220,6 +220,7 @@
               Devolvidos (para o item da NF-e)</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo V. Informações adicionais (para o item da NF-e)")' title='Grupo V. Informações adicionais (para o item da NF-e)'>Grupo V<br><span class='subtitulo'> Informações
               adicionais (para o item da NF-e)</span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo VA. Observações de uso livre (para o item da NF-e)")' title='Grupo VA. Observações de uso livre (para o item da NF-e)'>Grupo VA<br><span class='subtitulo'> Observações de uso livre (para o item da NF-e)</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo W. Total da NF-e")' title='Grupo W. Total da NF-e'>Grupo W<br><span class='subtitulo'> Total da NF-e</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo W01. Total da NF-e / ISSQN")' title='Grupo W01. Total da NF-e / ISSQN'>Grupo W01<br><span class='subtitulo'> Total da NF-e / ISSQN</span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Grupo W02. Total da NF-e / Retenção de Tributos")' title='Grupo W02. Total da NF-e / Retenção de Tributos'>Grupo W02<br><span class='subtitulo'> Total da NF-e /
@@ -625,7 +626,7 @@
             <td>0=Operação sem intermediador (em site ou plataforma própria)<br>1=Operação em site ou plataforma de terceiros (intermediadores/marketplace)<br>
               <ul>
                 <li>Considera-se intermediador/marketplace os prestadores de serviços e de negócios referentes às transações comerciais ou de prestação de serviços intermediadas, realizadas por pessoas jurídicas inscritas no Cadastro Nacional de
-                  Pessoa Jurídica - CNPJ ou pessoas físicas inscritas no Cadastro de Pessoa Física - CPF, ainda que não inscritas no cadastro de contribuintes do ICMS.</li>
+                  Pessoa Jurídica - CNPJ <span style="text-decoration: line-through">ou pessoas físicas inscritas no Cadastro de Pessoa Física - CPF</span>, ainda que não inscritas no cadastro de contribuintes do ICMS.</li>
                 <li>Considera-se site/plataforma própria as vendas que não foram intermediadas (por marketplace), como venda em site próprio, teleatendimento.</li>
               </ul><br> (Criado na NT 2020.006)
             </td>
@@ -2297,6 +2298,18 @@
             <td>Preencher com o código GTIN-8, GTIN-12, GTIN-13 ou GTIN-14 (antigos códigos EAN, UPC e DUN-14). Para produtos que não possuem código de barras com GTIN, deve ser informado o literal “SEM GTIN”; (atualizado NT 2017/001)</td>
           </tr>
           <tr class="">
+            <td>102.01</td>
+            <td>I03a</td>
+            <td>cBarra</td>
+            <td>Código de barras diferente do padrão GTIN</td>
+            <td>E</td>
+            <td>I01</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>3-30</td>
+            <td>Preencher com o Código de Barras próprio ou de terceiros que seja diferente do padrão GTIN</td>
+          </tr>
+          <tr class="">
             <td>103</td>
             <td>I04</td>
             <td>xProd</td>
@@ -2322,7 +2335,7 @@
             </td>
           </tr>
           <tr class="">
-            <td>104a</td>
+            <td>104.01</td>
             <td>I05a</td>
             <td>NVE</td>
             <td>Codificação NVE - Nomenclatura de Valor Aduaneiro e Estatística.</td>
@@ -2335,7 +2348,7 @@
                 href="./index.html#8.6. Identificador: Nomenclatura de Valor Aduaneiro e Estatística">Nomenclatura de Valor Aduaneiro e Estatística</a>.</td>
           </tr>
           <tr class="linha_grupo">
-            <td>104b</td>
+            <td>104.02</td>
             <td>105b</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -2347,7 +2360,7 @@
             <td>(Incluído na NT 2016.002)</td>
           </tr>
           <tr class="">
-            <td>104d</td>
+            <td>104.03</td>
             <td>105c</td>
             <td>CEST</td>
             <td>Código CEST</td>
@@ -2360,7 +2373,7 @@
               recolhimento do ICMS.<br>(Incluído na NT 2015/003. Atualizado NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>104e</td>
+            <td>104.04</td>
             <td>105d</td>
             <td>indEscala</td>
             <td>Indicador de Escala Relevante</td>
@@ -2373,7 +2386,7 @@
               relacionado no Anexo XXVII do Convenio 52/2017<br>(Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>104f</td>
+            <td>104.05</td>
             <td>105e</td>
             <td>CNPJFab</td>
             <td>CNPJ do Fabricante da Mercadoria</td>
@@ -2385,7 +2398,7 @@
             <td>CNPJ do Fabricante da Mercadoria, obrigatório para produto em escala NÃO relevante.<br>(Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>104g</td>
+            <td>104.06</td>
             <td>I05f</td>
             <td>cBenef</td>
             <td>Código de Benefício Fiscal na UF aplicado ao item.</td>
@@ -2445,7 +2458,7 @@
             <td>Informar a quantidade de comercialização do produto (v2.0).</td>
           </tr>
           <tr class="">
-            <td>109a</td>
+            <td>109.01</td>
             <td>I10a</td>
             <td>vUnCom</td>
             <td>Valor Unitário de Comercialização</td>
@@ -2467,7 +2480,7 @@
             <td>N</td>
             <td>1-1</td>
             <td>13v2</td>
-            <td>O valor do ICMS faz parte do Valor Total Bruto</td>
+            <td>O valor do ICMS faz parte do Valor Total Bruto, exceto nas notas de importação (NT 2020.005)</td>
           </tr>
           <tr class="">
             <td>111</td>
@@ -2481,6 +2494,18 @@
             <td>0,8,12,13,14</td>
             <td>Preencher com o código GTIN-8, GTIN-12, GTIN-13 ou GTIN-14 (antigos códigos EAN, UPC e DUN-14) da unidade tributável do produto. O GTIN da unidade tributável deve corresponder àquele da menor unidade comercializável identificada por
               código GTIN. Para produtos que não possuem código de barras com GTIN, deve ser informado o literal "SEM GTIN”; (Atualizado NT 2017/001)</td>
+          </tr>
+          <tr class="">
+            <td>111.01</td>
+            <td>I12a</td>
+            <td>cBarraTrib</td>
+            <td>Código de Barras da unidade tributável que seja diferente do padrão GTIN</td>
+            <td>E</td>
+            <td>I01</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>3-30</td>
+            <td>Preencher com o Código de Barras próprio ou de terceiros, que seja diferente do padrão GTIN, correspondente àquele da menor unidade comercializável identificado por Código de Barras</td>
           </tr>
           <tr class="">
             <td>112</td>
@@ -2507,7 +2532,7 @@
             <td>O GTIN da unidade tributável deve corresponder àquele da menor unidade comercializável identificada por código GTIN.</td>
           </tr>
           <tr class="">
-            <td>113a</td>
+            <td>113.01</td>
             <td>I14a</td>
             <td>vUnTrib</td>
             <td>Valor Unitário de tributação</td>
@@ -2609,13 +2634,13 @@
             <td>118</td>
             <td>I19</td>
             <td>nDI</td>
-            <td>Número do Documento de Importação (DI, DSI, DIRE, ...)</td>
+            <td>Número do Documento de Importação (DI, DSI, DIRE, DUImp)</td>
             <td>E</td>
             <td>I18</td>
             <td>C</td>
             <td>1-1</td>
-            <td>1 - 12</td>
-            <td>(NT 2011/004)</td>
+            <td>1 - 15</td>
+            <td>(NT 2011/004) (Atualizado pela NT 2020.005)</td>
           </tr>
           <tr class="">
             <td>119</td>
@@ -2666,19 +2691,25 @@
             <td>Formato: “AAAA-MM-DD”</td>
           </tr>
           <tr class="">
-            <td>122a</td>
+            <td>122.01</td>
             <td>I23a</td>
             <td>tpViaTransp</td>
-            <td>Via de transporte internacional informada na Declaração de Importação (DI)</td>
+            <td>Via de transporte internacional informada na Declaração de Importação (DI) ou na Declaração Única de Importação (DUImp) (NT 2020.005)</td>
             <td>E</td>
             <td>I18</td>
             <td>N</td>
             <td>1-1</td>
             <td>2</td>
-            <td>1=Marítima;<br>2=Fluvial;<br>3=Lacustre;<br>4=Aérea;<br>5=Postal;<br>6=Ferroviária;<br>7=Rodoviária;</td>
+            <td>1=Marítima;<br>2=Fluvial;<br>3=Lacustre;<br>4=Aérea;<br>5=Postal;<br>6=Ferroviária;<br>7=Rodoviária;
+              <br>8=Conduto/Rede Transmissão;
+  <br>9=Meios Próprios;
+  <br>10=Entrada/Saída Ficta;
+  <br>11=Courier;
+  <br>12=Em mãos;
+  <br>13=Por reboque;</td>
           </tr>
           <tr class="">
-            <td>122b</td>
+            <td>122.02</td>
             <td>I23b</td>
             <td>vAFRMM</td>
             <td>Valor da AFRMM - Adicional ao Frete para Renovação da Marinha Mercante</td>
@@ -2690,7 +2721,7 @@
             <td>A tag deve ser informada no caso da via de transporte marítima.</td>
           </tr>
           <tr class="">
-            <td>122c</td>
+            <td>122.03</td>
             <td>I23c</td>
             <td>tpIntermedio</td>
             <td>Forma de importação quanto a intermediação</td>
@@ -2702,7 +2733,7 @@
             <td>1=Importação por conta própria;<br>2=Importação por conta e ordem;<br>3=Importação por encomenda;</td>
           </tr>
           <tr class="">
-            <td>122d</td>
+            <td>122.04</td>
             <td>I23d</td>
             <td>CNPJ</td>
             <td>CNPJ do adquirente ou do encomendante</td>
@@ -2714,7 +2745,7 @@
             <td>Obrigatória a informação no caso de importação por conta e ordem ou por encomenda. Informar os zeros não significativos</td>
           </tr>
           <tr class="">
-            <td>122e</td>
+            <td>122.05</td>
             <td>I23e</td>
             <td>UFTerceiro</td>
             <td>Sigla da UF do adquirente ou do encomendante</td>
@@ -2741,13 +2772,13 @@
             <td>124</td>
             <td>I25</td>
             <td>adi</td>
-            <td>Adições</td>
+            <td>Adições e/ou itens</td>
             <td>G</td>
             <td>I18</td>
             <td></td>
-            <td>1-100</td>
+            <td>1-999</td>
             <td></td>
-            <td>(NT 2011/004)</td>
+            <td>(NT 2011/004) (NT 2021.005)</td>
           </tr>
           <tr class="">
             <td>125</td>
@@ -2757,20 +2788,20 @@
             <td>E</td>
             <td>I25</td>
             <td>N</td>
-            <td>1-1</td>
+            <td>0-1</td>
             <td>1 - 3</td>
-            <td></td>
+            <td>No caso de DUImp esse campo não deverá ser preenchido (NT 2020.005)</td>
           </tr>
           <tr class="">
             <td>126</td>
             <td>I27</td>
             <td>nSeqAdic</td>
-            <td>Numero sequencial do item dentro da Adição</td>
+            <td>Numero sequencial do item <span class="linha_revogada">dentro da Adição</span> (NT 2020.005)</td>
             <td>E</td>
             <td>I25</td>
             <td>N</td>
             <td>1-1</td>
-            <td>1 - 3</td>
+            <td>1 - 5</td>
             <td></td>
           </tr>
           <tr class="">
@@ -2804,9 +2835,9 @@
             <td>Número do ato concessório de Drawback</td>
             <td>E</td>
             <td>I25</td>
-            <td>N</td>
+            <td>C</td>
             <td>0-1</td>
-            <td>0, 9 ou 11</td>
+            <td>1-20</td>
             <td>O número do Ato Concessório de Suspensão deve ser preenchido com 11 dígitos (AAAANNNNNND) e o número do Ato Concessório de Drawback Isenção deve ser preenchido com 9 dígitos (AANNNNNND). (Observação incluída na NT 2013/005 v. 1.10)
             </td>
           </tr>
@@ -2844,9 +2875,9 @@
             <td>Número do ato concessório de Drawback</td>
             <td>E</td>
             <td>I50</td>
-            <td>N</td>
+            <td>C</td>
             <td>0-1</td>
-            <td>0, 9 ou 11</td>
+            <td>1-20</td>
             <td>O número do Ato Concessório de Suspensão deve ser preenchido com 11 dígitos (AAAANNNNNND) e o número do Ato Concessório de Drawback Isenção deve ser preenchido com 9 dígitos (AANNNNNND). (Observação incluída na NT 2013/005 v. 1.10)
             </td>
           </tr>
@@ -3050,7 +3081,7 @@
             <td>Código de Agregação</td>
             <td>E</td>
             <td>I80</td>
-            <td>N</td>
+            <td>C</td>
             <td>0-1</td>
             <td>1-20</td>
             <td></td>
@@ -3355,7 +3386,7 @@ uEmb: kg</td>
             <td>C</td>
             <td>1-1</td>
             <td>1 - 2</td>
-            <td>Utilizar Tabela RENAVAM (v2.0):<br>01=Álcool<br>02=Gasolina<br>03=Diesel<br>(...)<br>16=Álcool/Gasolina<br>17=Gasolina/Álcool/GNV<br>18=Gasolina/Elétrico</td>
+            <td>Utilizar Tabela RENAVAM</td>
           </tr>
           <tr class="">
             <td>140</td>
@@ -3439,10 +3470,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1 - 2</td>
-            <td>Utilizar Tabela RENAVAM, conforme exemplos abaixo:
-              <br>02=CICLOMOTO<br>03=MOTONETA<br>04=MOTOCICLO<br>05=TRICICLO<br>06=AUTOMÓVEL<br>07=MICROÔNIBUS<br>08=ÔNIBUS<br>10=REBOQUE<br>11=SEMIRREBOQUE<br>13=CAMINHONETA<br>14=CAMINHÃO<br>17=C. TRATOR<br>22=ESP / ÔNIBUS<br>23=MISTO /
-              CAM<br>24=CARGA/CAM<br>(...)
-            </td>
+            <td>Utilizar Tabela RENAVAM</td>
           </tr>
           <tr class="">
             <td>148</td>
@@ -3454,7 +3482,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>Utilizar Tabela RENAVAM <br>1=PASSAGEIRO<br>2=CARGA<br>3=MISTO<br>4=CORRIDA<br>5=TRAÇÃO<br>6=ESPECIAL</td>
+            <td>Utilizar Tabela RENAVAM</td>
           </tr>
           <tr class="">
             <td>149</td>
@@ -4385,7 +4413,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>0=Preço tabelado ou máximo sugerido;<br>1=Lista Negativa (valor);<br>2=Lista Positiva (valor);<br>3=Lista Neutra (valor);<br>4=Margem Valor Agregado (%);<br>5=Pauta (valor);</td>
+            <td>0=Preço tabelado ou máximo sugerido;<br>1=Lista Negativa (valor);<br>2=Lista Positiva (valor);<br>3=Lista Neutra (valor);<br>4=Margem Valor Agregado (%);<br>5=Pauta (valor);<br>6=Valor da Operação;</td>
           </tr>
           <tr class="">
             <td>180</td>
@@ -4494,6 +4522,42 @@ uEmb: kg</td>
             <td>1-1</td>
             <td>13v2</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>184.10</td>
+            <td>N33.1</td>
+            <td>-x-</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>N03</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo opcional</td>
+          </tr>
+          <tr class="">
+            <td>184.11</td>
+            <td>N33a</td>
+            <td>vICMSSTDeson</td>
+            <td>Valor do ICMS- ST desonerado </td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td> Informar apenas nos motivos de desoneração documentados abaixo</td>
+          </tr>
+          <tr class="">
+            <td>184.12</td>
+            <td>N33b</td>
+            <td>motDesICMSST</td>
+            <td>Motivo da desoneração do ICMS- ST</td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Campo será preenchido quando o campo anterior estiver preenchido. Informar o motivo da desoneração:<br>3=Uso na agropecuária;<br>9=Outros;<br>12=Órgão de fomento e desenvolvimento agropecuário</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo N04. Grupo Tributação do ICMS= 20">Grupo N04. Grupo Tributação do ICMS= 20</titulo_tabela><br><br>
@@ -4761,7 +4825,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor)</td>
+            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor);<br>6=Valor da Operação;</td>
           </tr>
           <tr class="">
             <td>197</td>
@@ -5158,7 +5222,7 @@ uEmb: kg</td>
             <td>Informar o valor realmente devido.</td>
           </tr>
           <tr class="linha_grupo">
-            <td>212.0</td>
+            <td>212.01</td>
             <td>N17.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5167,10 +5231,10 @@ uEmb: kg</td>
             <td></td>
             <td>0-1</td>
             <td></td>
-            <td>Grupo opcional. (Incluído na NT 2016/002)</td>
+            <td>Grupo opcional.</td>
           </tr>
           <tr class="">
-            <td>212.w</td>
+            <td>212.02</td>
             <td>N17a</td>
             <td>vBCFCP</td>
             <td>Valor da Base de Cálculo do FCP</td>
@@ -5182,7 +5246,7 @@ uEmb: kg</td>
             <td>Informar o valor da Base de Cálculo do FCP</td>
           </tr>
           <tr class="">
-            <td>212.x</td>
+            <td>212.03</td>
             <td>N17b</td>
             <td>pFCP</td>
             <td>Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5194,7 +5258,7 @@ uEmb: kg</td>
             <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP).</td>
           </tr>
           <tr class="">
-            <td>212.y</td>
+            <td>212.04</td>
             <td>N17c</td>
             <td>vFCP</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5203,7 +5267,55 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>13v2</td>
-            <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP).</td>
+            <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP). Valor realmente devido, já considerando o diferimento(NT 2020.005)</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>212.05</td>
+            <td>N17.2</td>
+            <td>-x-</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>N07</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo Opcional (NT 2020.005)</td>
+          </tr>
+          <tr class="">
+            <td>212.06</td>
+            <td>N17d</td>
+            <td>pFCPDif</td>
+            <td>Percentual do diferimento do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
+            <td>E</td>
+            <td>N17.2</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3v2-4</td>
+            <td>Percentual do diferimento do ICMS relativo ao Fundo de Combate à Pobreza (FCP). No caso de diferimento total, informar o percentual de diferimento "100"</td>
+          </tr>
+          <tr class="">
+            <td>212.07</td>
+            <td>N17e</td>
+            <td>vFCPDif</td>
+            <td> Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) diferido </td>
+            <td>E</td>
+            <td>N17.2</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td>Valor do ICMS relativo ao Fundo de Combate à Pobrez (FCP) diferido</td>
+          </tr>
+          <tr class="">
+            <td>212.08</td>
+            <td>N17f</td>
+            <td>vFCPEfet</td>
+            <td>Valor efetivo do ICMS relativo ao Fundo de Combate à Pobreza (FCP) </td>
+            <td>E</td>
+            <td>N17.2</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>13v2</td>
+            <td>Valor do ICMS relativo ao Fundo de Combate à Pobrez (FCP) realmente devido.</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo N08. Grupo Tributação do ICMS= 60">Grupo N08. Grupo Tributação do ICMS= 60</titulo_tabela><br><br>
@@ -5548,7 +5660,7 @@ uEmb: kg</td>
             <td></td>
           </tr>
           <tr class="linha_grupo">
-            <td>225.0</td>
+            <td>225.01</td>
             <td>N17.0</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5560,7 +5672,7 @@ uEmb: kg</td>
             <td>Grupo opcional. (Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>225.1</td>
+            <td>225.02</td>
             <td>N17a</td>
             <td>vBCFCP</td>
             <td>Valor da Base de Cálculo do FCP</td>
@@ -5572,7 +5684,7 @@ uEmb: kg</td>
             <td>Informar o valor da Base de Cálculo do FCP retido anteriormente por ST</td>
           </tr>
           <tr class="">
-            <td>225.2</td>
+            <td>225.03</td>
             <td>N17b</td>
             <td>pFCP</td>
             <td>Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5584,7 +5696,7 @@ uEmb: kg</td>
             <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária. Nota: Percentual máximo de 2%, conforme a legislação.</td>
           </tr>
           <tr class="">
-            <td>225.3</td>
+            <td>225.04</td>
             <td>N17c</td>
             <td>vFCP</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5605,7 +5717,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor)</td>
+            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor);<br>6=Valor da operação;</td>
           </tr>
           <tr class="">
             <td>227</td>
@@ -5668,7 +5780,7 @@ uEmb: kg</td>
             <td>Valor do ICMS ST retido</td>
           </tr>
           <tr class="linha_grupo">
-            <td>231.0</td>
+            <td>231.10</td>
             <td>N23.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5680,7 +5792,7 @@ uEmb: kg</td>
             <td>Grupo opcional. (Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>231.w</td>
+            <td>231.11</td>
             <td>N23a</td>
             <td>vBCFCPST</td>
             <td>Informar o valor da Base de Cálculo do FCP retido por Substituição Tributária</td>
@@ -5692,7 +5804,7 @@ uEmb: kg</td>
             <td>Informar o valor da Base de Cálculo do FCP retido por Substituição Tributária</td>
           </tr>
           <tr class="">
-            <td>231.x</td>
+            <td>231.12</td>
             <td>N23b</td>
             <td>pFCPST</td>
             <td>Percentual do FCP retido por Substituição Tributária</td>
@@ -5704,7 +5816,7 @@ uEmb: kg</td>
             <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária. Nota: Percentual máximo de 2%, conforme a legislação.</td>
           </tr>
           <tr class="">
-            <td>231.y</td>
+            <td>231.13</td>
             <td>N23d</td>
             <td>vFCPST</td>
             <td>Valor do FCP retido por Substituição Tributária</td>
@@ -5716,7 +5828,7 @@ uEmb: kg</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
           </tr>
           <tr class="linha_grupo">
-            <td>231.1</td>
+            <td>231.20</td>
             <td>N27.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5728,7 +5840,7 @@ uEmb: kg</td>
             <td>Grupo opcional.</td>
           </tr>
           <tr class="">
-            <td>231.2</td>
+            <td>231.21</td>
             <td>N28a</td>
             <td>vICMSDeson</td>
             <td>Valor do ICMS desonerado</td>
@@ -5740,7 +5852,7 @@ uEmb: kg</td>
             <td>Informar apenas nos motivos de desoneração documentados abaixo.</td>
           </tr>
           <tr class="">
-            <td>231.3</td>
+            <td>231.22</td>
             <td>N28</td>
             <td>motDesICMS</td>
             <td>Motivo da desoneração do ICMS</td>
@@ -5750,6 +5862,45 @@ uEmb: kg</td>
             <td>1-1</td>
             <td>2</td>
             <td>Campo será preenchido quando o campo anterior estiver preenchido. Informar o motivo da desoneração: <br>3=Uso na agropecuária;<br>9=Outros;<br>12=Órgão de fomento e desenvolvimento agropecuário</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>231.30</td>
+            <td>N33.1</td>
+            <td>-x-</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>N09</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo Opcional</td>
+          </tr>
+          <tr class="">
+            <td>231.31</td>
+            <td>N33a</td>
+            <td>vICMSSTDeson</td>
+            <td>Valor do ICMS- ST desonerado</td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td> Informar apenas nos motivos de desoneração documentados abaixo.</td>
+          </tr>
+          <tr class="">
+            <td>231.32</td>
+            <td>N33b</td>
+            <td>motDesICMSST</td>
+            <td>Motivo da desoneração do ICMS- ST</td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Campo será preenchido quando o campo anterior estiver preenchido. Informar o motivo da desoneração:
+              <br>3=Uso na agropecuária;
+              <br>9=Outros
+              <br>12=Órgão de fomento e desenvolvimento agropecuário</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo N10. Grupo Tributação do ICMS= 90">Grupo N10. Grupo Tributação do ICMS= 90</titulo_tabela><br><br>
@@ -5880,7 +6031,7 @@ uEmb: kg</td>
             <td></td>
           </tr>
           <tr class="linha_grupo">
-            <td>239.0</td>
+            <td>239.01</td>
             <td>N17.0</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5892,7 +6043,7 @@ uEmb: kg</td>
             <td>Grupo opcional. (Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>239.w</td>
+            <td>239.02</td>
             <td>N17a</td>
             <td>vBCFCP</td>
             <td>Valor da Base de Cálculo do FCP</td>
@@ -5904,7 +6055,7 @@ uEmb: kg</td>
             <td>Informar o valor da Base de Cálculo do FCP</td>
           </tr>
           <tr class="">
-            <td>239.x</td>
+            <td>239.03</td>
             <td>N17b</td>
             <td>pFCP</td>
             <td>Percentual do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5916,7 +6067,7 @@ uEmb: kg</td>
             <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP). Nota: Percentual máximo de 2%, conforme a legislação.</td>
           </tr>
           <tr class="">
-            <td>239.y</td>
+            <td>239.04</td>
             <td>N17c</td>
             <td>vFCP</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP)</td>
@@ -5928,7 +6079,7 @@ uEmb: kg</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP).</td>
           </tr>
           <tr class="linha_grupo">
-            <td>239.1</td>
+            <td>239.10</td>
             <td>N17.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -5949,7 +6100,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>1</td>
-            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor);</td>
+            <td>0=Preço tabelado ou máximo sugerido<br>1=Lista Negativa (valor)<br>2=Lista Positiva (valor)<br>3=Lista Neutra (valor)<br>4=Margem Valor Agregado (%)<br>5=Pauta (valor);<br>6=Valor da Operação;</td>
           </tr>
           <tr class="">
             <td>241</td>
@@ -6012,7 +6163,7 @@ uEmb: kg</td>
             <td>Valor do ICMS ST retido</td>
           </tr>
           <tr class="linha_grupo">
-            <td>245.0</td>
+            <td>245.20</td>
             <td>N23.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -6024,7 +6175,7 @@ uEmb: kg</td>
             <td>Grupo opcional. (Incluído na NT 2016/002)</td>
           </tr>
           <tr class="">
-            <td>245.w</td>
+            <td>245.21</td>
             <td>N23.a</td>
             <td>vBCFCPST</td>
             <td>Valor da Base de Cálculo do FCP retido por Substituição Tributária</td>
@@ -6036,7 +6187,7 @@ uEmb: kg</td>
             <td>Informar o valor da Base de Cálculo do FCP retido por Substituição Tributária</td>
           </tr>
           <tr class="">
-            <td>245.x</td>
+            <td>245.22</td>
             <td>N23.b</td>
             <td>pFCPST</td>
             <td>Percentual do FCP retido por Substituição Tributária</td>
@@ -6048,7 +6199,7 @@ uEmb: kg</td>
             <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
           </tr>
           <tr class="">
-            <td>245.y</td>
+            <td>245.23</td>
             <td>N23.d</td>
             <td>vFCPST</td>
             <td>Valor do FCP retido por Substituição Tributária</td>
@@ -6060,7 +6211,7 @@ uEmb: kg</td>
             <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
           </tr>
           <tr class="linha_grupo">
-            <td>245.1</td>
+            <td>245.24</td>
             <td>N27.1</td>
             <td>-x-</td>
             <td>Sequência XML</td>
@@ -6072,7 +6223,7 @@ uEmb: kg</td>
             <td>Grupo opcional.</td>
           </tr>
           <tr class="">
-            <td>245.2</td>
+            <td>245.25</td>
             <td>N28a</td>
             <td>vICMSDeson</td>
             <td>Valor do ICMS desonerado</td>
@@ -6084,7 +6235,7 @@ uEmb: kg</td>
             <td>Informar apenas nos motivos de desoneração documentados abaixo.</td>
           </tr>
           <tr class="">
-            <td>245.3</td>
+            <td>245.26</td>
             <td>N28</td>
             <td>motDesICMS</td>
             <td>Motivo da desoneração do ICMS</td>
@@ -6094,6 +6245,45 @@ uEmb: kg</td>
             <td>1-1</td>
             <td>2</td>
             <td>Campo será preenchido quando o campo anterior estiver preenchido. Informar o motivo da desoneração: <br>3=Uso na agropecuária;<br>9=Outros;<br>12=Órgão de fomento e desenvolvimento agropecuário.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>245.30</td>
+            <td>N33.1</td>
+            <td>-x-</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>N17.1</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo Opcional</td>
+          </tr>
+          <tr class="">
+            <td>245.31</td>
+            <td>N33a</td>
+            <td>vICMSSTDeson</td>
+            <td>Valor do ICMS- ST desonerado</td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td> Informar apenas nos motivos de desoneração documentados abaixo</td>
+          </tr>
+          <tr class="">
+            <td>245.32</td>
+            <td>N33b</td>
+            <td>motDesICMSST</td>
+            <td>Motivo da desoneração do ICMS- ST</td>
+            <td>E</td>
+            <td>N33.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Campo será preenchido quando o campo anterior estiver preenchido. Informar o motivo da desoneração:
+              <br>3=Uso na agropecuária
+              <br>9=Outros
+              <br>12=Órgão de fomento e desenvolvimento agropecuário</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo N10a. Grupo de Partilha do ICMS">Grupo N10a. Grupo de Partilha do ICMS</titulo_tabela><br><br>
@@ -6282,6 +6472,54 @@ uEmb: kg</td>
             <td>1-1</td>
             <td>13v2</td>
             <td>Valor do ICMS ST(v2.0)</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>245.14a</td>
+            <td>N23.1</td>
+            <td>-x-</td>
+            <td>Sequência XML</td>
+            <td>G</td>
+            <td>N10a</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Grupo opcional para informações do FCP retido por ST (NT 2021.004)</td>
+          </tr>
+          <tr class="">
+            <td>245.14b</td>
+            <td>N23.a</td>
+            <td>vBCFCPST</td>
+            <td>Valor da Base de Cálculo do FCP ST</td>
+            <td>E</td>
+            <td>N23.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td>Informar o valor da Base de Cálculo do FCP retido por Substituição Tributária</td>
+          </tr>
+          <tr class="">
+            <td>245.14c</td>
+            <td>N23.b</td>
+            <td>pFCPST</td>
+            <td>Percentual do FCP ST</td>
+            <td>E</td>
+            <td>N23.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3v2-4</td>
+            <td>Percentual relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
+          </tr>
+          <tr class="">
+            <td>245.14d</td>
+            <td>N23.c</td>
+            <td>vFCPST</td>
+            <td>Valor do FCP ST</td>
+            <td>E</td>
+            <td>N23.1</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>13v2</td>
+            <td>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP) retido por substituição tributária.</td>
           </tr>
           <tr class="">
             <td>245.15</td>
@@ -8453,6 +8691,19 @@ uEmb: kg</td>
             <td>13v2</td>
             <td></td>
           </tr>
+          <tr class="">
+            <td>292.01</td>
+            <td>R07</td>
+            <td>indSomaPISST</td>
+            <td>Indica se o valor do PISST compõe o valor total da NF-e </td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1</td>
+            <td>0=Valor do PISST não compõe o valor total da NF-e
+              <br>1=Valor do PISST compõe o valor total da NF-e</td>
+          </tr>
         </table><br>
         <titulo_tabela id="Grupo S. COFINS">Grupo S. COFINS</titulo_tabela><br><br>
         <table class="leiaute_nfe">
@@ -8856,6 +9107,19 @@ uEmb: kg</td>
             <td>13v2</td>
             <td></td>
           </tr>
+          <tr class="">
+            <td>318.01</td>
+            <td>T07</td>
+            <td>indSomaCOFINSST</td>
+            <td> Indica se o valor da COFINS ST compõe o valor total da NFe</td>
+            <td>E</td>
+            <td>T01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1</td>
+            <td> 0=Valor da COFINSST não compõe o valor total da NF-e
+              <br>1=Valor da COFINSST compõe o valor total da NF-e</td>
+          </tr>
         </table><br>
         <titulo_tabela id="Grupo U. ISSQN">Grupo U. ISSQN</titulo_tabela><br><br>
         <table class="leiaute_nfe">
@@ -9166,6 +9430,105 @@ uEmb: kg</td>
             <td>0-1</td>
             <td>1-500</td>
             <td>Norma referenciada, informações complementares, etc.</td>
+          </tr>
+        </table><br>
+        <titulo_tabela id="Grupo VA. Observações de uso livre (para o item da NF-e)">Grupo VA. Observações de uso livre (para o item da NF-e)</titulo_tabela><br><br>
+        <table class="leiaute_nfe">
+          <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Campo</th>
+            <th>Descrição</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>325a</td>
+            <td>VA01</td>
+            <td>obsItem</td>
+            <td>Grupo de observações de uso livre (para o item da NF-e)</td>
+            <td>G</td>
+            <td>H01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>NT 2021.004</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>325b</td>
+            <td>VA02</td>
+            <td>obsCont</td>
+            <td> Grupo de observações de uso livre do Contribuinte</td>
+            <td>G</td>
+            <td>VA01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Campo de uso livre do Contribuinte para o item da NF-e. Informar o nome do campo no atributo xCampo e o conteúdo do campo no xTexto.</td>
+          </tr>
+          <tr class="">
+            <td>325c</td>
+            <td>VA03</td>
+            <td>xCampo</td>
+            <td>Identificação do campo</td>
+            <td>A</td>
+            <td>VA02</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Identificação do campo</td>
+          </tr>
+          <tr class="">
+            <td>325d</td>
+            <td>VA04</td>
+            <td>xTexto</td>
+            <td>Conteúdo do campo</td>
+            <td>E</td>
+            <td>VA02</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-60</td>
+            <td>Conteúdo do campo</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>325e</td>
+            <td>VA05</td>
+            <td>obsFisco</td>
+            <td>Grupo de observações de uso livre do Fisco</td>
+            <td>G</td>
+            <td>VA01</td>
+            <td></td>
+            <td>0-1</td>
+            <td></td>
+            <td>Campo de uso livre do Fisco para o item da NF-e. Informar o nome do campo no atributo xCampo e o conteúdo do campo no xTexto.</td>
+          </tr>
+          <tr class="">
+            <td>325f</td>
+            <td>VA06</td>
+            <td>xCampo</td>
+            <td>Identificação do campo</td>
+            <td>A</td>
+            <td>VA05</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Identificação do campo</td>
+          </tr>
+          <tr class="">
+            <td>325g</td>
+            <td>VA07</td>
+            <td>xTexto</td>
+            <td>Conteúdo do campo</td>
+            <td>E</td>
+            <td>VA05</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-60</td>
+            <td>Conteúdo do campo</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo W. Total da NF-e">Grupo W. Total da NF-e</titulo_tabela><br><br>
@@ -10034,7 +10397,7 @@ uEmb: kg</td>
             <td>E</td>
             <td>X18</td>
             <td>C</td>
-            <td>1-1</td>
+            <td>0-1</td>
             <td>2</td>
             <td>Informar "EX" se Exterior.</td>
           </tr>
@@ -10082,7 +10445,7 @@ uEmb: kg</td>
             <td>E</td>
             <td>X22</td>
             <td>C</td>
-            <td>1-1</td>
+            <td>0-1</td>
             <td>2</td>
             <td>Informar "EX" se Exterior.</td>
           </tr>
@@ -10426,7 +10789,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>1-1</td>
             <td>2</td>
-            <td>Utilizar a Tabela de códigos dos meios de pagamentos publicada no Portal Nacional da Nota Fiscal Eletrônica<br>Atualizado na NT 2020.006</td>
+            <td>Utilizar a Tabela de códigos dos meios de pagamentos publicada no <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica</a><br>Atualizado na NT 2020.006</td>
           </tr>
           <tr class="">
             <td>398.12a</td>
@@ -10500,7 +10863,7 @@ uEmb: kg</td>
             <td>N</td>
             <td>0-1</td>
             <td>2</td>
-            <td>Utilizar a Tabela de Códigos das Operadoras de cartão de crédito e/ou débito publicada no Portal Nacional da Nota Fiscal Eletrônica.</td>
+            <td>Utilizar a Tabela de Códigos das Operadoras de cartão de crédito e/ou débito publicada no <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica</a>.</td>
           </tr>
           <tr class="">
             <td>398.24</td>
@@ -10735,6 +11098,21 @@ uEmb: kg</td>
             <td>1-1</td>
             <td>1</td>
             <td>0=SEFAZ<br>1=Justiça Federal<br>2=Justiça Estadual<br>3=Secex/RFB<br>9=Outros</td>
+          </tr>
+          <tr class="">
+            <td>401j</td>
+            <td>Z13</td>
+            <td>tpAto</td>
+            <td>Tipo do ato concessório</td>
+            <td>E</td>
+            <td>Z10</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>2</td>
+            <td>Para origem do Processo na SEFAZ (indProc=0), informar o tipo de ato concessório: (NT 2021.004)
+              <br>08=Termo de Acordo;
+              <br>10=Regime Especial;
+              <br>12=Autorização específica;</td>
           </tr>
         </table><br>
         <titulo_tabela id="Grupo ZA. Informações de Comércio Exterior">Grupo ZA. Informações de Comércio Exterior</titulo_tabela><br><br>

@@ -191,6 +191,7 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("X. Transporte da NF-e")' title='X. Transporte da NF-e'>X. Transporte da NF-e<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Y. Dados de Cobrança")' title='Y. Dados de Cobrança'>Y. Dados de Cobrança<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("YA. Formas de Pagamento")' title='YA. Formas de Pagamento'>YA. Formas de Pagamento<br></span></a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("YB. Informações do Intermediador da Transação")' title='YB. Informações do Intermediador da Transação'>YB. Informações do Intermediador da Transação<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("Z. Informação Adicional da NF-e")' title='Z. Informação Adicional da NF-e'>Z. Informação Adicional da NF-e<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZA. Comércio Exterior")' title='ZA. Comércio Exterior'>ZA. Comércio Exterior<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("ZB. Informação de Compra")' title='ZB. Informação de Compra'>ZB. Informação de Compra<br></span></a><br>
@@ -207,6 +208,8 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("4. Banco de Dados: Chave de Acesso na Exportação Indireta")' title='4. Banco de Dados: Chave de Acesso na Exportação Indireta'>4. Banco de Dados: Chave de Acesso na
             Exportação Indireta<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("5. Banco de Dados: Destinatário")' title='5. Banco de Dados: Destinatário'>5. Banco de Dados: Destinatário<br></span></a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("5A. Banco de Dados: Local de Retirada")' title='5A. Banco de Dados: Local de Retirada'>5A. Banco de Dados: Local de Retirada<br></span></a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("5B. Banco de Dados: Local de Entrega")' title='5B. Banco de Dados: Local de Entrega'>5B. Banco de Dados: Local de Entrega<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("7. Banco de Dados: Cadastro da SEFAZ")' title='7. Banco de Dados: Cadastro da SEFAZ'>7. Banco de Dados: Cadastro da SEFAZ<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("8. Banco de Dados: Acompanhamento do Contribuinte")' title='8. Banco de Dados: Acompanhamento do Contribuinte'>8. Banco de Dados: Acompanhamento do
             Contribuinte<br></span></a><br>
@@ -333,6 +336,15 @@
             <th>Msg</th>
             <th>Efeito</th>
             <th>Descrição Erro</th>
+          </tr>
+          <tr class="">
+            <td>B00</td>
+            <td>• Não encontrado o Parâmetro de Entrada na mensagem SOAP “nfeDadosMsg” (NT 2020.005)
+              <br>Nota: Verificar ausência do parâmetro de entrada do Web Service, ou possível diferença no nameSpace previsto para o Web Service.</td>
+            <td>Obrig.</td>
+            <td id="Rej_242">242</td>
+            <td id="Rej.">Rej.</td>
+            <td>Rejeição: Mensagem SOAP inválida</td>
           </tr>
           <tr class="">
             <td>B01</td>
@@ -509,6 +521,14 @@
             <td id="Rej_776">776</td>
             <td id="Rej.">Rej.</td>
             <td>Rejeição: Solicitada resposta síncrona para UF que não disponibiliza este atendimento (indSinc=1)</td>
+          </tr>
+          <tr class="">
+            <td>GAP03a-3</td>
+            <td>Solicitação de resposta assíncrona (indSinc=0) para lote com somente 1 (uma) NFC-e (2020.005)</td>
+            <td>Obrig.</td>
+            <td id="Rej_452">452</td>
+            <td id="Rej.">Rej.</td>
+            <td> Rejeição: Solicitada resposta assíncrona para Lote com somente 1 (uma) NFC-e </td>
           </tr>
         </table><br>
         <titulo_tabela id="DB. Extração dos eventos do lote e validação do Schema XML do evento">DB. Extração dos eventos do lote e validação do Schema XML do evento</titulo_tabela><br><br>
@@ -1138,10 +1158,11 @@
           <tr class="">
             <td>B25c-10</td>
             <td>55/65</td>
-            <td>Se Informado indicativo de presença, tag: indPres, IGUAL a 2, 3, 4 ou 9 <br>
+            <td>Se Informado indicativo de presença, tag: indPres, IGUAL a <span style="text-decoration: line-through">1, </span> 2, 3, 4 ou 9  e Tipo de operação, tag: tpNF, IGUAL 1-Saída e Finalidade de emissão, tag: finNFe, IGUAL 1-NF-e normal<br>
               <div class="recuo"></div>- Obrigatório o preenchimento do campo Indicativo do Intermediador (tag: indIntermed)<br><br>
-              <div class="negrito">Observação:</div> Regra de validação valida a partir de 01/02/2021 para
-              homologação e 01/09/2021 para produção
+              <div class="negrito">Observação 1 :</div> Regra de validação valida a partir de 23/08/2021 para homologação e 04/04/2022 para produção<br>
+              <div class="negrito" style="text-decoration: line-through">Observação 2 :</div> <span style="text-decoration: line-through">Regra válida para Nota Fiscal Avulsa eletrônica a partir de 03/05/2021 para homologação e 01/09/2021 para produção</span><br>
+              <div class="negrito">Exceção:</div> Regra não se aplica para os seguintes CFOP: 5205, 5206, 5207, 5251, 5252, 5253, 5254, 5255, 5256, 5257, 5258, 5301, 5302, 5303, 5304, 5305, 5306, 5307.<br>
             </td>
             <td>Obrig.</td>
             <td id="Rej_434">434</td>
@@ -1151,7 +1172,7 @@
           <tr class="">
             <td>B25c-20</td>
             <td>55/65</td>
-            <td>Se Informado indicativo de presença, tag: indPres, DIFERENTE de 2, 3, 4 ou 9 <br>
+            <td>Se Informado indicativo de presença, tag: indPres, DIFERENTE de 1, 2, 3, 4 ou 9 <br>
               <div class="recuo"></div>- Proibido o preenchimento do campo Indicativo do Intermediador (tag: indIntermed)
             </td>
             <td>Obrig.</td>
@@ -1624,7 +1645,7 @@
           </tr>
           <tr class="">
             <td>BA20-30</td>
-            <td>55/65</td>
+            <td>55<span style="color:red; text-decoration: line-through">/65</span></td>
             <td>Informado Cupom Fiscal referenciado (tag: refECF) em UF que não permite essa referência.<br><br>
               <div class="negrito">Observação: </div>Regra de validação opcional, a critério da UF.<br>(NT 2019.001)
             </td>
@@ -2585,7 +2606,8 @@
           <tr class="">
             <td>H02-10</td>
             <td>55/65</td>
-            <td>Número sequencial do item no arquivo XML “nItem" fora de ordem incremental, consecutiva, a partir de 1. (NT 2019.001)</td>
+            <td>Número sequencial do item no arquivo XML “nItem" fora de ordem incremental, consecutiva, a partir de 1. (NT 2019.001)
+            <br><span class="negrito">Observação:</span> Regra de validação opcional, a critério da UF.</td>
             <td>Obrig</td>
             <td id="Rej_927">927</td>
             <td>Rej.</td>
@@ -2701,6 +2723,15 @@
             <td id="Rej_779">779</td>
             <td>Rej.</td>
             <td>Rejeição: NFC-e com NCM incompatível [nItem: 999]</td>
+          </tr>
+          <tr class="">
+            <td>I05c-10</td>
+            <td>55/65</td>
+            <td>Se informado CEST, CEST inexistente (vide tabela de apoio publicada no Portal da NF-e).</td>
+            <td>Obrig.</td>
+            <td id="Rej_446">446</td>
+            <td>Rej.</td>
+            <td>Rejeição: Informado CEST inexistente [nItem:999]</td>
           </tr>
           <tr class="">
             <td>I05e-10</td>
@@ -2840,7 +2871,9 @@
             <td>I08-90</td>
             <td>55</td>
             <td>CFOP é de operação interestadual (inicia por 2 ou 6) e UF emitente = UF destinatário e CNPJ/CPF emissor diferente do CNPJ/CPF destinatário (NT 2010/004)<br><br>
-              <div class="negrito">Exceção:</div> Se a tag UFCons (id:LA06) foi informada com UF diversa do emitente: CFOP iniciado com 2 ou 6 é válido. (NT 2010/010)
+              <div class="negrito">Exceção 1:</div> Se a tag UFCons (id:LA06) foi informada com UF diversa do emitente: CFOP iniciado com 2 ou 6 é válido. (NT 2010/010)
+              <br><div class="negrito">Exceção 2:</div>  Se [UF emitente = UF destinatário] e [a tag finNFe (id:B25) indicar que esta é uma nota de ajuste (=3)]: será aceito o CFOP 6206
+              <br><div class="negrito">Observação:</div> Regra de validação opcional, a critério da UF
             </td>
             <td>Facult.</td>
             <td id="Rej_523">523</td>
@@ -2896,8 +2929,9 @@
             <td>55</td>
             <td>Para as NF-e com finalidade de devolução de mercadoria (tag:finNFe=4), somente serão aceitos CFOP de devolução de mercadoria.<br><br>
               <div class="negrito">Observação: </div>Vide relação de CFOP de devolução de mercadoria natabela de apoio publicada no Portal da NF-e (Tabela CFOP, indDevol=1).<br><br>
-              <div class="negrito">Exceção:</div> Aceitar os CFOP 1.949 e 2.949 na devolução de venda para não Contribuinte. Para estes CFOP verificar a condição:<br>
-              <div class="recuo"></div>- tag:finNFe = 4 (devolução) e tag:indIEDest = 9 (não Contribuinte) (NT 2015.002)
+              <div class="negrito">Exceção 1:</div> Aceitar os CFOP 1.949 e 2.949 na devolução de venda para não Contribuinte. Para estes CFOP verificar a condição:<br>
+              <div class="recuo"></div>- tag:finNFe = 4 (devolução) e tag:indIEDest = 9 (não Contribuinte) (NT 2015.002)<br>
+              <div class="negrito">Exceção 2:</div> Aceitar os CFOP 5.949 e 6.949 na devolução simbólica de gás natural (NCM 27112100) nos termos do <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2021/aj22_21">Ajuste SINIEF nº 22/21</a>
             </td>
             <td>Obrig.</td>
             <td id="Rej_327">327</td>
@@ -3418,6 +3452,39 @@
               <td>Rej.</td>
               <td>Rejeição: NFC-e com grupo de Veículos novos</td>
             </tr>
+            <tr class="">
+              <td>J19-10</td>
+              <td>55</td>
+              <td> Verificar se o código do tipo de veículo (campo: tpVeic) consta na Tabela de Tipo e Espécie de Veículo (NT 2021.004)
+                <br><br><div class="negrito">Observação 1:</div>Tabela de Tipo e Espécie de Veículo publicada na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
+              </td>
+              <td>Obrig.</td>
+              <td id="Rej_841">841</td>
+              <td>Rej.</td>
+              <td>Rejeição: Código do Tipo de Veículo Inexistente</td>
+            </tr>
+            <tr class="">
+              <td>J20-10</td>
+              <td>55</td>
+              <td>  Verificar se o código da espécie de veículo (campo: espVeic) consta na Tabela de Tipo e Espécie de Veículo (NT 2021.004)
+                <br><br><div class="negrito">Observação 1:</div>Tabela de Tipo e Espécie de Veículo publicada na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
+              </td>
+              <td>Obrig.</td>
+              <td id="Rej_842">842</td>
+              <td>Rej.</td>
+              <td>Rejeição: Código da espécie de Veículo Inexistente</td>
+            </tr>
+            <tr class="">
+              <td>J20-20</td>
+              <td>55</td>
+              <td> Verificar se o código da espécie de veículo (campo: espVeic) é compatível com o tipo de veículo (campo: tpVeic) conforme Tabela de Tipo e Espécie de Veículo (NT 2021.004)
+                <br><br><div class="negrito">Observação 1:</div>Tabela de Tipo e Espécie de Veículo publicada na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
+              </td>
+              <td>Obrig.</td>
+              <td id="Rej_843">843</td>
+              <td>Rej.</td>
+              <td>Rejeição: Código da espécie de Veículo incompatível com o tipo do Veículo.</td>
+            </tr>
           </table><br>
           <titulo_tabela id="K. Item / Medicamentos">K. Item / Medicamentos</titulo_tabela><br><br>
           <table class="regras_validacao_nfe">
@@ -3429,6 +3496,20 @@
               <th>Msg</th>
               <th>Efeito</th>
               <th>Descrição Erro</th>
+            </tr>
+            <tr class="">
+              <td>K01-10</td>
+              <td>55</td>
+              <td> Informado NCM de medicamento é obrigatório o preenchimento do Grupo de Medicamento (tag: med). (NT 2021.004)
+                <br>
+                <br><span class="negrito">Observação 1:</span>Regra de validação a critério da UF.
+                <br><span class="negrito">Observação 2:</span>Os medicamentos são classificados nos NCMs que começam com 3001, 3002, 3003, 3004, 3005 e 3006.
+                <br><span class="negrito">Observação 3:</span>Para os medicamentos que não possuam código de Produto da ANVISA, o campo cProdANVISA do Grupo de Medicamentos deverá ser preenchido com o literal “ISENTO”
+              </td>
+              <td>Facul.</td>
+              <td id="Rej_840">840</td>
+              <td>Rej.</td>
+              <td>Rejeição: NCM de medicamento e não informado o grupo de medicamento (med) [nItem:nnn]</td>
             </tr>
             <tr class="">
               <td>K01-20</td>
@@ -3749,7 +3830,9 @@
                   820101001, 820101010, 810102001, 810102004, 810102002, 810102003, 810101002, 810101001, 810101003, 220101003, 220101004, 220101002, 220101001, 220101005, 220101006, 560101001).<br>
                   <div class="negrito">Exceção 6:</div> A regra de validação acima não se aplica, para os CST=50 (Suspensão) e 51 (Diferimento), nas operações de devolução (finNFe=4).<br>
                   <div class="negrito">Exceção 7:</div>  A regra de validação acima não se aplica, para o CST=51 (Diferimento), nas operações com CFOP 5.123, 5.922, 6.123 e 6.922, nem nas operações internas (idDest=1).de retorno de Mercadoria depositada em depósito fechado ou armazém geral (CFOP 5.906 ou 5.907).<br>
-                  <div class="negrito">Exceção 8:</div>  A critério da UF a regra de validação não se aplica para o CST=10 (Tributada e com cobrança do ICMS por substituição tributária) em operação interna (idDest=1). (NT 2017.002 / NT 2015.003)</td>
+                  <div class="negrito">Exceção 8:</div>  A critério da UF a regra de validação não se aplica para o CST=10 (Tributada e com cobrança do ICMS por substituição tributária) em operação interna (idDest=1). (NT 2017.002 / NT 2015.003)<br>
+                  <div class="negrito">Exceção 9:</div>  A regra de validação não se aplica para o CST=30 (Isenta ou não tributada e com cobrança do ICMS por substituição tributária), em operação interestadual (idDest=2) na aquisição de energia elétrica em Ambiente de Contratação Livre (ACL) com NCM: 27160000 (NT 2020.005)
+                </td>
                 <td>Obrig.</td>
                 <td id="Rej_508">508</td>
                 <td>Rej.</td>
@@ -3761,7 +3844,7 @@
                 <td>Operação com Contribuinte Isento de Inscrição Estadual (indIEDest=2) e CST constante na relação abaixo:<br>
                   <div class="recuo"></div>- 50-Suspensão na cobrança do ICMS;<br>
                   <div class="recuo"></div>- 51-Diferimento na cobrança do ICMS.<br><br>
-                  <div class="negrito">Exceção 1:</div> A regra de validação acima não se aplica para o CST=50- Suspensão, nas operações com CFOP de conserto ou reparo (CFOP 1915, 1916, 2915, 2916, 5915, 5916, 6915 e 6916) ou de remessa para demonstração dentro do Estado (CFOP 1912, 1913, 5912 e 5913).<br>
+                  <div class="negrito">Exceção 1:</div> A regra de validação acima não se aplica para o CST=50- Suspensão, nas operações com CFOP de conserto ou reparo (CFOP 1915, 1916, 2915, 2916, 5915, 5916, 6915 e 6916) ou de remessa para demonstração dentro do Estado (CFOP 1912, 1913, 5912 e 5913) ou de Remessa para Industrialização por encomenda (1901, 2901, 5901 e 6901).<br>
                   <div class="negrito">Exceção 2:</div> A regra de validação acima não se aplica, em produção, para Nota Fiscal com data de emissão anterior a 01/07/2016.<br>
                   <div class="negrito">Exceção 3:</div> A critério da UF, a regra de validação acima não se aplica para CST=51-Diferimento em operações internas (idDest=1) quando o destinatário for Pessoa Jurídica (tag:dest/CNPJ).<br>
                   <div class="negrito">Exceção 4:</div> Esta regra não se aplica na emissão da NFA-e nas operações internas, a critério da UF. (NT 2017.002 / NT 2015.003)</td>
@@ -3796,9 +3879,9 @@
                 <td>55/65</td>
                 <td>Se informado CST com benefício fiscal (CST = 20, 30, 40, 41, 50, 51, 60, 70 ou 90):<br>
                   <div class="recuo"></div>-Obrigatório informar o código de benefício fiscal (tag: cBenef)<br><br>
-                  <div class="negrito">Observação 1: </div>Implementação a critério da UF, por modelo de DF-e e por CST.<br>
-                  <div class="negrito">Observação 2: </div> Tabela de código de benefício fiscal por UF publicada no Portal Nacional da NF-e<br>
-                  <div class="negrito">Exceção: </div>Não se aplica esta regra de validação no caso de CST=90 e:<br>
+                  <span class="negrito">Observação 1: </span>Implementação a critério da UF, por modelo de DF-e e por CST.<br>
+                  <span class="negrito">Observação 2: </span> Tabela de código de benefício fiscal por UF publicada no Portal Nacional da NF-e<br>
+                  <span class="negrito">Exceção: </span>Não se aplica esta regra de validação no caso de CST=90 e:<br>
                   <div class="recuo"></div>- Percentual de Redução de Base de Cálculo (tag: pRedBC) igual a zero;<br>
                   <div class="recuo"></div>- e (Percentual de Redução de Base de Cálculo do ICMS-ST (tag: pRedBCST) igual a zero e operação interna (idDest=1). (NT 2019.001 v1.10, v1.50)
                 </td>
@@ -3859,7 +3942,7 @@
               <tr class="">
                 <td>N12-90</td>
                 <td>55/65</td>
-                <td>Se CST de ICMS = (20, 30, 40, 41, 50, 70 ou 90):
+                <td>Se CST de ICMS = (20, 30, 40, 41, 50, 70 ou 90):<br>
                   <div class="recuo"></div>-Verificar se informado o valor do ICMS desonerado (tag:vICMSDeson) e o Motivo da Desoneração (tag: motDesICMS).<br><br>
                   <div class="negrito">Observação: </div>Implementação a critério da UF, por modelo de DF-e e por CST.<br><br>
                   <div class="negrito">Exceção 1: </div> a RV não se aplica quando Finalidade de emissão da NFe (tag: finNFe) igual a Devolução de Mercadoria e Identificador de local de destino da operação (tag: idDest) igual a Operação interestadual ou com o Exterior; <br>
@@ -4142,7 +4225,7 @@
                 <td>55/65</td>
                 <td>Informado a tag vFCP (id:N17c) e finNFe=1 (id:B25), verificar:<br>
                   <div class="recuo"></div>- Se CST=00 e vFCP (id:N17c) difere da vBC (id:N15)* pFCP (id:N17b) (*4) ou<br>
-                  <div class="recuo"></div>- Se CST=10, 20,70, 90 ou 51 e vFCP (id:N17c) difere da vBCFCP (id:N17a)* pFCP (id:N17b) (*4) (NT 2017.002)</td>
+                  <div class="recuo"></div>- Se CST=10, 20,70, 90 <span style="text-decoration: line-through">ou 51 </span>e vFCP (id:N17c) difere da vBCFCP (id:N17a)* pFCP (id:N17b) (*4) (NT 2017.002)</td>
                 <td>Obrig.</td>
                 <td id="Rej_860">860</td>
                 <td>Rej</td>
@@ -4286,8 +4369,8 @@
                 <td>55</td>
                 <td>Se informado tag:motDesICMS = 7 (desoneração Suframa):<br>
                   <div class="recuo"></div>- deve ser informado um dos CFOP abaixo:<br>
-                  <div class="recuo"></div>1203, 1204, 1208, 1209, 2203, 2204, 2208, 2209, 5109, 5110, 5120, 5151, 5152, 5651, 5652, 5654, 5655, 5658, 5659, 5910, 6109,
-                  6110, 6120, 6122, 6123, 6151, 6152, 6651, 6652, 6654, 6655, 6658, 6659, 6910 (NT 2012/003) (NT 2013/005 v1.10)</td>
+                  <div class="recuo"></div>1203, 1204, 1208, 1209, 2203, 2204, 2208, 2209, 5109, 5110, 5120, 5151, 5152, 5651, 5652, 5654, 5655, 5658, 5659, 5910, 6905 6109,
+                  6110, 6120, 6122, 6123, 6151, 6152, 6651, 6652, 6654, 6655, 6658, 6659, 6910, 6923 (NT 2012/003) (NT 2013/005 v1.10) (NT 2019.001 v1.51)</td>
                 <td>Facult.</td>
                 <td id="Rej_626">626</td>
                 <td>Rej.</td>
@@ -4552,8 +4635,11 @@
               <tr class="">
                 <td>NA15-10</td>
                 <td>55</td>
-                <td>Valor do ICMS Interestadual para UF de Destino (tag: vICMSUFDest) difere de vBCUFDest * (pICMSUFDest - pICMSInter) * pICMSInterPart (*4)[1]<br><br>
-                  <div class="negrito">Observação: </div> implementação futura (NT 2015.003)</td>
+                <td>Se CST de ICMS = 00 e informado o grupo ICMSUFDest Valor do ICMS Interestadual para UF de Destino (tag: vICMSUFDest) difere de:
+<br><br><div class="recuo"></div><span class="negrito">((vBCUFDest * pICMSUFDest) - (vBC * pICMSInter)) * pICMSInterPart (*4)</span><br>
+<br><span class="negrito">Observação 1:</span> Se o resultado do cálculo for menor que zero deverá ser informado o valor “0.00”.
+<br><span class="negrito">Observação 2:</span> Se existir benefício fiscal no destino, o valor da base de cálculo no ICMS de destino (vBCUFDest) deverá ser informado considerando esse benefício.
+<br><span class="negrito">Exceção: </span>A regra acima não se aplica para Nota Fiscal de Entrada (tpNF = 0)</td>
                 <td>Obrig</td>
                 <td id="Rej_815">815</td>
                 <td>Rej.</td>
@@ -4562,8 +4648,11 @@
               <tr class="">
                 <td>NA17-10</td>
                 <td>55</td>
-                <td>Valor do ICMS Interestadual para a UF do Remetente (tag: vICMSUFRemet) difere de (vBCUFDest * (pICMSUFDest - pICMSInter)) – vICMSUFDest (*4)[2]<br><br>
-                  <div class="negrito">Observação: </div> implementação futura (NT 2015.003)</td>
+                <td>Se CST de ICMS = 00 e informado o grupo ICMSUFDest Valor do ICMS Interestadual para UF do Remetente (tag: vICMSUFRemet) difere de:
+  <br><br><div class="recuo"></div><span class="negrito">((vBCUFDest * pICMSUFDest) - (vBC * pICMSInter)) – vICMSUFDest (*4)</span><br>
+  <br><span class="negrito">Observação 1:</span> Se o resultado do cálculo for menor que zero deverá ser informado o valor “0.00”.
+  <br><span class="negrito">Observação 2:</span> Se existir benefício fiscal no destino, o valor da base de cálculo no ICMS de destino (vBCUFDest) deverá ser informado considerando esse benefício.
+  <br><span class="negrito">Exceção: </span>A regra acima não se aplica para Nota Fiscal de Entrada (tpNF = 0)</td>
                 <td>Obrig</td>
                 <td id="Rej_816">816</td>
                 <td>Rej.</td>
@@ -4751,11 +4840,31 @@
                 <td>Rejeição: A NF-e deve ter pelo menos um item de produto sujeito ao ICMS.</td>
               </tr>
               <tr class="">
+                <td>U01-30</td>
+                <td>55/65</td>
+                <td>Se informado grupo de tributação do ISSQN (id:U01), deve ser informado GTIN (tag: cEAN) e GTIN da unidade tributável (tag: cEANTrib) igual a “SEM GTIN” . (NT 2021.003, Etapa 1)</td>
+                <td>Obrig.</td>
+                <td id="Rej_897">897</td>
+                <td>Rej.</td>
+                <td>Rejeição: Item de Serviço e informado GTIN diferente de SEM GTIN</td>
+              </tr>
+              <tr class="">
                 <td>U05-10</td>
                 <td>55/65</td>
                 <td>Se informado Código Município do FG – ISSQN:<br>
                   <div class="recuo"></div>- Código Município do FG – ISSQN inexistente (Tabela Municípios IBGE)<br><br>
                   <div class="negrito">Exceção: </div>Aceitar ISSQN/cMunFG="9999999" no caso de prestação de serviço no exterior (dest/cUF="EX"). (NT 2013/005 v1.20) (NT 2015.002)</td>
+                <td>Obrig.</td>
+                <td id="Rej_287">287</td>
+                <td>Rej.</td>
+                <td>Rejeição: Código Município do Fato Gerador de ISSQN inexistente [nItem:nnn]</td>
+              </tr>
+              <tr class="">
+                <td>U06-10</td>
+                <td>55/65</td>
+                <td>Verificar se o Item da Lista de Serviços (campo: cListServ) consta na Tabela de Códigos de Item da Lista de Serviços (NT 2021.004)<br>
+                  <br><div class="negrito">Observação 1:</div>Tabela de Códigos de Item da Lista de Serviços publicada  na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
+                </td>
                 <td>Obrig.</td>
                 <td id="Rej_287">287</td>
                 <td>Rej.</td>
@@ -4840,7 +4949,9 @@
                 <tr class="">
                   <td>W03-20</td>
                   <td>55/65</td>
-                  <td>Valor total da base de cálculo tag “vBC" (id:W03) superior ao valor limite estabelecido pela SEFAZ. (NT 2019.001)</td>
+                  <td>Valor total da base de cálculo tag “vBC" (id:W03) superior ao valor limite estabelecido pela SEFAZ. por modelo de DF-e (NT 2019.001)
+                    <br>Observação: o valor total máximo da base de cálculo é de R$ 200.000,00 (Duzentos mil reais).
+                  </td>
                   <td>Facult.</td>
                   <td id="Rej_935">935</td>
                   <td>Rej.</td>
@@ -5061,7 +5172,9 @@
                     <div class="recuo"></div>(+) vII (id:W11)<br>
                     <div class="recuo"></div>(+) vIPI (id:W12)<br>
                     <div class="recuo"></div>(+) vIPIDevol (id: W12a)<br>
-                    <div class="recuo"></div>(+) vServ (id:W18) (*3) (NT 2011/005)<br><br>
+                    <div class="recuo"></div>(+) vServ (id:W18) (*3) (NT 2011/005)<br>
+                    <div class="recuo"></div>(+) vPIS (id: R06, campo: PISST/vPIS), se indSomaPISST=1<br>
+                    <div class="recuo"></div>(+) vCofins (id: T06, campo: COFINSST/vCOFINS ), se indSomaCOFINSST =1<br><br>
                     <div class="negrito">Exceção 1: </div>Faturamento direto de veículos novos:<br>
                     Se informada operação de Faturamento Direto para veículos novos (tpOp = 2, id:J02):<br>
                     – Total do vNF (id:W16) difere do somatório de:<br>
@@ -5073,7 +5186,9 @@
                     <div class="recuo"></div>(+) vOutro (id:W15)<br>
                     <div class="recuo"></div>(+) vII (id:W11)<br>
                     <div class="recuo"></div>(+) vIPI (id:W12)<br>
-                    <div class="recuo"></div>(+) vServ (id:W18) (*3) (NT 2011/005)<br><br>
+                    <div class="recuo"></div>(+) vServ (id:W18) (*3) (NT 2011/005)<br>
+                    <div class="recuo"></div>(+) vPIS (id: R06, campo: PISST/vPIS), se indSomaPISST=1<br>
+                    <div class="recuo"></div>(+) vCofins (id: T06, campo: COFINSST/vCOFINS ), se indSomaCOFINSST =1<br><br>
                     <div class="negrito">Exceção 2: </div> Esta regra não se aplica nas operações de importação (CFOP inicia com “3").<br>
                     <div class="negrito">Exceção 3 </div>(NT 2013/005 v 1.22): Esta regra de validação não deverá causar rejeição caso não tenha sido subtraído o valor do ICMS Desonerado (vICMSDeson) do valor total da NF-e. ) (NT 2017.002)</td>
                   <td>Facult.</td>
@@ -5296,6 +5411,15 @@
                     <td>Rejeição: NFC-e de entrega a domicílio sem dados do Transportador</td>
                   </tr>
                   <tr class="">
+                    <td>X03-30</td>
+                    <td>55</td>
+                    <td>Se Modalidade do Frete = 9 (id: X02, campo: modFrete), o Grupo Transportador (id: X03, campo: transporta) não pode ser informado. (NT 2021.004)</td>
+                    <td>Obrig.</td>
+                    <td id="Rej_845">845</td>
+                    <td>Rej.</td>
+                    <td> Rejeição: O Grupo Transportador não pode ser preenchido para Modalidade do frete informada</td>
+                  </tr>
+                  <tr class="">
                     <td>X04-10</td>
                     <td>55</td>
                     <td>Obrigatória a informação de identificação do Transportador para os CFOP de venda de combustível (tag: CNPJ/CPF, id:X04/X05) com esta obrigatoriedade na Tabela CFOP, indComb=2.<br><br>
@@ -5316,6 +5440,119 @@
                     <td id="Rej_542">542</td>
                     <td>Rej.</td>
                     <td>Rejeição: CNPJ do Transportador inválido</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-30</td>
+                    <td>55</td>
+                    <td> Se for NF-e de saída (tpNF=1) e Modalidade do Frete = 3 (id: X02, campo:
+                        modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
+                        campo: CPF) do transportador deve ser IGUAL ao CNPJ Base (id:
+                        C02, campo: CNPJ) ou CPF do Remetente (id: C03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_846">846</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte próprio por conta do Remetente e CNPJ Base ou CPF do Transportador difere do CNPJ Base ou CPF do Remetente</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-40</td>
+                    <td>55</td>
+                    <td> Se for NF-e de entrada (tpNF=0) e Modalidade do Frete = 3 (id: X02,
+                      campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
+                      X05, campo: CPF) do transportador deve ser IGUAL ao CNPJ Base
+                      (id: E02, campo: CNPJ) ou CPF do Remetente (id: E03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_846">846</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte próprio por conta do Remetente e CNPJ Base ou CPF do Transportador difere do CNPJ Base ou CPF do Remetente</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-50</td>
+                    <td>55</td>
+                    <td> Se for NF-e de saída (tpNF=1) e Modalidade do Frete <> 3 (id: X02, campo:
+                      modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
+                      campo: CPF) do transportador deve ser DIFERENTE do CNPJ Base
+                      (id: C02, campo: CNPJ) ou CPF do Remetente (id: C03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_847">847</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte não é próprio por conta do Remetente e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Remetente</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-60</td>
+                    <td>55</td>
+                    <td> Se for NF-e de entrada (tpNF=0) e Modalidade do Frete <> 3 (id: X02,
+                      campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
+                      X05, campo: CPF) do transportador deve ser DIFERENTE do CNPJ
+                      Base (id: E02, campo: CNPJ) ou CPF do Remetente (id: E03, campo:
+                      CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_847">847</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte não é próprio por conta do Remetente e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Remetente</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-70</td>
+                    <td>55</td>
+                    <td>Se for NF-e de saída (tpNF=1) e Modalidade do Frete = 4 (id: X02, campo:
+                      modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
+                      campo: CPF) do transportador deve ser IGUAL ao CNPJ Base (id: E02,
+                      campo: CNPJ) ou CPF do Destinatário (id: E03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_848">848</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte próprio por conta do Destinatário e CNPJ Base ou dCPF do Transportador difere do CNPJ Base ou CPF do Destinatário</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-80</td>
+                    <td>55</td>
+                    <td>Se for NF-e de entrada (tpNF=0) e Modalidade do Frete = 4 (id: X02,
+                      campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
+                      X05, campo: CPF) do transportador deve ser IGUAL ao CNPJ Base
+                      (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_848">848</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte próprio por conta do Destinatário e CNPJ Base ou dCPF do Transportador difere do CNPJ Base ou CPF do Destinatário</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-90</td>
+                    <td>55</td>
+                    <td>Se for NF-e de saída (tpNF=1) e Modalidade do Frete <> 4 (id: X02, campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
+                      campo: CPF) do transportador deve ser DIFERENTE do CNPJ Base
+                      (id: E02, campo: CNPJ) ou CPF do Destinatário (id: E03, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_849">849</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte não é próprio por conta do Destinatário e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Destinatário</td>
+                  </tr>
+                  <tr class="">
+                    <td>X04-100</td>
+                    <td>55</td>
+                    <td>Se for NF-e de entrada (tpNF=0) e Modalidade do Frete <> 4 (id: X02,
+                      campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
+                      X05, campo: CPF) do transportador deve ser DIFERENTE do CNPJ
+                      Base (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C03, campo:
+                      CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                    </td>
+                    <td>Obrig.</td>
+                    <td id="Rej_849">849</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Transporte não é próprio por conta do Destinatário e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Destinatário</td>
                   </tr>
                   <tr class="">
                     <td>X05-10</td>
@@ -5540,6 +5777,45 @@
                     <td>Rej.</td>
                     <td>Rejeição: Informado incorretamente o campo meio de pagamento</td>
                   </tr>
+                  <tr class="linha_revogada">
+                    <td>YA02-50</td>
+                    <td>55/65</td>
+                    <td> Informado meio de pagamento tPag= 99 “Outros”  (NT 2020.006)
+<br>Observação 1: Regra válida a partir de 01/02/2021 para homologação e 01/09/2021 para produção
+<br>Observação 2: Regra de validação não se aplica para Nota Fiscal eletrônica Avulsa emitida por Produtor Primário</td>
+                    <td>Obrig</td>
+                    <td id="Rej_436">436</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Informado 99-Outros como meio de pagamento</td>
+                  </tr>
+                  <tr class="">
+                    <td>YA02-60</td>
+                    <td>55/65</td>
+                    <td>  Verificar se o código do meio de pagamento (tag: tPag) existe na Tabela de códigos dos meios de pagamentos publicada no <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica</a> (NT 2020.006)
+<br>Observação 1:  Regra válida a partir de 03/05/2021 para homologação e 01/09/2021 para produção</td>
+                    <td>Obrig</td>
+                    <td id="Rej_436">436</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Código do meio de pagamento inexistente.</td>
+                  </tr>
+                  <tr class="">
+                    <td>YA02a-10</td>
+                    <td>55/65</td>
+                    <td>Quando o código do meio de pagamento (tag: tPag) for preenchido com o código 99-outros, obrigatório o preenchimento da descrição do meio de pagamento (tag: xPag) (NT 2020.006)</td>
+                    <td>Obrig</td>
+                    <td id="Rej_441">441</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Descrição do pagamento obrigatória para meio de pagamento 99- outros</td>
+                  </tr>
+                  <tr class="">
+                    <td>YA02a-20</td>
+                    <td>55/65</td>
+                    <td>Quando o código do meio de pagamento for diferente 99-outros (tag: tPag<>99), proibido o preenchimento da descrição do meio de pagamento (tag: xPag) (NT 2020.006)</td>
+                    <td>Obrig</td>
+                    <td id="Rej_442">442</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Descrição do pagamento não permitida</td>
+                  </tr>
                   <tr class="">
                     <td>YA03-10</td>
                     <td>65</td>
@@ -5614,6 +5890,16 @@
                     <td>Rejeição: CNPJ da instituição de pagamento inválido</td>
                   </tr>
                   <tr class="">
+                    <td>YA06-10</td>
+                    <td>55/65</td>
+                    <td>Verificar se o Código da bandeira de cartão de crédito e/ou débito (campo: tBand) existe na tabela de códigos das operadoras de cartão de crédito e/ou débito publicada no <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica</a> (NT 2020.006)<br>
+                    <br><div class="negrito">Observação 1: </div>Regra válida a partir de 03/05/2021 para homologação e 01/09/2021 para produção
+                    <td>Facult.</td>
+                    <td id="Rej_443">443</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Código da bandeira de cartão de crédito e/ou débito inexistente</td>
+                  </tr>
+                  <tr class="">
                     <td>YA09-10</td>
                     <td>55/65</td>
                     <td>Se informado campo Valor do troco (id:YA09, tag:vTroco) com valor difere de:<br>
@@ -5625,8 +5911,100 @@
                     <td>Rejeição: Valor do troco incorreto</td>
                   </tr>
                 </table><br>
+                <titulo_tabela id="YB. Informações do Intermediador da Transação">YB. Informações do Intermediador da Transação</titulo_tabela><br><br>
+                <table class="regras_validacao_nfe">
+                  <tr>
+                    <th>Campo-Seq</th>
+                    <th>Modelo</th>
+                    <th>Regra de Validação</th>
+                    <th>Aplic.</th>
+                    <th>Msg</th>
+                    <th>Efeito</th>
+                    <th>Descrição Erro</th>
+                  </tr>
+                  <tr class="">
+                    <td>YB01-10</td>
+                    <td>55/65</td>
+                    <td> Se informado Indicador do Intermediador IGUAL a “1=Operação em site ou plataforma de terceiros (intermediadores/marketplace)” (indIntermed=1) (NT 2020.006)<br>
+                    <br><div class="recuo">-</div>Obrigatório o preenchimento das Informações do Intermediador da Transação (tag: infIntermed)</td>
+                    <td>Obrig.</td>
+                    <td id="Rej_438">438</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Obrigatória as informações do intermediador da transação para operação por site de terceiros</td>
+                  </tr>
+                  <tr class="">
+                    <td>YB01-20</td>
+                    <td>55/65</td>
+                    <td> Se informado Indicador do Intermediador DIFERENTE de “1=Operação em site ou plataforma de terceiros (intermediadores/marketplace)” (indIntermed=1) (NT 2020.006)<br>
+                    <br><div class="recuo">-</div> Não é permitido o preenchimento das Informações do Intermediador da Transação (tag: infIntermed)</td>
+                    <td>Obrig.</td>
+                    <td id="Rej_439">439</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Informações do intermediador da transação para operação por site de terceiros preenchido indevidamente</td>
+                  </tr>
+                  <tr class="">
+                    <td>YB02-10</td>
+                    <td>55/65</td>
+                    <td> Se informado o CNPJ do intermediador da transação (NT 2020.006)<br>
+                    <br><div class="recuo">-</div> Verificar CNPJ com zeros, nulo ou DV inválido</td>
+                    <td>Obrig.</td>
+                    <td id="Rej_440">440</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: CNPJ do intermediador da transação inválido</td>
+                  </tr>
+               </table>
+               <br>
                 <titulo_tabela id="Z. Informação Adicional da NF-e">Z. Informação Adicional da NF-e</titulo_tabela><br><br>
-                    <ol><h3>Não há regras de validação para este grupo.</h3><br></ol>
+                <table class="regras_validacao_nfe">
+                  <tr>
+                    <th>Campo-Seq</th>
+                    <th>Modelo</th>
+                    <th>Regra de Validação</th>
+                    <th>Aplic.</th>
+                    <th>Msg</th>
+                    <th>Efeito</th>
+                    <th>Descrição Erro</th>
+                  </tr>
+                  <tr class="">
+                    <td>Z02-10</td>
+                    <td>65</td>
+                    <td>NFC-e sem preenchimento das Informações Adicionais de Interesse do Fisco (campo:infAdFisco).(NT 2021.004)<br>
+                      <br><div class="negrito">Observação 1:</div>Regra de validação restrita a UF de SC
+                      <br><div class="negrito">Observação 2:</div>Regra de validação válida a partir de 01/02/2023 para homologação e 03/04/2023 para produção
+                    </td>
+                    <td>Facul.</td>
+                    <td id="Rej_949">949</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: NFC-e sem preenchimento das Informações Adicionais de Interesse do Fisco</td>
+                  </tr>
+                  <tr class="">
+                    <td>Z02-20</td>
+                    <td>65</td>
+                    <td>Tamanho das Informações Adicionais de Interesse do Fisco (campo:infAdFisco) não atende ao tamanho mínimo exigido (NT 2021.004)<br>
+                      <br><div class="negrito">Observação 1:</div>Regra de validação restrita a UF de SC, que exige um tamanho mínimo de 251 caracteres.
+                      <br><div class="negrito">Observação 2:</div>Regra de validação válida a partir de 01/02/2023 para homologação e 03/04/2023 para produção
+                    </td>
+                    <td>Facul.</td>
+                    <td id="Rej_950">950</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Informações Adicionais de Interesse do Fisco abaixo do tamanho mínimo exigido pela UF.</td>
+                  </tr>
+                  <tr class="">
+                    <td>Z13-10</td>
+                    <td>55/65</td>
+                    <td> Se Tipo do ato concessório (campo: tpAto) for igual a 08 ou 10, campo nProc não segue o padrão de regime especial da UF (NT 2021.004)<br>
+                      <br><div class="negrito">Observação 1:</div>Regra de validação a critério da UF.
+                      <br><div class="negrito">Observação 2:</div>Tabela de Padrões de Regime Especial de cada UF  publicada na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
+                    </td>
+                    <td>Facul.</td>
+                    <td id="Rej_941">941</td>
+                    <td>Rej.</td>
+                    <td>Rejeição: Número do Regime especial inválido</td>
+                  </tr>
+                </table>
+
+
+                <br>
                   <titulo_tabela id="ZA. Comércio Exterior">ZA. Comércio Exterior</titulo_tabela><br><br>
                   <table class="regras_validacao_nfe">
                     <tr>
@@ -5754,8 +6132,9 @@
                       <td>ZD01-10</td>
                       <td>55/65</td>
                       <td>Não informado o grupo de informações do responsável técnico<br><br>
-                        <div class="negrito">Observação: </div>Implementação futura, exceto as UF de AM, MS, PE, PR, SC e TO, nas quais estas regras já estão em vigor em ambiente de teste e entrarão em vigor em ambiente de produção no dia 03 de junho de 2019  (NT 2018.005 v 1.30)
-                        <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF), pois neste caso não é informado o grupo Informações do Responsável Técnico (NT 2021.002)
+                        <div class="negrito">Observação: </div>Implementação a critério da UF
+                        <br><br><div class="negrito">Exceção 1 : </div>Exceção: Esta RV não se aplica para a NFA-e (Nota Fiscal Avulsa emitida no site do Fisco, procEmi=1 ou 2) (NT 2020.005)
+                        <br><div class="negrito">Exceção 2: </div>Não se aplica para NFF (tpEmis = 3-NFF), pois neste caso não é informado o grupo Informações do Responsável Técnico (NT 2021.002)
                       </td>
                       <td>Facult.</td>
                       <td id="Rej_972">972</td>
@@ -5766,8 +6145,7 @@
                       <td>ZD02-10</td>
                       <td>55/65</td>
                       <td>Se informado CNPJ do responsável técnico e CNPJ inválido (NT 2021.002)<br>
-                        <div class="recuo"></div>- CNPJ com zeros, nulo ou DV inválido<br><br>
-                        <div class="negrito">Observação: </div> Implementação futura, exceto as UF de AM, MS, PE, PR, SC e TO, nas quais estas regras já estão em vigor em ambiente de teste e entrarão em vigor em ambiente de produção no dia 03 de junho de 2019  (NT 2018.005 v 1.30)</td>
+                        <div class="recuo"></div>- CNPJ com zeros, nulo ou DV inválido<br><br></td>
                       <td>Facult.</td>
                       <td id="Rej_973">973</td>
                       <td>Rej.</td>
@@ -5776,8 +6154,8 @@
                     <tr class="">
                       <td>ZD07-10</td>
                       <td>55/65</td>
-                      <td>Obrigatória a informação do identificador do CSRT (tag: idCSRT) e Hash do CSTR (tag: hashCSRT)<br><br>
-                        <div class="negrito">Observação: </div>Implementação futura, todas as UFs (NT 2018.005 v1.30)
+                      <td> Se informado o grupo do Responsável Técnico é obrigatória a informação do identificador do CSRT (tag: idCSRT) e Hash do CSRT (tag: hashCSRT)<br><br>
+                        <div class="negrito">Observação: </div>Implementação a critério da UF.
                         <br><br><div class="negrito">Exceção: </div>Não se aplica para NFF (tpEmis = 3-NFF)(NT 2021.002)</td>
                       <td>Facult.</td>
                       <td id="Rej_975">975</td>
@@ -6434,6 +6812,19 @@ UF (NT 2021.002)</td>
                       <td>Den.</td>
                       <td>Uso Denegado: Irregularidade fiscal do emitente</td>
                     </tr>
+                    <tr class="">
+                      <td>1C17-50</td>
+                      <td>55</td>
+                      <td>Se operação de saída interestadual (tpNF=1 e idDest=2) e operação com Consumidor Final (indFinal=1) e indIEDest=9:
+<br>• Acessar Cadastro Centralizado de Contribuinte (Chave: UF do Destinatário, CNPJ do Emitente, cSitCNPJ=10)
+<br>• Denegar a NF-e se for encontrado registro de bloqueio no CCC
+<br><span style="text-decoration: line-through">Nota: Regra de Validação opcional por UF, conforme Ajuste SINIEF 33/19</span>
+<br>Nota: Regra de Validação não aplicável pelas UFs não signatárias, conforme parágrafo 7º da Cláusula sexta, do <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2005/AJ007_05">Ajuste SINIEF 07/05</a>.(NT 2020.005)</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_307">307</td>
+                      <td>Den.</td>
+                      <td>Uso Denegado: Emitente bloqueado pela UF de destino, em operação com consumidor final</td>
+                    </tr>
                     <tr class="linha_revogada">
                       <td>1C17-50</td>
                       <td>55</td>
@@ -6606,12 +6997,15 @@ UF (NT 2021.002)</td>
                     <tr class="">
                       <td>3B08-100</td>
                       <td>55/65</td>
-                      <td>Acesso BD de Inutilização (Chave: Modelo, UF, CNPJ/CPF, Série, Número):<br>
-                        <div class="recuo"></div>- Numeração da NF-e está inutilizada (NT 2011/004) (NT 2018.001)</td>
+                      <td>Se Tipo de Emissão da NF-e for 1 (Emissão normal), 6 (Contingência SVC-AN) ou 7 (Contingência SVC-RS): (NT 2020.005)
+                        <br>Acesso BD de Inutilização (Chave: Modelo, UF, CNPJ/CPF, Série, Número):<br>
+                        <div class="recuo"></div>- Numeração da NF-e está inutilizada (NT 2011/004) (NT 2018.001)
+                        <br><br><div class="negrito">Observação:</div>Se cUF(B02) for igual 35(SP) validar também se Tipo de Emissão da NF-e for 2 (Contingência FS-IA), 4(Contingência EPEC) ou 5(Contingência FS-DA)
+                      </td>
                       <td>Obrig.</td>
                       <td id="Rej_206">206</td>
                       <td>Rej.</td>
-                      <td>Rejeição: NF-e já está inutilizada na Base de Dados da SEFAZ</td>
+                      <td>Rejeição: Numeração da NF-e já está inutilizada na Base de Dados da SEFAZ</td>
                     </tr>
                   </table><br>
                   <titulo_tabela id="3A. Banco de Dados: NF-e Referenciada">3A. Banco de Dados: NF-e Referenciada</titulo_tabela><br><br>
@@ -6631,7 +7025,7 @@ UF (NT 2021.002)</td>
                       <td>Para cada NF-e referenciada (tag:refNFe), se a UF da Chave de Acesso referenciada for igual a UF do Emitente:<br>
                         <div class="recuo"></div>- Acessar BD NFE com Chave de Acesso referenciada (se mod=55)<br>
                         <div class="recuo"></div>- NF-e referenciada inexistente<br><br>
-                        <div class="negrito">Exceção: </div>A NF-e referenciada pode não existir no caso de Emissão em Contingência (tpEmis = 2, 4 ou 5) (NT 2013/003)<br>
+                        <div class="negrito">Exceção: </div>A NF-e referenciada pode não existir no caso de Emissão em Contingência (tpEmis = 2, 4 ou 5) (NT 2013/003), desde que a Chave de Acesso da NF-e referenciada tenha o Ano-Mês de Emissão inferior a 1 mês da data atual ou desde que exista o EPEC (NT 2021.004)<br>
                         <div class="negrito">Observação: </div>A exceção acima não se aplica para “finNFe=2" (NF-e Complementar).</td>
                       <td>Facult.</td>
                       <td id="Rej_267">267</td>
@@ -6744,7 +7138,7 @@ UF (NT 2021.002)</td>
                       <td>55</td>
                       <td>Se informada IE do Destinatário e tpEmis <> 3-NFF (NT 2021.002):<br>
                         <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: UF Dest, IE Dest.) (*5)<br>
-                        <div class="recuo"></div>- IE destinatário não cadastrada, ou situação da IE igual a exclusão lógica no CCC (CCC.cSitIE=9-Exclusão lógica) (*7) (NT 2019.001)</td>
+                        <div class="recuo"></div>- IE destinatário não cadastrada, ou situação da IE igual a exclusão lógica no CCC (CCC.cSitIE=9-Exclusão lógica) <span style="text-decoration: line-through">(*7)</span> (NT 2019.001)</td>
                       <td>Obrig.</td>
                       <td id="Rej_233">233</td>
                       <td>Rej.</td>
@@ -6849,6 +7243,94 @@ UF (NT 2021.002)</td>
                   <p>(*6)	Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC. Pesquisar todas as IE vinculadas com o CNPJ informado.</p>
                   <p>(*7)	Algumas UF ainda não cadastraram no CCC os Contribuintes Pessoa Física (IE e CPF). Portanto, as SEFAZ Autorizadoras que utilizam o CCC para validar o destinatário somente poderão efetuar as validações assinaladas se o Contribuinte (IE e CPF) existir no CCC.</p>
                   <br><br>
+                  <br>
+                  <titulo_tabela id="5A. Banco de Dados: Local de Retirada">5A. Banco de Dados: Local de Retirada</titulo_tabela><br><br>
+                  <table class="regras_validacao_nfe">
+                    <tr>
+                      <th>Campo- Seq</th>
+                      <th>Modelo</th>
+                      <th>Regra de Validação</th>
+                      <th>Aplic.</th>
+                      <th>Msg</th>
+                      <th>Efeito</th>
+                      <th>Descrição Erro</th>
+                    </tr>
+                    <tr class="">
+                      <td>5AF15-10 </td>
+                      <td>55</td>
+                      <td>Se informada IE do Local de Retirada: (NT 2021.004)<br>
+                        <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: UF Retirada , IE Retirada)(*5)<br>
+                        <div class="recuo"></div>- IE do local de retirada não cadastrada</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_942">942</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de retirada não cadastrada</td>
+                    </tr>
+                    <tr class="">
+                      <td>5AF15-20</td>
+                      <td>55</td>
+                      <td>Se informado CNPJ do local de retirada e IE do local de retirada não vinculada ao CNPJ (tratar Regime Especial de IE Única)</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_943">943</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de retirada não vinculada ao CNPJ</td>
+                    </tr>
+                    <tr class="">
+                      <td>5AF15-30</td>
+                      <td>55</td>
+                      <td>Se informado CPF do local de retirada e IE do local de retirada não vinculada ao CPF</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_944">944</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de retirada não vinculada ao CPF</td>
+                    </tr>
+                  </table>
+                  <p>(*5)	Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC-Cadastro Centralizado de Contribuintes.</p>
+                  <br>
+                  <br>
+                  <titulo_tabela id="5B. Banco de Dados: Local de Entrega">5A. Banco de Dados: Local de Entrega</titulo_tabela><br><br>
+                  <table class="regras_validacao_nfe">
+                    <tr>
+                      <th>Campo- Seq</th>
+                      <th>Modelo</th>
+                      <th>Regra de Validação</th>
+                      <th>Aplic.</th>
+                      <th>Msg</th>
+                      <th>Efeito</th>
+                      <th>Descrição Erro</th>
+                    </tr>
+                    <tr class="">
+                      <td>5BG15-10 </td>
+                      <td>55</td>
+                      <td>Se informada IE do Local de Entrega: (NT 2021.004)<br>
+                        <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: UF Entrega , IE Entrega)(*5)<br>
+                        <div class="recuo"></div>- IE do local de entrega não cadastrada</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_945">945</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de entrega não cadastrada</td>
+                    </tr>
+                    <tr class="">
+                      <td>5BG15-20</td>
+                      <td>55</td>
+                      <td>Se informado CNPJ do local de entrega e IE do local de entrega não vinculada ao CNPJ (tratar Regime Especial de IE Única)</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_947">947</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de entrega não vinculada ao CNPJ</td>
+                    </tr>
+                    <tr class="">
+                      <td>5BG15-30</td>
+                      <td>55</td>
+                      <td>Se informado CPF do local de entrega e IE do local de entrega não vinculada ao CPF</td>
+                      <td>Obrig.</td>
+                      <td id="Rej_948">948</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: IE do local de entrega não vinculada ao CPF</td>
+                    </tr>
+                  </table>
+                  <p>(*5)	Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC-Cadastro Centralizado de Contribuintes.</p>
+                  <br>
                   <titulo_tabela id="7. Banco de Dados: Cadastro da SEFAZ">7. Banco de Dados: Cadastro da SEFAZ</titulo_tabela><br><br>
                   <table class="regras_validacao_nfe">
                     <tr class="">
@@ -6919,7 +7401,7 @@ UF (NT 2021.002)</td>
                       <td>Rej.</td>
                       <td>Rejeição: Escritório de Contabilidade não cadastrado na SEFAZ</td>
                     </tr>
-                    <tr class="">
+                    <tr class="linha_revogada">
                       <td>7I03-10</td>
                       <td>55/65</td>
                       <td>Se não informado GTIN (cEAN=Nulo).<br><br>
@@ -7027,7 +7509,9 @@ UF (NT 2021.002)</td>
                     <tr class="">
                       <td>9I03-30</td>
                       <td>55/65</td>
-                      <td>Se informado o GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)</td>
+                      <td>Se informado o GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)
+<br><br><div class="negrito">Observação:</div>validação somente é realizada se o CEST tiver sido informado no CCG (NT 2021.003, Etapa 2)
+                      </td>
                       <td>Obrig.</td>
                       <td id="Rej_892">892</td>
                       <td>Rej.</td>
@@ -7066,7 +7550,9 @@ UF (NT 2021.002)</td>
                     <tr class="">
                       <td>9I12-30</td>
                       <td>55/65</td>
-                      <td>Se informado GTIN da unidade tributável (tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)</td>
+                      <td>Se informado GTIN da unidade tributável (tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)
+<br><br><div class="negrito">Observação:</div>validação somente é realizada se o CEST tiver sido informado no CCG (NT 2021.003, Etapa 2)
+                      </td>
                       <td>Obrig.</td>
                       <td id="Rej_896">896</td>
                       <td>Rej.</td>
@@ -7370,7 +7856,7 @@ UF (NT 2021.002)</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_206")'>206</a></td>
-                        <td>Rejeição: NF-e já está inutilizada na Base de Dados da SEFAZ</td>
+                        <td>Rejeição: Numeração da NF-e já está inutilizada na Base de Dados da SEFAZ</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_207")'>207</a></td>
@@ -7503,6 +7989,10 @@ UF (NT 2021.002)</td>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_241")'>241</a></td>
                         <td>Rejeição: Um número da faixa já foi utilizado</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_242")'>242</a></td>
+                        <td>Rejeição: Mensagem SOAP inválida</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_243")'>243</a></td>
@@ -8126,7 +8616,7 @@ UF (NT 2021.002)</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_436")'>436</a></td>
-                        <td>Rejeição: Informado 99-Outros como meio de pagamento (NT 2020.006)</td>
+                        <td>Rejeição: Código do meio de pagamento inexistente</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_437")'>437</a></td>
@@ -8145,6 +8635,22 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: CNPJ do intermediador da transação inválido (NT 2020.006)</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_441")'>441</a></td>
+                        <td>Rejeição: Descrição do pagamento obrigatória para meio de pagamento 99-outros</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_442")'>442</a></td>
+                        <td>Rejeição: Descrição do pagamento não permitida</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_443")'>443</a></td>
+                        <td> Rejeição: Código da bandeira de operadora de cartão de crédito e/ou débito inexistente</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_446")'>446</a></td>
+                        <td>Rejeição: Informado CEST inexistente [nItem:999]</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_450")'>450</a></td>
                         <td>Rejeição: Modelo da NF-e diferente de 55</td>
                       </tr>
@@ -8153,8 +8659,12 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: Processo de Emissão pelo Fisco incompatível com a Série da NF</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_452")'>452</a></td>
+                        <td>Rejeição: Processo de Emissão pelo Fisco incompatível com a Série da NF</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_453")'>453</a></td>
-                        <td>Rejeição: Ano de inutilização não pode ser superior ao Ano atual</td>
+                        <td>Rejeição: Solicitada resposta assíncrona para Lote com somente 1 (uma) NFC-e</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_454")'>454</a></td>
@@ -8279,6 +8789,10 @@ UF (NT 2021.002)</td>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_495")'>495</a></td>
                         <td>Rejeição: CPF do Emitente com Série incompatível</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_496")'>496</a></td>
+                        <td>Rejeição: A chave de acesso da NF-e informada no evento está com código de tpEmis inválido</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_501")'>501</a></td>
@@ -9404,6 +9918,16 @@ UF (NT 2021.002)</td>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_834")'>834</a></td>
                         <td>Rejeição: Informação de Solicitação de NFF não preenchida</td>
                       </tr>
+                      <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_840")'>840</a></td><td>Rejeição: NCM de medicamento e não informado o grupo de medicamento (med) [nItem:nnn]</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_841")'>841</a></td><td>Rejeição: Código do Tipo de Veículo Inexistente</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_842")'>842</a></td><td>Rejeição: Código da espécie de Veículo Inexistente</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_843")'>843</a></td><td>Rejeição: Código da espécie de Veículo incompatível com o tipo do Veículo.</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_844")'>844</a></td><td>Rejeição: Código de Item da Lista de Serviços inexistente.</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_845")'>845</a></td><td>Rejeição: O Grupo Transportador não pode ser preenchido para Modalidade do frete informada</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_846")'>846</a></td><td>Rejeição: Transporte próprio por conta do Remetente e CNPJ Base ou CPF do Transportador difere do CNPJ Base ou CPF do Remetente</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_847")'>847</a></td><td>Rejeição: Transporte não é próprio por conta do Remetente e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Remetente</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_848")'>848</a></td><td>Rejeição: Transporte próprio por conta do Destinatário e CNPJ Base ou CPF do Transportador difere do CNPJ Base ou CPF do Destinatário	</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_849")'>849</a></td><td>Rejeição: Transporte não é próprio por conta do Destinatário e CNPJ Base ou CPF do Transportador igual ao CNPJ Base ou CPF do Destinatário</td></tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_850")'>850</a></td>
                         <td>Rejeição: Data de vencimento da parcela não informada ou menor que a Data de vencimento da parcela anterior [nOcor: 999]</td>
@@ -9541,10 +10065,14 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: GTIN da unidade tributável informado, mas não informado o GTIN [nItem:999]</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_887")'>887</a></td>
+                        <td>Rejeição: Item de Serviço e informado GTIN diferente de SEM GTIN</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_888")'>888</a></td>
                         <td>Rejeição: GTIN da unidade tributável (cEANTrib) sem informação [nItem:999]</td>
                       </tr>
-                      <tr>
+                      <tr class="linha_revogada">
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_889")'>889</a></td>
                         <td>Rejeição: Obrigatória a informação do GTIN para o produto [nItem: 999]</td>
                       </tr>
@@ -9717,9 +10245,26 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: Não informada BCST, pST e ICMSST retido na operação anterior [nItem: 999] [NT 2018.005]</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_939")'>939</a></td>
+                        <td>Rejeição: Pedido de Cancelamento para NF-e com evento de Averbação para Exportação</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_940")'>940</a></td>
+                        <td>Rejeição: Pedido de Cancelamento para NF-e com evento Financeiro</td>
+                      </tr>
+                      <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_941")'>941</a></td><td>Rejeição: Número do Regime especial inválido.</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_942")'>942</a></td><td>Rejeição: IE do local de retirada não cadastrada</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_943")'>943</a></td><td>Rejeição: IE do local de retirada não vinculada ao CNPJ</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_944")'>944</a></td><td>Rejeição: IE do local de retirada não vinculada ao CPF</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_945")'>945</a></td><td>Rejeição: IE do local de entrega não cadastrada</td></tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_946")'>946</a></td>
                         <td>Rejeição: Informado código de benefício fiscal incorreto ou inexistente na UF [nItem: nnn]</td>
                       </tr>
+                      <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_947")'>947</a></td><td>Rejeição: IE do local de entrega não vinculada ao CNPJ</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_948")'>948</a></td><td>Rejeição: IE do local de entrega não vinculada ao CPF	</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_949")'>949</a></td><td>Rejeição: NFC-e sem preenchimento das Informações Adicionais de Interesse do Fisco</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_950")'>950</a></td><td>Rejeição: Informações Adicionais de Interesse do Fisco abaixo do tamanho mínimo exigido pela UF.</td></tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_970")'>970</a></td>
                         <td>Rejeição: Código de País inexistente [local de retirada/entrega] [NT 2018.005]</td>
