@@ -1990,6 +1990,7 @@
             <td>55</td>
             <td>Se Operação com Exterior (tag:idDest = 3):<br>
               <div class="recuo"></div>- Deve ser informada tag idEstrangeiro (conteúdo da tag pode ser nulo)
+              <br><br><div class="negrito">Exceção:</div> Poderá ser informada a tag: dest/CNPJ quando o país do destinatário for o Brasil (tag: enderDest/cPais = “1058”) e existir algum item com a UF de consumo do combustível igual a exterior (tag:comb/UFCons =  “EX”) e com CFOP = “7667 - Venda de combustível ou lubrificante a  consumidor ou usuário final” (NT 2022.002)
             </td>
             <td>Obrig.</td>
             <td id="Rej_720">720</td>
@@ -2097,8 +2098,14 @@
           <tr class="">
             <td>E12-10</td>
             <td>55</td>
-            <td>Se endereço destinatário é no Exterior (dest/UF = “EX"):<br>
+            <td><span style="text-decoration: line-through">Se endereço destinatário é no Exterior (dest/UF = “EX"):</span><br>
+              Se operação com Exterior (tag:idDest=3):<br>
               <div class="recuo"></div>- UF de destino diferente de “EX"
+              <br><br><div class="negrito">Exceção:</div> Regra não se aplica quando existir algum item com a UF de
+consumo do combustível igual a exterior (tag: comb/UFCons = “EX”) e com
+CFOP = “7667 - Venda de combustível ou lubrificante a consumidor ou
+usuário final”.(NT 2022.002)
+
             </td>
             <td>Obrig.</td>
             <td id="Rej_727">727</td>
@@ -2189,6 +2196,10 @@
             <td>55</td>
             <td>Se operação com Exterior (tag:idDest=3):<br>
               <div class="recuo"></div>- Código País do destinatário = 1058 (Brasil), ou não informado
+              <br><br><div class="negrito">Exceção:</div> Regra não se aplica quando existir algum item com a UF de
+consumo do combustível igual a exterior (tag: comb/UFCons = “EX”) e com
+CFOP = “7667 - Venda de combustível ou lubrificante a consumidor ou
+usuário final”.(NT 2022.002)
             </td>
             <td>Facult.</td>
             <td id="Rej_510">510</td>
@@ -2231,6 +2242,10 @@
             <td>55</td>
             <td>Se operação com Exterior (tag:idDest=3):<br>
               <div class="recuo"></div>- Indicação de IE Destinatário diferente "Não Contribuinte" (tag:indIEDest <> 9) (NT 2015.003)
+              <br><br><div class="negrito">Exceção:</div> Regra não se aplica quando existir algum item com a UF de
+consumo do combustível igual a exterior (tag: comb/UFCons = “EX”) e com
+CFOP = “7667 - Venda de combustível ou lubrificante a consumidor ou
+usuário final”.(NT 2022.002)
             </td>
             <td>Obrig.</td>
             <td id="Rej_790">790</td>
@@ -3514,7 +3529,12 @@
             <tr class="">
               <td>K01-20</td>
               <td>55</td>
-              <td>Se informado Grupo de Medicamentos (tag :med) obrigatório preenchimento do grupo rastro (id: I80) (NT 2016.002)</td>
+              <td>Se informado Grupo de Medicamentos (tag :med) obrigatório preenchimento do grupo rastro (id: I80) (NT 2016.002)
+                <br>
+                <br><span class="negrito">Exceção 1:</span>Regra de Validação não se aplica para NF-e de devolução (finNfe = 4).
+                <br><span class="negrito">Exceção 2:</span>Regra de Validação não se aplica para NF-e de venda não prsencial (indPres = 2 ou 3)
+                <br><span class="negrito">Exceção 3:</span>Regra de Validação não se aplica para CFOP de venda para entrega futura (CFOPs 5922 e 6922) (NT 2021.004)
+              </td>
               <td>Obrig</td>
               <td id="Rej_873">873</td>
               <td>Rej</td>
@@ -4844,9 +4864,9 @@
                 <td>55/65</td>
                 <td>Se informado grupo de tributação do ISSQN (id:U01), deve ser informado GTIN (tag: cEAN) e GTIN da unidade tributável (tag: cEANTrib) igual a “SEM GTIN” . (NT 2021.003, Etapa 1)</td>
                 <td>Obrig.</td>
-                <td id="Rej_897">897</td>
+                <td id="Rej_887">887</td>
                 <td>Rej.</td>
-                <td>Rejeição: Item de Serviço e informado GTIN diferente de SEM GTIN</td>
+                <td>Rejeição: Item de Serviço e informado GTIN diferente de SEM GTIN [nItem:999]</td>
               </tr>
               <tr class="">
                 <td>U05-10</td>
@@ -4866,9 +4886,9 @@
                   <br><div class="negrito">Observação 1:</div>Tabela de Códigos de Item da Lista de Serviços publicada  na aba “Documentos”, opção “Diversos” do <a href="https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=">Portal Nacional da Nota Fiscal Eletrônica
                 </td>
                 <td>Obrig.</td>
-                <td id="Rej_287">287</td>
+                <td id="Rej_844">844</td>
                 <td>Rej.</td>
-                <td>Rejeição: Código Município do Fato Gerador de ISSQN inexistente [nItem:nnn]</td>
+                <td>Rejeição: Código de Item da Lista de Serviços inexistente. [nItem:nnn]</td>
               </tr>
               <tr class="">
                 <td>U14-10</td>
@@ -5425,6 +5445,10 @@
                     <td>Obrigatória a informação de identificação do Transportador para os CFOP de venda de combustível (tag: CNPJ/CPF, id:X04/X05) com esta obrigatoriedade na Tabela CFOP, indComb=2.<br><br>
                       <div class="negrito">Exceção 1:</div> A regra de validação acima se aplica somente para as NF-e com Finalidade de Emissão normal (tag:finNFe=1);<br>
                       <div class="negrito">Exceção 2:</div> A regra de validação acima se aplica somente para os Códigos de Produto ANP relacionados no Anexo X.02;<br>
+                      <div class="negrito">Exceção 3:</div> A regra de validação acima não se aplica se for informada a UF do Transportador no exterior (tag:transporta/UF=”EX”, id:X10);<br>
+                      <div class="negrito">Exceção 4:</div> Regra não se aplica quando existir algum item com a UF de consumo do combustível igual a exterior (tag: comb/UFCons = “EX”) e com CFOP = “7667 - Venda de combustível ou lubrificante a consumidor ou usuário final”.(NT 2022.002)<br>
+
+
                       <div class="negrito">Observação:</div> Nos casos em que não houver circulação física de mercadoria ou em que o transportador seja estrangeiro, os dados do transportador poderão ser preenchidos com o CNPJ do próprio emitente do documento fiscal. (NT 2017.002 / NT 2015.002)</td>
                     <td>Facul.</td>
                     <td id="Rej_362">362</td>
@@ -5447,7 +5471,7 @@
                     <td> Se for NF-e de saída (tpNF=1) e Modalidade do Frete = 3 (id: X02, campo:
                         modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
                         campo: CPF) do transportador deve ser IGUAL ao CNPJ Base (id:
-                        C02, campo: CNPJ) ou CPF do Remetente (id: C03, campo: CPF) (NT 2021.004).
+                        C02, campo: CNPJ) ou CPF do Remetente (id: C02a, campo: CPF) (NT 2021.004).
                         <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
                     </td>
                     <td>Obrig.</td>
@@ -5475,8 +5499,10 @@
                     <td> Se for NF-e de saída (tpNF=1) e Modalidade do Frete <> 3 (id: X02, campo:
                       modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
                       campo: CPF) do transportador deve ser DIFERENTE do CNPJ Base
-                      (id: C02, campo: CNPJ) ou CPF do Remetente (id: C03, campo: CPF) (NT 2021.004).
-                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      (id: C02, campo: CNPJ) ou CPF do Remetente (id: C02a, campo: CPF) (NT 2021.004).
+                        <br><br><div class="negrito">Observação 1:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                        <br><div class="negrito">Observação 2:</div> Regra de validação não se aplica quando CNPJ Base ou CPF do emitente for igual ao CNPJ Base ou CPF do destinatário e CFOP é de operação com combustíveis (indComb= 2), conforme Tabela CFOP.
+                        <br><div class="negrito">Observação 3:</div> Implementação futura.
                     </td>
                     <td>Obrig.</td>
                     <td id="Rej_847">847</td>
@@ -5491,7 +5517,9 @@
                       X05, campo: CPF) do transportador deve ser DIFERENTE do CNPJ
                       Base (id: E02, campo: CNPJ) ou CPF do Remetente (id: E03, campo:
                       CPF) (NT 2021.004).
-                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><br><div class="negrito">Observação 1:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><div class="negrito">Observação 2:</div> Regra de validação não se aplica quando CNPJ Base ou CPF do emitente for igual ao CNPJ Base ou CPF do destinatário e CFOP é de operação com combustíveis (indComb= 2), conforme Tabela CFOP.
+                      <br><div class="negrito">Observação 3:</div> Implementação futura.
                     </td>
                     <td>Obrig.</td>
                     <td id="Rej_847">847</td>
@@ -5518,7 +5546,7 @@
                     <td>Se for NF-e de entrada (tpNF=0) e Modalidade do Frete = 4 (id: X02,
                       campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
                       X05, campo: CPF) do transportador deve ser IGUAL ao CNPJ Base
-                      (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C03, campo: CPF) (NT 2021.004).
+                      (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C02a, campo: CPF) (NT 2021.004).
                         <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
                     </td>
                     <td>Obrig.</td>
@@ -5532,7 +5560,9 @@
                     <td>Se for NF-e de saída (tpNF=1) e Modalidade do Frete <> 4 (id: X02, campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id: X05,
                       campo: CPF) do transportador deve ser DIFERENTE do CNPJ Base
                       (id: E02, campo: CNPJ) ou CPF do Destinatário (id: E03, campo: CPF) (NT 2021.004).
-                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><br><div class="negrito">Observação 1:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><div class="negrito">Observação 2:</div> Regra de validação não se aplica quando CNPJ Base ou CPF do emitente for igual ao CNPJ Base ou CPF do destinatário e CFOP é de operação com combustíveis (indComb= 2), conforme Tabela CFOP.
+                      <br><div class="negrito">Observação 3:</div> Implementação futura.
                     </td>
                     <td>Obrig.</td>
                     <td id="Rej_849">849</td>
@@ -5545,9 +5575,11 @@
                     <td>Se for NF-e de entrada (tpNF=0) e Modalidade do Frete <> 4 (id: X02,
                       campo: modFrete), o CNPJ Base (id: X04, campo: CNPJ) ou CPF (id:
                       X05, campo: CPF) do transportador deve ser DIFERENTE do CNPJ
-                      Base (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C03, campo:
+                      Base (id: C02, campo: CNPJ) ou CPF do Destinatário (id: C02a, campo:
                       CPF) (NT 2021.004).
-                        <br><br><div class="negrito">Observação:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><br><div class="negrito">Observação 1:</div>Regra de validação não se aplica quando CNPJ/CPF do transportador não for informado.
+                      <br><div class="negrito">Observação 2:</div> Regra de validação não se aplica quando CNPJ Base ou CPF do emitente for igual ao CNPJ Base ou CPF do destinatário e CFOP é de operação com combustíveis (indComb= 2), conforme Tabela CFOP.
+                      <br><div class="negrito">Observação 3:</div> Implementação futura.
                     </td>
                     <td>Obrig.</td>
                     <td id="Rej_849">849</td>
@@ -7490,8 +7522,13 @@ UF (NT 2021.002)</td>
                     </tr>
                     <tr class="">
                       <td>9I03-10</td>
-                      <td>55/65</td>
-                      <td>Se informado GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e GTIN informado na NF-e inexistente no CCG. (NT 2017.001)</td>
+                      <td>55<span style="text-decoration: line-through">/65</span></td>
+                      <td>Se informado GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e
+                         <br>- NCM do produto consta no Anexo I – Grupo de Mercadoria para validação do GTIN e
+                         <br>- CFOP de Venda de Produção do Estabelecimento, conforme Anexo II:
+                         <br><br>Acesso CCG-Cadastro Centralizado de GTIN (Chave: cEAN, sitGTIN<>9-Exclusão):
+                         <br>-GTIN informado na NF-e inexistente no CCG. (NT 2021.003, Etapa 1)
+                      </td>
                       <td>Obrig</td>
                       <td id="Rej_890">890</td>
                       <td>Rej.</td>
@@ -7499,8 +7536,8 @@ UF (NT 2021.002)</td>
                     </tr>
                     <tr class="">
                       <td>9I03-20</td>
-                      <td>55/65</td>
-                      <td>Se informado GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e NCM informada na NF-e diferente da cadastrada no CCG (NT 2017.001)</td>
+                      <td>55<span style="text-decoration: line-through">/65</span></td>
+                      <td>- NCM informada na NF-e diferente da cadastrada no CCG (NT 2021.003, Etapa 2) </td>
                       <td>Obrig</td>
                       <td id="Rej_891">891</td>
                       <td>Rej.</td>
@@ -7508,16 +7545,17 @@ UF (NT 2021.002)</td>
                     </tr>
                     <tr class="">
                       <td>9I03-30</td>
-                      <td>55/65</td>
-                      <td>Se informado o GTIN (tag: cEAN) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)
-<br><br><div class="negrito">Observação:</div>validação somente é realizada se o CEST tiver sido informado no CCG (NT 2021.003, Etapa 2)
+                      <td>55<span style="text-decoration: line-through">/65</span></td>
+                      <td>- CEST informado na NF-e diferente do cadastrado no CCG
+<br><br><div class="negrito">Exceção:</div>Validação somente é realizada se o CEST tiver sido informado no CCG (NT 2021.003)
+<br><br><div class="negrito">Observação:</div>Implementação futura.
                       </td>
                       <td>Obrig.</td>
                       <td id="Rej_892">892</td>
                       <td>Rej.</td>
                       <td>Rejeição: GTIN incompatível com CEST [nItem:999; CEST esperado: 9999999]</td>
                     </tr>
-                    <tr class="">
+                    <tr class="linha_revogada">
                       <td>9I03-40</td>
                       <td>55/65</td>
                       <td>Se informado GTIN-14 (tag: cEAN>09999999999999) com prefixo do Brasil (iniciado em 789 ou 790) e informado GTIN da unidade tributável (tag: cEANTrib) diferente do GTIN Contido cadastrado no CCG<br><br>
@@ -7531,14 +7569,19 @@ UF (NT 2021.002)</td>
                     </tr>
                     <tr class="">
                       <td>9I12-10</td>
-                      <td>55/65</td>
-                      <td>Se informado GTIN da unidade tributável (tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e GTIN da unidade tributável informado na NF-e (tag: cEANTrib) inexistente no CCG. (NT 2017.001)</td>
+                      <td>55<span style="text-decoration: line-through">/65</td>
+                        <td>Se informado GTIN da unidade tributável(tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e
+                           <br>- NCM do produto consta no Anexo I – Grupo de Mercadoria para validação do GTIN e
+                           <br>- CFOP de Venda de Produção do Estabelecimento, conforme Anexo II:
+                           <br><br>Acesso CCG-Cadastro Centralizado de GTIN (Chave: cEANTrib, sitGTIN<>9-Exclusão):
+                           <br>-GTIN da unidade tributável informado na NF-e (tag:cEANTrib) inexistente no CCG. (NT 2021.003, Etapa 1)
+                        </td>
                       <td>Obrig</td>
                       <td id="Rej_894">894</td>
                       <td>Rej.</td>
                       <td>Rejeição: GTIN da unidade tributável inexistente no Cadastro Centralizado de GTIN (CCG) [nItem:999]</td>
                     </tr>
-                    <tr class="">
+                    <tr class="linha_revogada">
                       <td>9I12-20</td>
                       <td>55/65</td>
                       <td>Se informado GTIN da unidade tributável (tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e NCM informada na NF-e diferente da cadastrada no CCG (NT 2017.001)</td>
@@ -7547,7 +7590,7 @@ UF (NT 2021.002)</td>
                       <td>Rej.</td>
                       <td>Rejeição: GTIN da unidade tributável incompatível com a NCM [nItem:999; NCM esperada: 99999999]</td>
                     </tr>
-                    <tr class="">
+                    <tr class="linha_revogada">
                       <td>9I12-30</td>
                       <td>55/65</td>
                       <td>Se informado GTIN da unidade tributável (tag: cEANTrib) com prefixo do Brasil (iniciado em 789 ou 790) e CEST informado na NF-e diferente do cadastrado no CCG (NT 2017.001)
@@ -7559,6 +7602,65 @@ UF (NT 2021.002)</td>
                       <td>Rejeição: GTIN da unidade tributável incompatível com CEST [nItem:999; CEST esperado: 9999999]</td>
                     </tr>
                   </table>
+                  <br><br>
+                    <titulo_tabela id="Anexo I - Grupos de Mercadoria para Validação do GTIN (NT 2021.003)">Anexo I - Grupos de Mercadoria para Validação do GTIN (NT 2021.003)</titulo_tabela><br><br>
+                      <table style="border-collapse: collapse; margin-left:30px;">
+                      <tr>
+                      <th>Grupo</th>
+                      <th>NCM</th>
+                      <th>Descrição resumida</th>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td>2401 a 2403</td>
+                      <td>Tabaco e seus sucedâneos manufaturados</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>3001 a 3006</td>
+                      <td>Produtos farmacêuticos</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>9503 a 9505</td>
+                      <td>Brinquedos, jogos, artigos para divertimento</td>
+                    </tr>
+                    </table>
+                    <br><br>
+                      <titulo_tabela id="Anexo II – CFOP para validação do GTIN (NT 2021.003)">Anexo II – CFOP para validação do GTIN (NT 2021.003)</titulo_tabela><br><br>
+                      <table style="border-collapse: collapse; margin-left:30px;">
+                        <tr>
+                        <th>CFOP</th>
+                        <th>Descrição</th>
+                      </tr>
+                      <tr><td>5.101</td><td>Venda de produção do estabelecimento</td></tr>
+<tr><td>5.103</td><td>Venda de produção do estabelecimento efetuada fora do estabelecimento</td></tr>
+<tr><td>5.105</td><td>Venda de produção do estabelecimento que não deva por ele transitar</td></tr>
+<tr><td>5.109</td><td>Venda de produção do estabelecimento destinada à ZFM ou ALC</td></tr>
+<tr><td>5.111</td><td>Venda de produção do estabelecimento remetida anteriormente em consignação industrial</td></tr>
+<tr><td>5.113</td><td>Venda de produção do estabelecimento remetida anteriormente em consignação mercantil</td></tr>
+<tr><td>5.116</td><td>Venda de produção do estabelecimento originada de encomenda p/ entrega futura</td></tr>
+<tr><td>5.118</td><td>Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem</td></tr>
+<tr><td>5.122</td><td>Venda de produção do estabelecimento remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente </td></tr>
+<tr><td>5.401</td><td>Venda de produção do estabelecimento quando o produto esteja sujeito a ST</td></tr>
+<tr><td>5.402</td><td>Venda de produção do estabelecimento de produto sujeito a ST, em operação entre contribuintes substitutos do mesmo produto</td></tr>
+<tr><td>6.101</td><td>Venda de produção do estabelecimento</td></tr>
+<tr><td>6.103</td><td>Venda de produção do estabelecimento, efetuada fora do estabelecimento</td></tr>
+<tr><td>6.105</td><td>Venda de produção do estabelecimento que não deva por ele transitar</td></tr>
+<tr><td>6.107</td><td>Venda de produção do estabelecimento, destinada a não contribuinte</td></tr>
+<tr><td>6.109</td><td>Venda de produção do estabelecimento destinada à ZFM ou ALC</td></tr>
+<tr><td>6.111</td><td>Venda de produção do estabelecimento remetida anteriormente em consignação industrial</td></tr>
+<tr><td>6.113</td><td>Venda de produção do estabelecimento remetida anteriormente em consignação mercantil</td></tr>
+<tr><td>6.116</td><td>Venda de produção do estabelecimento originada de encomenda p/ entrega futura</td></tr>
+<tr><td>6.118</td><td>Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem</td></tr>
+<tr><td>6.122</td><td>Venda de produção do estabelecimento remetida p/ industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente </td></tr>
+<tr><td>6.401</td><td>Venda de produção do estabelecimento quando o produto sujeito a ST</td></tr>
+<tr><td>6.402</td><td>Venda de produção do estabelecimento de produto sujeito a ST, em operação entre contribuintes substitutos do mesmo produto</td></tr>
+<tr><td>7.101</td><td>Venda de produção do estabelecimento</td></tr>
+<tr><td>7.105</td><td>Venda de produção do estabelecimento, que não deva por ele transitar</td></tr>
+<tr><td>7.127</td><td>Venda de produção do estabelecimento sob o regime de drawback</td></tr>
+                    </table>
+                  <br><br>
                   <p>(*1)	Não validar o dígito de controle para os Códigos de Município que seguem: 2201919 - Bom Princípio do Piauí/PI; 2202251 - Canavieira /PI; 2201988 - Brejo do Piauí/PI; 2611533 – Quixaba/PE; 3117836 - Cônego Marinho/MG; 3152131 - Ponto Chique/MG; 4305871 - Coronel Barros/RS; 5203939 - Buriti de Goiás/GO; 5203962 – Buritinópolis/GO.</p>
                   <p>(*2)	O tamanho da IE deve ser normalizado na aplicação da SEFAZ, desprezando os zeros não significativos antes da verificação do dígito de controle.</p>
                   <p>(*3)	Considerar uma tolerância de R$ 0,50 para mais ou para menos (NT 2012/003).</p>
