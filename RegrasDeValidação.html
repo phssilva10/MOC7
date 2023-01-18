@@ -168,6 +168,7 @@
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I07. Produtos e Serviços / Grupo Diversos")' title='I07. Produtos e Serviços / Grupo Diversos'>I07. Produtos e Serviços / Grupo Diversos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I08. Rastreabilidade de produto")' title='I08. Rastreabilidade de produto'>I08. Rastreabilidade de produto<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I86. Informações Adicionais do Produto NFF")' title='I86. Informações Adicionais do Produto NFF'>I86. Informações Adicionais do Produto NFF<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("I87. Informações de Embalagem do Produto")' title='I87. Informações de Embalagem do Produto'>I87. Informações de Embalagem do Produto<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("J. Item / Veículos Novos")' title='J. Item / Veículos Novos'>J. Item / Veículos Novos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("K. Item / Medicamentos")' title='K. Item / Medicamentos'>K. Item / Medicamentos<br></span></a><br>
           <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("L. Item / Armamentos")' title='L. Item / Armamentos'>L. Item / Armamentos<br></span></a><br>
@@ -1392,6 +1393,185 @@
             <td>Rejeição: Chave de Acesso referenciada com a mesma Chave de Acesso da Nota Fiscal atual [nOcor:nnn]</td>
           </tr>
           <tr class="">
+            <td>BA02-60</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada (tag:refNFe):<br>
+              <div class="recuo"></div>   - Chave de Acesso referenciada com Tipo de Emissão Inválido (diferente de 1, 2, 3, 4, 5, 6, 7, 9) (NT 2022.003)
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_953">953</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com tipo de emissão inválido [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02-70</td>
+            <td>55</td>
+            <td>Se NFe de devolução (finNFe=4) e modelo de NFe referenciada (tag: refNFe) diferente de 55: (NT 2022.003)<br>
+              <div class="recuo"></div>   - Informada uma NF-e referenciada com código da UF diferente da UF do emitente.
+                <br><br><div class="negrito">Observação: </div>Implementação futura.<br>
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_954">954</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada não permitida para esta operação[nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02-80</td>
+            <td>55</td>
+            <td>Se NFe de devolução (finNFe=4) e destinatário consumidor final (indIEDest=9): (NT 2022.003)<br>
+              <div class="recuo"></div>- Informado código da UF da NF-e referenciada diferente da UF do emitente
+              <br><br><div class="negrito">Observação: </div>Implementação futura.<br>
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_954">954</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada não permitida para esta operação[nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02a-10</td>
+            <td>55</td>
+            <td>Se NF-e diferente de normal (fiNFe <> 1) e informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)</td>
+            <td>Facul.</td>
+            <td id="Rej_951">951</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com código numérico zerado não permitida para finalidade diferente de normal. [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02a-20</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+              <br><div class="recuo"></div>-Chave de Acesso referenciada com UF inválida
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_522">522</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com UF inválida[nOcor:nnn] </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-30</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+              <br><div class="recuo"></div>-Chave de Acesso referenciada com Ano Emissão < 06 ou > que o Ano corrente.
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_524">524</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com Ano-Mês inválido[nOcor:nnn]  </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-40</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+              <br><div class="recuo"></div>- Chave de Acesso referenciada com Mês Emissão < 01 ou > 12
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_524">524</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com Ano-Mês inválido[nOcor:nnn]  </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-50</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Série = [0-909] e CNPJ zerado ou dígito inválido, ou
+                <br><div class="recuo"></div>- Série = [910-969] e CPF zerado ou dígito inválido
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_552">552</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com CNPJ/CPF inválido[nOcor:nnn] </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-60</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Modelo da NF-e referenciada diferente de 55
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_679">679</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com Modelo inválido[nOcor:nnn] </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-70</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+              <br><div class="recuo"></div>- Chave de Acesso referenciada com Número zerado
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_683">683</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com Número inválido[nOcor:nnn] </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-74</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+              <br><div class="recuo"></div>- Chave de Acesso referenciada com Código Numérico não zerado
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_955">955</td>
+            <td>Rej.</td>
+            <td>Rejeição:  Chave de Acesso referenciada com código numérico não zerado [nOcor:nnn]   </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-80</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Verificar duplicidade da NF-e referenciada (duplicidade da tag: refNFeSig)
+                <br><br><div class="negrito">Observação:</div> desconsiderar o Dígito Verificador na comparação de duplicidade.
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_680">680</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada em duplicidade na NF-e [nOcor:nnn] </td>
+          </tr>
+          <tr class="">
+            <td>BA02a-90</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Verificar se alguma NF-e referenciada (tag: refNFe) possui mesma Chave Natural
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_680">680</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada em duplicidade na NF-e [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02a-100</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Nota Fiscal referenciada com a mesma Chave Natural da Nota Fiscal atual (mesma UF, CNPJ/CPF, Série e Nro);
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_952">952</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com a mesma Chave Natural da Nota Fiscal atual [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02a-110</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig): (NT 2022.003)
+                <br><div class="recuo"></div>- Chave de Acesso referenciada com Tipo de Emissão Inválido (diferente de 1, 2, 3, 4, 5, 6, 7, 9)
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_953">953</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com tipo de emissão inválido [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
+            <td>BA02a-120</td>
+            <td>55</td>
+            <td>Se informada uma NF-e referenciada por Chave de Acesso com código numérico zerado (tag: refNFeSig) em UF que não permite tal referência: (NT 2022.003)
+                <br><div class="recuo"></div>- Chave de Acesso referenciada com código numérico zerado não aplicável para a UF
+                <br><br><div class="negrito">Observação: </div>Essa regra se aplica para as seguintes UF: PE
+            </td>
+            <td>Facul.</td>
+            <td id="Rej_956">956</td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso referenciada com código numérico zerado não permitida na UF [nOcor:nnn]</td>
+          </tr>
+          <tr class="">
             <td>BA03-10</td>
             <td>55</td>
             <td>Se informada NF Modelo 1 ou NF Modelo 2 referenciada (tag:refNF):<br>
@@ -1699,7 +1879,7 @@
             <td>Rej.</td>
             <td>Rejeição: CNPJ do emitente com Série incompatível</td>
           </tr>
-          <tr class="">
+          <tr class="linha_revogada">
             <td>C02a-04</td>
             <td>65</td>
             <td>Se informado CPF do emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
@@ -1710,7 +1890,7 @@
             <td>Rej.</td>
             <td>Rejeição: NFC-e para emitente pessoa física</td>
           </tr>
-          <tr class="">
+          <tr class="linha_revogada">
             <td>C02a-08</td>
             <td>55</td>
             <td>Se informado CPF do emitente:<br>
@@ -1733,7 +1913,7 @@
             <td>Rej.</td>
             <td>Rejeição: CPF do Emitente com Série incompatível</td>
           </tr>
-          <tr class="">
+          <tr class="linha_revogada">
             <td>C02a-14</td>
             <td>55</td>
             <td>Se informado CPF do Emitente e tpEmis <> 3-NFF (NT 2021.002):<br>
@@ -2946,7 +3126,7 @@ usuário final”.(NT 2022.002)
               <div class="negrito">Observação: </div>Vide relação de CFOP de devolução de mercadoria natabela de apoio publicada no Portal da NF-e (Tabela CFOP, indDevol=1).<br><br>
               <div class="negrito">Exceção 1:</div> Aceitar os CFOP 1.949 e 2.949 na devolução de venda para não Contribuinte. Para estes CFOP verificar a condição:<br>
               <div class="recuo"></div>- tag:finNFe = 4 (devolução) e tag:indIEDest = 9 (não Contribuinte) (NT 2015.002)<br>
-              <div class="negrito">Exceção 2:</div> Aceitar os CFOP 5.949 e 6.949 na devolução simbólica de gás natural (NCM 27112100) nos termos do <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2021/aj22_21">Ajuste SINIEF nº 22/21</a>
+              <div class="negrito">Exceção 2:</div> Aceitar os CFOP 5.949 e 6.949 na devolução simbólica de gás natural (NCM 27112100) nos termos do <a href="https://www.confaz.fazenda.gov.br/legislacao/ajustes/2021/aj22_21">Ajuste SINIEF nº 22/21</a> (NT 2021.004)
             </td>
             <td>Obrig.</td>
             <td id="Rej_327">327</td>
@@ -3029,6 +3209,33 @@ usuário final”.(NT 2022.002)
             <td id="Rej_701">701</td>
             <td>Rej.</td>
             <td>Rejeição: Não informado Nota Fiscal referenciada (CFOP de Exportação Indireta) [nItem: nnn]</td>
+          </tr>
+          <tr class="">
+            <td>I08-194</td>
+            <td>55</td>
+            <td>Se emitente for não contribuinte do ICMS (CCC/tpIE=3) (NT 2022.003)
+              <br><div class="recuo"></div>- Se operação de Venda, com os CFOP abaixo:
+              <br><div class="recuo">5101, 5102, 5103, 5104, 5105, 5106, 5109, 5110, 5116, 5117,5118, 5119, 5120, 5122, 5123, 5917, 5251, 5252, 5253, 5254, 5255, 5256, 5257, 5258, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5351, 5352, 5353, 5354, 5355, 5356, 5357, 5932, 5359, 5360, 5401, 5402, 5403, 5405, 5501, 5502, 5124, 5125, 5917, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6116, 6117, 6118, 6119, 6120, 6122, 6123, 6917, 6151, 6152, 6153, 6155, 6156, 6251, 6252, 6253, 6254, 6255, 6256, 6257, 6258, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6351, 6352, 6353, 6354, 6355, 6356, 6357, 6359, 6360, 6932, 6401, 6402, 6403, 6404, 6408, 6409, 6501, 6502, 6917, 6124, 6125, 7101, 7102, 7105, 7106, 7127, 7651, 7654, 7667, 7251, 7301, 7358</div>
+              <br><br><div class="negrito">Exceção: </div>Emissão de Nota Fiscal Avulsa – NFA-e (procEmi=1 ou 2)
+              <br><div class="negrito">Observação: </div>Regra de Validação opcional, a critério da UF.
+            </td>
+            <td>Obrig.</td>
+            <td id="Rej_475">475</td>
+            <td>Rej.</td>
+            <td>Rejeição: Operação não permitida para não contribuinte [nItem:999]</td>
+          </tr>
+          <tr class="">
+            <td>I08-198</td>
+            <td>55</td>
+            <td>Se emitente for não contribuinte do ICMS (CCC/tpIE=3) (NT 2022.003)
+              <br><div class="recuo"></div>- Se operação com os CFOP 5949, 6949, 7949 e valor do ICMS diferente de zero (verificar vICMS, vICMSOp, vICMSDif, vICMSRet, vICMSEfet)
+              <br><br><div class="negrito">Exceção: </div>Emissão de Nota Fiscal Avulsa – NFA-e (procEmi=1 ou 2)
+              <br><div class="negrito">Observação: </div>Regra de Validação opcional, a critério da UF.
+            </td>
+            <td>Obrig.</td>
+            <td id="Rej_475">475</td>
+            <td>Rej.</td>
+            <td>Rejeição: Operação não permitida para não contribuinte [nItem:999]</td>
           </tr>
           <tr class="">
             <td>I09-10</td>
@@ -3447,6 +3654,27 @@ usuário final”.(NT 2022.002)
             <td>Rejeição: Informado produto fiscal de NFF</td>
           </tr>
         </table><br>
+        <titulo_tabela id="I87. Informações de Embalagem do Produto">I87. Informações de Embalagem do Produto</titulo_tabela><br><br>
+        <table class="regras_validacao_nfe">
+          <tr>
+            <th>Campo-Seq</th>
+            <th>Modelo</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr class="">
+            <td>I87-10</td>
+            <td>55/65</td>
+            <td>Tipo de emissão diferente de Nota Fiscal Fácil (tpEmis <> 3-NFF) ou NF-e Avulsa e preenchida a embalagem do produto (infProdEmb) (NT 2021.002)</td>
+            <td>Obrig</td>
+            <td id="Rej_833">833</td>
+            <td>Rej</td>
+            <td>Rejeição: Informada embalagem do produto</td>
+          </tr>
+        </table><br>
           <titulo_tabela id="J. Item / Veículos Novos">J. Item / Veículos Novos</titulo_tabela><br><br>
           <table class="regras_validacao_nfe">
             <tr>
@@ -3520,6 +3748,7 @@ usuário final”.(NT 2022.002)
                 <br><span class="negrito">Observação 1:</span>Regra de validação a critério da UF.
                 <br><span class="negrito">Observação 2:</span>Os medicamentos são classificados nos NCMs que começam com 3001, 3002, 3003, 3004, 3005 e 3006.
                 <br><span class="negrito">Observação 3:</span>Para os medicamentos que não possuam código de Produto da ANVISA, o campo cProdANVISA do Grupo de Medicamentos deverá ser preenchido com o literal “ISENTO”
+                <br><span class="negrito">Observação 4:</span>Implementação futura.
               </td>
               <td>Facul.</td>
               <td id="Rej_840">840</td>
@@ -3532,8 +3761,9 @@ usuário final”.(NT 2022.002)
               <td>Se informado Grupo de Medicamentos (tag :med) obrigatório preenchimento do grupo rastro (id: I80) (NT 2016.002)
                 <br>
                 <br><span class="negrito">Exceção 1:</span>Regra de Validação não se aplica para NF-e de devolução (finNfe = 4).
-                <br><span class="negrito">Exceção 2:</span>Regra de Validação não se aplica para NF-e de venda não prsencial (indPres = 2 ou 3)
-                <br><span class="negrito">Exceção 3:</span>Regra de Validação não se aplica para CFOP de venda para entrega futura (CFOPs 5922 e 6922) (NT 2021.004)
+                <br><span class="negrito">Exceção 2:</span>Regra de Validação não se aplica para NF-e de venda não presencial (indPres = 2 ou 3)
+                <br><span class="negrito">Exceção 3:</span>Regra de Validação não se aplica para CFOP de venda para entrega futura (CFOPs 5922 e 6922) ou CFOP de Venda à Ordem (5118, 6118, 5119, 6119, 5120 e 6120) (NT 2021.004)
+                <br><span class="negrito">Exceção 4:</span>Regra de validação não se aplica para NF-e de entrada (tpNF=0)
               </td>
               <td>Obrig</td>
               <td id="Rej_873">873</td>
@@ -4262,6 +4492,17 @@ usuário final”.(NT 2022.002)
                 <td>Rejeição: Operação interestadual para Consumidor Final e valor do FCP informado em campo diferente de vFCPUFDest (id:NA13) [nItem: 999]</td>
               </tr>
               <tr class="">
+                <td>N17c-30</td>
+                <td>55</td>
+                <td>Se Operação Interna ou Operação Interestadual (idDest=1 ou 2) com CST=00 (operação tributada normalmente): (NT 2022.003)<br><br>
+                  <div class="recuo"></div>- Se informado valor diferente de zero para o FCP (verificar tags vFCP, vFCPST, vFCPSTRet)
+                  <br><br><div class="negrito">Observação: </div> Regra de validação aplicável para a UF: CE.
+                <td>Obrig.</td>
+                <td id="Rej_474">474</td>
+                <td>Rej</td>
+                <td>Rejeição: FCP não deve ser destacado na NF-e conforme legislação estadual [nItem:999]</td>
+              </tr>
+              <tr class="">
                 <td>N18-10</td>
                 <td>55</td>
                 <td>Se o campo modBCST = “4" Margem Valor Agregado, obrigatório o preenchimento do campo pMVAST (NT 2019.001)<br><br>
@@ -4570,7 +4811,9 @@ usuário final”.(NT 2022.002)
                   <div class="recuo"></div>- 6.929 - Lançamento relativo a Cupom Fiscal.<br>
                   <div class="negrito">Exceção 10: </div>Esta regra de validação não se aplica nas operações isentas (CST=40-Isenta ou CSOSN=103-Isento), imunes ou não tributadas (CST=41-Não tributada, ou CSOSN=300-Imune, ou CSOSN=400-Não tributada pelo Simples Nacional).<br>
                   <div class="negrito">Exceção 11: </div>A regra de validação acima não se aplica nas NF-e complementares (finNFe=2) nem nas de ajuste (finNFe=3).<br>
-                  <div class="negrito">Exceção 12: </div>A regra de validação acima não se aplica para emitentes optantes pelo Simples Nacional (CRT=1). (NT 2017.002 / NT 2015.003)</td>
+                  <div class="negrito">Exceção 12: </div>A regra de validação acima não se aplica para emitentes optantes pelo Simples Nacional (CRT=1). (NT 2017.002 / NT 2015.003)
+                  <br><span style="text-decoration:line-through"><div class="negrito">Observação: </div>: RV suspensa a partir de 01/01/2022, conforme comunicado no Portal Nacional (em 28/12/2021).</span>NT 2022.005</td>
+
                 <td>Obrig.</td>
                 <td id="Rej_694">694</td>
                 <td>Rej.</td>
@@ -4853,7 +5096,12 @@ usuário final”.(NT 2022.002)
                 <td>U01-20</td>
                 <td>55/65</td>
                 <td>Informado grupo de tributação do ISSQN (id:U01) sem informar nenhum grupo de ICMS (id:N01)<br><br>
-                  <div class="negrito">Exceção: </div>A critério da UF poderá ser autorizada a emissão de NF-e que só tenham itens sujeitos ao ISSQN. (NT 2010/010)</td>
+                  <div class="negrito">Exceção: </div>A critério da UF poderá ser autorizada/vedada a emissão de NF-e/NFC-e que só tenham itens sujeitos ao ISSQN. (NT 2010/010);
+                  <br>Parametrizações possíveis: (NT 2022.004)
+                  <br><div class="recuo"></div>- 0: Não aceita item de Serviço.
+                  <br><div class="recuo"></div>- 1: Aceita item de Serviço.
+                  <br><div class="recuo"></div>- 2: Aceita item de Serviço somente na NF-e/NFC-e conjugada (que contenha também itens de ICMS).
+                  </td>
                 <td>Facult.</td>
                 <td id="Rej_592">592</td>
                 <td>Rej.</td>
@@ -6002,7 +6250,7 @@ usuário final”.(NT 2022.002)
                     <td>65</td>
                     <td>NFC-e sem preenchimento das Informações Adicionais de Interesse do Fisco (campo:infAdFisco).(NT 2021.004)<br>
                       <br><div class="negrito">Observação 1:</div>Regra de validação restrita a UF de SC
-                      <br><div class="negrito">Observação 2:</div>Regra de validação válida a partir de 01/02/2023 para homologação e 03/04/2023 para produção
+                      <br><div class="negrito">Observação 2:</div>Implementação futura.
                     </td>
                     <td>Facul.</td>
                     <td id="Rej_949">949</td>
@@ -6014,7 +6262,7 @@ usuário final”.(NT 2022.002)
                     <td>65</td>
                     <td>Tamanho das Informações Adicionais de Interesse do Fisco (campo:infAdFisco) não atende ao tamanho mínimo exigido (NT 2021.004)<br>
                       <br><div class="negrito">Observação 1:</div>Regra de validação restrita a UF de SC, que exige um tamanho mínimo de 251 caracteres.
-                      <br><div class="negrito">Observação 2:</div>Regra de validação válida a partir de 01/02/2023 para homologação e 03/04/2023 para produção
+                      <br><div class="negrito">Observação 2:</div>Implementação futura.
                     </td>
                     <td>Facul.</td>
                     <td id="Rej_950">950</td>
@@ -7097,6 +7345,79 @@ UF (NT 2021.002)</td>
                       <td>Rejeição: NF Complementar referencia uma NF-e denegada</td>
                     </tr>
                     <tr class="">
+                      <td>3BA02-50</td>
+                      <td>55</td>
+                      <td>Se NF-e de Devolução (finNFe = 4): (NT 2022.005)<br>
+                        <div class="recuo"></div>- Valor total da NF-e de Devolução (tag: vNF, id:W16) maior que o somatório do valor correspondente das NF-e referenciadas
+                        <br><br><div class="negrito">Exceção: A RV somente será aplicada se todas as NF-e referenciadas existirem no BD da SEFAZ.
+                      </td>
+                      <td>Obrig.</td>
+                      <td id="Rej_545">545</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: NF-e de devolução com valor total superior a NF-e devolvida</td>
+                    </tr>
+                    <tr class="">
+                      <td>3BA02-54</td>
+                      <td>55</td>
+                      <td>Se NF-e de Devolução (finNFe = 4): (NT 2022.005)<br>
+                        <div class="recuo"></div>- Valor total do ICMS da NF-e de Devolução (tag: vICMS, id:W04) maior que o somatório do valor correspondente das NF-e referenciadas
+                        <br><br><div class="negrito">Exceção: A RV somente será aplicada se todas as NF-e referenciadas existirem no BD da SEFAZ.
+                      </td>
+                      <td>Obrig.</td>
+                      <td id="Rej_546">546</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: NF-e de devolução com valor do ICMS superior a NF-e devolvida</td>
+                    </tr>
+                    <tr class="">
+                      <td>3BA02-58</td>
+                      <td>55</td>
+                      <td>Se NF-e de Devolução (finNFe = 4): (NT 2022.005)<br>
+                        <div class="recuo"></div>- Valor total do FCP da NF-e de Devolução (tag: vFCP, id:W04h) maior que o somatório do valor correspondente das NF-e referenciadas
+                        <br><br><div class="negrito">Exceção: A RV somente será aplicada se todas as NF-e referenciadas existirem no BD da SEFAZ.
+                      </td>
+                      <td>Obrig.</td>
+                      <td id="Rej_566">566</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: NF-e de devolução com valor do FCP superior a NF-e devolvida</td>
+                    </tr>
+                    <tr class="">
+                      <td>3BA02-64</td>
+                      <td>55</td>
+                      <td>Se NF-e de Devolução (finNFe = 4): (NT 2022.005)<br>
+                        <div class="recuo"></div>- Valor total do ICMS interestadual da NF-e de Devolução (tag: vICMSUFDest, id:W04e) maior que o somatório do valor correspondente das NF-e referenciadas
+                        <br><br><div class="negrito">Exceção: A RV somente será aplicada se todas as NF-e referenciadas existirem no BD da SEFAZ.
+                      </td>
+                      <td>Obrig.</td>
+                      <td id="Rej_567">567</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: NF-e de devolução com valor do ICMS da UF Destino superior a NF-e devolvida</td>
+                    </tr>
+                    <tr class="">
+                      <td>3BA02-68</td>
+                      <td>55</td>
+                      <td>Se NF-e de Devolução (finNFe = 4): (NT 2022.005)<br>
+                        <div class="recuo"></div>- Valor total do FCP interestadual da NF-e de Devolução (tag: vFCPUFDest, id:W04c) maior que o somatório do valor correspondente das NF-e referenciadas
+                        <br><br><div class="negrito">Exceção: A RV somente será aplicada se todas as NF-e referenciadas existirem no BD da SEFAZ.
+                      </td>
+                      <td>Obrig.</td>
+                      <td id="Rej_581">581</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: NF-e de devolução com valor do FCP da UF Destino superior a NF-e devolvida</td>
+                    </tr>
+                    <tr class="">
+                      <td>3BA02a-10</td>
+                      <td>55</td>
+                      <td>Para cada NF-e referenciada por Chave de Acesso com código numérico zerado (tag:refNFeSig), se a UF da Chave de Acesso referenciada for igual a UF do Emitente: (NT 2022.003)<br>
+                        <br><div class="recuo"></div>- Acessar BD NFE com Chave natural
+                        <br><div class="recuo"></div>– NF-e referenciada inexistente
+                        <br><br><div class="negrito">Exceção: </div>A NF-e referenciada pode não existir no caso de Emissão em Contingência (tpEmis = 2, 4 ou 5) desde que a Chave de Acesso da NF-e referenciada com código numérico zerado tenha o Ano-Mês de Emissão inferior a 1 mês da data atual ou desde que exista o EPEC.
+                        </td>
+                      <td>Facult.</td>
+                      <td id="Rej_267">267</td>
+                      <td>Rej.</td>
+                      <td>Rejeição: Chave de Acesso referenciada inexistente [nRef: xxx]</td>
+                    </tr>
+                    <tr class="">
                       <td>3BA15-10</td>
                       <td>55</td>
                       <td>Para cada NF de Produtor referenciada (tag:refNFP), se a Nota Fiscal referenciada for da própria UF (tag:refNFP/cUF):<br>
@@ -7273,7 +7594,7 @@ UF (NT 2021.002)</td>
                   </table>
                   <p>(*5)	Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC-Cadastro Centralizado de Contribuintes.</p>
                   <p>(*6)	Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC. Pesquisar todas as IE vinculadas com o CNPJ informado.</p>
-                  <p>(*7)	Algumas UF ainda não cadastraram no CCC os Contribuintes Pessoa Física (IE e CPF). Portanto, as SEFAZ Autorizadoras que utilizam o CCC para validar o destinatário somente poderão efetuar as validações assinaladas se o Contribuinte (IE e CPF) existir no CCC.</p>
+                  <p style="text-decoration: line-through;">(*7)	Algumas UF ainda não cadastraram no CCC os Contribuintes Pessoa Física (IE e CPF). Portanto, as SEFAZ Autorizadoras que utilizam o CCC para validar o destinatário somente poderão efetuar as validações assinaladas se o Contribuinte (IE e CPF) existir no CCC.</p>
                   <br><br>
                   <br>
                   <titulo_tabela id="5A. Banco de Dados: Local de Retirada">5A. Banco de Dados: Local de Retirada</titulo_tabela><br><br>
@@ -7288,7 +7609,7 @@ UF (NT 2021.002)</td>
                       <th>Descrição Erro</th>
                     </tr>
                     <tr class="">
-                      <td>5AF15-10 </td>
+                      <td>5AF15-10</td>
                       <td>55</td>
                       <td>Se informada IE do Local de Retirada: (NT 2021.004)<br>
                         <div class="recuo"></div>- Acessar Cadastro de Contribuinte da UF (Chave: UF Retirada , IE Retirada)(*5)<br>
@@ -7396,9 +7717,9 @@ UF (NT 2021.002)</td>
                       <td>7C21-10</td>
                       <td>55/65</td>
                       <td>Código de Regime Tributário do emitente divergente do cadastrado na SEFAZ (tag:emit/CRT):<br>
-                        <div class="recuo"></div>- CRT="1-Simples Nacional" para Contribuinte cadastrado como Regime Normal na UF;<br>
-                        <div class="recuo"></div>- CRT="3-Regime Normal" para Contribuinte cadastrado como Simples Nacional na UF;<br><br>
-                        <div class="negrito">Observação: </div>Implementação futura. (NT 2015.002)</td>
+                        <div class="recuo"></div>- CRT="1-Simples Nacional" para Contribuinte cadastrado como Regime Normal na UF (CCC, regTrib=9);<br>
+                        <div class="recuo"></div>- CRT="3-Regime Normal" para Contribuinte cadastrado como Simples Nacional na UF (CCC, regTrib=1 ou 2);<br><br>
+                        <div class="negrito">Observação: </div>Regra de Validação opcional por UF (NT2022.003)</td>
                       <td>Facult.</td>
                       <td id="Rej_481">481</td>
                       <td>Rej.</td>
@@ -7624,6 +7945,66 @@ UF (NT 2021.002)</td>
                       <td></td>
                       <td>9503 a 9505</td>
                       <td>Brinquedos, jogos, artigos para divertimento</td>
+                    </tr>
+                    <tr>
+                      <td>II</td>
+                      <td>2201 a 2209</td>
+                      <td>Bebidas e Refrigerantes (NT 2021.003 1.20)</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>2523,3816</td>
+                      <td>Cimentos e Argamassa</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>-x-</td>
+                      <td>Produtos de Higiene Pessoal e Cosméticos, conforme abaixo</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>2814</td>
+                      <td>Produtos químico inorgânicos ..., Amoníaco</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>2847</td>
+                      <td>Produtos químico inorgânicos ..., Água oxigenada</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>3301 a 3307</td>
+                      <td>Óleos Essenciais, Perfumes e Águas de Colônia, Produtos de Beleza ou de maquiagem, Preparações capilares, Higiene bucal ou dentária, Preparações para barbear, Desodorantes,...</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>3401</td>
+                      <td>Sabões, agentes orgânicos de superfície, preparações para lavagem, preparações lubrificantes, ceras artificiais, ceras preparadas, produtos de conservação e limpeza, velas e artigos semelhantes, ...</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>4818</td>
+                      <td>Papel Higiênico, Lenço e toalhas de mão, ...</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>8212</td>
+                      <td>Navalhas e Aparelhos e lâminas de barbear, ...</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>9605</td>
+                      <td>Conjuntos de viagem, para toucador de pessoas, para costura ou para limpeza de calçado ou de roupas</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>9615</td>
+                      <td>Pentes, travessas para cabelo e artigos semelhantes; grampos (alfinetes) para cabelo e artefatos semelhantes, ...</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>9619</td>
+                      <td>Absorventes, fraldas, e artigos semelhantes</td>
                     </tr>
                     </table>
                     <br><br>
@@ -8821,6 +9202,14 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: CPF consultado difere do CPF do Certificado Digital</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_474")'>474</a></td>
+                        <td>Rejeição: FCP não deve ser destacado na NF-e conforme legislação estadual [nItem:999]</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_475")'>475</a></td>
+                        <td>Rejeição: Operação não permitida para não contribuinte [nItem:999]</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_476")'>476</a></td>
                         <td>Rejeição: Código da UF diverge da UF da primeira NF-e do Lote</td>
                       </tr>
@@ -9069,6 +9458,14 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: IE do Transportador inválida</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_545")'>545</a></td>
+                        <td>Rejeição: NF-e de devolução com valor total superior a NF-e devolvida</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_546")'>546</a></td>
+                        <td>Rejeição: NF-e de devolução com valor do ICMS superior a NF-e devolvida</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_547")'>547</a></td>
                         <td>Rejeição: Chave de Acesso referenciada com Dígito Verificador inválido[nOcor:nnn]</td>
                       </tr>
@@ -9141,6 +9538,14 @@ UF (NT 2021.002)</td>
                         <td>Rejeição: Falha no schema XML – inexiste a tag raiz esperada para o lote de NF-e</td>
                       </tr>
                       <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_566")'>566</a></td>
+                        <td>Rejeição: NF-e de devolução com valor do FCP superior a NF-e devolvida</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_567")'>567</a></td>
+                        <td>Rejeição: NF-e de devolução com valor do ICMS da UF Destino superior a NF-e devolvida</td>
+                      </tr>
+                      <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_568")'>568</a></td>
                         <td>Rejeição: Falha no schema XML – inexiste atributo versao na tag raiz do lote de NF-e</td>
                       </tr>
@@ -9191,6 +9596,10 @@ UF (NT 2021.002)</td>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_580")'>580</a></td>
                         <td>Rejeição: O evento exige uma NF-e autorizada</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_581")'>581</a></td>
+                        <td>Rejeição: NF-e de devolução com valor do FCP da UF Destino superior a NF-e devolvida</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_587")'>587</a></td>
@@ -10014,7 +10423,11 @@ UF (NT 2021.002)</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_832")'>832</a></td>
-                        <td>Rejeição: Rejeição: CNPJ incorreto na transmissão da NFF</td>
+                        <td>Rejeição: CNPJ incorreto na transmissão da NFF</td>
+                      </tr>
+                      <tr>
+                        <td><a href='javascript:void(0);' onclick='meiodatela("Rej_833")'>833</a></td>
+                        <td>Rejeição: Informada embalagem do produto</td>
                       </tr>
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_834")'>834</a></td>
@@ -10367,6 +10780,28 @@ UF (NT 2021.002)</td>
 <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_948")'>948</a></td><td>Rejeição: IE do local de entrega não vinculada ao CPF	</td></tr>
 <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_949")'>949</a></td><td>Rejeição: NFC-e sem preenchimento das Informações Adicionais de Interesse do Fisco</td></tr>
 <tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_950")'>950</a></td><td>Rejeição: Informações Adicionais de Interesse do Fisco abaixo do tamanho mínimo exigido pela UF.</td></tr>
+<tr><td><a href='javascript:void(0);' onclick='meiodatela("Rej_951")'>951</a></td><td>Rejeição: Chave de Acesso referenciada com código numérico zerado não permitida para finalidade diferente de normal. [nOcor:nnn]</td></tr>
+<tr>
+  <td><a href='javascript:void(0);' onclick='meiodatela("Rej_952")'>952</a></td>
+  <td>Rejeição: Chave de Acesso referenciada com a mesma Chave Natural da Nota Fiscal atual [nOcor:nnn]</td>
+</tr>
+<tr>
+  <td><a href='javascript:void(0);' onclick='meiodatela("Rej_953")'>953</a></td>
+  <td>Rejeição: Chave de Acesso referenciada com tipo de emissão inválido [nOcor:nnn]</td>
+</tr>
+<tr>
+  <td><a href='javascript:void(0);' onclick='meiodatela("Rej_954")'>954</a></td>
+  <td>Rejeição: Chave de Acesso referenciada não permitida para esta operação[nOcor:nnn]</td>
+</tr>
+<tr>
+  <td><a href='javascript:void(0);' onclick='meiodatela("Rej_955")'>955</a></td>
+  <td>Rejeição: Chave de Acesso referenciada com código numérico não zerado [nOcor:nnn]  </td>
+</tr>
+<tr>
+  <td><a href='javascript:void(0);' onclick='meiodatela("Rej_956")'>956</a></td>
+  <td>Rejeição: Chave de Acesso referenciada com código numérico zerado não permitida na UF [nOcor:nnn]</td>
+</tr>
+
                       <tr>
                         <td><a href='javascript:void(0);' onclick='meiodatela("Rej_970")'>970</a></td>
                         <td>Rejeição: Código de País inexistente [local de retirada/entrega] [NT 2018.005]</td>

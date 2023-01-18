@@ -310,7 +310,7 @@
             <td>D</td>
             <td>1-1</td>
             <td>-</td>
-            <td>Data e hora do evento no formato AAAAMMDDThh:mm:ssTZD (UTC – Universal Coordinated Time)</td>
+            <td>Data e hora do evento no formato AAAA-MM-DD-Thh:mm:ssTZD (UTC – Universal Coordinated Time)</td>
           </tr>
           <tr class="">
             <td>P14</td>
@@ -853,7 +853,10 @@
           <tr class="">
             <td>P12-44</td>
             <td>• CNPJ/CPF do Autor diverge do CNPJ/CPF da Chave de Acesso
-              <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]
+              <br>Nota 01: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. CNPJ: Série=[0-909], CPF: Série<>[0-909]
+              <br>Nota 02: Caso tpEmis = 3-NFF, considerar o 5º dígito do número da nota (nNF) para determinar se CNPJ/CPF na Chave de Acesso:
+              <br>CNPJ: 5º dígito do nNF = “1” , CPF: 5º dígito do nNF = “2” (NT 2021.002)
+<br><br><span style="text-decoration:line-through;">Exceção: Para NFF (tpEmis = 3-NFF) CNPJ do certificado é somente o da SVRS (NT 2021.002)</span>
             </td>
             <td>Obrig.</td>
             <td>574</td>

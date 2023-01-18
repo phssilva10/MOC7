@@ -716,7 +716,7 @@
             <td>G</td>
             <td>B01</td>
             <td></td>
-            <td>0-500</td>
+            <td>0-999</td>
             <td></td>
             <td>Grupo com informações de Documentos Fiscais referenciados. Informação utilizada nas hipóteses previstas na legislação. (Ex.: Devolução de mercadorias, Substituição de NF cancelada, Complementação de NF, etc.).</td>
           </tr>
@@ -731,6 +731,18 @@
             <td>1-1</td>
             <td>44</td>
             <td>Referencia uma NF-e (modelo 55) emitida anteriormente, vinculada a NF-e atual, ou uma NFC-e (modelo 65)</td>
+          </tr>
+          <tr class="">
+            <td>29x.2a</td>
+            <td>BA02a</td>
+            <td>refNFeSig</td>
+            <td>Chave da NF-e com código numérico zerado (NT 2022.003)</td>
+            <td>CE</td>
+            <td>BA01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>44</td>
+            <td>Referencia uma NF-e (modelo 55) emitida anteriormente pela sua Chave de Acesso com código numérico zerado, permitindo manter o sigilo da NF-e referenciada.</td>
           </tr>
           <tr class="linha_grupo">
             <td>29x.3</td>
@@ -3142,7 +3154,7 @@ frutas e verduras, destinadas a contribuintes do ICMS.
             <td>1-5</td>
             <td>Código da operação selecionada na NFF e relacionada ao item</td>
           </tr>
-          <tr class="linha_grupo_revogada">
+          <tr class="linha_grupo">
             <td>128v-d</td>
             <td>I87</td>
             <td>infProdEmb</td>
@@ -3155,25 +3167,13 @@ frutas e verduras, destinadas a contribuintes do ICMS.
             <td>Informações da embalagem do produto No caso da NFF, preenchido somente se modBC = 1-Pauta</td>
           </tr>
         </tr>
-        <tr class="linha_grupo">
-          <td>128v-d</td>
-          <td>I86c</td>
-          <td>-x-</td>
-          <td>Sequência XML (NT 2021.002)</td>
-          <td>G</td>
-          <td>I86</td>
-          <td></td>
-          <td>0-1</td>
-          <td></td>
-          <td>No caso da NFF, preenchido somente se modBC = 1-Pauta</td>
-        </tr>
         <tr class="">
           <td>128v-e</td>
-          <td>I86d</td>
+          <td>I87a</td>
           <td>xEmb</td>
           <td>Embalagem do produto</td>
           <td>E</td>
-          <td>I86c</td>
+          <td>I87</td>
           <td>C</td>
           <td>1-1</td>
           <td>1-8</td>
@@ -3184,33 +3184,27 @@ frutas e verduras, destinadas a contribuintes do ICMS.
         </tr>
         <tr class="">
           <td>128v-f</td>
-          <td>I86e</td>
+          <td>I87b</td>
           <td>qVolEmb</td>
           <td>Volume do produto na embalagem</td>
           <td>E</td>
-          <td>I86c</td>
+          <td>I87</td>
           <td>N</td>
           <td>1-1</td>
           <td>7v2</td>
-          <td>Volume / quantidade do produto por unidade de medida
-na embalagem.<br>
-Ex: Caixa com 3 KG<br>
-xEmb: caixa<br>
-qVolEmb: 3<br>
-uEmb: kg</td>
+          <td>Volume / quantidade do produto por unidade de medida na embalagem.<br> Ex: Caixa com 3 KG<br> xEmb: caixa<br> qVolEmb: 3<br> uEmb: kg</td>
         </tr>
         <tr class="">
           <td>128v-g</td>
-          <td>I86f</td>
+          <td>I87c</td>
           <td>uEmb</td>
           <td>Unidade de Medida da Embalagem</td>
           <td>E</td>
-          <td>I86c</td>
+          <td>I87</td>
           <td>C</td>
           <td>1-1</td>
           <td>1-8</td>
-          <td>Exemplos<br>
-      Ex: Caixa com 3 KG<br>
+          <td>Exemplos:<br>
       "grama"; "kg"; "ton"; "litro"; "metro"; "m3"; "m3 ester"
   (m3 estéreo); "m2"; "unid"; "dúzia";</td>
         </tr>
