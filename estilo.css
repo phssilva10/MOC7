@@ -342,6 +342,11 @@ ul.disco{
   list-style-type: disc;
 }
 
+ul.circulo{
+  list-style-type: circle;
+
+}
+
 #principal {
   padding-left: 10px;
   padding-top: 10px;
@@ -372,6 +377,36 @@ ul.disco{
   /*colapsa as bordas entre as diferentes colunas- linhas*/
   width: 100%;
   /*oucpação da tabela na janela*/
+}
+
+.tabela_eventos {
+  width: 50%;
+  margin:auto;
+  border-collapse: collapse;
+}
+
+.tabela_eventos th{
+  background-color:#C0C0C0;
+}
+
+.tabela_eventos td:nth-child(1) {
+  width: 10%;
+}
+
+.tabela_eventos td:nth-child(2) {
+  width: 35%;
+}
+
+.tabela_eventos td:nth-child(3) {
+  width: 5%;
+}
+
+.tabela_eventos td:nth-child(4) {
+  width: 35%;
+}
+
+.tabela_eventos td:nth-child(5) {
+  width: 15%;
 }
 
 .tabela_regras_genericas {
