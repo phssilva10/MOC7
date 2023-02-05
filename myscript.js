@@ -7,10 +7,14 @@ window.onload = function() {
   navbar = document.getElementById("barra_superior");
   sticky = navbar.offsetTop;
     myFunction()
+
   };
 window.onscroll = function() {
     myFunction()
 };
+
+
+
 
   function myFunction() {
 
