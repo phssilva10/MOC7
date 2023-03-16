@@ -62,6 +62,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -978,7 +979,9 @@
               <td>Chave de Acesso inválida:
                 <br>- Série = [0-909] e CNPJ zerado ou dígito inválido, ou
                 <br>- Série = [910-969] e CPF zerado ou dígito inválido
-                <br><div class="negrito">Exceção:</div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)</td>
+                <br>
+                <div class="negrito">Exceção:</div> Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+              </td>
               <td>Obrig.</td>
               <td>617</td>
               <td>Rej.</td>
@@ -1428,41 +1431,44 @@
           <p>
             (13) Tanto o emitente quanto o destinatário consultam o WS nfeDistribuicaoDFe a partir do último NSU
             recebido e recuperam o evento gerado pelo fisco;</p>
-            <br>
+          <br>
           <p>
             O fluxo exemplificado resulta nos seguintes NSU para emitente e destinatário:</p>
         </div>
-  <img src="./Imagens/NFe_DistribuicaoDFe_tabelaNSU.png" alt="NSU exemplos" class="tabela_NSU">
-  <div class="texto_normal">
-    <p> Este novo modelo permitirá ao emitente a consulta dos eventos manifestados pelos destinatários de
-suas NF-e. Também será disponibilizado para o destinatário da NF-e qualquer evento gerado pelo
-emitente. Além disso, os eventos gerados pelo fisco serão disponibilizados tanto para o emitente
-quanto para o destinatário da NF-e.</p>
-    <p> O modelo simplifica o processo de download da NF-e uma vez que a partir da manifestação do
-destinatário o Ambiente Nacional gera automaticamente um NSU referenciando a NF-e e permitindo
-sua recuperação a partir do WS nfeDistribuicaoDFe.</p>
-  </div>
-  <div class="texto_normal">
+        <img src="./Imagens/NFe_DistribuicaoDFe_tabelaNSU.png" alt="NSU exemplos" class="tabela_NSU">
+        <div class="texto_normal">
+          <p> Este novo modelo permitirá ao emitente a consulta dos eventos manifestados pelos destinatários de
+            suas NF-e. Também será disponibilizado para o destinatário da NF-e qualquer evento gerado pelo
+            emitente. Além disso, os eventos gerados pelo fisco serão disponibilizados tanto para o emitente
+            quanto para o destinatário da NF-e.</p>
+          <p> O modelo simplifica o processo de download da NF-e uma vez que a partir da manifestação do
+            destinatário o Ambiente Nacional gera automaticamente um NSU referenciando a NF-e e permitindo
+            sua recuperação a partir do WS nfeDistribuicaoDFe.</p>
+        </div>
+        <div class="texto_normal">
 
-    <div class="negrito">
-      <p>1.7.1. Recomendações Para Evitar o Uso Indevido</p>
-    </div>
-    <p>A análise do comportamento atual das aplicações das empresas (“aplicação cliente”) permite
-identificar algumas situações de “uso indevido” nos ambientes autorizadores.</p><p>
-Como exemplo maior do mau uso do ambiente, ressalta-se a falta de controle de algumas aplicações
-que entram em “loop”, consumindo recursos de forma indevida, sobrecarregando principalmente o
-canal de comunicação com a Internet.</p><p>
-Para este Web Service serão mantidos controles para identificar as situações de uso indevido de
-sucessivas tentativas de busca de registros já disponibilizados anteriormente.</p><p>
-As novas tentativas serão rejeitadas com o erro “656–Rejeição: Consumo Indevido”.</p>
-  <div class="negrito">
-    <p>1.7.2.  Endereços dos Web Services</p>
-  </div>
-<p>Os endereços dos Web Services de Distribuição do Ambiente Nacional estão publicados no <a href="http://www.nfe.fazenda.gov.br/portal">Portal da
-NF- e</a> , e no <a href="http://hom.nfe.fazenda.gov.br/">Portal de Homologação</a>   no menu “Serviços” / “Relação de Serviços Web”.</p>
+          <div class="negrito">
+            <p>1.7.1. Recomendações Para Evitar o Uso Indevido</p>
+          </div>
+          <p>A análise do comportamento atual das aplicações das empresas (“aplicação cliente”) permite
+            identificar algumas situações de “uso indevido” nos ambientes autorizadores.</p>
+          <p>
+            Como exemplo maior do mau uso do ambiente, ressalta-se a falta de controle de algumas aplicações
+            que entram em “loop”, consumindo recursos de forma indevida, sobrecarregando principalmente o
+            canal de comunicação com a Internet.</p>
+          <p>
+            Para este Web Service serão mantidos controles para identificar as situações de uso indevido de
+            sucessivas tentativas de busca de registros já disponibilizados anteriormente.</p>
+          <p>
+            As novas tentativas serão rejeitadas com o erro “656–Rejeição: Consumo Indevido”.</p>
+          <div class="negrito">
+            <p>1.7.2. Endereços dos Web Services</p>
+          </div>
+          <p>Os endereços dos Web Services de Distribuição do Ambiente Nacional estão publicados no <a href="http://www.nfe.fazenda.gov.br/portal">Portal da
+              NF- e</a> , e no <a href="http://hom.nfe.fazenda.gov.br/">Portal de Homologação</a> no menu “Serviços” / “Relação de Serviços Web”.</p>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
 

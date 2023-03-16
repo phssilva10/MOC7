@@ -63,6 +63,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -137,259 +138,539 @@
     </div>
 
 
-<div class='corpo'>
-  <div id='principal'>
-    <!-- Aqui vão as tabelas e o texto do MOC -->
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
 
-    <h1>Web Service – NFeRecepcaoEvento – Ator Interessado na NF-e - Transportador</h1>
+        <h1>Web Service – NFeRecepcaoEvento – Ator Interessado na NF-e - Transportador</h1>
 
-    <ul>
-      <div class="negrito">Função: </div>serviço destinado à recepção de mensagem de Evento da NF-e<br><br>
-      O objetivo deste evento é permitir que o Emitente informe a identificação do Transportador a
-qualquer momento, como uma das pessoas autorizadas a acessar o XML da NF-e.<br><br>
-No caso em que o transporte não é de responsabilidade do Emitente, o Destinatário poderá gerar o
-evento, com o mesmo objetivo de autorizar que o Transportador fique autorizado a acessar o XML da
-NF-e.<br><br>
-      <div class="negrito">Autor do Evento:</div>O autor do evento é o emissor da NF-e. A mensagem XML do evento será
-      assinada com o certificado digital que tenha o CNPJ base do Emissor da NF-e.<br>
+        <ul>
+          <div class="negrito">Função: </div>serviço destinado à recepção de mensagem de Evento da NF-e<br><br>
+          O objetivo deste evento é permitir que o Emitente informe a identificação do Transportador a
+          qualquer momento, como uma das pessoas autorizadas a acessar o XML da NF-e.<br><br>
+          No caso em que o transporte não é de responsabilidade do Emitente, o Destinatário poderá gerar o
+          evento, com o mesmo objetivo de autorizar que o Transportador fique autorizado a acessar o XML da
+          NF-e.<br><br>
+          <div class="negrito">Autor do Evento:</div>O autor do evento é o emissor da NF-e. A mensagem XML do evento será
+          assinada com o certificado digital que tenha o CNPJ base do Emissor da NF-e.<br>
 
-    </ul>
-    <br><br>
-    <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
-    <ul>
-      <div class="negrito"> Entrada: </div>Estrutura XML da parte específica do evento, a ser inserida na tag detEvento (P17) da <a href="./RecepcaoEventoGeral.html#1.1. Leiaute Mensagem de Entrada (Parte Geral)">Parte
-        Geral do Web Service de Registro de Eventos.</a><br>
-      <div class="negrito">Schema XML: envEventoAtorInteressado_v1.00.xsd</div><br>
-    </ul>
-    <table class="leiaute_web_services">
-      <tr>
-        <th>#</th>
-        <th>Campo</th>
-        <th>Ele</th>
-        <th>Pai</th>
-        <th>Tipo</th>
-        <th>Ocor.</th>
-        <th>Tam.</th>
-        <th>Descrição/Observação</th>
-      </tr>
-      <tr class="">
-        <td>P18</td>
-        <td>versao</td>
-        <td>A</td>
-        <td>P17</td>
-        <td>N</td>
-        <td>1-1</td>
-        <td>2v2</td>
-        <td>Informar o mesmo valor da tag verEvento (P16).</td>
-      </tr>
-      <tr class="">
-        <td>P19</td>
-        <td>descEvento</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>C</td>
-        <td>1-1</td>
-        <td>5-60</td>
-        <td>Descrição do Evento, conforme documentado junto com o Código do Evento (Id: P14).</td>
-      </tr>
-      <tr class="">
-        <td>P20</td>
-        <td>cOrgaoAutor</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>N</td>
-        <td>1-1</td>
-        <td>2</td>
-        <td>Código da UF do emitente do Evento.</td>
-      </tr>
-      <tr class="">
-        <td>P21</td>
-        <td>tpAutor</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>N</td>
-        <td>1-1</td>
-        <td>1</td>
-        <td>Informar uma das opções abaixo:
-<br>1=Geração do Evento pelo Emitente;
-<br>2=Geração do Evento pelo Destinatário;
-<br>3=Geração do Evento pelo Transportador Contratado;
-<br>
-<div class='negrito'>Valores:</div><br>
-<br>1=Empresa Emitente;
-<br>2=Empresa Destinatária;
-<br>3=Empresa Transportadora;
-</td>
-      </tr>
-      <tr class="">
-        <td>P22</td>
-        <td>verAplic</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>C</td>
-        <td>1-1</td>
-        <td>1-20</td>
-        <td>Versão do aplicativo do Autor do Evento.</td>
-      </tr>
-      <tr class="linha_grupo">
-        <td>P23</td>
-        <td>autXML</td>
-        <td>G</td>
-        <td>P17</td>
-        <td>-</td>
-        <td>1-1</td>
-        <td>-</td>
-        <td>Pessoas autorizadas a acessar o XML da NF-e</td>
-      </tr>
-      <tr class="">
-        <td>P24</td>
-        <td>CNPJ</td>
-        <td>CE</td>
-        <td>P23</td>
-        <td>N</td>
-        <td>1-1</td>
-        <td>3-14</td>
-        <td>CNPJ autorizado</td>
-      </tr>
-      <tr class="">
-        <td>P25</td>
-        <td>CPF</td>
-        <td>CE</td>
-        <td>P23</td>
-        <td>N</td>
-        <td>1-1</td>
-        <td>3-11</td>
-        <td>CPF autorizado</td>
-      </tr>
-      <tr class="">
-        <td>P26</td>
-        <td>tpAutorizacao</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>N</td>
-        <td>0-1</td>
-        <td>1</td>
-        <td>0 - Não permite;
-          <br>1 - Permite o transportador autorizado pelo emitente ou destinatário autorizar outros transportadores para ter acesso ao download da NF-e</td>
-      </tr>
-      <tr class="">
-        <td>P27</td>
-        <td>xCondUso</td>
-        <td>E</td>
-        <td>P17</td>
-        <td>C</td>
-        <td>0-1</td>
-        <td>-</td>
-        <td>Condição de uso do tipo de autorização para o transportador: O emitente ou destinatário da NFe, declara que permite o transportador declarado no campo CNPJ/CPF deste evento a autorizar os transportadores subcontratados ou redespachados a terem acesso ao download da NF-e</td>
-      </tr>
-      <tr class="linha_grupo">
-        <td>P91</td>
-        <td>Signature</td>
-        <td>G</td>
-        <td>P04</td>
-        <td>XML</td>
-        <td>1-1</td>
-        <td></td>
-        <td>Assinatura Digital do documento XML, a assinatura deverá ser aplicada no elemento infEvento</td>
-      </tr>
-    </table>
-    <br><br>
-    <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
-    <ul>
-      <div class="negrito"> Retorno: </div>Estrutura XML com a mensagem do resultado da transmissão, conforme<a href="./RecepcaoEventoGeral.html#1.2. Leiaute Mensagem de Retorno (Parte Geral)"> retorno do Web Service de Registro de Eventos –
-        Parte Geral</a><br>
-      <div class="negrito">Descrição do resultado do processamento do evento (xEvento):</div>Ator Interessado na NF-e - Transportador<br>
-      <div class="negrito">Schema XML: retEnvEventoAtorInteressado_v1.00.xsd</div><br><br>
-      O leiaute desta mensagem de retorno não apresenta nenhuma diferença com relação ao retorno do Web Service de Registro de Eventos
-    </ul>
-    <br>
-    <br>
-    <titulo_tabela id="1.3. Regras de Validação">1.3. Regras de Validação</titulo_tabela><br>
-    <div class="texto_normal">
-      <p>Serão aplicadas as <a href="./RecepcaoEventoGeral.html#1.4. Regras de Validação Genéricas Para Todos os Eventos"> regras de validação gerais </a>e as regras de negócio específicas que podem ser vistas na Tabela abaixo</p>
+        </ul>
+        <br><br>
+        <titulo_tabela id="1.1. Leiaute Mensagem de Entrada">1.1. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Entrada: </div>Estrutura XML da parte específica do evento, a ser inserida na tag detEvento (P17) da <a href="./RecepcaoEventoGeral.html#1.1. Leiaute Mensagem de Entrada (Parte Geral)">Parte
+            Geral do Web Service de Registro de Eventos.</a><br>
+          <div class="negrito">Schema XML: envEventoAtorInteressado_v1.00.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="">
+            <td>P18</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Informar o mesmo valor da tag verEvento (P16).</td>
+          </tr>
+          <tr class="">
+            <td>P19</td>
+            <td>descEvento</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>5-60</td>
+            <td>Descrição do Evento, conforme documentado junto com o Código do Evento (Id: P14).</td>
+          </tr>
+          <tr class="">
+            <td>P20</td>
+            <td>cOrgaoAutor</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código da UF do emitente do Evento.</td>
+          </tr>
+          <tr class="">
+            <td>P21</td>
+            <td>tpAutor</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1</td>
+            <td>Informar uma das opções abaixo:
+              <br>1=Geração do Evento pelo Emitente;
+              <br>2=Geração do Evento pelo Destinatário;
+              <br>3=Geração do Evento pelo Transportador Contratado;
+              <br>
+              <div class='negrito'>Valores:</div><br>
+              <br>1=Empresa Emitente;
+              <br>2=Empresa Destinatária;
+              <br>3=Empresa Transportadora;
+            </td>
+          </tr>
+          <tr class="">
+            <td>P22</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do aplicativo do Autor do Evento.</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P23</td>
+            <td>autXML</td>
+            <td>G</td>
+            <td>P17</td>
+            <td>-</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Pessoas autorizadas a acessar o XML da NF-e</td>
+          </tr>
+          <tr class="">
+            <td>P24</td>
+            <td>CNPJ</td>
+            <td>CE</td>
+            <td>P23</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-14</td>
+            <td>CNPJ autorizado</td>
+          </tr>
+          <tr class="">
+            <td>P25</td>
+            <td>CPF</td>
+            <td>CE</td>
+            <td>P23</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>3-11</td>
+            <td>CPF autorizado</td>
+          </tr>
+          <tr class="">
+            <td>P26</td>
+            <td>tpAutorizacao</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1</td>
+            <td>0 - Não permite;
+              <br>1 - Permite o transportador autorizado pelo emitente ou destinatário autorizar outros transportadores para ter acesso ao download da NF-e
+            </td>
+          </tr>
+          <tr class="">
+            <td>P27</td>
+            <td>xCondUso</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>-</td>
+            <td>Condição de uso do tipo de autorização para o transportador: O emitente ou destinatário da NFe, declara que permite o transportador declarado no campo CNPJ/CPF deste evento a autorizar os transportadores subcontratados ou
+              redespachados a terem acesso ao download da NF-e</td>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P91</td>
+            <td>Signature</td>
+            <td>G</td>
+            <td>P04</td>
+            <td>XML</td>
+            <td>1-1</td>
+            <td></td>
+            <td>Assinatura Digital do documento XML, a assinatura deverá ser aplicada no elemento infEvento</td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML com a mensagem do resultado da transmissão, conforme<a href="./RecepcaoEventoGeral.html#1.2. Leiaute Mensagem de Retorno (Parte Geral)"> retorno do Web Service de Registro de Eventos –
+            Parte Geral</a><br>
+          <div class="negrito">Descrição do resultado do processamento do evento (xEvento):</div>Ator Interessado na NF-e - Transportador<br>
+          <div class="negrito">Schema XML: retEnvEventoAtorInteressado_v1.00.xsd</div><br><br>
+          O leiaute desta mensagem de retorno não apresenta nenhuma diferença com relação ao retorno do Web Service de Registro de Eventos
+        </ul>
+        <br>
+        <br>
+        <titulo_tabela id="1.3. Regras de Validação">1.3. Regras de Validação</titulo_tabela><br>
+        <div class="texto_normal">
+          <p>Serão aplicadas as <a href="./RecepcaoEventoGeral.html#1.4. Regras de Validação Genéricas Para Todos os Eventos"> regras de validação gerais </a>e as regras de negócio específicas que podem ser vistas na Tabela abaixo</p>
+        </div>
+        <table class="regras_validacao_gerais">
+          <tr>
+            <th>#</th>
+            <th>Regra de Validação</th>
+            <th>Aplic.</th>
+            <th>Msg</th>
+            <th>Efeito</th>
+            <th>Descrição Erro</th>
+          </tr>
+          <tr>
+            <td>P07-10</td>
+            <td> Atributo “Id” não corresponde à concatenação dos campos do evento (“ID” + tpEvento + chNFe + nSeqEvento) (*1) </td>
+            <td>Obrig.</td>
+            <td> 572 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Erro Atributo ID do evento não corresponde a concatenação dos campos (“Id” + tpEvento + chNFe + nSeqEvento)</td>
+          </tr>
+          <tr>
+            <td>P08-10</td>
+            <td> Código do órgão de recepção do Evento diverge do definido para este evento (*1) </td>
+            <td>Obrig.</td>
+            <td> 250 </td>
+            <td>Rej.</td>
+            <td>Rejeição: UF diverge da UF autorizadora</td>
+          </tr>
+          <tr>
+            <td>P09-10</td>
+            <td> Tipo do ambiente difere do ambiente do Web Service (*1) </td>
+            <td>Obrig.</td>
+            <td> 252 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td>
+          </tr>
+          <tr>
+            <td>P10-10</td>
+            <td> Se informado CNPJ do Autor do Evento: <br>- CNPJ inválido (zeros, nulo ou DV inválido) (*1) </td>
+            <td>Obrig.</td>
+            <td> 489 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ informado inválido (DV ou zeros)</td>
+          </tr>
+          <tr>
+            <td>P11-10</td>
+            <td> Se informado o CPF do Autor do evento: <br>- CPF inválido (zeros, nulo ou DV inválido) (*1) </td>
+            <td>Obrig.</td>
+            <td> 490 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CPF informado inválido (DV ou zeros)</td>
+          </tr>
+          <tr>
+            <td>P12-10</td>
+            <td> Validação da Chave de Acesso da NF-e (tag: chNFe): <br>- Dígito verificador inválido (*1) </td>
+            <td>Obrig.</td>
+            <td> 236 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso com dígito verificador inválido</td>
+          </tr>
+          <tr>
+            <td>P12-14</td>
+            <td> - Código UF inválido (*1) </td>
+            <td>Obrig.</td>
+            <td> 614 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Código UF inválido)</td>
+          </tr>
+          <tr>
+            <td>P12-18</td>
+            <td> - Ano < 06 ou Ano maior que Ano corrente (*1) </td>
+            <td>Obrig.</td>
+            <td> 615 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Ano < 06 ou Ano maior que Ano corrente)</td>
+          </tr>
+          <tr>
+            <td>P12-22</td>
+            <td> - Mês = 0 ou Mês > 12 (*1) </td>
+            <td>Obrig.</td>
+            <td> 616 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês> 12)</td>
+          </tr>
+          <tr>
+            <td>P12-26</td>
+            <td> - CNPJ/CPF zerado ou dígito inválido (*1) <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. <br>CNPJ: Série=[0-909], <br>CPF: Série<>[0- 909] </td>
+            <td>Obrig.</td>
+            <td> 617 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (CNPJ/CPF zerado ou dígito inválido)</td>
+          </tr>
+          <tr>
+            <td>P12-30A</td>
+            <td> - Eventos somente da NF-e: <br>- Modelo diferente de 55 </td>
+            <td>Obrig.</td>
+            <td> 450 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Modelo da NF-e diferente de 55</td>
+          </tr>
+          <tr>
+            <td>P12-34</td>
+            <td> - Número NF = 0 (*1) </td>
+            <td>Obrig.</td>
+            <td> 619 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso inválida (número NF = 0)</td>
+          </tr>
+          <tr>
+            <td>P12-40</td>
+            <td> Se tpAutor=1-Empresa Emitente: <br>- UF da Chave de Acesso diverge da UF Autorizadora </td>
+            <td>Obrig.</td>
+            <td> 249 </td>
+            <td>Rej.</td>
+            <td>Rejeição: UF da Chave de Acesso diverge da UF autorizadora</td>
+          </tr>
+          <tr>
+            <td>P12-44</td>
+            <td> - CNPJ/CPF do Autor diverge do CNPJ/CPF da Chave de Acesso <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. <br>CNPJ: Série=[0-909], <br>CPF: Série<>[0-909] </td>
+            <td>Obrig.</td>
+            <td> 574 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Autor do evento diverge do emissor da NF-e</td>
+          </tr>
+          <tr>
+            <td>P13-10</td>
+            <td> Data do evento maior que a data de processamento (aceitar tolerância de até 5 minutos) (*1) </td>
+            <td>Obrig.</td>
+            <td> 578 </td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser maior que a data do processamento</td>
+          </tr>
+          <tr>
+            <td>P15-10</td>
+            <td> Número de sequência do Evento maior que 20 </td>
+            <td>Obrig.</td>
+            <td> 594 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Número de sequência do evento informado é maior que o permitido</td>
+          </tr>
+          <tr>
+            <td>P20-10</td>
+            <td> Se tpAutor=1-Empresa Emitente: <br>- UF do Autor (cOrgaoAutor) diverge da UF da Chave de Acesso </td>
+            <td>Obrig.</td>
+            <td> 455 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Órgão Autor do evento difere da UF da Chave de Acesso</td>
+          </tr>
+          <tr>
+            <td>P21-10</td>
+            <td> Tipo do Autor difere de: <br>“1=Empresa Emitente”, <br>“2=Empresa destinatária” ou <br>“3=Empresa Transportador Contratado. </td>
+            <td>Obrig.</td>
+            <td> 466 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento com Tipo de Autor incompatível</td>
+          </tr>
+          <tr>
+            <td>P24-10</td>
+            <td> Se informado CNPJ autorizado: <br>– CNPJ com zeros ou dígito inválido </td>
+            <td>Obrig.</td>
+            <td> 323 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ autorizado para download inválido</td>
+          </tr>
+          <tr>
+            <td>P25-10</td>
+            <td> Se informado CPF autorizado:<br>– CPF com zeros ou dígito inválido </td>
+            <td>Obrig.</td>
+            <td> 325 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CPF autorizado para download inválido</td>
+          </tr>
+          <tr>
+            <td>P26-10</td>
+            <td> Se autor do evento for o emitente ou destinatário da NF-e: <br>- Obrigatório o preenchimento do campo tpAutorizacao </td>
+            <td>Obrig</td>
+            <td> 827 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Obrigatório informar o tipo de autorização</td>
+          </tr>
+          <tr>
+            <td>P26-20</td>
+            <td> Se autor do evento não for o emitente ou destinatário da NF-e:<br>- Preenchimento do campo tpAutorizacao não é permitido </td>
+            <td>Obrig</td>
+            <td> 828 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Não permitido informar o campo tipo de autorização</td>
+          </tr>
+          <tr>
+            <td>P27-10</td>
+            <td> Se informado tpAutorizacao igual 1:<br>- Obrigatório informar o campo xCondUso, declarando que está ciente da permissão para o transportador </td>
+            <td>Obrig.</td>
+            <td> 829 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Condição de uso não informado para o tipo de autorização de uso</td>
+          </tr>
+          <tr>
+            <td>P27-20</td>
+            <td> Se informado tpAutorizacao diferente de 1:<br>- Preenchimento do campo xCondUso não é permitido </td>
+            <td>Obrig</td>
+            <td> 830 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Não permitido preencher o campo Condição de Uso</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Emitente</td>
+          </tr>
+          <tr>
+            <td>1P10-20</td>
+            <td> - Verificar situação fiscal do emitente </td>
+            <td>Obrig.</td>
+            <td> 240 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Irregularidade fiscal do emitente</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:NF-e</td>
+          </tr>
+          <tr>
+            <td>2P12-10</td>
+            <td> Acesso BD NFE (Chave: Chave de Acesso):<br>- Chave Acesso inexistente para o tpEvento que exige a existência da NF-e (*1) </td>
+            <td>Obrig.</td>
+            <td> 494 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Chave de Acesso Inexistente</td>
+          </tr>
+          <tr>
+            <td>2P12-22</td>
+            <td> - Verificar se NF-e está denegada ou cancelada </td>
+            <td>Obrig.</td>
+            <td> 580 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento exige uma NF-e autorizada</td>
+          </tr>
+          <tr>
+            <td>2P13-10</td>
+            <td> - Data do evento menor que a Data de Emissão da NF-e (*1) </td>
+            <td>Obrig.</td>
+            <td> 577 </td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser menor que a data de emissão da NF-e</td>
+          </tr>
+          <tr>
+            <td>2P13-14</td>
+            <td> - Data do evento menor que a Data de Autorização da NF-e não emitida em contingência (tpEmis=1)<br>Nota: Tolerância de 5 minutos, devido ao sincronismo de horário entre o servidor da Empresa e o servidor da SEFAZ Autorizadora. </td>
+            <td>Obrig.</td>
+            <td> 579 </td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser menor que a data de autorização da NF-e</td>
+          </tr>
+          <tr>
+            <td>2P21-10</td>
+            <td> - Se tpAutor=2-Empresa Destinatário: <br>- CNPJ/CPF do Autor diverge do CNPJ/CPF do Destinatário da NF-e </td>
+            <td>Obrig.</td>
+            <td> 575 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Autor do evento diverge do destinatário da NF-e</td>
+          </tr>
+          <tr>
+            <td>2P21-14</td>
+            <td> - Se tpAutor=2-Empresa Destinatário: <br>- Modalidade de Frete não é por conta do Destinatário (modFrete<>1 e 4) </td>
+            <td>Obrig.</td>
+            <td> 449 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Modalidade de Frete não é por conta do Destinatário</td>
+          </tr>
+          <tr>
+            <td>2P24-10</td>
+            <td> - CNPJ/CPF autorizado neste evento idêntico ao CNPJ/CPF do Emitente </td>
+            <td>Obrig.</td>
+            <td> 421 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Informado o CNPJ/CPF do Emitente</td>
+          </tr>
+          <tr>
+            <td>P24-14</td>
+            <td> - CNPJ/CPF autorizado neste evento idêntico ao CNPJ/CPF do Destinatário </td>
+            <td>Obrig.</td>
+            <td> 422 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Informado o CNPJ/CPF do Destinatário</td>
+          </tr>
+          <tr>
+            <td>P24-18</td>
+            <td> - CNPJ/CPF autorizado neste evento já está autorizado a acessar o XML da NF-e (leiaute NF-e, tag: autXML, Id:GA01) </td>
+            <td>Obrig.</td>
+            <td> 423 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ/CPF já está autorizado a acessar o XML da NFe</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento</td>
+          </tr>
+          <tr>
+            <td>3P15-10</td>
+            <td> Acesso BD de Eventos (Chave: Chave de Acesso, tpEvento, nSeqEvento, cOrgaoAutor): <br>- Evento já existente (*1) </td>
+            <td>Obrig.</td>
+            <td> 573 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Duplicidade de Evento</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento 2</td>
+          </tr>
+          <tr>
+            <td>3P15-10</td>
+            <td> Acesso BD de Eventos (Chave: Chave de Acesso, tpEvento=110150): <br>- CNPJ/CPF autorizado neste evento já está autorizado a acessar o XML da NF-e </td>
+            <td>Obrig.</td>
+            <td> 423 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ/CPF já está autorizado a acessar o XML da NFe</td>
+          </tr>
+          <tr>
+            <td>3P15-20</td>
+            <td> - Evento do BD possui tpAutorizacao=0 e Evento atual com CNPJ/CPF Autor (tag:CNPJ, id:P10) diferente do Emitente ou Destinatário da NF-e </td>
+            <td>Obrig.</td>
+            <td> 831 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Transportador Contratado não autorizado a a liberar acesso a NF-e</td>
+          </tr>
+          <tr>
+            <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:CCC</td>
+          </tr>
+          <tr>
+            <td>4P21-10</td>
+            <td> Se tpAutor=3-Transportador Contratado:<br>-Acesso Cadastro Centralizado de Contribuintes (Chave: cOrgaoAutor, CNPJ/CPF Autor): <br>- CNPJ/CPF Autor do evento não é emitente de CT-e (nenhum Modal), ou não está ativo para a UF </td>
+            <td>Obrig.</td>
+            <td> 448 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ/CPF Autor não é emitente de CT-e </td>
+          </tr>
+          <tr>
+            <td>4P24-10</td>
+            <td> Acesso CCC-Cadastro Centralizado de Contribuintes (Chave: cOrgaoAutor, CNPJ/CPF Autorizado):<br>- CNPJ/CPF autorizado neste evento não é emitente de CT-e (nenhum Modal), ou não está ativo para a UF </td>
+            <td>Obrig.</td>
+            <td> 371 </td>
+            <td>Rej.</td>
+            <td>Rejeição: CNPJ/CPF Autorizado não é emitente de CT-e</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <titulo_tabela id="1.4. Final do Processamento do Lote">1.4. Final do Processamento do Lote</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>O processamento do lote pode resultar em:</p>
+          <p>
+          <div class='negrito'>- Rejeição do Lote:</div>por algum problema que comprometa o processamento do lote;</p>
+          <p>
+          <div class='negrito'>- Processamento do Lote:</div>o lote foi processado (cStat= 128 - ), e a validação de cada evento do
+          lote poderá resultar em:</p>
+          <p>
+          <div class='negrito'>- Rejeição:</div>o Evento será rejeitado, retornando do código do status do motivo da rejeição;</p>
+          <p>
+          <div class='negrito'>- Evento Autorizado, com vinculação à respectiva NF-e: </div>Encontrada a NF-e no banco de dados.
+          Retornar cStat= 135-Evento registrado e vinculado a NF-e</p>
+          <p>
+          <div class='negrito'>- Evento Autorizado, sem vinculação à respectiva NF-e:</div>Não encontrada a NF-e no banco de
+          dados. Retornar cStat=136 - Evento registrado, mas não vinculado a NF-e</p>
+        </div>
+
+      </div>
     </div>
-    <table class="regras_validacao_gerais">
-      <tr>
-        <th>#</th>
-        <th>Regra de Validação</th>
-        <th>Aplic.</th>
-        <th>Msg</th>
-        <th>Efeito</th>
-        <th>Descrição Erro</th>
-      </tr>
-      <tr><td>P07-10</td><td> Atributo “Id” não corresponde à concatenação dos campos do evento (“ID” + tpEvento + chNFe + nSeqEvento) (*1) </td><td>Obrig.</td><td> 572 </td><td>Rej.</td><td>Rejeição: Erro Atributo ID do evento não corresponde a concatenação dos campos (“Id” + tpEvento + chNFe + nSeqEvento)</td></tr>
-    <tr><td>P08-10</td><td> Código do órgão de recepção do Evento diverge do definido para este evento (*1) </td><td>Obrig.</td><td> 250 </td><td>Rej.</td><td>Rejeição: UF diverge da UF autorizadora</td></tr>
-    <tr><td>P09-10</td><td> Tipo do ambiente difere do ambiente do Web Service (*1) </td><td>Obrig.</td><td> 252 </td><td>Rej.</td><td>Rejeição: Ambiente informado diverge do Ambiente de recebimento</td></tr>
-    <tr><td>P10-10</td><td> Se informado CNPJ do Autor do Evento: <br>- CNPJ inválido (zeros, nulo ou DV inválido) (*1) </td><td>Obrig.</td><td> 489 </td><td>Rej.</td><td>Rejeição: CNPJ informado inválido (DV ou zeros)</td></tr>
-    <tr><td>P11-10</td><td> Se informado o CPF do Autor do evento: <br>- CPF inválido (zeros, nulo ou DV inválido) (*1) </td><td>Obrig.</td><td> 490 </td><td>Rej.</td><td>Rejeição: CPF informado inválido (DV ou zeros)</td></tr>
-    <tr><td>P12-10</td><td> Validação da Chave de Acesso da NF-e (tag: chNFe): <br>- Dígito verificador inválido (*1) </td><td>Obrig.</td><td> 236 </td><td>Rej.</td><td>Rejeição: Chave de Acesso com dígito verificador inválido</td></tr>
-    <tr><td>P12-14</td><td> - Código UF inválido (*1) </td><td>Obrig.</td><td> 614 </td><td>Rej.</td><td>Rejeição: Chave de Acesso inválida (Código UF inválido)</td></tr>
-    <tr><td>P12-18</td><td> - Ano < 06 ou Ano maior que Ano corrente (*1) </td><td>Obrig.</td><td> 615 </td><td>Rej.</td><td>Rejeição: Chave de Acesso inválida (Ano < 06 ou Ano maior que Ano corrente)</td></tr>
-    <tr><td>P12-22</td><td> - Mês = 0 ou Mês > 12 (*1) </td><td>Obrig.</td><td> 616 </td><td>Rej.</td><td>Rejeição: Chave de Acesso inválida (Mês < 1 ou Mês > 12)</td></tr>
-    <tr><td>P12-26</td><td> - CNPJ/CPF zerado ou dígito inválido (*1) <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. <br>CNPJ: Série=[0-909], <br>CPF: Série<>[0- 909] </td><td>Obrig.</td><td> 617 </td><td>Rej.</td><td>Rejeição: Chave de Acesso inválida (CNPJ/CPF zerado ou dígito inválido)</td></tr>
-    <tr><td>P12-30A</td><td> - Eventos somente da NF-e: <br>- Modelo diferente de 55 </td><td>Obrig.</td><td> 450 </td><td>Rej.</td><td>Rejeição: Modelo da NF-e diferente de 55</td></tr>
-    <tr><td>P12-34</td><td> - Número NF = 0 (*1) </td><td>Obrig.</td><td> 619 </td><td>Rej.</td><td>Rejeição: Chave de Acesso inválida (número NF = 0)</td></tr>
-    <tr><td>P12-40</td><td> Se tpAutor=1-Empresa Emitente: <br>- UF da Chave de Acesso diverge da UF Autorizadora </td><td>Obrig.</td><td> 249 </td><td>Rej.</td><td>Rejeição: UF da Chave de Acesso diverge da UF autorizadora</td></tr>
-    <tr><td>P12-44</td><td> - CNPJ/CPF do Autor diverge do CNPJ/CPF da Chave de Acesso <br>Nota: Considerar a Série para determinar se CNPJ/CPF na Chave de Acesso. <br>CNPJ: Série=[0-909], <br>CPF: Série<>[0-909] </td><td>Obrig.</td><td> 574 </td><td>Rej.</td><td>Rejeição: Autor do evento diverge do emissor da NF-e</td></tr>
-    <tr><td>P13-10</td><td> Data do evento maior que a data de processamento (aceitar tolerância de até 5 minutos) (*1) </td><td>Obrig.</td><td> 578 </td><td>Rej.</td><td>Rejeição: A data do evento não pode ser maior que a data do processamento</td></tr>
-    <tr><td>P15-10</td><td> Número de sequência do Evento maior que 20 </td><td>Obrig.</td><td> 594 </td><td>Rej.</td><td>Rejeição: Número de sequência do evento informado é maior que o permitido</td></tr>
-    <tr><td>P20-10</td><td> Se tpAutor=1-Empresa Emitente: <br>- UF do Autor (cOrgaoAutor) diverge da UF da Chave de Acesso </td><td>Obrig.</td><td> 455 </td><td>Rej.</td><td>Rejeição: Órgão Autor do evento difere da UF da Chave de Acesso</td></tr>
-    <tr><td>P21-10</td><td> Tipo do Autor difere de: <br>“1=Empresa Emitente”, <br>“2=Empresa destinatária” ou <br>“3=Empresa Transportador Contratado. </td><td>Obrig.</td><td> 466 </td><td>Rej.</td><td>Rejeição: Evento com Tipo de Autor incompatível</td></tr>
-    <tr><td>P24-10</td><td> Se informado CNPJ autorizado: <br>– CNPJ com zeros ou dígito inválido </td><td>Obrig.</td><td> 323 </td><td>Rej.</td><td>Rejeição: CNPJ autorizado para download inválido</td></tr>
-    <tr><td>P25-10</td><td> Se informado CPF autorizado:<br>– CPF com zeros ou dígito inválido </td><td>Obrig.</td><td> 325 </td><td>Rej.</td><td>Rejeição: CPF autorizado para download inválido</td></tr>
-    <tr><td>P26-10</td><td> Se autor do evento for o emitente ou destinatário da NF-e: <br>- Obrigatório o preenchimento do campo tpAutorizacao </td><td>Obrig</td><td> 827 </td><td>Rej.</td><td>Rejeição: Obrigatório informar o tipo de autorização</td></tr>
-    <tr><td>P26-20</td><td> Se autor do evento não for o emitente ou destinatário da NF-e:<br>- Preenchimento do campo tpAutorizacao não é permitido </td><td>Obrig</td><td> 828 </td><td>Rej.</td><td>Rejeição: Não permitido informar o campo tipo de autorização</td></tr>
-    <tr><td>P27-10</td><td> Se informado tpAutorizacao igual 1:<br>- Obrigatório informar o campo xCondUso, declarando que está ciente da permissão para o transportador </td><td>Obrig.</td><td> 829 </td><td>Rej.</td><td>Rejeição: Condição de uso não informado para o tipo de autorização de uso</td></tr>
-    <tr><td>P27-20</td><td> Se informado tpAutorizacao diferente de 1:<br>- Preenchimento do campo xCondUso não é permitido </td><td>Obrig</td><td> 830 </td><td>Rej.</td><td>Rejeição: Não permitido preencher o campo Condição de Uso</td></tr>
-    <tr>
-      <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Emitente</td>
-    </tr>
-    <tr><td>1P10-20</td><td> - Verificar situação fiscal do emitente </td><td>Obrig.</td><td> 240 </td><td>Rej.</td><td>Rejeição: Irregularidade fiscal do emitente</td></tr>
-    <tr>
-      <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:NF-e</td>
-    </tr>
-    <tr><td>2P12-10</td><td> Acesso BD NFE (Chave: Chave de Acesso):<br>- Chave Acesso inexistente para o tpEvento que exige a existência da NF-e (*1) </td><td>Obrig.</td><td> 494 </td><td>Rej.</td><td>Rejeição: Chave de Acesso Inexistente</td></tr>
-    <tr><td>2P12-22</td><td> - Verificar se NF-e está denegada ou cancelada </td><td>Obrig.</td><td> 580 </td><td>Rej.</td><td>Rejeição: Evento exige uma NF-e autorizada</td></tr>
-    <tr><td>2P13-10</td><td> - Data do evento menor que a Data de Emissão da NF-e (*1) </td><td>Obrig.</td><td> 577 </td><td>Rej.</td><td>Rejeição: A data do evento não pode ser menor que a data de emissão da NF-e</td></tr>
-    <tr><td>2P13-14</td><td> - Data do evento menor que a Data de Autorização da NF-e não emitida em contingência (tpEmis=1)<br>Nota: Tolerância de 5 minutos, devido ao sincronismo de horário entre o servidor da Empresa e o servidor da SEFAZ Autorizadora. </td><td>Obrig.</td><td> 579 </td><td>Rej.</td><td>Rejeição: A data do evento não pode ser menor que a data de autorização da NF-e</td></tr>
-    <tr><td>2P21-10</td><td> - Se tpAutor=2-Empresa Destinatário: <br>- CNPJ/CPF do Autor diverge do CNPJ/CPF do Destinatário da NF-e </td><td>Obrig.</td><td> 575 </td><td>Rej.</td><td>Rejeição: Autor do evento diverge do destinatário da NF-e</td></tr>
-    <tr><td>2P21-14</td><td> - Se tpAutor=2-Empresa Destinatário: <br>- Modalidade de Frete não é por conta do Destinatário (modFrete<>1 e 4) </td><td>Obrig.</td><td> 449 </td><td>Rej.</td><td>Rejeição: Modalidade de Frete não é por conta do Destinatário</td></tr>
-    <tr><td>2P24-10</td><td> - CNPJ/CPF autorizado neste evento idêntico ao CNPJ/CPF do Emitente </td><td>Obrig.</td><td> 421 </td><td>Rej.</td><td>Rejeição: Informado o CNPJ/CPF do Emitente</td></tr>
-    <tr><td>P24-14</td><td> - CNPJ/CPF autorizado neste evento idêntico ao CNPJ/CPF do Destinatário </td><td>Obrig.</td><td> 422 </td><td>Rej.</td><td>Rejeição: Informado o CNPJ/CPF do Destinatário</td></tr>
-    <tr><td>P24-18</td><td> - CNPJ/CPF autorizado neste evento já está autorizado a acessar o XML da NF-e (leiaute NF-e, tag: autXML, Id:GA01) </td><td>Obrig.</td><td> 423 </td><td>Rej.</td><td>Rejeição: CNPJ/CPF já está autorizado a acessar o XML da NFe</td></tr>
-    <tr>
-      <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento</td>
-    </tr>
-    <tr><td>3P15-10</td><td> Acesso BD de Eventos (Chave: Chave de Acesso, tpEvento, nSeqEvento, cOrgaoAutor): <br>- Evento já existente (*1) </td><td>Obrig.</td><td> 573 </td><td>Rej.</td><td>Rejeição: Duplicidade de Evento</td></tr>
-    <tr>
-      <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento 2</td>
-    </tr>
-    <tr><td>3P15-10</td><td> Acesso BD de Eventos (Chave: Chave de Acesso, tpEvento=110150): <br>- CNPJ/CPF autorizado neste evento já está autorizado a acessar o XML da NF-e </td><td>Obrig.</td><td> 423 </td><td>Rej.</td><td>Rejeição: CNPJ/CPF já está autorizado a acessar o XML da NFe</td></tr>
-    <tr><td>3P15-20</td><td> - Evento do BD possui tpAutorizacao=0 e Evento atual com CNPJ/CPF Autor (tag:CNPJ, id:P10) diferente do Emitente ou Destinatário da NF-e </td><td>Obrig.</td><td> 831 </td><td>Rej.</td><td>Rejeição: Transportador Contratado não autorizado a a liberar acesso a NF-e</td></tr>
-    <tr>
-      <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:CCC</td>
-    </tr>
-    <tr><td>4P21-10</td><td> Se tpAutor=3-Transportador Contratado:<br>-Acesso Cadastro Centralizado de Contribuintes (Chave: cOrgaoAutor, CNPJ/CPF Autor): <br>- CNPJ/CPF Autor do evento não é emitente de CT-e (nenhum Modal), ou não está ativo para a UF </td><td>Obrig.</td><td> 448 </td><td>Rej.</td><td>Rejeição: CNPJ/CPF Autor não é emitente de CT-e </td></tr>
-    <tr><td>4P24-10</td><td> Acesso CCC-Cadastro Centralizado de Contribuintes (Chave: cOrgaoAutor, CNPJ/CPF Autorizado):<br>- CNPJ/CPF autorizado neste evento não é emitente de CT-e (nenhum Modal), ou não está ativo para a UF </td><td>Obrig.</td><td> 371 </td><td>Rej.</td><td>Rejeição: CNPJ/CPF Autorizado não é emitente de CT-e</td></tr>
-    </table>
-    <br>
-    <br>
-    <titulo_tabela id="1.4. Final do Processamento do Lote">1.4. Final do Processamento do Lote</titulo_tabela><br>
-    <div class='texto_normal'>
-      <p>O processamento do lote pode resultar em:</p>
-      <p><div class='negrito'>- Rejeição do Lote:</div>por algum problema que comprometa o processamento do lote;</p>
-      <p><div class='negrito'>- Processamento do Lote:</div>o lote foi processado (cStat= 128 - ), e a validação de cada evento do
-lote poderá resultar em:</p>
-      <p><div class='negrito'>- Rejeição:</div>o Evento será rejeitado, retornando do código do status do motivo da rejeição;</p>
-      <p><div class='negrito'>- Evento Autorizado, com vinculação à respectiva NF-e: </div>Encontrada a NF-e no banco de dados.
-Retornar cStat= 135-Evento registrado e vinculado a NF-e</p>
-      <p><div class='negrito'>- Evento Autorizado, sem vinculação à respectiva NF-e:</div>Não encontrada a NF-e no banco de
-dados. Retornar cStat=136 - Evento registrado, mas não vinculado a NF-e</p>
-    </div>
-
   </div>
-</div>
-</div>
 
 
 </body>

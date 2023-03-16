@@ -63,6 +63,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -474,7 +475,8 @@
           <tr>
             <td>2P12-14 </td>
             <td>• Se tpEvento=110111 (Cancelamento Normal): verificar se NF-e autorizada há mais de 1 dia (24 horas). <br>Nota: Considera a exceção de prazo definida em legislação estadual
-<br><br><div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+              <br><br>
+              <div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
 
             </td>
             <td>Obrig.</td>
@@ -564,7 +566,8 @@
               <br><s>o “610550 –
                 Registro Passagem NF-e BRId” </s><br>o “610552 – Registro Passagem Automático MDF-e” <br>o “610554 – Registro Passagem Automático MDF-e com CT-e” <br>Exceção: Uma NF-e pode ter vários Registros de Passagem. Permitir o cancelamento se
               todos os eventos
-              deste tipo tiverem o correspondente evento de cancelamento.</td>
+              deste tipo tiverem o correspondente evento de cancelamento.
+            </td>
             <td>Obrig.</td>
             <td>219</td>
             <td>Rej.</td>
@@ -573,46 +576,47 @@
           <tr>
             <td>4P15-26 </td>
             <td>Acesso BD de Eventos (Chave: Chave de Acesso) <br>- Existe evento de “Comprovante de Entrega da NF-e”, ou “Comprovante de Entrega do CT-e” não cancelados:
-<br>- tpEvento=110130 (cancelamento: 110131);
-<br>- tpEvento=610130 (cancelamento: 610131).</td>
+              <br>- tpEvento=110130 (cancelamento: 110131);
+              <br>- tpEvento=610130 (cancelamento: 610131).
+            </td>
             <td>Obrig.</td>
             <td>826</td>
             <td>Rej.</td>
             <td>Rejeição: Pedido de Cancelamento para NF-e com evento de registro de Entrega</td>
           </tr>
           <tr>
-            <tr>
-              <td>4P15-30 </td>
-              <td>• Existe evento da Suframa, tpEvento: <br>o “990900 – Vistoria SUFRAMA”; <br>o “9910910 – Internalização SUFRAMA”;</td>
-              <td>Obrig.</td>
-              <td>304</td>
-              <td>Rej.</td>
-              <td> Rejeição: Pedido de Cancelamento para NF-e com evento da Suframa</td>
-            </tr>
-            <tr>
-              <td>4P15-30 </td>
-              <td>• Existe evento de Registro de Averbação para Exportação, tpEvento: (NT 2020.005)<br>o “790700 – Registro de Averbação para Exportação”</td>
-              <td>Obrig.</td>
-              <td>939</td>
-              <td>Rej.</td>
-              <td>Rejeição: Pedido de Cancelamento para NF-e com evento de Averbação para Exportação</td>
-            </tr>
-            <tr>
-              <td>4P15-34 </td>
-              <td>•  Existe evento Financeiro, tpEvento: (NT 2020.005)
-                <br>o “990100 – Registro de Cessão de Parcela de Fat-e por IMF”
-                <br>o “900120 – Transferência de Parcela de Fat-e por IMF”
-                <br>o “900140 – Ativação de monitoramento de parcela de Fat-e informada por ESF”
-                <br>o “900138 – Envio de Parcela de Fat-e para Cobrança Judicial”
-                <br>o “900110 – Recebível em Avaliação”
-      <br>Exceção: Uma NF-e pode ter vários eventos deste tipo. Permitir o cancelamento se todos os eventos deste tipo tiverem o correspondente evento de cancelamento.
-              </td>
-              <td>Obrig.</td>
-              <td>940</td>
-              <td>Rej.</td>
-              <td>Rejeição: Pedido de Cancelamento para NF-e com evento Financeiro</td>
-            </tr>
-            <tr>
+          <tr>
+            <td>4P15-30 </td>
+            <td>• Existe evento da Suframa, tpEvento: <br>o “990900 – Vistoria SUFRAMA”; <br>o “9910910 – Internalização SUFRAMA”;</td>
+            <td>Obrig.</td>
+            <td>304</td>
+            <td>Rej.</td>
+            <td> Rejeição: Pedido de Cancelamento para NF-e com evento da Suframa</td>
+          </tr>
+          <tr>
+            <td>4P15-30 </td>
+            <td>• Existe evento de Registro de Averbação para Exportação, tpEvento: (NT 2020.005)<br>o “790700 – Registro de Averbação para Exportação”</td>
+            <td>Obrig.</td>
+            <td>939</td>
+            <td>Rej.</td>
+            <td>Rejeição: Pedido de Cancelamento para NF-e com evento de Averbação para Exportação</td>
+          </tr>
+          <tr>
+            <td>4P15-34 </td>
+            <td>• Existe evento Financeiro, tpEvento: (NT 2020.005)
+              <br>o “990100 – Registro de Cessão de Parcela de Fat-e por IMF”
+              <br>o “900120 – Transferência de Parcela de Fat-e por IMF”
+              <br>o “900140 – Ativação de monitoramento de parcela de Fat-e informada por ESF”
+              <br>o “900138 – Envio de Parcela de Fat-e para Cobrança Judicial”
+              <br>o “900110 – Recebível em Avaliação”
+              <br>Exceção: Uma NF-e pode ter vários eventos deste tipo. Permitir o cancelamento se todos os eventos deste tipo tiverem o correspondente evento de cancelamento.
+            </td>
+            <td>Obrig.</td>
+            <td>940</td>
+            <td>Rej.</td>
+            <td>Rejeição: Pedido de Cancelamento para NF-e com evento Financeiro</td>
+          </tr>
+          <tr>
             <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:NF-e_2</td>
           </tr>
           <tr>

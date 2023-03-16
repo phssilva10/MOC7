@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:37:02 GMT -->
+
+<head>
+
+  <title>Consulta GTIN</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Keywords" content="NF-e, NFC-e, Encat, Web- Services, Nota Eltrônica, Nota Fiscal, Nota de Consumidor, Nota Fiscal de Consumidor Eletrônica">
+  <meta name="Description" content="Manual de Orientação ao Contribuinte- Nota Fiscal Eletrônica">
+
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="myscript.js"></script>
+  <link rel="icon" href="./Imagens/nfe_logo.png">
+</head>
+
+<body>
+
+  <!-- Cabeçalho da pagina, que deve sumir quando dou o scroll-->
+  <div class='cabecalho topo'>
+    <div class='titulo'>
+      <p><span><span style="font-size: 14pt;">Projeto Nota Fiscal Eletr&ocirc;nica</span></span></p>
+      <p><span><span>Manual de Orienta&ccedil;&atilde;o ao Contribuinte</span></span></p>
+    </div>
+    <div class='imagens_cabecalho'>
+      <img src="./Imagens/nfce_logo.png" alt="NFC-e" style="height:100%;width:auto;float:right ;">
+      <img src="./Imagens/nfe_logo.png" alt="NF-e" style="height:100%;width:auto;float:right;">
+
+    </div>
+  </div>
+
+  <!-- Barra de navegação superior, que deve ficar fixa no alto da pagina quando dou scroll -->
+
+
+
+  <!--Essa primeira parte cria a barra, atribuindo os efeitos à ela -->
+  <div class='linha_superior sombra barra_nav' id='barra_superior'>
+    <div style='overflow:auto;'>
+      <div style='float:left;width:100%;overflow:hidden;height:44px'>
+        <!-- Aqui vai o índice geral do Manual-->
+        <a href='javascript:void(0);' id="botao_menu" class='' onclick='menu()' title='Menu'>&#9776;</a>
+        <a href='./index.html' title='Visão Geral'>Visão Geral</a>
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Web Services'>Web Services</a>
+          <div class='dropdown-content'>
+            <a href='./NFeAutorizacao.html' title='WS Autorizacao'> Web Service- NFeAutorização</a>
+            <a href='./NFeRetAutorizacao.html' title='WS RetAutorizacao'>Web Service- NFeRetAutorizacao</a>
+            <a href='./NFeInutilizacao.html' title='WS Inutilizacao'>Web Service- NFeInutilização</a>
+            <a href='./NFeConsultaProtocolo.html' title='WS Consulta Protocolo'>Web Service- NFeConsulta Protocolo</a>
+            <a href='./NFeStatusServico.html' title='WS Status Serviço'>Web Service- NFeStatus Servico</a>
+            <a href='./NFeConsultaCadastro.html' title='WS Consulta Cadastro'>Web Service- NFeConsultaCadastro</a>
+            <a href='./NFeDistribuicaoDFe.html' title='WS Distribuição DFe'>Web Service- NFeDistribuicaoDFe</a>
+            <a href='javascript:void(0);' title='WS Recepção Evento'>Web Service- NFeRecepcaoEvento</a>
+            <a href='./RecepcaoEventoGeral.html' title='WS Autorizacao'>&emsp;&#8227;Parte Geral</a>
+            <a href='./RecepcaoEventoCancelamento.html' title='WS Cancelamento por Substituição'>&emsp;&#8227;Cancelamento/Cancelamento por substituição</a>
+            <a href='./RecepcaoEventoCartaCorrecao.html' title='WS Carta de Correção'>&emsp;&#8227;Carta de Correção</a>
+            <a href='./RecepcaoEventoManifestacao.html' title='WS Manifestação do Destinatário'>&emsp;&#8227;Manifestação do Destinatário</a>
+            <a href='./RecepcaoEventoEPEC.html' title='WS EPEC'>&emsp;&#8227;EPEC</a>
+            <a href='./RecepcaoEventoProrrogacao.html' title='WS Pedido de Prorrogação'>&emsp;&#8227;Pedido de Prorrogação</a>
+            <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
+            <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
+            <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
+          </div>
+        </div>
+
+        <div class='dropdown hide_leiaute'>
+          <a href='./Leiaute.html' id="botao_leiaute" title='Leiaute'>Leiaute</a>
+        </div>
+
+        <div class='dropdown hide_regras_validacao'>
+          <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
+        </div>
+
+
+        <div class='dropdown hide_danfe'>
+          <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+        </div>
+
+        <div class='dropdown hide_contingencia'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>Contingência</a>
+          <div class='dropdown-content'>
+            <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Contingência NF-e</a>
+            <a href='./ContingenciaNFCe.html' title='Contingência NFC-e'>Contingência NFC-e</a>
+          </div>
+        </div>
+
+        <div class='dropdown'>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Demais Anexos'><span class="show_anexo">Anexos</span></a>
+          <div class='dropdown-content'>
+
+            <div class="show_leiaute">
+              <!--A classe show_leiaute garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 630 pixels -->
+              <a href='./Leiaute.html' id="botao_leiaute" title='Leiaute'>Leiaute</a>
+            </div>
+
+            <div class="show_regras_validacao">
+              <!--A classe show_regras_validacao garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 840 pixels -->
+              <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
+            </div>
+
+            <div class="show_danfe">
+              <!--A classe show_danfe garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 934 pixels -->
+              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+            </div>
+
+            <div class="show_contingencia">
+              <!--A classe show_contingencia garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 1100 pixels -->
+              <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Contingência NF-e</a>
+              <a href='./ContingenciaNFCe.html' title='Contingência NFC-e'>Contingência NFC-e</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='sub_barra'>
+    <!-- Isso aqui estbelece uma divisao pra toda a parte abaixo da barra de navegacao-->
+    <div id='menu_esq' style="display:none">
+      <!-- isso aqui cria o menu lateral, à esquerda-->
+      <div id='indice'>
+        <!-- cria a parte interna do menu a esquerda-->
+        <div id='indice_texto'>
+          <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
+          <!-- Aqui vai o índice específico dessa parte-->
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice.."> Desnecessário, índice pequeno-->
+          <h4 style="text-align:center">Web Service – NfeConsultaProtocolo</h4><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Informações Gerais")' title='1.1. Informações Gerais'>1.1. Informações Gerais<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Leiaute Mensagem de Entrada")' title='1.2. Leiaute Mensagem de Entrada'>1.2. Leiaute Mensagem de Entrada<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.3. Leiaute Mensagem de Retorno")' title='1.3. Leiaute Mensagem de Retorno'>1.3. Leiaute Mensagem de Retorno<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.4. Validação do Certificado de Transmissão")' title='1.4. Validação do Certificado de Transmissão'>1.4. Validação do Certificado de Transmissão<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.5. Validação Inicial da Mensagem no Web Service")' title='1.5. Validação Inicial da Mensagem no Web Service'>1.5. Validação Inicial da Mensagem no Web
+            Service<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.6. Validação da Área de Dados – Geral")' title='1.6. Validação da Área de Dados – Geral'>1.6. Validação da Área de Dados – Geral<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.7. Validação das Regras de Negócio")' title='1.7. Validação das Regras de Negócio'>1.7. Validação das Regras de Negócio<br></span></a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.8. Final do Processamento")' title='1.8. Final do Processamento'>1.8. Final do Processamento<br></span></a><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='corpo'>
+      <div id='principal'>
+        <!-- Aqui vão as tabelas e o texto do MOC -->
+        <h1>Web Service – Consulta GTIN</h1>
+        <titulo_tabela id="1.1. Informações Gerais">1.1. Informações Gerais</titulo_tabela><br>
+
+        <ul>
+          <h3>Objetivo</h3>
+        </ul>
+
+        <p>O objetivo deste serviço é disponibilizar a consulta reduzida ao Cadastro Centralizado de GTIN-CCG, mantido pela GS1, no Ambiente SEFAZ Virtual do RS (SVRS).</p>
+
+        <ul>
+          <h3>Informações sobre o Serviço</h3>
+        </ul>
+
+        <ul>
+          <table style="border-collapse:collapse;">
+            <tr>
+              <td>Nome do Web Service</td>
+              <td>ccgConsGTIN</td>
+            </tr>
+            <tr>
+              <td>Nome do Método</td>
+              <td>ccgConsGTIN</td>
+            </tr>
+            <tr>
+              <td>Processo</td>
+              <td>Síncrono</td>
+            </tr>
+          </table>
+        </ul>
+        <ul>
+          <p>
+          <div class="negrito">URL Ambiente de Produção</div>
+          </p>
+        </ul>
+        <ul>
+          <ul class="disco">
+            <li><a href="https://dfe-servico.svrs.rs.gov.br/ws/ccgConsGTIN/ccgConsGTIN.asmx">https://dfe-servico.svrs.rs.gov.br/ws/ccgConsGTIN/ccgConsGTIN.asmx</a>
+          </ul>
+        </ul>
+
+        <ul>
+          <h3>Envio das informações</h3>
+        </ul>
+
+        <p>Este WebService requer autenticação mútua e o envio das informações deverá ser feito com Certificado Digital que contenha o CNPJ ou o CPF de Contribuinte emitente de NF-e ou NFC-e.</p>
+
+        <titulo_tabela id="1.2. Leiaute Mensagem de Entrada">1.2. Leiaute Mensagem de Entrada</titulo_tabela><br>
+        <ul>
+          <div class="negrito">Schema XML: consGTIN_v9.99.xsd</div><br>
+        </ul>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>P01</td>
+            <td>consGTIN</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz</td>
+          </tr>
+          <tr class="">
+            <td>P02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>P01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>P03</td>
+            <td>GTIN</td>
+            <td>N</td>
+            <td>P01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>8, 12, 13, 14</td>
+            <td>Informar o código GTIN a ser consultado.
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.2. Leiaute Mensagem de Retorno">1.2. Leiaute Mensagem de Retorno</titulo_tabela><br>
+        <ul>
+          <div class="negrito"> Retorno: </div>Estrutura XML contendo a mensagem do resultado da consulta de protocolo:<br>
+          <div class="negrito">Schema XML: retConsSitNFe_v4.00.xsd</div><br>
+        </ul>
+        <br>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr class="linha_grupo">
+            <td>R01</td>
+            <td>retConsGTIN</td>
+            <td>Raiz</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>TAG raiz da Resposta</td>
+          </tr>
+          <tr class="">
+            <td>R02</td>
+            <td>versao</td>
+            <td>A</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>2v2</td>
+            <td>Versão do leiaute</td>
+          </tr>
+          <tr class="">
+            <td>R03</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>1-20</td>
+            <td>Versão do Aplicativo que atendeu a requisição</td>
+          </tr>
+          <tr class="">
+            <td>R07</td>
+            <td>cStat</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>4</td>
+            <td>Código do status da resposta. Se não tiver erro, será retornado: “9490 – Consulta realizada com sucesso“</a>).</td>
+          </tr>
+          <tr class="">
+            <td>R08</td>
+            <td>xMotivo</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-255</td>
+            <td>Descrição do status da resposta.</td>
+          </tr>
+          <tr class="">
+            <td>R09</td>
+            <td>dhResp</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>DH</td>
+            <td>1-1</td>
+            <td>-</td>
+            <td>Data e hora da resposta no formato AAAA-MM-DDThh:mm:ssTZD (UTC – Universal Coordinate Time)</td>
+          </tr>
+          <tr class="">
+            <td>R10</td>
+            <td>GTIN</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>8-14</td>
+            <td>Idem mensagem de entrada</td>
+          </tr>
+          <tr class="">
+            <td>R11</td>
+            <td>tpGTIN</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>1-2</td>
+            <td>Tipos possíveis: 8, 12, 13, 14</td>
+          </tr>
+          <tr class="">
+            <td>R12</td>
+            <td>xProd</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>C</td>
+            <td>0-1</td>
+            <td>1-500</td>
+            <td>Descrição do Produto, cadastrada pelo “Dono da Marca” na GS1, para o GTIN consultado</td>
+          </tr>
+          <tr class="">
+            <td>R13</td>
+            <td>NCM</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>0-1</td>
+            <td>8</td>
+            <td>Código do NCM, cadastrado pelo “Dono da Marca” na GS1, para o GTIN consultado</td>
+          </tr>
+          <tr class="">
+            <td>R14</td>
+            <td>CEST</td>
+            <td>E</td>
+            <td>R01</td>
+            <td>N</td>
+            <td>0-3</td>
+            <td>7</td>
+            <td>Código do CEST, cadastrado pelo “Dono da Marca” na GS1. Normalmente um Produto (definido pelo código do GTIN) está vinculado a somente 1 CEST, mas existem situações pouco frequentes onde um Produto pode estar associado a mais de 1
+              CEST, conforme a operação.</td>
+          </tr>
+        </table>
+        <br><br>
+        <titulo_tabela id="1.4. Validação do Certificado de Transmissão">1.4. Validação do Certificado de Transmissão</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Regras de validação idênticas aos demais Web Services, podendo gerar os erros:</p>
+          <ul>
+            <ul class="disco">
+              <li>280: “Rejeição: Certificado Transmissor inválido”</li>
+              <li>281: “Rejeição: Certificado Transmissor Data Validade”</li>
+              <li>283: “Rejeição: Certificado Transmissor – erro Cadeia de Certificação”</li>
+              <li>286: “Rejeição: Certificado Transmissor erro no acesso a LCR”</li>
+              <li>284: “Rejeição: Certificado Transmissor revogado”</li>
+              <li>285: “Rejeição: Certificado Transmissor difere ICP-Brasil”</li>
+              <li>282: “Rejeição: Certificado Transmissor sem CNPJ/CPF”</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <titulo_tabela id="1.5. Validação Inicial da Mensagem no Web Service">1.5. Validação Inicial da Mensagem no Web Service</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Regras de validação idênticas aos demais Web Services, podendo gerar os erros:</p>
+          <ul>
+            <ul class="disco">
+              <li>214: “Rejeição: Tamanho da mensagem excedeu o limite estabelecido”</li>
+              <li>108: “Serviço Paralisado Momentaneamente (curto prazo)”</li>
+              <li>109: “Serviço Paralisado sem Previsão”</li>
+              <li>239: “Rejeição: Versão do arquivo XML não suportada”</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <titulo_tabela id="1.6. Validação da área de Dados – Geral">1.6. Validação da área de Dados – Geral</titulo_tabela><br>
+        <div class='texto_normal'>
+          <p>Regras de validação idênticas aos demais Web Services, podendo gerar os erros:</p>
+          <ul>
+            <ul class="disco">
+              <li>516: “Rejeição: Falha Schema XML, inexiste a tag raiz esperada para a mensagem”</li>
+              <li>517: “Rejeição: Falha Schema XML, inexiste atributo versão na tag raiz da mensagem”</li>
+              <li>239: “Rejeição: Falha Schema XML, versão não suportada”</li>
+              <li>215: “Rejeição: Falha Schema XML”</li>
+              <li>587: “Rejeição: Usar somente o namespace padrão da NF-e”</li>
+              <li>588: “Rejeição: Não é permitida a presença de caracteres de edição no início/fim da mensagem ou entre as tags da mensagem”</li>
+              <li>404: “Rejeição: Uso de prefixo de namespace não permitido”</li>
+              <li>402: “Rejeição: XML da área de dados com codificação diferente de UTF-8”</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <titulo_tabela id="1.7. Validação das Regras de Negócio">1.7. Validação das Regras de Negócio</titulo_tabela><br>
+
+        <ul>
+          <h3>1.7.1. Sobre a Normalização do GTIN</h3>
+        </ul>
+        <div class='texto_normal'>
+          <ol>
+            <ol type="A">
+              <li> Prefixo GS1
+                <br>A codificação do GTIN contém o "Prefixo GS1" que define a entidade GS1 que concedeu a faixa de códigos para a empresa usar na identificação dos seus produtos. Este “Prefixo” é composto por 3 algarismos, que constam no início do
+                código GTIN do produto.
+              </li>
+              <li>Como Identificar o "Prefixo GS1"
+                <br>O GTIN pode possuir 8, 12, 13 ou 14 algarismos, e segue abaixo uma forma prática de identificar o "Prefixo GS1":
+              </li>
+              <ul class="disco">
+                <li>Normalizar o tamanho do campo em 14 posições numéricas, com zeros não significativos à esquerda;</li>
+                <li>Se as primeiras 6 posições do GTIN normalizado for = Zeros (GTIN-8):
+                  ­ <br>Prefixo GS1: posições 7 a 9 do GTIN normalizado;</li>
+                <li>Se as primeiras 6 posições do GTIN normalizado for <> Zeros (GTIN-12, 13 ou 14):
+                    ­ <br>Prefixo GS1: posições 2 a 4 do GTIN normalizado;
+                    <br><br>Obs. 1: A GS1-Brasil é identificada pelo Prefixo 789 e 790, e não temos o uso do GTIN-12 para produtos produzidos no País.
+                    <br>Obs. 2: O GTIN-14 na verdade é uma variação do GTIN-13, onde a primeira posição identifica um agrupamento dos produtos identificados pelo GTIN-13. O primeiro algarismo do GTIN-14 não pode ser zero.
+
+                </li>
+              </ul>
+              <li>Prefixo GS1 não identificando um País
+                <br>O "Prefixo GS1" identifica uma entidade GS1 associada e normalmente isso identifica também um País. Existem casos especiais, onde o prefixo GS1 não identifica um País, por exemplo:
+              </li>
+              <ul class="disco">
+                <li>Faixa de códigos GTIN que podem ser usados internamente na empresa;</li>
+                <li>Faixa de códigos GTIN para Jornais, Revistas periódicas e Livros;</li>
+                <li>Outros.</li>
+              </ul>
+              <li>"Prefixo GS1" para a GS1 Brasil
+                <br>Para efeito dessa consulta, estão disponíveis somente os GTIN concedidos pela GS1 Brasil, identificados pelo “Prefixo GS1” = 789 ou 790.
+              </li>
+            </ol>
+          </ol>
+        </div>
+
+        <ul>
+          <h3>1.7.2. Regras de Validação</h3>
+        </ul>
+
+        <ul>
+          <table style="border-collapse:collapse" class="tabela_gtin">
+            <tr>
+              <th>#</th>
+              <th>Regra de Validação</th>
+              <th>Aplic.</th>
+              <th>Msg.</th>
+              <th>Descrição Erro</th>
+            </tr>
+            <tr>
+              <td>P10-10</td>
+              <td>Normalizar GTIN com 14 posições:
+                <br>
+                <div class="recuo"></div>- Se GTIN com dígito de verificador inválido
+              </td>
+              <td>Obrig.</td>
+              <td>9491</td>
+              <td>Rejeição: GTIN com dígito verificador inválido</td>
+            </tr>
+            <tr>
+              <td>P10-20</td>
+              <td>- Se Prefixo GS1 diferente de 789, 790 (Brasil)</td>
+              <td>Obrig.</td>
+              <td>9492</td>
+              <td>Rejeição: GTIN não possui prefixo 789 ou 790 (Brasil)</td>
+            </tr>
+            <tr class="linha_grupo">
+              <td colspan="5">*** Banco de Dados: Cadastro Centralizado de Contribuintes (CCC)</td>
+            </tr>
+            <tr>
+              <td>1P10-10</td>
+              <td>Acesso CCC-Cadastro Centralizado de Contribuintes (Chave: CNPJ/CPF do Certificado de Transmissão):
+                <br>
+                <div class="recuo"></div>- CNPJ/CPF do Certificado de Transmissão não é emitente de NF-e / NFC-e
+              </td>
+              <td>Obrig.</td>
+              <td>9493</td>
+              <td>Rejeição: CNPJ/CPF do Certificado de Transmissão não é emitente de NF-e ou NFC-e</td>
+            </tr>
+            <tr class="linha_grupo">
+              <td colspan="5">*** Banco de Dados: Cadastro Centralizado de GTIN (CCG)</td>
+            </tr>
+            <tr>
+              <td>2P10-10</td>
+              <td>Acesso CCG-Cadastro Centralizado de GTIN (Chave: GTIN):
+                <br>
+                <div class="recuo"></div>- GTIN inexistente no CCG
+              </td>
+              <td>Obrig.</td>
+              <td>9494</td>
+              <td>Rejeição: GTIN inexistente no Cadastro Centralizado de GTIN (CCG)</td>
+            </tr>
+            <tr>
+              <td>2P10-20</td>
+              <td><br>
+                <div class="recuo"></div> - GTIN existe no CCG, com situação inválida (sitGTIN <> 1)
+                  <br><br>Nota:Não retornar os dados do CCG.
+              </td>
+              <td>Obrig.</td>
+              <td>9495</td>
+              <td>Rejeição: GTIN existe no CCG com situação inválida. Solicitar ao dono da marca que entre em contato com a GS1</td>
+            </tr>
+            <tr>
+              <td>2P10-30</td>
+              <td><br>
+                <div class="recuo"></div> - GTIN existe no CCG, mas Dono da Marca não autorizou a publicação das informações (indNaoAutoriza = 1)
+                <br><br>Nota:Não retornar os dados do CCG.
+              </td>
+              <td>Obrig.</td>
+              <td>9496</td>
+              <td>Rejeição: GTIN existe no CCG, mas dono da marca não autorizou a publicação das informações. Entrar em contato com o dono da marca</td>
+            </tr>
+            <tr>
+              <td>2P10-40</td>
+              <td><br>
+                <div class="recuo"></div> - GTIN existe no CCG com NCM não cadastrado
+                <br><br>Nota:Não retornar os dados do CCG.
+              </td>
+              <td>Obrig.</td>
+              <td>9497</td>
+              <td>Rejeição: GTIN existe no CCG com NCM não cadastrado</td>
+            </tr>
+            <tr>
+              <td>2P10-50</td>
+              <td><br>
+                <div class="recuo"></div> - GTIN existe no CCG com NCM inválido ou fora da vigência
+                <br><br>Nota:Não retornar os dados do CCG.
+              </td>
+              <td>Obrig.</td>
+              <td>9498</td>
+              <td>Rejeição: GTIN existe no CCG com NCM inválido</td>
+            </tr>
+          </table>
+          <br><br>
+          <titulo_tabela id="1.8. Final do Processamento">1.8. Final do Processamento</titulo_tabela><br>
+
+          <p>A validação da mensagem de requisição poderá resultar em:</p>
+          <ul>
+            <ul class="disco">
+              <li>Rejeição: conforme as Regras de Validação definidas anteriormente, retornando o motivo da rejeição (tag: cStat e xMotivo);</li>
+              <li>Resultado da Consulta: Caso não haja rejeição, serão retornados os dados da consulta, com a mensagem: “9490 – Consulta realizada com sucesso“.</li>
+            </ul>
+          </ul>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<!-- Mirrored from www.w3schools.com/css/default.asp by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2016 05:41:03 GMT -->
+
+</html>

@@ -63,6 +63,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -148,77 +149,77 @@
             Geral do Web Service de Registro de Eventos.</a><br>
           <div class="negrito">Schema XML: envEventoCancEntregaNFe_v9.99.xsd</div><br>
         </ul>
-          <table class="leiaute_web_services">
-            <tr>
-              <th>#</th>
-              <th>Campo</th>
-              <th>Ele</th>
-              <th>Pai</th>
-              <th>Tipo</th>
-              <th>Ocor.</th>
-              <th>Tam.</th>
-              <th>Descrição/Observação</th>
-            </tr>
-            <tr>
-              <td>P18 </td>
-              <td>versao</td>
-              <td>A </td>
-              <td>P17</td>
-              <td>N </td>
-              <td>1-1 </td>
-              <td>2v2 </td>
-              <td>Informar o mesmo valor da tag “verEvento” (P16)</td>
-            </tr>
-            <tr>
-              <td>P19</td>
-              <td>descEvento </td>
-              <td>E</td>
-              <td>P17</td>
-              <td>C</td>
-              <td>1-1</td>
-              <td>5-60 </td>
-              <td>Veja a descrição do evento, junto com o Tipo de Evento documentado anteriormente.</td>
-            </tr>
-            <tr>
-              <td>P20</td>
-              <td>cOrgaoAutor</td>
-              <td>E</td>
-              <td>P17</td>
-              <td>N </td>
-              <td>1-1</td>
-              <td>2</td>
-              <td>Código do Órgão Autor do Evento. Informar o Código da UF para este Evento.</td>
-            </tr>
-            <tr>
-              <td>P21</td>
-              <td>tpAutor</td>
-              <td>E</td>
-              <td>P17 </td>
-              <td>N</td>
-              <td>1-1 </td>
-              <td>1</td>
-              <td>Informar 1=Empresa Emitente. <br>Valores: 1=Empresa Emitente, 2=Empresa destinatária; 3=Empresa; 5=Fisco; 6=RFB; 9=Outros Órgãos;</td>
-            </tr>
-            <tr>
-              <td>P22</td>
-              <td>verAplic</td>
-              <td>E</td>
-              <td>P17</td>
-              <td>C</td>
-              <td>1-1</td>
-              <td>1-20 </td>
-              <td>Versão do aplicativo do Autor do Evento.</td>
-            </tr>
-            <tr>
-              <td>P23</td>
-              <td>nProtEvento</td>
-              <td>E</td>
-              <td>P17</td>
-              <td>N</td>
-              <td>1-1</td>
-              <td>15</td>
-              <td>Informar o número do Protocolo de Autorização do Evento da NF-e a que se refere este cancelamento.</td>
-            </tr>
+        <table class="leiaute_web_services">
+          <tr>
+            <th>#</th>
+            <th>Campo</th>
+            <th>Ele</th>
+            <th>Pai</th>
+            <th>Tipo</th>
+            <th>Ocor.</th>
+            <th>Tam.</th>
+            <th>Descrição/Observação</th>
+          </tr>
+          <tr>
+            <td>P18 </td>
+            <td>versao</td>
+            <td>A </td>
+            <td>P17</td>
+            <td>N </td>
+            <td>1-1 </td>
+            <td>2v2 </td>
+            <td>Informar o mesmo valor da tag “verEvento” (P16)</td>
+          </tr>
+          <tr>
+            <td>P19</td>
+            <td>descEvento </td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>5-60 </td>
+            <td>Veja a descrição do evento, junto com o Tipo de Evento documentado anteriormente.</td>
+          </tr>
+          <tr>
+            <td>P20</td>
+            <td>cOrgaoAutor</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>N </td>
+            <td>1-1</td>
+            <td>2</td>
+            <td>Código do Órgão Autor do Evento. Informar o Código da UF para este Evento.</td>
+          </tr>
+          <tr>
+            <td>P21</td>
+            <td>tpAutor</td>
+            <td>E</td>
+            <td>P17 </td>
+            <td>N</td>
+            <td>1-1 </td>
+            <td>1</td>
+            <td>Informar 1=Empresa Emitente. <br>Valores: 1=Empresa Emitente, 2=Empresa destinatária; 3=Empresa; 5=Fisco; 6=RFB; 9=Outros Órgãos;</td>
+          </tr>
+          <tr>
+            <td>P22</td>
+            <td>verAplic</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>C</td>
+            <td>1-1</td>
+            <td>1-20 </td>
+            <td>Versão do aplicativo do Autor do Evento.</td>
+          </tr>
+          <tr>
+            <td>P23</td>
+            <td>nProtEvento</td>
+            <td>E</td>
+            <td>P17</td>
+            <td>N</td>
+            <td>1-1</td>
+            <td>15</td>
+            <td>Informar o número do Protocolo de Autorização do Evento da NF-e a que se refere este cancelamento.</td>
+          </tr>
         </table>
 
         <br><br>
@@ -356,7 +357,8 @@
             <td>1P10-10</td>
             <td>Acesso ao Cadastro de Contribuintes (Chave: CNPJ do Autor):
               <br>• Verificar se Emitente não autorizado a emitir NF-e
-              <br><br><div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+              <br><br>
+              <div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
             </td>
             <td>Obrig.</td>
             <td>203</td>
@@ -366,7 +368,8 @@
           <tr class="">
             <td>1P10-20</td>
             <td>• Verificar situação fiscal do emitente
-        <br><br><div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
+              <br><br>
+              <div class="negrito">Exceção:</div>Não se aplica para NFF (tpEmis = 3-NFF) (NT 2021.002)
             </td>
             <td>Obrig.</td>
             <td>240</td>
@@ -379,17 +382,40 @@
           <tr class="">
             <td>2P12-10</td>
             <td>Acesso BD NFE (Chave: CNPJ/CPF da Chave de Acesso, Modelo, Série e Número):
-        <br>- Chave Acesso inexistente para o tpEvento que exige a existência da NF-e (*1)
-        <br><br><div class="negrito">Nota:</div> Caso exista no banco de dados uma NF-e com Chave de Acesso divergente, opcionalmente, deverá ser concatenado a Chave de Acesso existente na descrição do erro, caso o CNPJ/CPF do Autor do
-        Evento seja o mesmo CNPJ/CPF da Chave de Acesso.</td>
+              <br>- Chave Acesso inexistente para o tpEvento que exige a existência da NF-e (*1)
+              <br><br>
+              <div class="negrito">Nota:</div> Caso exista no banco de dados uma NF-e com Chave de Acesso divergente, opcionalmente, deverá ser concatenado a Chave de Acesso existente na descrição do erro, caso o CNPJ/CPF do Autor do
+              Evento seja o mesmo CNPJ/CPF da Chave de Acesso.
+            </td>
             <td>Obrig.</td>
             <td>494</td>
             <td>Rej.</td>
             <td>Rejeição: Chave de Acesso Inexistente [chNFe:999...999]</td>
           </tr>
-          <tr><td>2P12-22</td><td> - Verificar se NF-e está denegada ou cancelada </td><td>Obrig.</td><td> 580 </td><td>Rej.</td><td>Rejeição: Evento exige uma NF-e autorizada</td></tr>
-          <tr><td>2P13-10</td><td> - Data do evento menor que a Data de Emissão da NF-e (*1) </td><td>Obrig.</td><td> 577 </td><td>Rej.</td><td>Rejeição: A data do evento não pode ser menor que a data de emissão da NF-e</td></tr>
-          <tr><td>2P13-14</td><td> - Data do evento menor que a Data de Autorização da NF-e não emitida em contingência (tpEmis=1)<br>Nota: Tolerância de 5 minutos, devido ao sincronismo de horário entre o servidor da Empresa e o servidor da SEFAZ Autorizadora. </td><td>Obrig.</td><td> 579 </td><td>Rej.</td><td>Rejeição: A data do evento não pode ser menor que a data de autorização da NF-e</td></tr>
+          <tr>
+            <td>2P12-22</td>
+            <td> - Verificar se NF-e está denegada ou cancelada </td>
+            <td>Obrig.</td>
+            <td> 580 </td>
+            <td>Rej.</td>
+            <td>Rejeição: Evento exige uma NF-e autorizada</td>
+          </tr>
+          <tr>
+            <td>2P13-10</td>
+            <td> - Data do evento menor que a Data de Emissão da NF-e (*1) </td>
+            <td>Obrig.</td>
+            <td> 577 </td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser menor que a data de emissão da NF-e</td>
+          </tr>
+          <tr>
+            <td>2P13-14</td>
+            <td> - Data do evento menor que a Data de Autorização da NF-e não emitida em contingência (tpEmis=1)<br>Nota: Tolerância de 5 minutos, devido ao sincronismo de horário entre o servidor da Empresa e o servidor da SEFAZ Autorizadora. </td>
+            <td>Obrig.</td>
+            <td> 579 </td>
+            <td>Rej.</td>
+            <td>Rejeição: A data do evento não pode ser menor que a data de autorização da NF-e</td>
+          </tr>
           <tr>
             <td colspan="6" style="background-color:lightblue; text-align:center">***Banco de Dados:Evento</td>
           </tr>
@@ -418,7 +444,9 @@
           </tr>
           <tr class="">
             <td>4P23-10</td>
-            <td> <div class="recuo"></div>- Número do Protocolo não encontrado</td>
+            <td>
+              <div class="recuo"></div>- Número do Protocolo não encontrado
+            </td>
             <td>Obrig.</td>
             <td>460</td>
             <td>Rej.</td>
@@ -431,14 +459,26 @@
         <div class='texto_normal'>
           <p>O processamento do lote pode resultar em:</p>
           <ul>
-            <li><div class="negrito">Rejeição do Lote:</div>por algum problema que comprometa o processamento do lote;</li>
-            <li><div class="negrito">Processamento do Lote:</div>o lote foi processado (cStat=”128 - Lote de Evento Processado”),
-e a validação de cada evento do lote poderá resultar em:</li>
-            <ul><li><div class="negrito">Rejeição:</div>o Evento será rejeitado, retornando do código do status do motivo da rejeição;</li>
-            <li><div class="negrito">Evento Autorizado, com vinculação à respectiva NF-e:</div>Encontrada a NF-e no banco de
-dados. Retornar cStat=”135-Evento registrado e vinculado a NF-e”;</li>
-            <li><div class="negrito">Evento Autorizado, sem vinculação à respectiva NF-e:</div>Não encontrada a NF-e no banco
-de dados. Retornar cStat=”136-Evento registrado, mas não vinculado a NF-e”;</li></ul>
+            <li>
+              <div class="negrito">Rejeição do Lote:</div>por algum problema que comprometa o processamento do lote;
+            </li>
+            <li>
+              <div class="negrito">Processamento do Lote:</div>o lote foi processado (cStat=”128 - Lote de Evento Processado”),
+              e a validação de cada evento do lote poderá resultar em:
+            </li>
+            <ul>
+              <li>
+                <div class="negrito">Rejeição:</div>o Evento será rejeitado, retornando do código do status do motivo da rejeição;
+              </li>
+              <li>
+                <div class="negrito">Evento Autorizado, com vinculação à respectiva NF-e:</div>Encontrada a NF-e no banco de
+                dados. Retornar cStat=”135-Evento registrado e vinculado a NF-e”;
+              </li>
+              <li>
+                <div class="negrito">Evento Autorizado, sem vinculação à respectiva NF-e:</div>Não encontrada a NF-e no banco
+                de dados. Retornar cStat=”136-Evento registrado, mas não vinculado a NF-e”;
+              </li>
+            </ul>
 
           </ul>
         </div>

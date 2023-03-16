@@ -63,6 +63,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -479,10 +480,12 @@
           <tr class="">
             <td>P23-10</td>
             <td>Data de Emissão posterior a data de recebimento
-            <br><div class="negrito">Nota:</div>Na comparação acima, aceitar
-uma tolerância de 5 minutos, devido ao
-sincronismo de horário entre o servidor
-da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)</td>
+              <br>
+              <div class="negrito">Nota:</div>Na comparação acima, aceitar
+              uma tolerância de 5 minutos, devido ao
+              sincronismo de horário entre o servidor
+              da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)
+            </td>
             <td>Obrig.</td>
             <td>212</td>
             <td>Rej.</td>
@@ -666,7 +669,8 @@ da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)</td>
           <tr class="">
             <td>4P12-10</td>
             <td>Acesso ao BD NFE (Chave: Modelo=55, UF Emitente, CNPJ ou CPF Emitente, Série e Número da NFe):
-<br>NF-e já existente para o número do EPEC informado</td>
+              <br>NF-e já existente para o número do EPEC informado
+            </td>
             <td>Obrig.</td>
             <td>661</td>
             <td>Rej.</td>
@@ -675,7 +679,8 @@ da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)</td>
           <tr class="">
             <td>5P12-10</td>
             <td>Acesso ao BD de Inutilização (Chave: Modelo=55, UF Emitente, CNPJ ou CPF Emitente, Série e Número):
-<br>Numeração do EPEC está inutilizada na Base de Dados da SEFAZ</td>
+              <br>Numeração do EPEC está inutilizada na Base de Dados da SEFAZ
+            </td>
             <td>Obrig.</td>
             <td>662</td>
             <td>Rej.</td>
@@ -687,9 +692,10 @@ da Empresa e o servidor da SEFAZ Autorizadora.(NT 2018.004)</td>
           <tr class="">
             <td>6P31-10</td>
             <td>Se informada IE do Destinatário: <br>Acessar Cadastro de Contribuinte da UF (Chave: UF Dest, IE Dest.) (*5)
-<br>IE destinatário não cadastrada, ou situação da IE
-igual a exclusão lógica no CCC (CCC.cSitIE=9-
-Exclusão lógica) (*7) (NT 2019.001 v1.00)</td>
+              <br>IE destinatário não cadastrada, ou situação da IE
+              igual a exclusão lógica no CCC (CCC.cSitIE=9-
+              Exclusão lógica) (*7) (NT 2019.001 v1.00)
+            </td>
             <td>Obrig.</td>
             <td>233</td>
             <td>Rej.</td>
@@ -738,7 +744,8 @@ Exclusão lógica) (*7) (NT 2019.001 v1.00)</td>
           <tr class="">
             <td>6P31-50</td>
             <td>Se IE Destinatário não informada e informado CNPJ do destinatário:
-<br>Acessar Cadastro Contribuinte da UF (Chave: UFDest, CNPJ-Dest) (*6) Destinatário possui IE ativa na UF (CCC.cSitIE=1- Habilitado) e CCC.IndIEDestOpc = 0 – Obrigatório (NT 2019.001 v1.00)</td>
+              <br>Acessar Cadastro Contribuinte da UF (Chave: UFDest, CNPJ-Dest) (*6) Destinatário possui IE ativa na UF (CCC.cSitIE=1- Habilitado) e CCC.IndIEDestOpc = 0 – Obrigatório (NT 2019.001 v1.00)
+            </td>
             <td>Obrig.</td>
             <td>232</td>
             <td>Rej.</td>
@@ -765,18 +772,24 @@ Exclusão lógica) (*7) (NT 2019.001 v1.00)</td>
         <div class="texto_normal">
           <p>Notas:</p>
           <p>(*2)....O tamanho da IE deve ser normalizado na aplicação do AN, desprezando os zeros não significativos, antes da verificação do
-          dígito de controle;</p><p>
-          (*3)....Valor parametrizável, definido inicialmente em R$ 500 milhões, para evitar erros de preenchimento do campo;</p><p>
-          (*4)....No caso do ambiente de contingência EPEC bloqueado para o emitente, serão retornadas as Chaves de Acesso de até 50 EPEC
-          pendentes de conciliação (tag:chNFePend);</p><p>
-          (*5)....Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC-Cadastro Centralizado de
-          Contribuintes. (NT 2019.001 v1.00)</p><p>
-          .......... Nota: A validação do destinatário do EPEC não gera denegação, mas simplesmente uma rejeição.</p><p>
-          (*6)....Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC. Pesquisar todas as IE
-          vinculadas com o CNPJ informado. (NT 2019.001 v1.00)</p><p>
-          (*7)....Algumas UF ainda não cadastraram no CCC os Contribuintes Pessoa Física (IE e CPF). Portanto, o Ambiente de Contingência EPEC
-          que utiliza o CCC para validar o destinatário somente poderá efetuar as validações assinaladas se o Contribuinte (IE e CPF) e xistir
-          no CCC. (NT 2019.001 v1.00)</p>
+            dígito de controle;</p>
+          <p>
+            (*3)....Valor parametrizável, definido inicialmente em R$ 500 milhões, para evitar erros de preenchimento do campo;</p>
+          <p>
+            (*4)....No caso do ambiente de contingência EPEC bloqueado para o emitente, serão retornadas as Chaves de Acesso de até 50 EPEC
+            pendentes de conciliação (tag:chNFePend);</p>
+          <p>
+            (*5)....Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC-Cadastro Centralizado de
+            Contribuintes. (NT 2019.001 v1.00)</p>
+          <p>
+            .......... Nota: A validação do destinatário do EPEC não gera denegação, mas simplesmente uma rejeição.</p>
+          <p>
+            (*6)....Validação possível na operação interestadual, ou no ambiente da SEFAZ Virtual, utilizando o CCC. Pesquisar todas as IE
+            vinculadas com o CNPJ informado. (NT 2019.001 v1.00)</p>
+          <p>
+            (*7)....Algumas UF ainda não cadastraram no CCC os Contribuintes Pessoa Física (IE e CPF). Portanto, o Ambiente de Contingência EPEC
+            que utiliza o CCC para validar o destinatário somente poderá efetuar as validações assinaladas se o Contribuinte (IE e CPF) e xistir
+            no CCC. (NT 2019.001 v1.00)</p>
 
         </div>
 
@@ -786,8 +799,8 @@ Exclusão lógica) (*7) (NT 2019.001 v1.00)</td>
         <div class='texto_normal'>
           <p>O resultado do processamento do lote está especificado na seção <a href="./RecepcaoEventoGeral.html#1.5. Final do Processamento do Lote">Web Service de Registro de Eventos – Parte Geral</a></p>
           <p>No caso do evento de EPEC, não existe a possibilidade do retorno "135 – Evento registrado e
-vinculado a NF-e" porque este evento somente é autorizado se não existir uma NF-e para a mesma
-Nota Fiscal (mesma UF, CNPJ emitente, Série e Número).</p>
+            vinculado a NF-e" porque este evento somente é autorizado se não existir uma NF-e para a mesma
+            Nota Fiscal (mesma UF, CNPJ emitente, Série e Número).</p>
         </div>
 
       </div>

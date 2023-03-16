@@ -63,6 +63,7 @@
             <a href='./RecepcaoAtorInteressado.html' title='WS Ator Interessado'>&emsp;&#8227;Ator Interessado na NF-e - Transportador</a>
             <a href='./RecepcaoComprovanteEntrega.html' title='WS Ator Interessado'>&emsp;&#8227;Comprovante de Entrega da NF-e</a>
             <a href='./RecepcaoCancelamentoComprovante.html' title='WS Ator Interessado'>&emsp;&#8227;Cancelamento Comprovante de Entrega da NF-e </a>
+            <a href='./NFeConsultaGTIN.html' title='WS Consulta GTIN'>Web Service- Consulta GTIN</a>
           </div>
         </div>
 
@@ -422,95 +423,95 @@
           <p>No caso de processamento síncrono do Lote de NF-e, as validações da NF-e serão feitas na sequência, sem a geração de um Número de Recibo.</p>
         </div>
       </ul>
-        </div>
-      <titulo_tabela id="1.5. Regras de Validação">1.5. Regras de Validação</titulo_tabela><br>
-      <div class='texto_normal'>
-        <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a></p>
-      </div>
-      <table class="tabela_regras_genericas">
-        <tr>
-          <th>Grupo</th>
-          <th>Descrição</th>
-        </tr>
-        <tr>
-          <td>A</td>
-          <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
-        </tr>
-        <tr>
-          <td>B</td>
-          <td>Validação Inicial da Mensagem no Web Service</td>
-        </tr>
-        <tr>
-          <td>D</td>
-          <td>Validação da Área de Dados </td>
-        </tr>
-        <tr>
-          <td>E</td>
-          <td>Validação do Certificado Digital de Assinatura</td>
-        </tr>
-        <tr>
-          <td>F</td>
-          <td>Validação da Assinatura Digital</td>
-        </tr>
-
-      </table>
-      <div class='texto_normal'>
-        <p>As regras de validação específicas deste WS podem ser vistas no <a href="./RegrasDeValidação.html">Anexo de Regras de Validação da NF-e e da NFC-e.</a></p>
-<br>
-        <titulo_tabela id="1.6. Final do Processamento do Lote">1.6. Final do Processamento do Lote</titulo_tabela><br>
-        <div class='texto_normal'>
-          <p>A validação da NF-e poderá resultar em (NT 2017.001):</p>
-
-          <ul class="lista">
-            <li>Rejeição – a NF-e será descartada, não sendo armazenada no Banco de Dados podendo ser corrigida e novamente transmitida;</li>
-            <li>Autorização de uso – a NF-e será armazenada no Banco de Dados;</li>
-            <li>Denegação de uso – a NF-e será armazenada no Banco de Dados com esse status nos casos de irregularidade fiscal do emitente.</li>
-          </ul>
-
-          <p>Ou seja:</p>
-
-          <table>
-            <tr>
-              <th colspan="2">Validação</td>
-              <th colspan="4">Consequência</td>
-            </tr>
-            <tr>
-              <th>NF-e</th>
-              <th>Emitente</th>
-              <th>Situação da NF-e</th>
-              <th>Uso como Doc. Fiscal</th>
-              <th>Para o contribuinte</th>
-              <th>Banco de dados</th>
-            </tr>
-            <tr>
-              <td>Inválida</td>
-              <td>Irrelevante</td>
-              <td>Rejeição</td>
-              <td>Vedado</td>
-              <td>Corrigir NF-e</td>
-              <td>Não gravar</td>
-            </tr>
-            <tr>
-              <td>Válida</td>
-              <td>Irregular</td>
-              <td>Denegação de Uso</td>
-              <td>Vedado</td>
-              <td>A operação não poderá ser realizada</td>
-              <td>Gravar</td>
-            </tr>
-            <tr>
-              <td>Válida</td>
-              <td>Regular</td>
-              <td>Autorização de Uso</td>
-              <td>Permitido</td>
-              <td>A operação está autorizada</td>
-              <td>Gravar</td>
-            </tr>
-          </table>
-
-
-
     </div>
+    <titulo_tabela id="1.5. Regras de Validação">1.5. Regras de Validação</titulo_tabela><br>
+    <div class='texto_normal'>
+      <p>Serão aplicadas as regras de validação genéricas conforme os grupos citados na tabela abaixo, detalhados na <a href="./RegrasDeValidação.html#1.Regras de Validação Gerais">Seção 1 do Anexo de Regras de Validação da NF-e e da NFC-e.</a></p>
+    </div>
+    <table class="tabela_regras_genericas">
+      <tr>
+        <th>Grupo</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>Validação do Certificado de Transmissão (protocolo TLS)</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>Validação Inicial da Mensagem no Web Service</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>Validação da Área de Dados </td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>Validação do Certificado Digital de Assinatura</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>Validação da Assinatura Digital</td>
+      </tr>
+
+    </table>
+    <div class='texto_normal'>
+      <p>As regras de validação específicas deste WS podem ser vistas no <a href="./RegrasDeValidação.html">Anexo de Regras de Validação da NF-e e da NFC-e.</a></p>
+      <br>
+      <titulo_tabela id="1.6. Final do Processamento do Lote">1.6. Final do Processamento do Lote</titulo_tabela><br>
+      <div class='texto_normal'>
+        <p>A validação da NF-e poderá resultar em (NT 2017.001):</p>
+
+        <ul class="lista">
+          <li>Rejeição – a NF-e será descartada, não sendo armazenada no Banco de Dados podendo ser corrigida e novamente transmitida;</li>
+          <li>Autorização de uso – a NF-e será armazenada no Banco de Dados;</li>
+          <li>Denegação de uso – a NF-e será armazenada no Banco de Dados com esse status nos casos de irregularidade fiscal do emitente.</li>
+        </ul>
+
+        <p>Ou seja:</p>
+
+        <table>
+          <tr>
+            <th colspan="2">Validação</td>
+            <th colspan="4">Consequência</td>
+          </tr>
+          <tr>
+            <th>NF-e</th>
+            <th>Emitente</th>
+            <th>Situação da NF-e</th>
+            <th>Uso como Doc. Fiscal</th>
+            <th>Para o contribuinte</th>
+            <th>Banco de dados</th>
+          </tr>
+          <tr>
+            <td>Inválida</td>
+            <td>Irrelevante</td>
+            <td>Rejeição</td>
+            <td>Vedado</td>
+            <td>Corrigir NF-e</td>
+            <td>Não gravar</td>
+          </tr>
+          <tr>
+            <td>Válida</td>
+            <td>Irregular</td>
+            <td>Denegação de Uso</td>
+            <td>Vedado</td>
+            <td>A operação não poderá ser realizada</td>
+            <td>Gravar</td>
+          </tr>
+          <tr>
+            <td>Válida</td>
+            <td>Regular</td>
+            <td>Autorização de Uso</td>
+            <td>Permitido</td>
+            <td>A operação está autorizada</td>
+            <td>Gravar</td>
+          </tr>
+        </table>
+
+
+
+      </div>
 
 
       <br><br><br><br><br><br><br><br><br><br><br><br>

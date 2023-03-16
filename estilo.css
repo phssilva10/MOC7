@@ -222,10 +222,9 @@
   z-index: 9;
 }
 
-#menu_esq ul{
+#menu_esq ul {
   padding-left: 10px;
 }
-
 
 #menu_esq h2 {
   font-size: 21px;
@@ -312,7 +311,7 @@ ul.lista {
   padding-left: 8em;
 }
 
-ul li{
+ul li {
   text-indent: 0;
    !important
 }
@@ -336,13 +335,12 @@ ol li {
    !important
 }
 
-ul.disco{
+ul.disco {
   list-style-type: disc;
 }
 
-ul.circulo{
+ul.circulo {
   list-style-type: circle;
-
 }
 
 #principal {
@@ -377,14 +375,23 @@ ul.circulo{
   /*oucpação da tabela na janela*/
 }
 
+.tabela_assinatura, .tabela_assinatura th, .tabela_assinatura td {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.tabela_assinatura th {
+  background-color: #C0C0C0;
+}
+
 .tabela_eventos {
   width: 50%;
-  margin:auto;
+  margin: auto;
   border-collapse: collapse;
 }
 
-.tabela_eventos th{
-  background-color:#C0C0C0;
+.tabela_eventos th {
+  background-color: #C0C0C0;
 }
 
 .tabela_eventos td:nth-child(1) {
@@ -416,13 +423,13 @@ ul.circulo{
   /*oucpação da tabela na janela*/
 }
 
-.tabela_regras_genericas, .tabela_distribuicao_dfe{
+.tabela_regras_genericas, .tabela_distribuicao_dfe {
   margin-left: auto;
   margin-right: auto;
 }
 
-.tabela_distribuicao_dfe{
-font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
+.tabela_distribuicao_dfe {
+  font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
 }
 
@@ -440,6 +447,11 @@ font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
   padding: 8px;
 }
 
+.tabela_gtin td, .tabela_gtin th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
 .leiaute_nfe td, .leiaute_nfe th, .leiaute_web_services td, .leiaute_web_services th, .regras_validacao_nfe td, .regras_validacao_nfe th, .regras_validacao_gerais td, .regras_validacao_gerais th {
   /*Estabelece o tamanho e cor da borda tando de uma célula normal (td) quanto da célula do cabeçalho (th)*/
   border: 1px solid #ddd;
@@ -448,7 +460,7 @@ font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
 
 /*.leiaute_nfe tr:nth-child(even){background-color: #f2f2f2;}*/
 /*Estabelece a cor das células ímpares(even)*/
-.leiaute_nfe tr:hover, .regras_validacao_nfe tr:hover, .leiaute_web_services tr:hover, .regras_validacao_gerais tr:hover {
+.leiaute_nfe tr:hover, .regras_validacao_nfe tr:hover, .leiaute_web_services tr:hover, .regras_validacao_gerais tr:hover, .tabela_gtin tr:hover {
   background-color: #ddd;
 }
 
@@ -458,12 +470,11 @@ font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 
-.linha_grupo_revogada{
+.linha_grupo_revogada {
   background-color: #87CEFA;
   font-weight: bold;
   text-decoration: line-through;
 }
-
 
 .linha_revogada {
   text-decoration: line-through;
@@ -499,7 +510,7 @@ font-family: Calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
   display: inline-block;
 }
 
-.leiaute_nfe th, .leiaute_web_services th, .regras_validacao_nfe th, .regras_validacao_gerais th {
+.leiaute_nfe th, .leiaute_web_services th, .regras_validacao_nfe th, .regras_validacao_gerais th, .tabela_gtin th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
