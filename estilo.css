@@ -94,6 +94,9 @@
   .hide_leiaute {
     display: none !important;
   }
+
+  font-size:2;
+
 }
 
 @media (max-width:840px) {

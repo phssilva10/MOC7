@@ -75,7 +75,11 @@
 
 
         <div class='dropdown hide_danfe'>
-          <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>DANFE</a>
+          <div class='dropdown-content'>
+            <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras NF-e</a>
+            <a href='./DanfeQrCodeNFCe.html' title='Contingência NFC-e'>DANFE/Qr-code NFC-e</a>
+          </div>
         </div>
 
         <div class='dropdown hide_contingencia'>
@@ -102,9 +106,9 @@
 
             <div class="show_danfe">
               <!--A classe show_danfe garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 934 pixels -->
-              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras NF-e</a>
+              <a href='./DanfeQrCodeNFCe.html' title='Contingência NFC-e'>DANFE/Qr-code NFC-e</a>
             </div>
-
             <div class="show_contingencia">
               <!--A classe show_contingencia garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 1100 pixels -->
               <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Contingência NF-e</a>
@@ -128,8 +132,8 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
-
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">  HABILITAR ESSE MENU QUANDO CONSEGUIR RESOLVER O PROBLEMA DOS ESPAÇOS-->
+		  
           <h4 style="text-align:center">Regras de Validação</h4><br>
 
           <h4>1. Regras de Validação Gerais </h4>

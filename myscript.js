@@ -35,13 +35,13 @@ function menu() {
   var fechar = document.getElementById("menu_esq");
   if (fechar.style.display != "none") {
     fechar.style.display = "none";
-    var parte_maior = document.getElementById("principal");
+  //  var parte_maior = document.getElementById("principal");
     document.getElementById("botao_menu").classList.remove("active");
-    parte_maior.style.paddingLeft = "10px";
+  //  parte_maior.style.paddingLeft = "10px";
   } else {
     fechar.style.display = "block";
-    var parte_maior = document.getElementById("principal");
-    parte_maior.style.paddingLeft = "320px";
+  //  var parte_maior = document.getElementById("principal");
+  //  parte_maior.style.paddingLeft = "320px";
     document.getElementById("botao_menu").classList.add("active");
 
   }
@@ -64,18 +64,21 @@ function pesquisa() {
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
         breakline[(i * 2 + 1)].style.display = "";
+        breakline[(i * 2)].style.display = "";
       } else {
         tr[i].style.display = "none";
         breakline[(i * 2 + 1)].style.display = "none"; //para cada tag escondida, tenho duas tags br, uma interna e outra externa. Logo, a tag br que eu quero esconder com essa função é sempre dada por i*2+1
+        breakline[(i * 2)].style.display = "none"; //para cada tag escondida, tenho duas tags br, uma interna e outra externa. Logo, a tag br que eu quero esconder com essa função é sempre dada por i*2+1
       }
     }
   }
 }
 
 function meiodatela(id_elemento) {
-  console.log("opa, esta querendo que eu va ate o elemento   " + id_elemento);
+  //console.log("opa, esta querendo que eu va ate o elemento   " + id_elemento);
   var elmnt = document.getElementById(id_elemento);
   posicao = elmnt.offsetTop - 100;
   console.log("peguei a posicao dele, ta em   " + posicao);
+  menu();//chamo o menu para que ele seja fechado caso eu tenha clicado em algum link
   window.scrollTo(0, posicao);
 }

@@ -5,7 +5,7 @@
 
 <head>
 
-  <title>Template</title>
+  <title>DANFE e Código de Barras</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,9 +75,12 @@
           <a href='./RegrasDeValidação.html' id="botao_leiaute" title='Regras de Validação'>Regras de Validação</a>
         </div>
 
-
         <div class='dropdown hide_danfe'>
-          <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+          <a href='javascript:void(0);' id="botao_leiaute" title='Leiaute'>DANFE</a>
+          <div class='dropdown-content'>
+            <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras NF-e</a>
+            <a href='./DanfeQrCodeNFCe.html' title='Contingência NFC-e'>DANFE/Qr-code NFC-e</a>
+          </div>
         </div>
 
         <div class='dropdown hide_contingencia'>
@@ -104,7 +107,8 @@
 
             <div class="show_danfe">
               <!--A classe show_danfe garante que essas informações só serão exibidas dentro da aba de demais anexos quando a tela for inferior à 934 pixels -->
-              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras</a>
+              <a href='./DanfeCodigoBarras.html' id="botao_leiaute" title='Danfe/Código de Barras'>DANFE/Código de Barras NF-e</a>
+              <a href='./DanfeQrCodeNFCe.html' title='Contingência NFC-e'>DANFE/Qr-code NFC-e</a>
             </div>
 
             <div class="show_contingencia">
@@ -127,7 +131,117 @@
         <div id='indice_texto'>
           <!-- cria a parte interna da parte interna, para que fique abaixo da barra-->
           <!-- Aqui vai o índice específico dessa parte-->
-          <input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">
+          <!--<input type="text" id="myInput" onkeyup="pesquisa()" placeholder="Pesquisar índice..">  HABILITAR ESSE MENU QUANDO CONSEGUIR RESOLVER O PROBLEMA DOS ESPAÇOS-->
+
+
+          <h4 style="text-align:center">DANFE e Código de Barras - NF-e</h4><br>
+
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1. Código de Barras")' title='1. Código de Barras'>1. Código de Barras</a>
+          <ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.1. Cálculo do Dígito Verificador do CODE-128C")' title='1.1. Cálculo do Dígito Verificador do CODE-128C'>1.1. Cálculo do Dígito Verificador do CODE-128C</a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("1.2. Representação Simbólica do Código")' title='1.2. Representação Simbólica do Código'>1.2. Representação Simbólica do Código</a>
+          </ul>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2. DANFE")' title='2. DANFE'>2. DANFE</a>
+          <ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1. Campos do DANFE")' title='2.1. Campos do DANFE'>2.1. Campos do DANFE</a><br>
+            <ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.1. Chave de Acesso")' title='2.1.1. Chave de Acesso'>2.1.1. Chave de Acesso</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.2. Dados da NF-e")' title='2.1.2. Dados da NF-e'>2.1.2. Dados da NF-e</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.3. Dados do Emitente")' title='2.1.3. Dados do Emitente'>2.1.3. Dados do Emitente</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.4. Informações do local de retirada (NT 2018.005)")' title='2.1.4. Informações do local de retirada (NT 2018.005)'>2.1.4. Informações do local de retirada (NT
+                2018.005)</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.5. Informações do local de entrega (NT 2018.005)")' title='2.1.5. Informações do local de entrega (NT 2018.005)'>2.1.5. Informações do local de entrega (NT
+                2018.005)</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.6. Quadro Fatura/Duplicatas")' title='2.1.6. Quadro Fatura/Duplicatas'>2.1.6. Quadro Fatura/Duplicatas</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.7. Quadro Dados dos Produtos / Serviços")' title='2.1.7. Quadro Dados dos Produtos / Serviços'>2.1.7. Quadro Dados dos Produtos / Serviços</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.8. Informações Complementares")' title='2.1.8. Informações Complementares'>2.1.8. Informações Complementares</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.9. Reservado ao Fisco")' title='2.1.9. Reservado ao Fisco'>2.1.9. Reservado ao Fisco</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.10. Quadro do Transportador")' title='2.1.10. Quadro do Transportador'>2.1.10. Quadro do Transportador</a><br>
+            </ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”")'
+              title='2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”'>2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”</a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.3. Supressões e Modificações Permitidas")' title='2.3. Supressões e Modificações Permitidas'>2.3. Supressões e Modificações Permitidas</a><br>
+            <ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.3.1. Bloco de Canhoto")' title='2.3.1. Bloco de Canhoto'>2.3.1. Bloco de Canhoto</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.3.2. Quadro “Fatura/Duplicatas”")' title='2.3.2. Quadro “Fatura/Duplicatas”'>2.3.2. Quadro “Fatura/Duplicatas”</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.3.3. Quadro “Cálculo do ISSQN”")' title='2.3.3. Quadro “Cálculo do ISSQN”'>2.3.3. Quadro “Cálculo do ISSQN”</a><br>
+            </ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.4. Verso do DANFE")' title='2.4. Verso do DANFE'>2.4. Verso do DANFE</a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.5. Folhas Adicionais")' title='2.5. Folhas Adicionais'>2.5. Folhas Adicionais</a><br>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.6. Formulário")' title='2.6. Formulário'>2.6. Formulário</a><br>
+            <ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.6.1. Tamanho do Papel")' title='2.6.1. Tamanho do Papel'>2.6.1. Tamanho do Papel</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.6.2. Margem Lateral no Formulário")' title='2.6.2. Margem Lateral no Formulário'>2.6.2. Margem Lateral no Formulário</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.6.3. Modelos de DANFE Permitidos")' title='2.6.3. Modelos de DANFE Permitidos'>2.6.3. Modelos de DANFE Permitidos</a><br>
+            </ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7. Padrões de Caracteres (Tipos de Fontes)")' title='2.7. Padrões de Caracteres (Tipos de Fontes)'>2.7. Padrões de Caracteres (Tipos de Fontes)</a><br>
+            <ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.1. Descritivo dos Blocos de Campos")' title='2.7.1. Descritivo dos Blocos de Campos'>2.7.1. Descritivo dos Blocos de Campos</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.2. Descritivo dos Campos do Quadro “Dados dos Produtos/Serviços”")' title='2.7.2. Descritivo dos Campos do Quadro “Dados dos Produtos/Serviços”'>2.7.2.
+                Descritivo dos Campos do Quadro “Dados dos Produtos/Serviços”</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.3. Descritivo dos Demais Campos")' title='2.7.3. Descritivo dos Demais Campos'>2.7.3. Descritivo dos Demais Campos</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.4. Conteúdo do Bloco de Campos de Identificação do Documento")' title='2.7.4. Conteúdo do Bloco de Campos de Identificação do Documento'>2.7.4. Conteúdo do
+                Bloco de Campos de Identificação do Documento</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.5. Conteúdo do Campo Chave de Acesso.")' title='2.7.5. Conteúdo do Campo Chave de Acesso.'>2.7.5. Conteúdo do Campo Chave de Acesso.</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.6. Conteúdo do Quadro Dados do Emitente")' title='2.7.6. Conteúdo do Quadro Dados do Emitente'>2.7.6. Conteúdo do Quadro Dados do Emitente</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.7. Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”")' title='2.7.7. Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”'>2.7.7. Conteúdo
+                dos Campos do Quadro “Dados dos Produtos/Serviços”</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.8. Conteúdo do Campo Informações Complementares")' title='2.7.8. Conteúdo do Campo Informações Complementares'>2.7.8. Conteúdo do Campo Informações
+                Complementares</a><br>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7.9. Conteúdo dos Demais Campos")' title='2.7.9. Conteúdo dos Demais Campos'>2.7.9. Conteúdo dos Demais Campos</a><br>
+            </ul>
+            <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8. Tamanho dos Campos")' title='2.8. Tamanho dos Campos'>2.8. Tamanho dos Campos</a<br>
+              <ul>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.1. Formulário A-4 em Modo Retrato")' title='2.8.1. Formulário A-4 em Modo Retrato'>2.8.1. Formulário A-4 em Modo Retrato</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.2. Formulário A-4 em Modo Paisagem")' title='2.8.2. Formulário A-4 em Modo Paisagem'>2.8.2. Formulário A-4 em Modo Paisagem</a><br>
+              </ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9. Campos de Conteúdo Variável")' title='2.9. Campos de Conteúdo Variável'>2.9. Campos de Conteúdo Variável</a><br>
+              <ul>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.1. Emissão Normal da NF-e e SVC-XX")' title='2.9.1. Emissão Normal da NF-e e SVC-XX'>2.9.1. Emissão Normal da NF-e e SVC-XX</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança")'
+                  title='2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança'>2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional")' title='2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional'>2.9.3.
+                  Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional</a><br>
+              </ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10. Outros")' title='2.10. Outros'>2.10. Outros</a><br>
+              <ul>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10.1. Marca d’Água")' title='2.10.1. Marca d’Água'>2.10.1. Marca d’Água</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10.2. Impressão do Número da Folha")' title='2.10.2. Impressão do Número da Folha'>2.10.2. Impressão do Número da Folha</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10.3. Limitações da Impressora")' title='2.10.3. Limitações da Impressora'>2.10.3. Limitações da Impressora</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10.4. Código de Barras")' title='2.10.4. Código de Barras'>2.10.4. Código de Barras</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.10.5. Campo “Valor de ICMS Desonerado”")' title='2.10.5. Campo “Valor de ICMS Desonerado”'>2.10.5. Campo “Valor de ICMS Desonerado”</a><br>
+              </ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.11. DANFE Simplificado")' title='2.11. DANFE Simplificado'>2.11. DANFE Simplificado</a><br>
+              <ul>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.11.1. Tipo e tamanho do Papel")' title='2.11.1. Tipo e tamanho do Papel'>2.11.1. Tipo e tamanho do Papel</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.11.2. Chave de acesso")' title='2.11.2. Chave de acesso'>2.11.2. Chave de acesso</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.11.3. Padrões de Caracteres (Tipos de Fontes)")' title='2.11.3. Padrões de Caracteres (Tipos de Fontes)'>2.11.3. Padrões de Caracteres (Tipos de
+                  Fontes)</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.11.4. Campos obrigatórios")' title='2.11.4. Campos obrigatórios'>2.11.4. Campos obrigatórios</a><br>
+              </ul>
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.12. DANFE Simplificado – Etiqueta (NT 2020.004)")' title='2.12. DANFE Simplificado – Etiqueta (NT 2020.004)'>2.12. DANFE Simplificado – Etiqueta (NT
+                2020.004)</a><br>
+              <ul>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.12.1. Tipo e tamanho do Papel")' title='2.12.1. Tipo e tamanho do Papel'>2.12.1. Tipo e tamanho do Papel</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.12.2. Chave de acesso")' title='2.12.2. Chave de acesso'>2.12.2. Chave de acesso</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.12.3. Padrões de Caracteres (Tipos de Fontes)")' title='2.12.3. Padrões de Caracteres (Tipos de Fontes)'>2.12.3. Padrões de Caracteres (Tipos de
+                  Fontes)</a><br>
+                <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.12.4. Campos obrigatórios")' title='2.12.4. Campos obrigatórios'>2.12.4. Campos obrigatórios</a>
+              </ul>
+          </ul>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("3. Conjunto de Caracteres Código de Barras CODE-128C")' title='3. Conjunto de Caracteres Código de Barras CODE-128C'>3. Conjunto de Caracteres Código de Barras
+            CODE-128C</a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("4. DANFE Tamanho A-4 em Modo Retrato, Folhas Soltas")' title='4. DANFE Tamanho A-4 em Modo Retrato, Folhas Soltas'>4. DANFE Tamanho A-4 em Modo Retrato, Folhas
+            Soltas</a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("5. DANFE Tamanho A-4 em Modo Retrato, Formulário Contínuo")' title='5. DANFE Tamanho A-4 em Modo Retrato, Formulário Contínuo'>5. DANFE Tamanho A-4 em Modo Retrato,
+            Formulário Contínuo</a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("6. DANFE Tamanho A-4 em Modo Paisagem, Folhas Soltas")' title='6. DANFE Tamanho A-4 em Modo Paisagem, Folhas Soltas'>6. DANFE Tamanho A-4 em Modo Paisagem, Folhas
+            Soltas</a><br>
+          <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("7. DANFE Tamanho A-4 em Modo Paisagem, Formulário Contínuo")' title='7. DANFE Tamanho A-4 em Modo Paisagem, Formulário Contínuo'>7. DANFE Tamanho A-4 em Modo Paisagem,
+            Formulário Contínuo</a><br>
+
+
+
         </div>
       </div>
     </div>
@@ -137,7 +251,2066 @@
       <div id='principal'>
         <!-- Aqui vão as tabelas e o texto do MOC -->
 
-        <h1>PÁGINA EM CONSTRUÇÃO</h1><br><br>
+        <h1>DANFE e Código de Barras - NF-e</h1><br><br>
+
+        <h2 id="1. Código de Barras">1. Código de Barras</h2>
+
+        <p>O padrão de código de barras a ser impresso no DANFE é o CODE-128C. Utilize o código de barras:</p>
+
+
+
+
+
+        <ol type="a">
+          <li>No caso de DANFE impresso para representar uma NF-e emitida em operação normal ou em contingência utilizando o Sistema de Contingência do Ambiente Nacional: apenas um código de barras com a chave de acesso do arquivo da nota fiscal
+            eletrônica, descrita no item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.1. Emissão Normal da NF-e e SVC-XX")' title='2.9.1. Emissão Normal da NF-e e SVC-XX'>2.9.1</a> e;</li>
+          <li>No caso de DANFE impresso para representar uma NF-e emitida nas demais hipóteses de contingência: dois códigos de barras; um para representar a chave de acesso do arquivo da nota fiscal eletrônica, e outro para representar dados da NF-e
+            emitida em contingência, conforme o item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança")'
+              title='2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança'>2.9.2.</a></li>
+        </ol>
+
+        <p>A impressão dos códigos de barras no DANFE tem a finalidade de facilitar e agilizar a captura de dados para consulta nos portais estaduais e da Receita Federal do Brasil.</p>
+
+        <p>Com a chave de acesso é possível realizar a consulta de uma Nota Fiscal Eletrônica e de sua situação, bem como visualizar a autorização de uso da mesma. Dentre outras finalidades do código, destacam-se o registro do trânsito de mercadorias
+          nos Postos Fiscais e, a critério de cada unidade federada, a disponibilização do arquivo da NF-e consultada.</p>
+
+        <p>Os dados adicionais contidos no segundo código de barras serão utilizados para auxiliar o registro do trânsito de mercadorias acobertadas por notas fiscais eletrônicas emitidas em contingência.</p>
+
+        <p>O conjunto de caracteres representativos do Código de Barras CODE-128C encontra-se no <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("3. Conjunto de Caracteres Código de Barras CODE-128C")'
+            title='3. Conjunto de Caracteres Código de Barras CODE-128C'>Item 3</a> deste manual. Para a sua impressão será considerada a seguinte estrutura de simbolização:</p>
+
+        <img src="./Imagens/CBarra_Estrutura.png" alt="Código de Barra" style="width:auto;">
+
+        <ul>
+          <ul class="disco">
+            <li>
+              <div class="negrito">Margem Clara:</div> espaço claro que não contém nenhuma marca legível por máquina, localizado à esquerda e à direita do código, a fim de evitar interferência na decodificação da simbologia. A margem clara é chamada
+              também de "área livre", "zona de silêncio" ou "margem de silêncio".
+            </li>
+            <li>
+              <div class="negrito">Start C:</div> inicia a codificação dos dados CODE-128C de acordo com o conjunto de caracteres. O Start C não representa nenhum caractere.
+            </li>
+            <li>
+              <div class="negrito">Dados representados:</div> caracteres representados no código de barras.
+            </li>
+            <li>
+              <div class="negrito">DV:</div> dígito verificador da simbologia.
+            </li>
+            <li>
+              <div class="negrito">Stop:</div> caractere de parada que indica o final do código ao leitor óptico.
+            </li>
+          </ul>
+        </ul>
+
+        <p>O código de barras deverá ser impresso com os padrões próprios residentes das impressoras de não impacto (laser ou deskjet) e de impacto (matriciais ou de linhas) a fim de respeitarem os padrões dos referidos códigos:</p>
+        <ul>
+          <ul class="disco">
+            <li>A área reservada no DANFE;</li>
+            <li>Largura mínima total do código de barras (considerando o código de barras da chave de acesso, com 44 posições):</li>
+            <ul class="circulo">
+              <li> 6 cm para impressoras de Não Impacto (Laser de Jato de Tinta);</li>
+              <li>11,5 cm para impressora de impacto (Matricial e de linha)</li>
+            </ul>
+            <li>Altura mínima da barra: 0,8 cm;</li>
+            <li>Largura mínima da barra: 0,02 cm, conforme explicado a seguir:
+              <br>Considerando que para cada símbolo da barra são codificados dois caracteres, então teremos:
+              <br>Tamanho do campo = 44 (caracteres) / 2 = 22 (símbolos)
+              <br>Considerando que cada símbolo possui 11 (módulos) * 22 (símbolos) = 242 posições
+              <br>Margem clara = deve ter no mínimo a dimensão de 10 (módulos) * 2 = 20 posições
+              <br>Start C = 11 (módulos) = 11 posições
+              <br>DV = 11 (módulos) = 11 posições
+              <br>Stop = 13 (módulos) = 13 posições
+              <br>Tamanho total da simbologia = 242 + 20 + 11 + 11 + 13 = 297 (posições)
+              <br>Largura mínima de cada módulo da barra = 6 cm / 297 (posições) = 0,02 cm
+            </li>
+          </ul>
+        </ul>
+
+
+        <h3 id="1.1. Cálculo do Dígito Verificador do CODE-128C">1.1. Cálculo do Dígito Verificador do CODE-128C</h3>
+
+        <p>O dígito verificador é baseado em um cálculo do módulo 103 considerando a soma ponderada dos valores de cada um dos dígitos na mensagem que está sendo codificada, incluindo o valor do caractere de início (start).</p>
+
+        <p>Exemplo: consideremos que a chave de acesso fosse apenas de oito caracteres e contivesse o seguinte número: 09758364</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr>
+                <td colspan="2" ; style="font-weight:bold">Chave de Acesso</td>
+                <td style="background-color:darkblue; color:white; text-align:center;">START</td>
+                <td style="background-color:darkblue; color:white; text-align:center;">09</td>
+                <td style="background-color:darkblue; color:white; text-align:center;">75</td>
+                <td style="background-color:darkblue; color:white; text-align:center;">83</td>
+                <td style="background-color:darkblue; color:white; text-align:center;">64</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold">Sequência</td>
+                <td style="font-weight:bold">A</td>
+                <td></td>
+                <td style="text-align:center">1</td>
+                <td style="text-align:center">2</td>
+                <td style="text-align:center">3</td>
+                <td style="text-align:center">4</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold">Valor do caractere</td>
+                <td style="font-weight:bold">B</td>
+                <td style="text-align:center">105</td>
+                <td style="text-align:center">9</td>
+                <td style="text-align:center">75</td>
+                <td style="text-align:center">83</td>
+                <td style="text-align:center">64</td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold">Valor Ponderado (A X B)</td>
+                <td style="font-weight:bold">C</td>
+                <td style="text-align:center">105</td>
+                <td style="text-align:center">9</td>
+                <td style="text-align:center">150</td>
+                <td style="text-align:center">249</td>
+                <td style="text-align:center">256</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <ul>
+          <ul class="disco">
+            <li>Na linha valor do caractere foi incluso o valor 105 que corresponde ao valor do caractere de início (start) para o padrão Code C.</li>
+            <li>Excetuando o caractere de start, os demais valores dos caracteres coincidem com os valores da chave de acesso, isto porque estamos utilizando o padrão Code C de codificação que é exclusivamente numérico.</li>
+            <li>O dígito verificador do código será o resto da divisão da somatória dos valores ponderados dividido por 103 (módulo 103).</li>
+          </ul>
+        </ul>
+
+        <p>Assim o dígito verificador será:</p>
+
+        <ul>
+          <ul class="disco">
+            <li>Valor da soma ponderada = (1x105)+(1x9)+(2x75)+(3x83)+(4x64) = 769</li>
+            <li>769/103 = 7 resta 48, assim o DV é 48</li>
+
+          </ul>
+        </ul>
+
+
+        <h3 id="1.2. Representação Simbólica do Código">1.2. Representação Simbólica do Código</h3>
+
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="text-align:center">
+                <td colspan="6">START</td>
+                <td colspan="6">09</td>
+                <td colspan="6">75</td>
+                <td colspan="6">83</td>
+                <td colspan="6">64</td>
+                <td colspan="6">DV=48</td>
+                <td colspan="7">STOP</td>
+              </tr>
+              <tr style="background-color:darkblue; color:white; text-align:center">
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+                <td>S</td>
+                <td>B</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <p>A sequência de barras está descrita na tabela do <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("3. Conjunto de Caracteres Código de Barras CODE-128C")'
+            title='3. Conjunto de Caracteres Código de Barras CODE-128C'>Item 3</a> deste manual.</p>
+        <ul>
+          <ul>
+            B = barra preta<br>
+            S = espaço ou barra branca
+          </ul>
+        </ul>
+        <p>A numeração acima indica quantas vezes a barra deverá ser impressa no símbolo.</p>
+
+
+
+        <h2 id="2. DANFE">2. DANFE</h2>
+
+        <p>O DANFE é um documento auxiliar impresso em papel com os objetivos de:</p>
+        <ol type="a">
+          <li>Acompanhar o trânsito de mercadorias;</li>
+          <li>Colher a firma do destinatário/tomador para comprovação de entrega das mercadorias ou prestação de serviços;</li>
+          <li>Prover a necessidade de representações impressas adicionais previstas expressamente na legislação; e</li>
+          <li>Auxiliar a escrituração da NF-e pelo destinatário não credenciado como emissor de NF-e.</li>
+        </ol>
+
+        <p>O DANFE será impresso:</p>
+        <ol type="a">
+          <li>Em condições normais, em qualquer tipo de papel, exceto papel jornal; e</li>
+          <li>Em uma única via, salvo quando houver disposição expressa em outro sentido.</li>
+        </ol>
+
+
+        <p>O DANFE emitido para representar NF-e cujo uso foi autorizado em ambiente de homologação sempre deverá conter a frase “SEM VALOR FISCAL” no quadro “Informações Complementares” ou em marca d’água destacada.</p>
+
+        <p>O DANFE emitido para representar NF-e emitida em contingência deverá conter esta informação em destaque, conforme disposto no <a href='./Contingencia_NFe.html' title='Contingência NF-e'>Manual de Contingência da NF-e</a>.</p>
+
+        <p>O “Valor Aproximado dos Tributos” calculado pela empresa, correspondente a totalidade dos tributos federais, estaduais e municipais, cuja incidência influa na formação do respectivo preço de venda, opcionalmente poderá aparecer no DANFE no
+          campo de Informações Adicionais do Produto (tag: infAdProd, id:V01) e/ou no campo de Informações Complementares da NF-e (tag: infCpl, id:Z03).</p>
+
+        <p>O “Valor Aproximado dos Tributos”, poderá opcionalmente constar no DANFE em campo próprio, conforme segue: </p>
+
+        <ul>
+          <ul class="disco">
+            <li>Quadro de Cálculo do Imposto: incluir nova coluna com o “Valor Aproximado dos Tributos”
+              (itens <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.1. Formulário A-4 em Modo Retrato")' title='2.8.1. Formulário A-4 em Modo Retrato'>2.8.1. </a>
+              e <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.2. Formulário A-4 em Modo Paisagem")' title='2.8.2. Formulário A-4 em Modo Paisagem'>2.8.2.</a>);</li>
+            <li>Quadro Dados dos Produtos / Serviços: incluir nova coluna com o “Valor Aproximado dos Tributos” (<a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.7. Quadro Dados dos Produtos / Serviços")'
+                title='2.1.7. Quadro Dados dos Produtos / Serviços'>2.1.7.</a>,
+              <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.1. Formulário A-4 em Modo Retrato")' title='2.8.1. Formulário A-4 em Modo Retrato'>2.8.1. </a>
+              e <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8.2. Formulário A-4 em Modo Paisagem")' title='2.8.2. Formulário A-4 em Modo Paisagem'>2.8.2.</a>);
+            </li>
+          </ul>
+        </ul>
+
+
+        <h3 id="2.1. Campos do DANFE">2.1. Campos do DANFE</h3>
+
+        <p>Os campos do DANFE deverão representar o conteúdo das respectivas TAG XML da NF-e, quando conhecidos no momento da solicitação de autorização de uso. Não poderão ser impressas informações que não constem do arquivo da NF-e.</p>
+
+        <p>O conteúdo dos campos poderá ser impresso em mais de uma linha desde que a leitura possa ser feita de forma clara.</p>
+
+        <p>O item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.8. Tamanho dos Campos")' title='2.8. Tamanho dos Campos'>2.8.</a> deste manual traz a sugestão de tamanhos a serem seguidos para cada campo,
+          que garantem a legibilidade prevista na legislação. Embora os tamanhos descritos no item 2.8 não sejam obrigatórios,
+          o DANFE deverá ser impresso conforme um dos modelos permitidos (conforme o item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.6.3. Modelos de DANFE Permitidos")'
+            title='2.6.3. Modelos de DANFE Permitidos'>2.6.3</a>)
+          e utilizando-se os tamanhos mínimos de fonte descritos no item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.7. Padrões de Caracteres (Tipos de Fontes)")'
+            title='2.7. Padrões de Caracteres (Tipos de Fontes)'>2.7</a>.</p>
+
+        <p>O DANFE deverá conter todos os campos previstos no modelo adotado, com exceção dos campos não obrigatórios do quadro “Dados dos Produtos/Serviços”, conforme disposto no item <a href='javascript:void(0);' id="botao_meiodatela"
+            onclick='meiodatela("2.1.7. Quadro Dados dos Produtos / Serviços")' title='2.1.7. Quadro Dados dos Produtos / Serviços'>2.1.7</a>.</p>
+
+        <p>As regras estabelecidas para a impressão dos campos aplicam-se também para a impressão das folhas adicionais do DANFE.
+        <p>
+
+        <h4 id="2.1.1. Chave de Acesso">2.1.1. Chave de Acesso</h4>
+
+        <p>A chave de acesso será impressa em onze blocos de quatro dígitos cada, com a seguinte máscara:</p>
+
+        <p>9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999</p>
+
+
+
+        <h4 id="2.1.2. Dados da NF-e">2.1.2. Dados da NF-e</h4>
+
+        <p>No caso de emissão de NF-e normal ou em contingência SVC-XX, os campos 1 e 2 serão preenchidos conforme o item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.9.1. Emissão Normal da NF-e e SVC-XX")'
+            title='2.9.1. Emissão Normal da NF-e e SVC-XX'>2.9.1.</a>;</p>
+
+        <p>No caso de emissão de NF-e em contingência FS ou FS-DA, os campos 1 e 2 serão preenchidos conforme o item <a href='javascript:void(0);' id="botao_meiodatela"
+            onclick='meiodatela("2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança")' title='2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança'>2.9.2.</a> Observando que no
+          Campo 2, o Código de Barras Adicional “Dados da NF-e” será impresso em nove blocos de quatro dígitos cada, com a seguinte máscara: 9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999&nbsp;9999;</p>
+
+        <p>No caso de emissão de NF-e em contingência EPEC, os campos 1 e 2 serão preenchidos conforme o item <a href='javascript:void(0);' id="botao_meiodatela"
+            onclick='meiodatela("2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional")' title='2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional'>2.9.3.</a></p>
+
+        <h4 id="2.1.3. Dados do Emitente">2.1.3. Dados do Emitente</h4>
+
+        <p>Deverá conter a identificação do emitente, composta no mínimo por:</p>
+        <ul>
+          <ul class="disco">
+            <li>nome ou razão social;</li>
+            <li>endereço completo (logradouro, número, complemento, bairro, município, UF, CEP); e</li>
+            <li>telefone.</li>
+          </ul>
+        </ul>
+
+        <p>Opcionalmente poderá conter logotipo, desde que sua inclusão não prejudique a exibição das informações obrigatórias.</p>
+
+
+
+        <h4 id="2.1.4. Informações do local de retirada (NT 2018.005)">2.1.4. Informações do local de retirada (NT 2018.005)</h4>
+        <p>Caso haja preenchimento do grupo F - Local de retirada, fica possibilitada a exibição de informações no DANFE em área especifica, conforme sugestão de modelo abaixo:</p>
+        <img src="./Imagens/LocalRetirada.png" alt="Código de Barra" style="width:auto;">
+
+        <h4 id="2.1.5. Informações do local de entrega (NT 2018.005)">2.1.5. Informações do local de entrega (NT 2018.005)</h4>
+        </p>Caso haja preenchimento do grupo G - Local de entrega, fica possibilitada a exibição de informações no DANFE em área especifica, conforme sugestão de modelo abaixo:</p>
+        <img src="./Imagens/LocalEntrega.png" alt="Código de Barra" style="width:auto;">
+
+        <h4 id="2.1.6. Quadro Fatura/Duplicatas">2.1.6. Quadro Fatura/Duplicatas</h4>
+
+        </p>Poderá conter linhas divisórias internas separando as informações. Poderão ser acrescidas ao quadro outras informações relativas ao assunto, além das informações contidas no grupo de Dados de Cobrança da NF-e, desde que estas informações
+        adicionais também estejam contidas no arquivo da NF-e.</p>
+
+
+        <h4 id="2.1.7. Quadro Dados dos Produtos / Serviços">2.1.7. Quadro Dados dos Produtos / Serviços</h4>
+
+        <p>As informações adicionais de produto (TAG <i>&lt;infAdProd&gt;</i>) deverão constar impressas no DANFE logo abaixo do item ao qual se referirem.</p>
+
+        <p>As informações relativas ao Fundo de Combate à Pobreza (FCP) devem ser informadas:</p>
+
+        <ul>
+          <ul class="disco">
+            <li>No campo de "Informações Adicionais do Produto, tag: infAdProd", os valores informados por item nos campos (vBCFCP, pFCP, vFCP, vBCFCPST, pFCPST, vFCPST), quando existirem.</p>
+          </ul>
+        </ul>
+
+        <p>Sempre que o conteúdo de um mesmo item for impresso utilizando-se mais de uma linha do quadro de “Dados dos Produtos/Serviços”, deverá ser aplicado um destaque divisório que identifique quais linhas foram utilizadas para cada item, a fim
+          de distinguir com clareza um item do outro. O destaque divisório pode ser aplicado com o uso de linha (pontilhadas, continuas, ou tracejada), espaçamento duplo entre linhas, sombreamento ou qualquer outro recurso ou efeito semelhante que
+          resulte no destaque divisório.</p>
+
+        <p>Exemplo de destaque divisório com linha tracejada:</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="text-align:center">
+                <td>Cód. Produto</td>
+                <td style="width:500px;">Descrição do Produto/Serviço</td>
+                <td>NCM</td>
+              </tr>
+              <tr style="border-bottom:2px dashed;">
+                <td>123</td>
+                <td>Camisa Social Masculina Manga Longa<br>EAN 7890123456789</td>
+                <td>61099000</td>
+              </tr>
+              <tr style="border-bottom:2px dashed;">
+                <td>124</td>
+                <td>Camisa Social Masculina Manga Curta<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+              <tr>
+                <td>125</td>
+                <td>Camiseta Polo<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <p>Exemplo de destaque divisório com espaço duplo:</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="text-align:center">
+                <td>Cód. Produto</td>
+                <td style="width:500px;">Descrição do Produto/Serviço</td>
+                <td>NCM</td>
+              </tr>
+              <tr style="border-bottom:hidden;">
+                <td>123</td>
+                <td>Camisa Social Masculina Manga Longa<br>EAN 7890123456789</td>
+                <td>61099000</td>
+              </tr>
+              <tr style="border-bottom:hidden;">
+                <td>124</td>
+                <td>Camisa Social Masculina Manga Curta<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+              <tr>
+                <td>125</td>
+                <td>Camiseta Polo<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <p>Exemplo de destaque divisório com sombreamento:</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="text-align:center">
+                <td>Cód. Produto</td>
+                <td style="width:500px;">Descrição do Produto/Serviço</td>
+                <td>NCM</td>
+              </tr>
+              <tr style="border-bottom:hidden;">
+                <td>123</td>
+                <td>Camisa Social Masculina Manga Longa<br>EAN 7890123456789</td>
+                <td>61099000</td>
+              </tr>
+              <tr style="border-bottom:hidden; background-color:lightgrey;">
+                <td>124</td>
+                <td>Camisa Social Masculina Manga Curta<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+              <tr>
+                <td>125</td>
+                <td>Camiseta Polo<br>EAN 7890123456790</td>
+                <td>61099000</td>
+              </tr>
+
+            </table>
+          </ul>
+        </ul>
+
+        <p>Essa exigência também se aplica no caso da utilização de uma mesma coluna para aposição de outro campo, conforme o item <a href='javascript:void(0);' id="botao_meiodatela"
+            onclick='meiodatela("2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”")'
+            title='2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”'>2.2.</a></p>
+
+        <p>Deve-se utilizar o quadro “Dados dos Produtos/Serviços” para detalhar as operações que não caracterizem circulação de mercadorias ou prestações de serviços, e que exijam emissão de documentos fiscais (como transferência de créditos ou
+          apropriação de incentivos fiscais, por exemplo).</p>
+
+        <p>Nas situações em que o valor unitário comercial for diferente do valor unitário tributável, ambas as informações deverão estar expressas e identificadas no DANFE, podendo ser utilizada uma das linhas adicionais previstas, ou o campo de
+          informações adicionais.</p>
+
+        <p>Independentemente do descrito no item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.3. Supressões e Modificações Permitidas")' title='2.3. Supressões e Modificações Permitidas'>2.3</a>, o contribuinte poderá
+          suprimir colunas do quadro “Dados dos Produtos/Serviços” que não se apliquem a suas atividades e acrescentar outras do seu interesse. A inserção destas colunas será realizada à direita da coluna “Descrição dos Produtos/Serviços”. A ordem
+          das colunas remanescentes deverá ser respeitada.</p>
+
+        <p>As seguintes colunas não poderão ser suprimidas:</p>
+        <ul>
+          <ul class="disco">
+            <li>Código dos Produtos/Serviços;</li>
+            <li>Descrição dos Produtos/Serviços;</li>
+            <li>NCM;</li>
+            <li>CST;</li>
+            <li>CFOP;</li>
+            <li>Unidade;</li>
+            <li>Quantidade;</li>
+            <li>Valor Unitário;</li>
+            <li>Valor Total;</li>
+            <li>Base de Cálculo do ICMS próprio;</li>
+            <li>Valor do ICMS próprio; e</li>
+            <li>Alíquota do ICMS.</li>
+          </ul>
+        </ul>
+
+        <h4 id="2.1.8. Informações Complementares">2.1.8. Informações Complementares</h4>
+
+        <p>Deverá conter todas as Informações Adicionais da NF-e incluídas nas TAGs &lt;infAdFisco&gt; e &lt;infCpl&gt;, ficando facultada a impressão das informações adicionais contidas nas TAGs &lt;obsCont&gt;. Na hipótese de insuficiência de
+          espaço no quadro de “informações complementares”, a impressão destas deverá ser continuada no verso ou na folha seguinte, neste mesmo quadro ou no quadro “Dados dos Produtos/Serviços”.</p>
+
+        <p>As empresas remetentes devem informar, no campo de “Informações Complementares”, os valores descritos no grupo de tributação do ICMS para a UF de destino. (NT 2015.003)</p>
+
+        <p>Exemplo 1 de preenchimento do DANFE (1ª situação da sistemática de cálculo descrita a seguir):</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse; width:700px; height:150px;">
+              <tr style="vertical-align: top;">
+                <td>
+                  <div class="negrito">INFORMAÇÕES COMPLEMENTARES:</div>
+                  <br>Valores totais do ICMS Interestadual: DIFAL da UF destino R$216,00 + FCP R$40,00; DIFAL da UF Origem R$324,00.
+
+                </td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <p>Exemplo 2 de preenchimento do DANFE (2ª situação da sistemática de cálculo descrita a seguir):</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse; width:700px; height:150px;">
+              <tr style="vertical-align: top;">
+                <td>
+                  <div class="negrito">INFORMAÇÕES COMPLEMENTARES:</div>
+                  <br>Valores totais do ICMS Interestadual: DIFAL da UF destino R$156,00 + FCP R$40,00; DIFAL da UF Origem R$234,00.
+                </td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <p>As informações relativas ao Fundo de Combate à Pobreza (FCP) devem ser informadas: </p>
+        <ul>
+          <ul class="disco">
+            <li>Os valores de totais do FCP (id: W04b e W06a) devem ser informados em "Informações Adicionais de Interesse do Fisco, campo “infAdFisco", quando existirem."</li>
+          </ul>
+        </ul>
+
+
+
+        <h4 id="2.1.9. Reservado ao Fisco">2.1.9. Reservado ao Fisco</h4>
+
+        <p>O contribuinte não deverá preencher este quadro, sendo seu preenchimento de uso exclusivo do fisco, exceto, a critério da UF, quanto à orientação de impressão do teor das tags contidas no XML de retorno de autorização da NF-e. Em caso de
+          utilização de formulário de segurança provido de estampa fiscal, esse quadro não estará presente."</p>
+
+
+        <h4 id="2.1.10. Quadro do Transportador">2.1.10. Quadro do Transportador</h4>
+
+        <p>O campo identificação da Modalidade do Frete (id: X02, tag:modFrete) deverá ser preenchido com um dos seguintes códigos (NT 2016/002) (Atualizado NT 2108.005):</p>
+        <ul>
+          <ul>0=Contratação do Frete por conta do Remetente (CIF);
+            <br>1=Contratação do Frete por conta do Destinatário (FOB);
+            <br>2=Contratação do Frete por conta de Terceiros;
+            <br>3=Transporte Próprio por conta do Remetente;
+            <br>4=Transporte Próprio por conta do Destinatário;
+            <br>9=Sem Ocorrência de Transporte.
+          </ul>
+        </ul>
+
+        <p>Exemplo de preenchimento:</p>
+
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse;">
+              <tr style="vertical-align: top;">
+                <td style="width:500px;">Nome / Razão Social</td>
+                <td>Frete por Conta<br>0 - Remetente</td>
+                <td>Código ANTT</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+
+        <h3 id="2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”">2.2. Possibilidade de Uso de Uma Mesma Coluna Com Mais de Um Campo no Quadro “Dados dos Produtos/Serviços”</h3>
+
+        <p>É permitida a utilização de uma mesma coluna para aposição de outro campo no quadro “Dados dos Produtos/Serviços” do DANFE.</p>
+
+        <p>A utilização de uma mesma coluna para mais de um campo implicará na ocupação de duas linhas do “Dados dos Produtos/Serviços” para cada item da NF-e, além das linhas adicionais previstas para descrever as informações adicionais de
+          produto/serviço (TAG &lt;infAdProd&gt;).</p>
+
+        <p>Deverá ser observada a necessidade de aposição de destaque divisório dos diferentes itens do quadro “Dados dos Produtos/Serviços”, conforme descrito no item <a href='javascript:void(0);' id="botao_meiodatela"
+            onclick='meiodatela("2.1.7. Quadro Dados dos Produtos / Serviços")' title='2.1.7. Quadro Dados dos Produtos / Serviços'>2.1.7.</a></p>
+
+        <p>Os campos que podem ser colocados na mesma coluna são:</p>
+        <ul>
+          <ul class="disco">
+            <li>“Código do Produto/Serviço” com “NCM/SH”;</li>
+            <li>“CST” com “CFOP”;</li>
+            <li>“CSOSN” com “CFOP”;</li>
+            <li>“Quantidade” com “Unidade”;</li>
+            <li>“Valor Unitário” com “Desconto”;</li>
+            <li>“Valor Total” com “Base de Cálculo do ICMS”;</li>
+            <li>“Base de Cálculo do ICMS por Substituição Tributária” com “Valor do ICMS por Substituição Tributária”;</li>
+            <li>“Valor do ICMS Próprio” com “Valor do IPI”;</li>
+            <li>“Alíquota do ICMS” com “Alíquota do IPI”.</LI>
+          </ul>
+        </ul>
+
+        <p>A utilização de uma mesma coluna para mais de um campo não se aplicará para a aposição do campo Descrição dos Produtos e/ou Serviços, podendo-se, neste caso, utilizar mais linhas para aposição de seu conteúdo.</p>
+
+
+
+        <h3 id="2.3. Supressões e Modificações Permitidas">2.3. Supressões e Modificações Permitidas</h3>
+
+        <p>Além das supressões e inclusões de colunas tratadas no item <a href='javascript:void(0);' id="botao_meiodatela" onclick='meiodatela("2.1.7. Quadro Dados dos Produtos / Serviços")'
+            title='2.1.7. Quadro Dados dos Produtos / Serviços'>2.1.7.</a> poderão ser feitas ainda as seguintes alterações:</p>
+
+
+        <h4 id="2.3.1. Bloco de Canhoto">2.3.1. Bloco de Canhoto</h4>
+
+        <p>Caso o emitente não utilize o bloco de Canhoto, poderá aumentar o quadro “Dados dos Produtos/Serviços” suprimindo os campos do referido bloco e deslocando para cima os campos seguintes. Estes ajustes deverão ser feitos no mesmo valor da
+          redução obtida com a eliminação do quadro Fatura e de sua descrição.</p>
+
+        <p>Para a impressão de DANFE que não utilizar formulário de segurança, o bloco de canhoto poderá ser deslocado para a extremidade inferior do formulário, sem alterações nas demais dimensões e disposições de campos e quadros.</p>
+
+        <p>Essas alterações serão admitidas somente no formato retrato.</p>
+
+        <h4 id="2.3.2. Quadro “Fatura/Duplicatas”">2.3.2. Quadro “Fatura/Duplicatas”</h4>
+
+        <p>O quadro “fatura/duplicatas” poderá ser suprimido, caso o contribuinte não utilize esses documentos; ou reduzido, desde que contenha todos os dados das respectivas TAGs.</p>
+
+        <p>O valor obtido com a eliminação ou redução do quadro “fatura/duplicatas” deverá ser acrescido na altura do quadro “Dados dos Produtos/Serviços”, deslocando para cima os campos seguintes ao quadro Fatura e anteriores ao quadro a ser
+          aumentado.</p>
+
+        <p>Essas alterações poderão ser feitas tanto nos formatos retrato quanto paisagem.</p>
+
+        <h4 id="2.3.3. Quadro “Cálculo do ISSQN”">2.3.3. Quadro “Cálculo do ISSQN”</h4>
+
+        <p>Caso não se aplique às suas operações, o emitente poderá suprimir os campos do bloco “Cálculo do ISSQN” e efetuar os seguintes ajustes:</p>
+        <ul>
+          <ul class="disco">
+            <li>Aumentar a altura do quadro “Dados dos Produtos/Serviços” no mesmo valor da redução obtida com a eliminação dos campos do referido bloco.</li>
+            <li>Aumentar a altura do campo “Informações Complementares” e do quadro “Reservado ao Fisco” no mesmo valor da redução obtida com a eliminação dos campos do bloco “Cálculo do ISSQN”.</li>
+          </ul>
+        </ul>
+
+        <h3 id="2.4. Verso do DANFE">2.4. Verso do DANFE</h3>
+
+        <p>Até 50% do verso de qualquer folha do DANFE poderá ser utilizado para continuação dos dados do quadro “Dados dos Produtos/Serviços”, do campo “Informações Complementares” ou para uma combinação de ambos. O restante do verso deverá ser
+          deixado sem nenhum tipo de impressão.</p>
+
+        <p>Sempre que o verso do DANFE for utilizado, a informação “CONTINUA NO VERSO” deverá constar no anverso, ao final dos quadros “Dados dos Produtos/Serviços” e “Informações Complementares”, conforme a utilização.</p>
+
+        <h3 id="2.5. Folhas Adicionais">2.5. Folhas Adicionais</h3>
+
+        <p>O DANFE poderá ser emitido em mais de uma folha.</p>
+
+        <p>Cada uma das folhas adicionais deverá conter, na parte superior, no mínimo as seguintes informações, impressas na mesma disposição e tamanho definidos para a primeira folha:</p>
+        <ul>
+          <ul class="disco">
+            <li>Dados de Identificação do Emitente;</li>
+            <li>As descrições “DANFE” em destaque, e “Documento Auxiliar da Nota Fiscal Eletrônica”;</li>
+            <li>O número e a série da NF-e, o tipo de operação, se Entrada ou Saída, além do número total de folhas e o número de ordem de cada folha;</li>
+            <li>Código(s) de Barras;</li>
+            <li>Campos Natureza da Operação e Chave de Acesso; e</li>
+            <li>Demais campos de identificação do Emitente: Inscrição Estadual, Inscrição Estadual do Substituto Tributário e CNPJ.</li>
+          </ul>
+        </ul>
+
+        <p>A área restante das folhas adicionais poderá ser utilizada exclusivamente para:</p>
+        <ul>
+          <ul class="disco">
+            <li>Os demais itens da NF-e que não couberem na primeira folha do DANFE, mantendo-se as mesmas colunas com a mesma disposição e largura utilizadas na primeira folha; e/ou</li>
+            <li>As demais informações complementares da NF-e que não couberem no campo próprio da primeira folha do DANFE.</li>
+          </ul>
+        </ul>
+
+        <h3 id="2.6. Formulário">2.6. Formulário</h3>
+
+        <p>Para a impressão do DANFE poderá ser utilizado qualquer tipo de papel, com exceção de papel jornal, desde que seja garantido o contraste necessário para assegurar leitura dos códigos de barras sem problemas.</p>
+
+        <h4 id="2.6.1. Tamanho do Papel">2.6.1. Tamanho do Papel</h4>
+
+        <p>A impressão do DANFE poderá ser efetuada tanto em modo retrato quanto em modo paisagem, utilizando-se formulários de tamanho mínimo A-4 e máximo Ofício II (230 x 330 mm).</p>
+
+        <p>Em caso de uso de folha de tamanho superior ao tamanho A-4 o espaço excedente deverá ser alocado da seguinte maneira:</p>
+        <ul>
+          <ul class="disco">
+            <li>Na horizontal, para aumentar a largura dos campos; e</li>
+            <li>Na vertical, somente para aumentar a altura:</li>
+            <ul class="circulo">
+              <li>do quadro “Dados dos Produtos/Serviços”; ou</li>
+              <li>simultaneamente dos campos “Informações Complementares” e “Reservado ao Fisco”; ou, ainda,</li>
+              <li>de uma combinação destas duas opções.</li>
+            </ul>
+          </ul>
+        </ul>
+
+
+
+        <h4 id="2.6.2. Margem Lateral no Formulário">2.6.2. Margem Lateral no Formulário</h4>
+
+        <p>As Margens entre o corpo impresso do DANFE e o final do formulário (ou a linha de picote) deverão ter, no mínimo, 0,2 cm e, no máximo, 0,8 cm em cada lateral (inclusive nas margens superior e inferior).</p>
+
+        <h4 id="2.6.3. Modelos de DANFE Permitidos">2.6.3. Modelos de DANFE Permitidos</h4>
+
+        <p>É opção do contribuinte a utilização em folhas soltas ou formulário contínuo, pré-impresso ou em branco. Poderão ser utilizados os formatos a seguir, devendo a disposição de campos obrigatoriamente obedecer ao disposto no respectivo anexo:
+        </p>
+        <ul>
+          <ul class="disco">
+            <li>Tamanho A-4 em modo retrato:</li>
+            <ul class="circulo">
+              <li>Folhas Soltas – Anexo III.02</li>
+              <li>Formulário Contínuo – Anexo III.03</li>
+            </ul>
+            <li>Tamanho A-4 em modo paisagem:</li>
+            <ul class="circulo">
+              <li>Folhas Soltas – Anexo III.04</li>
+              <li>Formulário Contínuo – Anexo III.05</li>
+            </ul>
+          </ul>
+        </ul>
+
+
+
+        <h3 id="2.7. Padrões de Caracteres (Tipos de Fontes)">2.7. Padrões de Caracteres (Tipos de Fontes)</h3>
+
+        </p>Todos os caracteres deverão estar impressos na fonte Times New Roman ou na fonte Courier New. A impressão dos dados variáveis feitas por Impressoras de Impacto (Matricial e de Linha) deverá estar entre 10 e 17 CPP (Caracteres por
+        Polegada).</p>
+
+        <h4 id="2.7.1. Descritivo dos Blocos de Campos">2.7.1. Descritivo dos Blocos de Campos</h4>
+
+        <p>Deverá ter tamanho mínimo de cinco (5) pontos, impresso em negrito em caixa alta (maiúsculas).</p>
+
+        <h4 id="2.7.2. Descritivo dos Campos do Quadro “Dados dos Produtos/Serviços”">2.7.2. Descritivo dos Campos do Quadro “Dados dos Produtos/Serviços”</h4>
+
+        <p>Deverá ser impresso em caixa alta (maiúsculas), com tamanho mínimo de cinco (5) pontos.</p>
+
+        <h4 id="2.7.3. Descritivo dos Demais Campos">2.7.3. Descritivo dos Demais Campos</h4>
+
+        <p>Deverá ser impresso em caixa alta (maiúsculas) e ter tamanho mínimo de seis (6) pontos.</p>
+
+        <h4 id="2.7.4. Conteúdo do Bloco de Campos de Identificação do Documento">2.7.4. Conteúdo do Bloco de Campos de Identificação do Documento</h4>
+
+        <p> O conteúdo dos campos “DANFE”, “entrada ou saída”, “número”, “série” e “folhas do documento” deverá ser impresso em caixa alta (maiúsculas). Além disto:</p>
+        <ul>
+          <ul class="disco">
+            <li>a descrição “DANFE” deverá estar impressa em negrito e ter tamanho mínimo de doze (12) pontos, ou 10 CPP;</li>
+            <li>a série e número da NF-e, o número de ordem da folha, o total de folhas do DANFE e o número identificador do tipo de operação (se “ENTRADA” ou “SAÍDA”, conforme tag “tpNF”) deverão estar impressos em negrito e ter tamanho mínimo de
+              dez (10) pontos, ou 10 CPP;</li>
+            <li>a identificação “DOCUMENTO AUXILIAR DA NOTA FISCAL ELETRÔNICA” e as descrições do tipo de operação, “ENTRADA” ou “SAÍDA” deverão ter tamanho mínimo de oito (8) pontos, ou 17 CPP.</li>
+          </ul>
+        </ul>
+
+
+        <h4 id="2.7.5. Conteúdo do Campo Chave de Acesso.">2.7.5. Conteúdo do Campo Chave de Acesso.</h4>
+
+        <p>Deverá ser impresso em formato negrito.</p>
+
+        <h4 id="2.7.6. Conteúdo do Quadro Dados do Emitente">2.7.6. Conteúdo do Quadro Dados do Emitente</h4>
+
+        <p>Deverá estar impresso em negrito. A razão social e/ou nome fantasia deverá ter tamanho mínimo de doze (12) pontos, ou 17 CPP e os demais dados do emitente, endereço, município, CEP, fone/fax deverão ter tamanho mínimo de oito (8) pontos,
+          ou 17 CPP.</p>
+
+        <h4 id="2.7.7. Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”">2.7.7. Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”</h4>
+
+        <p>Deverá ter tamanho mínimo de seis (6) pontos, ou 17 CPP.</p>
+
+        <h4 id="2.7.8. Conteúdo do Campo Informações Complementares">2.7.8. Conteúdo do Campo Informações Complementares</h4>
+        <p>Deverá ter tamanho mínimo de seis (6) pontos, ou 17 CPP.</p>
+        <h4 id="2.7.9. Conteúdo dos Demais Campos">2.7.9. Conteúdo dos Demais Campos</h4>
+        <p>Deverá ter tamanho mínimo de seis (6) pontos, ou 17 CPP.</p>
+        <h3 id="2.8. Tamanho dos Campos">2.8. Tamanho dos Campos</h3>
+
+        <p>Esta seção apresenta a sugestão de tamanho e posição de cada campo. Todas as medidas estão em centímetros.</p>
+
+        <h4 id="2.8.1. Formulário A-4 em Modo Retrato">2.8.1. Formulário A-4 em Modo Retrato</h4>
+
+        <p>O eixo 0 (zero) é no início da folha no canto superior esquerdo.</p>
+        <img src="./Imagens/DanfeFormularioA4Retrato.png" alt="Formulário A4 Retrato" style="width:auto;">
+
+        <p>Obs 1: Permite-se a inclusão dos dados de duplicatas das TAG do grupo Y07</p>
+        <p>Obs 2: Detalhamento específicos de produtos/serviços (outras TAG do grupo H)</p>
+        <p>Obs 3: Total Bruto (TAG) ou Líquido (Mod.1/1-A)?</p>
+        <p>Obs 4: Colunas apresentadas na ordem descrita</p>
+        <p>Obs 5: TAG: C03, C04, C06, C07, C08, C09, C11, C12, C13, C16</p>
+        <p>Obs 6: TAG: B11</p>
+        <p>Obs 7: TAG: B07, B08</p>
+        <p>Obs 8: TAG: X02</p>
+        <p>Obs 9: Campo utilizado exclusivamente no Modelo de Contingência</p>
+
+        <h4 id="2.8.2. Formulário A-4 em Modo Paisagem">2.8.2. Formulário A-4 em Modo Paisagem</h4>
+
+        <p>O eixo 0 (zero) é no início da folha no canto superior esquerdo.</p>
+
+        <img src="./Imagens/DanfeFormularioA4Paisagem.png" alt="Formulário A4 Retrato" style="width:auto;">
+
+        <p>Obs 1: Permite-se a inclusão dos dados de duplicatas das TAG do grupo Y07</p>
+        <p>Obs 2: Detalhamento específicos de produtos/serviços (outras TAG do grupo H)</p>
+        <p>Obs 3: Total Bruto sem desconto</p>
+        <p>Obs 4: Colunas apresentadas na ordem descrita</p>
+        <p>Obs 5: TAG: C03, C04, C06, C07, C08, C09, C11, C12, C13, C16</p>
+        <p>Obs 6: TAG: B11</p>
+        <p>Obs 7: TAG: B07, B08</p>
+        <p>Obs 8: TAG: X02</p>
+        <p>Obs 9: Campo utilizado exclusivamente no Modelo de Contingência</p>
+
+
+
+        <h3 id="2.9. Campos de Conteúdo Variável">2.9. Campos de Conteúdo Variável</h3>
+
+        <p>O leiaute de impressão DANFE prevê dois campos de conteúdo variável logo abaixo do local onde é impressa a chave de acesso, de acordo com a seguinte disposição:</p>
+
+        <img src="./Imagens/DanfeCamposConteudoVariavel.png" alt="Formulário A4 Retrato" style="width:auto;">
+
+        <p>O conteúdo destes campos é função da forma de emissão da NF-e.</p>
+
+        <h4 id="2.9.1. Emissão Normal da NF-e e SVC-XX">2.9.1. Emissão Normal da NF-e e SVC-XX</h4>
+
+        <p>A emissão de NF-e normal e a emissão com a utilização da Sefaz Virtual de Contingência do Ambiente Nacional (SVC-AN) ou da Sefaz Virtual de Contingência do RS (SVC-RS) são formas conclusivas de emissão da NF-e, pois é dada a autorização de
+          uso para a NF-e, sem necessidade de posterior transmissão para a SEFAZ.</p>
+
+        <p>Nestes casos, após a obtenção da autorização de uso da NF-e o emissor poderá imprimir o DANFE em papel comum, informando o número do protocolo de autorização de uso e a data e a hora de autorização no Campo 2, de acordo com a seguinte
+          disposição:</p>
+
+        <img src="./Imagens/DanfeEmissaoNormalSVCXX.png" alt="Formulário A4 Retrato" style="width:auto;">
+
+
+
+
+
+        <h4 id="2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança">2.9.2. Emissão da NF-e em Contingência com Impressão do DANFE em Formulário de Segurança</h4>
+
+        <p>O uso do formulário de segurança (FS ou FS-DA) para impressão do DANFE é a forma de contingência mais simples. As NF-e devem ser transmitidas posteriormente para a SEFAZ quando cessados os problemas técnicos que impediam a transmissão.</p>
+         
+        <p>Neste caso, o emissor deverá gerar o Código de Barras Adicional “Dados da NF-e” no Campo 1 e a representação numérica deste Código de Barras Adicional no Campo 2:</p>
+
+
+        <img src="./Imagens/DanfeFormularioSeguranca.png" alt="Formulário A4 Retrato" style="width:auto;">
+
+        <p>O Código de Barras Adicional dos Dados da NF-e será formado pelo seguinte conteúdo, em um total de 36 caracteres:</p>
+
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr>
+                <td></td>
+                <td>cUF</td>
+                <td>tpEmis</td>
+                <td>CNPJ</td>
+                <td>vNF</td>
+                <td>ICMSp</td>
+                <td>ICMSs</td>
+                <td>DD</td>
+                <td>DV</td>
+              </tr>
+              <tr>
+                <td>Quantidade de caracteres</td>
+                <td>02</td>
+                <td>01</td>
+                <td>14</td>
+                <td>14</td>
+                <td>01</td>
+                <td>01</td>
+                <td>02</td>
+                <td>01</td>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+        <ul>
+          <ul class="disco">
+            <li>cUF = Código da UF do destinatário ou remetente do Documento Fiscal, informar 99 quando a operação for de comércio exterior;</li>
+            <li>tpEmis = Forma de Emissão da NF-e, informar 2-Contingência FS ou 5-Contingência FS-DA, conforme o Capítulo 2 do Anexo I do MOC 7.</li>
+            <li>CNPJ = CNPJ do destinatário ou do remetente, informar zeros no caso de operação com o exterior ou o CPF caso o destinatário ou remetente seja pessoa física;</li>
+            <li>vNF = Valor Total da NF-e (sem ponto decimal, informar sempre os centavos);</li>
+            <li>ICMSp = Destaque de ICMS próprio na NF-e no seguinte formato:</li>
+            <ul class="circulo">
+              <li>1 = há destaque de ICMS próprio;</li>
+              <li>2 = não há destaque de ICMS próprio.</li>
+            </ul>
+            <li>ICMSs = Destaque de ICMS por substituição tributária na NF-e, no seguinte formato:</li>
+            <ul class="circulo">
+              <li>1 = há destaque de ICMS por substituição tributária;</li>
+              <li>2 = não há destaque de ICMS por substituição tributária.</li>
+            </ul>
+            <li>DD = Dia da emissão da NF-e;</li>
+            <li>DV = Dígito Verificador, calculado de forma igual ao DV da Chave de Acesso (item 5.4).</li>
+
+
+          </ul>
+        </ul>
+
+        <p>
+        <div class="negrito">Obs. Todos os campos que formam o código de barras devem ser preenchidos com alinhamento à direita, sem formatação e com os zeros não significativos necessários para alcançar o tamanho do campo.</div>
+        </p>
+
+        <h4 id="2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional">2.9.3. Emissão da NF-e com Prévio Registro do EPEC no Ambiente Nacional</h4>
+
+        <p>Nesta modalidade de contingência eletrônica o emissor deve gerar o Evento Prévio de Emissão em Contingência (EPEC), que consiste em um arquivo de resumo das operações que está realizando. Este arquivo será transmitido ao Ambiente Nacional
+          para autorização do EPEC.
+          Após o registro do EPEC o emissor poderá imprimir o DANFE em papel comum devendo consignar o número e data e hora do protocolo de autorização do EPEC no campo 2:</p>
+
+
+
+        <img src="./Imagens/DanfeEPEC.png" alt="DANFE EPEC" style="width:auto;">
+
+
+
+        <h3 id="2.10. Outros">2.10. Outros</h3>
+        <h4 id="2.10.1. Marca d’Água">2.10.1. Marca d’Água</h4>
+
+        <p>O formulário poderá conter marca d’água desde que não prejudique a legibilidade dos dados impressos.</p>
+
+        <h4 id="2.10.2. Impressão do Número da Folha">2.10.2. Impressão do Número da Folha</h4>
+
+        <p>O número de ordem e o número total de folhas deverão ser impressos na parte superior de cada uma das folhas do DANFE, inclusive na primeira, mesmo que se utilize uma única folha.</p>
+
+
+        <h4 id="2.10.3. Limitações da Impressora">2.10.3. Limitações da Impressora</h4>
+
+        <p>Se, no formato retrato, for necessária a utilização de uma margem superior ou inferior maior, devido a limitações da impressora, a redução necessária poderá ser feita somente na altura do quadro de “Dados dos Produtos/Serviços” deslocando
+          os campos seguintes para cima pelo valor desta redução. Essa redução não é permitida no formato paisagem.</p>
+
+        <h4 id="2.10.4. Código de Barras">2.10.4. Código de Barras</h4>
+
+        <p>É permitida a impressão de código de barras de informações existentes na NF-e de interesse do emissor no quadro de informações complementares, no rodapé ou no verso do DANFE.</p>
+
+
+        <h4 id="2.10.5. Campo “Valor de ICMS Desonerado”">2.10.5. Campo “Valor de ICMS Desonerado”</h4>
+
+        <p>O conteúdo do campo vICMSDeson, enquanto não for previsto no leiaute do DANFE, deverá ser copiado no campo de Informações Complementares de Interesse do Contribuinte (infCpl) para que a informação conste impressa no DANFE.</p>
+
+        <p>Caso seja necessária sua impressão no DANFE, outros campos que não forem previstos no leiaute também poderão ser copiados no campo de Informações Complementares de Interesse do Contribuinte (infCpl).</p>
+
+        <h3 id="2.11. DANFE Simplificado">2.11. DANFE Simplificado</h3>
+
+        <p>Nas operações realizadas fora do estabelecimento o DANFE poderá ser impresso em formato simplificado, não sendo admitida a emissão em contingência utilizando EPEC ou a impressão de DANFE em formulário de segurança.</p>
+
+        <h4 id="2.11.1. Tipo e tamanho do Papel">2.11.1. Tipo e tamanho do Papel</h4>
+
+        <p>Para a impressão do DANFE Simplificado poderá ser utilizado qualquer tipo de papel com largura mínima de 55 milímetros, com exceção de papel jornal, desde que seja garantido o contraste necessário para assegurar leitura dos códigos de
+          barras sem problemas.</p>
+
+        <h4 id="2.11.2. Chave de acesso">2.11.2. Chave de acesso</h4>
+
+        <p>A chave de acesso e seu respectivo código de barras poderão ser impressos em qualquer sentido, no canto superior direito do papel, observadas as demais disposições dos capítulos 2 e 3 deste Anexo.</p>
+
+        <h4 id="2.11.3. Padrões de Caracteres (Tipos de Fontes)">2.11.3. Padrões de Caracteres (Tipos de Fontes)</h4>
+
+        <p>Todos os caracteres deverão estar impressos em tamanho não inferior a seis (6) pontos, sendo os títulos dos campos impressos em negrito e em caixa alta (maiúsculas).</p>
+
+        <h4 id="2.11.4. Campos obrigatórios">2.11.4. Campos obrigatórios</h4>
+
+        <p>No DANFE Simplificado deverão ser impressos, no mínimo, além da expressão “DANFE Simplificado”, da chave de acesso, seu código de barras e do correspondente Protocolo de Autorização de Uso, o conteúdo dos seguintes campos: </p>
+
+        <ol type="a">
+          <li>Dados do emitente: Nome/Razão Social, Sigla da UF, CNPJ, Inscrição Estadual; </li>
+          <li>Dados gerais da NF-e: Tipo de operação (entrada ou saída), Série e número da NF-e, Data de emissão; </li>
+          <li>Dados do destinatário/remetente: Nome/Razão Social, Sigla da UF, CNPJ/CPF; </li>
+          <li>Dados dos itens: Descrição dos Produtos/Serviços, Unidade Comercial, Quantidade, Valor unitário, Valor total do item; </li>
+          <li>Dados dos totais da NF-e: Valor total da Nota Fiscal.</li>
+
+
+        </ol>
+
+
+        <h3 id="2.12. DANFE Simplificado – Etiqueta (NT 2020.004)">2.12. DANFE Simplificado – Etiqueta (NT 2020.004)</h3>
+
+        <p>Com o avanço do comércio eletrônico, surgiu a necessidade de simplificar o processo de impressão do Documento Auxiliar da Nota Fiscal Eletrônica. </p>
+
+        <p>A impressão do DANFE Simplificado – Etiqueta, possível de ser utilizado pelos contribuintes nas operações de venda a varejo para consumidor final em comércio eletrônico, venda por telemarketing ou processos semelhantes, ocorrerá seguindo
+          os padrões técnicos estabelecidos nesta Nota Técnica, atendendo ao disposto no §5º-A da cláusula nona do Ajuste SINIEF 07/05.</p>
+
+        <h4 id="2.12.1. Tipo e tamanho do Papel">2.12.1. Tipo e tamanho do Papel</h4>
+
+        <p>Para a impressão do DANFE Simplificado poderá ser utilizado qualquer tipo de papel com largura mínima de 55 milímetros, com exceção de papel jornal, desde que seja garantido o contraste necessário para assegurar leitura do código de barras
+          nos equipamentos normais do mercado.</p>
+
+        <h4 id="2.12.2. Chave de acesso">2.12.2. Chave de acesso</h4>
+
+        <p>A chave de acesso e seu respectivo código de barras poderão ser impressos em qualquer sentido, no canto superior direito do papel, observadas as demais disposições dos capítulos 2 e 3 deste Anexo.</p>
+
+        <h4 id="2.12.3. Padrões de Caracteres (Tipos de Fontes)">2.12.3. Padrões de Caracteres (Tipos de Fontes)</h4>
+
+        <p>Todos os caracteres deverão estar impressos em tamanho não inferior a seis (6) pontos, sendo os títulos dos campos impressos em negrito e em caixa alta (maiúsculas).</p>
+
+        <h4 id="2.12.4. Campos obrigatórios">2.12.4. Campos obrigatórios</h4>
+
+        <p>No DANFE Simplificado – Etiqueta deverão estar visíveis e ser impresso no mínimo, além da chave de acesso, seu código de barras e do correspondente Protocolo de Autorização de Uso, o conteúdo dos seguintes campos: </p>
+
+
+        <ol type="a">
+          <li>A descrição “DANFE Simplificado – Etiqueta”; </li>
+          <li>Dados do emitente: Nome/Razão Social, Sigla da UF, CNPJ, Inscrição Estadual; </li>
+          <li>Dados gerais da NF-e: Tipo de operação, se entrada ou saída, Série e Número da NF-e, Data de emissão; </li>
+          <li>Dados do destinatário/remetente: Nome/Razão Social, Sigla da UF, CNPJ/CPF, Inscrição Estadual, quando existir; </li>
+          <li>Dados dos totais da NF-e: Valor total da Nota Fiscal. </li>
+          <li>Contingência EPEC: Informar o protocolo de autorização do Evento EPEC. </li>
+
+
+        </ol>
+
+        <h2 id="3. Conjunto de Caracteres Código de Barras CODE-128C">3. Conjunto de Caracteres Código de Barras CODE-128C</h2>
+
+        <p>Conjunto de caracteres representativos do Código de Barras</p>
+        <p>Combinação de barras: B=barra preta e S=espaço (barra branca)</p>
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="background-color:#0ce9e2">
+                <th rowspan="2">Valor <br>CODE C</th>
+                <th colspan="6">Combinação de Barras</th>
+              </tr>
+              <tr style="background-color:#0ce9e2">
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">00</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">01</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">02</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">03</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">04</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">05</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">06</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">07</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">08</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">09</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">10</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">11</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">12</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">13</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">14</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">15</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">16</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">17</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">18</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">19</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">20</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">21</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">22</td>
+                <td>2</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">23</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">24</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">25</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">26</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">27</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">28</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">29</td>
+                <td>3</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">30</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">31</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">32</td>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">33</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">34</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">35</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">36</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">37</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">38</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">39</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">40</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">41</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">42</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">43</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">44</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">45</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">46</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">47</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">48</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">49</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">50</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">51</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">52</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">53</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">54</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">55</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">56</td>
+                <td>3</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">57</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">58</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">59</td>
+                <td>3</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">60</td>
+                <td>3</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">61</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">62</td>
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">63</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">64</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">65</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">66</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">67</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">68</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">69</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">70</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">61</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">72</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">73</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">74</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">75</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">76</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">77</td>
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">78</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">79</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">80</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">81</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">82</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">83</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">84</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">85</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">86</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">87</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">88</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">89</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">90</td>
+                <td>4</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">91</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">92</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">93</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">94</td>
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">95</td>
+                <td>4</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">96</td>
+                <td>4</td>
+                <td>1</td>
+                <td>4</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">97</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">98</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">99</td>
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">100</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">101</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">102</td>
+                <td>4</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">103</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td style="background-color:#0ce9e2">104</td>
+                <td>2</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>1</td>
+                <td>4</td>
+              </tr>
+            </table>
+
+          </ul>
+        </ul>
+        <br><br>
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="background-color:#0ce9e2">
+                <th>Valor</th>
+                <th colspan="6">Caractere de Início (START)</th>
+              </tr>
+              <tr style="background-color:#0ce9e2">
+                <th rowspan="2">105</th>
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <th>2</th>
+                <th>1</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>2</th>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+        <br><br>
+        <ul>
+          <ul>
+            <table style="border-collapse:collapse">
+              <tr style="background-color:#0ce9e2">
+                <th colspan="7">Caractere de Fim (STOP)</th>
+              </tr>
+              <tr style="background-color:#0ce9e2">
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+                <th>S</th>
+                <th>B</th>
+              </tr>
+              <tr>
+                <th>2</th>
+                <th>3</th>
+                <th>3</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>2</th>
+              </tr>
+            </table>
+          </ul>
+        </ul>
+
+
+
+        <h2 id="4. DANFE Tamanho A-4 em Modo Retrato, Folhas Soltas">4. DANFE Tamanho A-4 em Modo Retrato, Folhas Soltas</h2>
+
+
+        <img src="./Imagens/DanfeA4RetratoFolhasSoltas.png" alt="Código de Barra" style="width:auto;">
+
+
+        <h2 id="5. DANFE Tamanho A-4 em Modo Retrato, Formulário Contínuo">5. DANFE Tamanho A-4 em Modo Retrato, Formulário Contínuo</h2>
+
+        <img src="./Imagens/DanfeA4RetratoContinuo.png" alt="Código de Barra" style="width:auto;">
+
+
+
+        <h2 id="6. DANFE Tamanho A-4 em Modo Paisagem, Folhas Soltas">6. DANFE Tamanho A-4 em Modo Paisagem, Folhas Soltas</h2>
+
+        <img src="./Imagens/DanfeA4PaisagemFolhasSoltas.png" alt="Código de Barra" style="width:auto;">
+
+
+
+        <h2 id="7. DANFE Tamanho A-4 em Modo Paisagem, Formulário Contínuo">7. DANFE Tamanho A-4 em Modo Paisagem, Formulário Contínuo</h2>
+
+        <img src="./Imagens/DanfeA4PaisagemContinuo.png" alt="Código de Barra" style="width:auto;">
+
 
       </div>
     </div>
